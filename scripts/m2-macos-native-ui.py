@@ -46,11 +46,10 @@ try:
     wait_for('Upload image');press('Upload image');time.sleep(1)
     snap('image-picker');choose(root/'engine/test/fixtures/k-logo.png')
     wait_for('1,374',90);snap('converted');check('native image conversion','1,374 stitches from actual PNG file picker')
-    # All subsequent choices come from the native accessibility labels.
-    # Preserve actual observations even if a WebKit control cannot be driven.
     current=ax('snapshot')
-    if any(r.get('description')=='Project name' or r.get('title')=='Project name' for r in current):
-        ax('set','Project name','Native Mac ZIP verification');key(48)
+    graphics_error='The canvas needs WebGL' in text(current)
+    if graphics_error:
+        checks.append({'name':'native canvas preview','result':'blocked','detail':'Native WebView reports WebGL unavailable on the hosted VM. No application or graphics settings were changed.'})
     # Select the same prominent hoop control observed in the native tree.
     hoop=next((r for r in current if r['role']=='AXButton' and (r['title'].startswith('Hoop:') or r['description'].startswith('Hoop:'))),None)
     if hoop:
@@ -61,23 +60,38 @@ try:
         found=next(r for r in choices if r['role']=='AXButton' and '4 x 4 in' in (r['title']+' '+r['description']))
         press(found['title'] or found['description']);wait_for('100 × 100');check('native hoop selection','100 × 100 mm selected from search')
     else:raise AssertionError('Native hoop selector was not exposed as expected; evidence retained')
-    key(1,1048576);time.sleep(1);snap('project-save-dialog');choose(out/'Native-Mac-ZIP-sample.lilo',saving=True)
-    project=out/'Native-Mac-ZIP-sample.lilo'
+    # The observed compact native Save sheet opens with its proposed filename
+    # selected. Confirm it normally; XPC-hosted fields are not in the app's AX
+    # tree. Find only the newly written agent fixture on this disposable runner.
+    save_start=time.time()
+    key(1,1048576);time.sleep(1);snap('project-save-dialog');key(36)
+    project=None
     for _ in range(30):
-        if project.exists():break
+        candidates=[p for p in pathlib.Path.home().rglob('k-logo.lilo') if p.stat().st_mtime>=save_start]
+        if candidates:project=max(candidates,key=lambda p:p.stat().st_mtime);break
         time.sleep(.5)
+    assert project is not None,'Native Save sheet did not produce a new project'
     with zipfile.ZipFile(project) as z:
         doc=json.loads(z.read('project.json'));assert len(doc['design']['objects'])==6
     check('native project save','Actual native Save sheet wrote a valid project with six editable objects')
-    press('Export');wait_for('Export stats');snap('export')
+    shutil.copy2(project,out/'Native-Mac-ZIP-sample.lilo')
+    press('Export');wait_for('Save PES');snap('export')
     current=ax('snapshot');save=next(r for r in current if r['role']=='AXButton' and ('Save PES' in r['title'] or 'Save PES' in r['description']))
-    press(save['title'] or save['description']);time.sleep(1);snap('pes-save-dialog');choose(out/'Native-Mac-ZIP-sample.pes',saving=True)
-    pes=out/'Native-Mac-ZIP-sample.pes';time.sleep(2);assert pes.read_bytes().startswith(b'#PES')
+    export_start=time.time()
+    press(save['title'] or save['description']);time.sleep(1);snap('pes-save-dialog');key(36)
+    pes=None
+    for _ in range(30):
+        candidates=[p for p in pathlib.Path.home().rglob('k-logo.pes') if p.stat().st_mtime>=export_start]
+        if candidates:pes=max(candidates,key=lambda p:p.stat().st_mtime);break
+        time.sleep(.5)
+    assert pes is not None,'Native Save sheet did not produce a new PES file'
+    assert pes.read_bytes().startswith(b'#PES')
+    shutil.copy2(pes,out/'Native-Mac-ZIP-sample.pes')
     check('native PES export',str(pes.stat().st_size)+' bytes with valid PES header')
     # Use the OS file-open event to reopen the project saved by this native app.
     subprocess.run(['open','-a',app,project],check=True);wait_for('1,374');snap('project-reopened')
     check('native project reopening','Native saved project reopened with 1,374 stitches')
-    result='pass'
+    result='partial' if graphics_error else 'pass'
 except Exception as exc:
     result='incomplete';error=str(exc)
     try:snap('failure')
