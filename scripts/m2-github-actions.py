@@ -9,7 +9,7 @@ parser.add_argument('command', choices=['dispatch', 'status', 'artifacts', 'down
 parser.add_argument('--id')
 args = parser.parse_args()
 env = dict(os.environ, GIT_TERMINAL_PROMPT='0', GCM_INTERACTIVE='never')
-p = subprocess.run(['git', '-c', 'credential.interactive=never', 'credential', 'fill'], input='protocol=https\nhost=github.com\n\n', text=True, capture_output=True, env=env, timeout=45)
+p = subprocess.run(['git', '-c', 'credential.interactive=never', 'credential', 'fill'], input='protocol=https\nhost=github.com\nusername=thomastt-cryoo\n\n', text=True, capture_output=True, env=env, timeout=45)
 fields = dict(line.split('=', 1) for line in p.stdout.splitlines() if '=' in line)
 if not fields.get('password'):
     raise SystemExit('GitHub credential-manager access is unavailable; no action performed.')
@@ -18,9 +18,12 @@ headers = {'Authorization': 'Bearer '+fields['password'], 'Accept': 'application
 def api(path, method='GET', body=None):
     req = urllib.request.Request('https://api.github.com/'+path, headers=headers, method=method, data=json.dumps(body).encode() if body is not None else None)
     if body is not None: req.add_header('Content-Type', 'application/json')
-    with urllib.request.urlopen(req, timeout=30) as r:
-        raw = r.read()
-        return json.loads(raw) if raw else {}
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            raw = r.read()
+            return json.loads(raw) if raw else {}
+    except urllib.error.HTTPError as e:
+        raise SystemExit(str(e.code)+': '+e.read().decode())
 
 repo = api('repos/'+REPO)
 assert repo['private'], 'Refusing to use a public repository for this milestone.'

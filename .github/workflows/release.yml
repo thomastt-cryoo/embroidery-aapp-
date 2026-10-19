@@ -14,12 +14,13 @@ jobs:
     timeout-minutes: 80
     env:
       APPLE_SIGNING_IDENTITY: '-'
-      LILO_FONTS_CACHE: ${{ runner.temp }}/studio-fonts-cache
       CARGO_BUILD_JOBS: '3'
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+      - name: Configure pinned font cache
+        run: echo "LILO_FONTS_CACHE=$RUNNER_TEMP/studio-fonts-cache" >> "$GITHUB_ENV"
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
