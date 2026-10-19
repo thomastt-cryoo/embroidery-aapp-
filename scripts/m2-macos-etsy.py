@@ -69,7 +69,7 @@ if args.action == 'package':
             result_path.write_text(json.dumps(records,indent=2)+'\n')
     try:
         pkg=modework/'Install Embroidery Studio.pkg'
-        run(['pkgbuild','--component',app,'--install-location','/Applications','--identifier','io.github.thomasttcryoo.embroiderystudio','--version','1.4.0','--compression','latest',pkg])
+        run(['pkgbuild','--component',app,'--install-location','/Applications','--identifier','io.github.thomasttcryoo.embroiderystudio','--version','1.4.0','--min-os-version','13.0','--compression','latest',pkg])
         delivery=modework/'pkg.zip'
         zip_installer(pkg,delivery,'Open Install Embroidery Studio.pkg and follow the installer. Then open Embroidery Studio in Applications.')
         record(delivery,'pkg',{'pkgBytes':pkg.stat().st_size})
