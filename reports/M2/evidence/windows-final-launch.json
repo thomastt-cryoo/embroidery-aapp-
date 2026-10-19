@@ -1,0 +1,12 @@
+{
+  "result": "pass",
+  "nativeProcess": 24628,
+  "debuggingEnabled": false,
+  "localHealth": {
+    "apiVersion": 1,
+    "app": "embroidery-studio",
+    "port": 17842,
+    "version": "1.4.0"
+  },
+  "installerSignature": "NotSigned"
+}

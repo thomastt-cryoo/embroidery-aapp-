@@ -1,16 +1,12 @@
-# Lilo by Kadwood
+# Embroidery Studio — private development copy
 
 Free, open-source embroidery digitizing. Turn images, SVGs and fonts into stitch files and send them to your machine over Wi-Fi.
 
-Website: [lilo.kadwood.com](https://lilo.kadwood.com) (source in [`site/`](site/README.md)).
+This is the private working copy for the redesigned **Embroidery Studio** application, based on [Lilo by Kadwood](https://github.com/Kadwood/lilo). The original repository is a read-only reference and was not modified. The private build repository is `thomastt-cryoo/embroidery-aapp-`. No public release or website deployment is enabled.
 
-> Status: **M5 (screens)**: Home with recent projects, click-to-stitch, My Threads, pixel art, the
-> converter, all export formats, projects with autosave and version history. Before that, **M3
-> (Editor)**: drop a PNG, JPG, WEBP or SVG on the canvas: Lilo traces it, snaps the
-> colours to Brother threads, lays down stitches and lets you play them back stitch by stitch
-> (pausing at each thread change). Everything it makes is editable, and you can draw from scratch
-> with the full toolbar, the seven run types and 36 fill patterns. Export a PES with the real thread
-> colours, or send it to a machine with Lilo Link. Lettering and the rest come in later milestones.
+See [M2_FINAL_REPORT.md](M2_FINAL_REPORT.md) for the completed Windows installer, macOS packages, real screenshots, test results and signing limitations.
+
+> Status: **M1 approved; M2 complete for private review. M3 has not started.** The application installs separately from Lilo and preserves the original embroidery engine.
 
 ## What it will do (v1)
 
@@ -24,30 +20,13 @@ Website: [lilo.kadwood.com](https://lilo.kadwood.com) (source in [`site/`](site/
 
 One desktop app for macOS, Windows and Linux. No account needed.
 
-## Install
+## Install the M2 review build
 
-Download the latest version from the **[Releases page](https://github.com/Kadwood/lilo/releases/latest)**.
-Every release lists a `SHA256SUMS` file if you want to check your download.
+Use the packages in `dist/M2` and follow the [review instructions](reports/M2/DELIVERY_README.md). They are private review packages: Windows is unsigned, and macOS uses ad-hoc signing without Developer ID or notarization. The Mac workflow is manual and keeps artifacts private.
 
-**Mac** (macOS 13 or newer, Apple Silicon and Intel): download `Lilo_<version>_universal.dmg`, open
-it and drag Lilo onto Applications. Lilo is signed and notarized by Apple, so the first time you open
-it macOS shows "Lilo is an app downloaded from the Internet" with an **Open** button; click it. The
-first time you look for machines on your network, macOS asks to allow Local Network access: say yes.
+**Automatic updates are disabled.** Embroidery Studio does not use Lilo's release channel. Your existing Lilo installation, URL handler and default file associations are preserved.
 
-**Windows** (64-bit): download `Lilo_<version>_x64-setup.exe` and run it. The Windows installer is
-not code-signed yet, so SmartScreen may say "Windows protected your PC". Click **More info**, then
-**Run anyway**. It installs for your user only, no admin rights needed.
-
-**Linux** (64-bit): download either
-- `Lilo_<version>_amd64.AppImage`: `chmod +x Lilo_*.AppImage`, then run it (needs FUSE 2, `libfuse2`, on newer Ubuntu), or
-- `Lilo_<version>_amd64.deb`: `sudo apt install ./Lilo_*.deb`.
-
-**Updates**: Lilo checks GitHub for a new version when it starts (at most once a day) and shows a
-banner with "Install and restart". Turn that off, or check by hand, under Lilo Link > Settings >
-Updates. It only ever talks to GitHub Releases.
-
-**Build from source**: see [Develop](#develop). Builds from source have no update key, so they never
-self-update.
+Build and verification commands are in the [M2 handoff](reports/M2/DEVELOPMENT.md). The original engine documentation below is retained for technical reference. Required third-party attribution and licences remain in [NOTICE.md](NOTICE.md) and [LICENSE](LICENSE).
 
 ## Guide
 

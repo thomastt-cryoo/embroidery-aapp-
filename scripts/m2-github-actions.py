@@ -5,7 +5,7 @@ import argparse, json, os, pathlib, subprocess, urllib.request, urllib.error
 
 REPO = 'thomastt-cryoo/embroidery-aapp-'
 parser = argparse.ArgumentParser()
-parser.add_argument('command', choices=['dispatch', 'status', 'artifacts', 'download', 'cancel-site'])
+parser.add_argument('command', choices=['dispatch', 'status', 'artifacts', 'download', 'cancel-site', 'evidence'])
 parser.add_argument('--id')
 args = parser.parse_args()
 env = dict(os.environ, GIT_TERMINAL_PROMPT='0', GCM_INTERACTIVE='never')
@@ -46,6 +46,26 @@ elif args.command == 'cancel-site':
             print('Cancelled inherited website workflow; no publishing requested.')
 elif args.command == 'artifacts':
     print(json.dumps(api('repos/'+REPO+'/actions/runs/'+args.id+'/artifacts'),indent=2))
+elif args.command == 'evidence':
+    from datetime import datetime
+    runs = api('repos/'+REPO+'/actions/workflows/release.yml/runs?per_page=10')['workflow_runs']
+    selected = []
+    total_seconds = 0
+    for run in runs:
+        item = {k:run[k] for k in ['id','html_url','head_sha','status','conclusion','created_at','updated_at']}
+        jobs = api('repos/'+REPO+'/actions/runs/'+str(run['id'])+'/jobs')['jobs']
+        item['jobs'] = [{k:j[k] for k in ['id','name','status','conclusion','started_at','completed_at','runner_name','labels']} for j in jobs]
+        for job in item['jobs']:
+            if job['completed_at'] and job['started_at']:
+                seconds = int((datetime.fromisoformat(job['completed_at'].replace('Z','+00:00')) - datetime.fromisoformat(job['started_at'].replace('Z','+00:00'))).total_seconds())
+                job['elapsedSeconds'] = seconds
+                total_seconds += seconds
+        if str(run['id']) == args.id:
+            item['artifacts'] = api('repos/'+REPO+'/actions/runs/'+args.id+'/artifacts')['artifacts']
+        selected.append(item)
+    target = pathlib.Path('reports/M2/evidence/actions-final.json')
+    target.write_text(json.dumps({'repository':REPO,'private':repo['private'],'selectedRunId':args.id,'measuredMacJobSeconds':total_seconds,'allowanceVerified':False,'runs':selected},indent=2)+'\n')
+    print('Saved private run, artifact and measured runner-time evidence:',target)
 elif args.command == 'download':
     class NoRedirect(urllib.request.HTTPRedirectHandler):
         def redirect_request(self, req, fp, code, msg, hdrs, newurl): return None
@@ -56,7 +76,7 @@ elif args.command == 'download':
         if e.code != 302: raise
         # The signed artifact URL carries its own authorization. Never forward the API token.
         response=urllib.request.urlopen(e.headers['Location'],timeout=120)
-    target=pathlib.Path('dist/M2/macos-actions-artifact.zip')
+    target=pathlib.Path('reports/M2/build-artifacts/macos-actions-artifact.zip')
     target.parent.mkdir(parents=True,exist_ok=True)
     with response, target.open('wb') as f:
         while block:=response.read(1024*1024): f.write(block)

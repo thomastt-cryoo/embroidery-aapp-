@@ -103,7 +103,8 @@ describe("My Threads shelf", () => {
     render(<ShelfPanel />);
     mock.state.pickFiles = [{ name: "nope.json", bytes: new TextEncoder().encode("{\"hello\":1}") }];
     fireEvent.click(screen.getByRole("button", { name: "Import JSON…" }));
-    expect((await screen.findByRole("alert")).textContent).toMatch(/not a Embroidery Studio thread shelf/);
+    // The unchanged engine names its compatible shelf format in this diagnostic.
+    expect((await screen.findByRole("alert")).textContent).toMatch(/not a Lilo thread shelf/);
   });
 
   it("offers Search online when the catalogue has no such code, opening the brand's chart", async () => {

@@ -1,0 +1,307 @@
+{
+  "milestone": "M2",
+  "status": "complete-awaiting-user-approval",
+  "date": "2026-10-19",
+  "name": "Embroidery Studio",
+  "version": "1.4.0",
+  "branch": "codex/m2-branding-packaging",
+  "applicationSourceCommit": "6234b89c6061474bea16abe578a7b8f0f509aa2d",
+  "approvedM1": "6334c8b",
+  "upstream": "Kadwood/lilo (read-only; unchanged; local pushing disabled)",
+  "privateWorkingRepository": "thomastt-cryoo/embroidery-aapp-",
+  "packages": [
+    {
+      "file": "Embroidery Studio_1.4.0_x64-setup.exe",
+      "bytes": 241316900,
+      "MiB": 230.14,
+      "sha256": "320a9615cf3be62589435fa071dac63a47045762467d56c3aeb247558a7bafaa"
+    },
+    {
+      "file": "Embroidery Studio_1.4.0_universal.dmg",
+      "bytes": 53798509,
+      "MiB": 51.31,
+      "sha256": "66ba3151f44d2773c029d55ec5b6024dcbbe3a3a3929161f20b6d3aa3d8a9221"
+    },
+    {
+      "file": "Embroidery_Studio_1.4.0_universal.app.zip",
+      "bytes": 53515689,
+      "MiB": 51.04,
+      "sha256": "b2f0135d8a7eec566044a86c480b1b3b6cd4521f3619add7a86c3da7e10ade5f"
+    }
+  ],
+  "installedWindows": {
+    "result": "pass",
+    "installedExe": "C:\\Users\\mazin\\Applications\\Embroidery Studio\\embroidery-studio.exe",
+    "installedSha256": "C2BB68B50A8AF49EEF8B7A0368F1B9723B1411AF41510C60DF6C61957523FD57",
+    "matchesFinalBuild": true,
+    "unbundledBuildSha256": "3A4D03FBF43ED35937C7124E90C9A32BB56E4A873A106E814B7547D341B380ED",
+    "bundleMarker": "Tauri NSIS packaging: UNK -> NSS; all other bytes identical",
+    "originalLiloUnchanged": true,
+    "originalLiloSha256": "2FE59440A3441F001B88835B0620FF67B2FB8C7AF47E36D6864FD11920D1811C",
+    "extensionDefaultsPreserved": {
+      "xxx": "Embroidery stitch file",
+      "pes": "Embroidery stitch file",
+      "dst": "Embroidery stitch file",
+      "hus": "Embroidery stitch file",
+      "vp3": "Embroidery stitch file",
+      "pec": "Embroidery stitch file",
+      "exp": "Embroidery stitch file",
+      "lilo": "Lilo Project",
+      "tbf": "Embroidery stitch file",
+      "jef": "Embroidery stitch file",
+      "u01": "Embroidery stitch file",
+      "vip": "Embroidery stitch file"
+    },
+    "openWithCommand": "\"C:\\Users\\mazin\\Applications\\Embroidery Studio\\embroidery-studio.exe\" \"%1\"",
+    "protocolCommand": "\"C:\\Users\\mazin\\Applications\\Embroidery Studio\\embroidery-studio.exe\" \"%1\"",
+    "originalLiloProtocolCommand": "\"C:\\Users\\mazin\\AppData\\Local\\Lilo\\lilo.exe\" \"%1\"",
+    "uninstallDisplayName": "Embroidery Studio",
+    "uninstallVersion": "1.4.0",
+    "startMenuShortcutTarget": "C:\\Users\\mazin\\Applications\\Embroidery Studio\\embroidery-studio.exe",
+    "customerFiles": [
+      "embroidery-studio.exe",
+      "LICENSE.txt",
+      "NOTICE.txt",
+      "uninstall.exe"
+    ],
+    "signatureStatus": "NotSigned"
+  },
+  "windowsReleaseLaunch": {
+    "result": "pass",
+    "nativeProcess": 24628,
+    "debuggingEnabled": false,
+    "localHealth": {
+      "apiVersion": 1,
+      "app": "embroidery-studio",
+      "port": 17842,
+      "version": "1.4.0"
+    },
+    "installerSignature": "NotSigned"
+  },
+  "nativeWindowsChecks": 10,
+  "nativeMac": {
+    "os": "macOS-14.8.9-arm64-arm-64bit-Mach-O",
+    "architecture": "arm64",
+    "appIdentifier": "io.github.thomasttcryoo.embroiderystudio",
+    "version": "1.4.0",
+    "binaryArchitectures": "x86_64 arm64",
+    "nativeLaunch": "pass",
+    "health": {
+      "apiVersion": 1,
+      "app": "embroidery-studio",
+      "port": 17842,
+      "version": "1.4.0"
+    },
+    "nativeScreenshot": "native-macos-desktop.png",
+    "sampleOpenRequested": "k-logo.lilo",
+    "signature": "ad-hoc; not Developer ID or notarized",
+    "scope": "Native application launched on actual macOS; health and package identity checked. Inspect screenshot for rendered sample. Detailed conversion/edit/export acceptance runs separately in Chromium on this same macOS runner."
+  },
+  "regression": {
+    "editor": {
+      "result": "pass across final recorded runs",
+      "uniquePassed": 650,
+      "files": 58,
+      "baseRunPassed": 633,
+      "baseRunIncludedHoopPasses": 25,
+      "replacementFilesPassed": 42,
+      "calculation": "633 - 25 + 42 = 650",
+      "initialIssues": [
+        "Hoop warning UI fixture planned a large dense fill and exceeded its test timeout. It now uses the same-sized outline. No production code changed.",
+        "Home test expected the old Kadwood website lockup; assertion updated to check the preserved original-source credit.",
+        "ShelfPanel test worker did not start within its deadline under concurrent builds; all 15 shelf tests ran in the final targeted run.",
+        "Shelf error assertion initially renamed an unchanged engine diagnostic; restored the compatible Lilo shelf-format wording."
+      ],
+      "finalTargetedFailures": 0,
+      "fullLog": "editor-tests-final.txt",
+      "targetedLog": "editor-targeted-final.txt"
+    },
+    "windowsNativeRust": {
+      "libraryPassed": 92,
+      "apiIntegrationPassed": 18,
+      "failed": 0,
+      "log": "native-windows-tests-final.txt"
+    },
+    "macosNativeRust": {
+      "passed": 96,
+      "failed": 0,
+      "log": "macos/native-tests.txt"
+    },
+    "scripts": {
+      "passed": 32,
+      "failed": 0,
+      "log": "script-tests-final.txt"
+    },
+    "productionAcceptance": {
+      "windows": 9,
+      "macos": 9,
+      "externalNetworkBlocked": true,
+      "exportFormats": 13,
+      "readableFormatsReopened": 11
+    },
+    "checks": [
+      "TypeScript passed",
+      "Guide generation/check passed",
+      "Version checks passed in private macOS workflow",
+      "Package/source protection passed"
+    ],
+    "rawLogEvidence": [
+      {
+        "path": "editor-tests-final.txt",
+        "bytes": 15557,
+        "sha256": "f9a0b2e9fe5438ae383ba6fb6f707941e92824bfa39b18121f44f03f2682622f"
+      },
+      {
+        "path": "editor-targeted-final.txt",
+        "bytes": 829,
+        "sha256": "dff6fec1b89df9817784b4de75cbf19576800d1a3fa4714f76441994fc4393e9"
+      },
+      {
+        "path": "native-windows-tests-final.txt",
+        "bytes": 8853,
+        "sha256": "ac1021fd4435ee5692d7efe03a55dca6d67e319d6ddbfd6535e04696bc93d551"
+      },
+      {
+        "path": "macos/native-tests.txt",
+        "bytes": 8099,
+        "sha256": "221f5d3cbac4f83e8e065566d158127352ac5697b2fe32a4266e9ce0fc790115"
+      },
+      {
+        "path": "script-tests-final.txt",
+        "bytes": 2578,
+        "sha256": "b333436d23815bb447e9bd891275d965f5edb9fce131956df0a15ce8544d9879"
+      },
+      {
+        "path": "typecheck-final.txt",
+        "bytes": 567,
+        "sha256": "40886bd6148597bfcffc558d9413217f1b8982222027c7c542d03eb3f9154aa3"
+      },
+      {
+        "path": "guide-check-final.txt",
+        "bytes": 396,
+        "sha256": "3da6031b4060450195fa846ea581c32362dea360b689d0fb0658ccab64546b52"
+      },
+      {
+        "path": "package-check-final.txt",
+        "bytes": 161,
+        "sha256": "d734c50c594f88186f4f15866dbb8f45843088444d92e3757481f2831a58089b"
+      },
+      {
+        "path": "production-acceptance-final.txt",
+        "bytes": 951,
+        "sha256": "a911341c20fb8dde7b832044066541bfbb5fb3be7e2408d292eb73314ea50367"
+      },
+      {
+        "path": "macos/browser-acceptance.txt",
+        "bytes": 942,
+        "sha256": "1e14a8e090667ceb9f93d10390a446fdc458c5acf88f34c74099a9f1ad264a19"
+      }
+    ]
+  },
+  "macosActions": {
+    "runId": 39307805583,
+    "url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39307805583",
+    "finalJobSeconds": 382,
+    "totalMeasuredMacJobSeconds": 1102,
+    "allowanceVerified": false,
+    "private": true,
+    "artifact": {
+      "id": 12213758910,
+      "node_id": "MDg6QXJ0aWZhY3QxMjIxMzc1ODkxMA==",
+      "name": "Embroidery-Studio-macOS-M2-private",
+      "size_in_bytes": 109010924,
+      "url": "https://api.github.com/repos/thomastt-cryoo/embroidery-aapp-/actions/artifacts/12213758910",
+      "archive_download_url": "https://api.github.com/repos/thomastt-cryoo/embroidery-aapp-/actions/artifacts/12213758910/zip",
+      "expired": false,
+      "digest": "sha256:5e00157452bf63e90a02bd29c96aa5c1a53a0adae21e659174413beee947ac14",
+      "created_at": "2026-10-19T19:10:21Z",
+      "updated_at": "2026-10-19T19:10:21Z",
+      "expires_at": "2026-10-21T19:10:18Z",
+      "workflow_run": {
+        "id": 39307805583,
+        "repository_id": 1426017176,
+        "head_repository_id": 1426017176,
+        "head_branch": "main",
+        "head_sha": "6234b89c6061474bea16abe578a7b8f0f509aa2d"
+      }
+    }
+  },
+  "sourceProtection": {
+    "result": "pass",
+    "engine": "byte-for-byte identical to approved M1",
+    "M1Stylesheet": "byte-for-byte identical",
+    "editingProjectPlatform": "only literal branding-word substitutions; all logic unchanged",
+    "log": "package-check-final.txt"
+  },
+  "logs": [
+    {
+      "path": "windows-build-final.txt",
+      "bytes": 47216,
+      "sha256": "49fde146b0072570781f5dc05d2807772d831fc1f1ceddc78a4b99548badb293"
+    },
+    {
+      "path": "native-windows-tests-final.txt",
+      "bytes": 8853,
+      "sha256": "ac1021fd4435ee5692d7efe03a55dca6d67e319d6ddbfd6535e04696bc93d551"
+    },
+    {
+      "path": "editor-tests-final.txt",
+      "bytes": 15557,
+      "sha256": "f9a0b2e9fe5438ae383ba6fb6f707941e92824bfa39b18121f44f03f2682622f"
+    },
+    {
+      "path": "editor-targeted-final.txt",
+      "bytes": 829,
+      "sha256": "dff6fec1b89df9817784b4de75cbf19576800d1a3fa4714f76441994fc4393e9"
+    },
+    {
+      "path": "script-tests-final.txt",
+      "bytes": 2578,
+      "sha256": "b333436d23815bb447e9bd891275d965f5edb9fce131956df0a15ce8544d9879"
+    },
+    {
+      "path": "typecheck-final.txt",
+      "bytes": 567,
+      "sha256": "40886bd6148597bfcffc558d9413217f1b8982222027c7c542d03eb3f9154aa3"
+    },
+    {
+      "path": "guide-check-final.txt",
+      "bytes": 396,
+      "sha256": "3da6031b4060450195fa846ea581c32362dea360b689d0fb0658ccab64546b52"
+    },
+    {
+      "path": "package-check-final.txt",
+      "bytes": 161,
+      "sha256": "d734c50c594f88186f4f15866dbb8f45843088444d92e3757481f2831a58089b"
+    },
+    {
+      "path": "production-acceptance-final.txt",
+      "bytes": 951,
+      "sha256": "a911341c20fb8dde7b832044066541bfbb5fb3be7e2408d292eb73314ea50367"
+    },
+    {
+      "path": "macos/macos-build.txt",
+      "bytes": 48758,
+      "sha256": "6a52bd166cfc1da80c358a1bbc0dd98d5c0a3ff2b42ab5f37c46f4f48c1f7116"
+    },
+    {
+      "path": "macos/native-tests.txt",
+      "bytes": 8099,
+      "sha256": "221f5d3cbac4f83e8e065566d158127352ac5697b2fe32a4266e9ce0fc790115"
+    },
+    {
+      "path": "macos/browser-acceptance.txt",
+      "bytes": 942,
+      "sha256": "1e14a8e090667ceb9f93d10390a446fdc458c5acf88f34c74099a9f1ad264a19"
+    }
+  ],
+  "limitations": [
+    "Windows unsigned",
+    "macOS ad-hoc signed; no Developer ID or notarization",
+    "Native macOS editing/file-dialog journeys not fully automated; detailed acceptance ran in Chromium on the actual Mac runner",
+    "Intel binary included but Intel execution not tested",
+    "Physical embroidery hardware sewing and Wi-Fi transfer not tested",
+    "Final product branding awaiting user decision"
+  ],
+  "nextMilestoneStarted": false
+}

@@ -32,3 +32,4 @@ reports/M1/evidence/native/*.bak
 reports/M2/evidence/*.txt
 reports/M2/evidence/macos/*.txt
 reports/M2/evidence/**/*.bak
+reports/M2/build-artifacts/

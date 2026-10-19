@@ -1,0 +1,26 @@
+{
+  "upstream": "Kadwood/lilo",
+  "upstreamAccess": {
+    "pull": true,
+    "push": false,
+    "admin": false
+  },
+  "upstreamChangesAdded": false,
+  "deletionRequired": false,
+  "workingRepository": "thomastt-cryoo/embroidery-aapp-",
+  "workingRepositoryPrivate": true,
+  "protection": "Local upstream push URL disabled; default push destination is distribution.",
+  "pushHistory": [
+    "6234b89 update by push",
+    "7a7e19a update by push",
+    "840398a update by push",
+    "817a378 update by push",
+    "defe821 update by push"
+  ],
+  "remotes": [
+    "distribution\thttps://github.com/thomastt-cryoo/embroidery-aapp-.git (fetch)",
+    "distribution\thttps://github.com/thomastt-cryoo/embroidery-aapp-.git (push)",
+    "origin\thttps://github.com/Kadwood/lilo.git (fetch)",
+    "origin\tdisabled://reference-only (push)"
+  ]
+}

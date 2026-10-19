@@ -27,6 +27,10 @@ assert(!hooks.includes('$\"'), 'Registry commands must use plain double quotes i
 assert(!/WriteRegStr HKCU "Software\\Classes\\\.[^"\\]+" ""/.test(hooks));
 assert(!hooks.includes('DeleteRegKey HKCU "Software\\Classes\\.'));
 assert(!hooks.includes('Kadwood'));
+const installGuide = read('docs/guide/install.md');
+assert(!installGuide.includes('Kadwood/lilo/releases'));
+assert(installGuide.includes('Automatic updates are disabled'));
+assert(installGuide.includes('no Apple Developer ID or notarization'));
 const workflow = read('.github/workflows/release.yml');
 assert(!workflow.includes('contents: write'));
 assert(!workflow.includes('gh release'));

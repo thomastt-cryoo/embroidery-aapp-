@@ -1,0 +1,37 @@
+{
+  "result": "pass",
+  "installedExe": "C:\\Users\\mazin\\Applications\\Embroidery Studio\\embroidery-studio.exe",
+  "installedSha256": "C2BB68B50A8AF49EEF8B7A0368F1B9723B1411AF41510C60DF6C61957523FD57",
+  "matchesFinalBuild": true,
+  "unbundledBuildSha256": "3A4D03FBF43ED35937C7124E90C9A32BB56E4A873A106E814B7547D341B380ED",
+  "bundleMarker": "Tauri NSIS packaging: UNK -> NSS; all other bytes identical",
+  "originalLiloUnchanged": true,
+  "originalLiloSha256": "2FE59440A3441F001B88835B0620FF67B2FB8C7AF47E36D6864FD11920D1811C",
+  "extensionDefaultsPreserved": {
+    "xxx": "Embroidery stitch file",
+    "pes": "Embroidery stitch file",
+    "dst": "Embroidery stitch file",
+    "hus": "Embroidery stitch file",
+    "vp3": "Embroidery stitch file",
+    "pec": "Embroidery stitch file",
+    "exp": "Embroidery stitch file",
+    "lilo": "Lilo Project",
+    "tbf": "Embroidery stitch file",
+    "jef": "Embroidery stitch file",
+    "u01": "Embroidery stitch file",
+    "vip": "Embroidery stitch file"
+  },
+  "openWithCommand": "\"C:\\Users\\mazin\\Applications\\Embroidery Studio\\embroidery-studio.exe\" \"%1\"",
+  "protocolCommand": "\"C:\\Users\\mazin\\Applications\\Embroidery Studio\\embroidery-studio.exe\" \"%1\"",
+  "originalLiloProtocolCommand": "\"C:\\Users\\mazin\\AppData\\Local\\Lilo\\lilo.exe\" \"%1\"",
+  "uninstallDisplayName": "Embroidery Studio",
+  "uninstallVersion": "1.4.0",
+  "startMenuShortcutTarget": "C:\\Users\\mazin\\Applications\\Embroidery Studio\\embroidery-studio.exe",
+  "customerFiles": [
+    "embroidery-studio.exe",
+    "LICENSE.txt",
+    "NOTICE.txt",
+    "uninstall.exe"
+  ],
+  "signatureStatus": "NotSigned"
+}

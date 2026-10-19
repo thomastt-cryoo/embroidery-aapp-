@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
-import { DEFAULT_HOOP, exportCustomHoops, makeCustomHoop, type Design } from "@lilo/engine/light";
+import { DEFAULT_HOOP, DEFAULT_RUN_PARAMS, exportCustomHoops, makeCustomHoop, type Design } from "@lilo/engine/light";
 import { HomeView } from "../app/HomeView";
 import type { AppApi } from "../app/AppContext";
 import { GuidesLayer, Rulers } from "../canvas/HoopOverlays";
@@ -38,8 +38,9 @@ afterEach(() => {
 const loaded = () => waitFor(() => expect(lastEditor?.state.planResult).not.toBeNull(), T);
 const bigDesign = (): Design => {
   const d = testDesign();
-  // 150 x 300 mm: bigger than every NV2700 hoop
-  d.objects = [{ ...d.objects[0], geometry: { shell: [[-75, -150], [75, -150], [75, 150], [-75, 150]], holes: [] } } as never];
+  // 150 x 300 mm: bigger than every NV2700 hoop. An outline tests the
+  // same overflow without planning a large filled rectangle in a UI test.
+  d.objects = [{ ...d.objects[0], kind: "run", geometry: { path: [[-75, -150], [75, -150], [75, 150], [-75, 150]], closed: true }, params: DEFAULT_RUN_PARAMS }];
   return d;
 };
 
@@ -321,15 +322,15 @@ describe("Home", () => {
     return { view: "home", go: vi.fn() as unknown as AppApi["go"] };
   }
 
-  it("offers the six ways to start as cards, and the Kadwood lockup opens kadwood.com", async () => {
+  it("offers the six ways to start as cards, and credits the original source", async () => {
     renderEditor(<HomeView />, { app: app() });
     const grid = screen.getByRole("list", { name: "Ways to start" });
     for (const name of ["New design", "Digitize a picture…", "Type a monogram", "Pixel art", "Open…", "Converter"]) expect(within(grid).getByRole("button", { name })).toBeTruthy();
     expect(screen.getByRole("heading", { name: /A little idea/ })).toBeTruthy();
     expect(screen.getByRole("button", { name: "Upload image" })).toBeTruthy();
-    fireEvent.click(screen.getByTitle("kadwood.com"));
-    await waitFor(() => expect(mock.openedUrls).toEqual(["https://kadwood.com"]));
-    expect(screen.getByRole("img", { name: "Kadwood" })).toBeTruthy();
+    fireEvent.click(screen.getByTitle("Original Lilo source and GPL licence"));
+    await waitFor(() => expect(mock.openedUrls).toEqual(["https://github.com/Kadwood/lilo"]));
+    expect(screen.getByText("Embroidery Studio · based on Lilo · GPL-3.0")).toBeTruthy();
   });
 
   it("Pixel art and Converter go to their screens; Type a monogram starts a design with the Text tool", async () => {
