@@ -5,7 +5,7 @@ import argparse, json, os, pathlib, subprocess, urllib.request, urllib.error
 
 REPO = 'thomastt-cryoo/embroidery-aapp-'
 parser = argparse.ArgumentParser()
-parser.add_argument('command', choices=['dispatch', 'status', 'artifacts', 'download'])
+parser.add_argument('command', choices=['dispatch', 'status', 'artifacts', 'download', 'cancel-site'])
 parser.add_argument('--id')
 args = parser.parse_args()
 env = dict(os.environ, GIT_TERMINAL_PROMPT='0', GCM_INTERACTIVE='never')
@@ -37,6 +37,13 @@ elif args.command == 'status':
         if args.id and str(run['id']) == args.id:
             jobs=api('repos/'+REPO+'/actions/runs/'+args.id+'/jobs')['jobs']
             print(json.dumps([{'id':j['id'],'status':j['status'],'conclusion':j['conclusion'],'started_at':j['started_at'],'completed_at':j['completed_at'],'steps':j['steps']} for j in jobs],indent=2))
+elif args.command == 'cancel-site':
+    runs=api('repos/'+REPO+'/actions/workflows/site.yml/runs?per_page=10')['workflow_runs']
+    for run in runs:
+        print(json.dumps({'id':run['id'],'status':run['status'],'conclusion':run['conclusion']}))
+        if run['status'] != 'completed':
+            api('repos/'+REPO+'/actions/runs/'+str(run['id'])+'/cancel','POST')
+            print('Cancelled inherited website workflow; no publishing requested.')
 elif args.command == 'artifacts':
     print(json.dumps(api('repos/'+REPO+'/actions/runs/'+args.id+'/artifacts'),indent=2))
 elif args.command == 'download':
