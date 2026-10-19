@@ -5,8 +5,12 @@ interface CachedPath {
   positions: Float32Array;
   indices: Uint32Array | Uint16Array;
   count: number;
-  path: Path2D;
+  paths: Path2D[];
 }
+
+// Bound each native path's intersection work. A single path containing an
+// entire dense 2,000-stitch chunk is expensive for software rasterizers.
+const INDICES_PER_PATH = 96;
 
 /** Canvas counterpart of the existing solid-colour stitch meshes. Geometry,
  * colour, layer order, view transforms and reveal counts come from StitchLayer.
@@ -35,24 +39,26 @@ export class CanvasStitchMeshPipe {
     const count = geometry.indexCount || indices.length;
     let cached = this.paths.get(mesh);
     if (!cached || cached.geometry !== geometry || cached.positions !== positions || cached.indices !== indices || count < cached.count) {
-      cached = { geometry, positions, indices, count: 0, path: new Path2D() };
+      cached = { geometry, positions, indices, count: 0, paths: [] };
       this.paths.set(mesh, cached);
     }
     // Playback normally grows one partial chunk. Append only newly revealed
     // triangles; fully visible chunks keep their cached native paths.
     for (let i = cached.count; i < count; i += 3) {
+      const slot = Math.floor(i / INDICES_PER_PATH);
+      const path = cached.paths[slot] ?? (cached.paths[slot] = new Path2D());
       const a = indices[i] * 2;
       const b = indices[i + 1] * 2;
       const c = indices[i + 2] * 2;
-      cached.path.moveTo(positions[a], positions[a + 1]);
+      path.moveTo(positions[a], positions[a + 1]);
       // The mesh's end caps have the opposite winding from its rectangles.
       // Normalize winding so overlapping native path triangles never cancel.
       const cross = (positions[b] - positions[a]) * (positions[c + 1] - positions[a + 1]) - (positions[b + 1] - positions[a + 1]) * (positions[c] - positions[a]);
       const first = cross < 0 ? c : b;
       const second = cross < 0 ? b : c;
-      cached.path.lineTo(positions[first], positions[first + 1]);
-      cached.path.lineTo(positions[second], positions[second + 1]);
-      cached.path.closePath();
+      path.lineTo(positions[first], positions[first + 1]);
+      path.lineTo(positions[second], positions[second + 1]);
+      path.closePath();
     }
     cached.count = count;
     const renderer = this.renderer;
@@ -69,7 +75,7 @@ export class CanvasStitchMeshPipe {
     system.setContextTransform(mesh.groupTransform);
     context.globalAlpha = alpha;
     context.fillStyle = `rgb(${channel(0)},${channel(8)},${channel(16)})`;
-    context.fill(cached.path);
+    for (const path of cached.paths) context.fill(path);
     context.restore();
   }
 
