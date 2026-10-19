@@ -32,9 +32,9 @@ func visit(_ e: AXUIElement, _ depth: Int) {
 }
 visit(app,0)
 func emit(_ value: Any) { let d=try! JSONSerialization.data(withJSONObject:value,options:[.prettyPrinted,.sortedKeys]); print(String(data:d,encoding:.utf8)!) }
-func key(_ code: CGKeyCode, _ flags: CGEventFlags = []) {
+func key(_ code: CGKeyCode, _ flags: CGEventFlags = [], settle:Bool = true) {
     for down in [true,false] { let event=CGEvent(keyboardEventSource:nil,virtualKey:code,keyDown:down)!;event.flags=flags;event.post(tap:.cghidEventTap);usleep(20000) }
-    RunLoop.current.run(until:Date(timeIntervalSinceNow:0.15))
+    if settle {RunLoop.current.run(until:Date(timeIntervalSinceNow:0.15))}
 }
 if operation == "activate" {running.activate(options:[.activateIgnoringOtherApps]);emit(["result":"activated"])}
 else if operation == "snapshot" { emit(rows) }
@@ -51,8 +51,9 @@ else if operation == "key" {
         let shifted=character == "_" || character != lower
         let base:Character=character == "_" ? "-" : lower
         guard let code=codes[base] else {fatalError("Unsupported test-fixture character")}
-        key(code,shifted ? .maskShift : [])
+        key(code,shifted ? .maskShift : [],settle:false)
     }
+    RunLoop.current.run(until:Date(timeIntervalSinceNow:0.3))
     emit(["result":"typed test data"])
 } else if operation == "paste" {
     NSPasteboard.general.clearContents();NSPasteboard.general.setString(args[2],forType:.string)
