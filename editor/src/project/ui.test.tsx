@@ -196,10 +196,10 @@ describe("title and unsaved dot", () => {
     expect(screen.queryByRole("img", { name: "Unsaved changes" })).toBeNull();
     act(() => lastEditor!.actions.setName("Crest"));
     expect(screen.getByRole("img", { name: "Unsaved changes" })).toBeTruthy();
-    expect(document.title).toBe("Crest • — Lilo");
+    expect(document.title).toBe("Crest • — Embroidery Studio");
     await act(async () => void (await manager.save()));
     expect(screen.queryByRole("img", { name: "Unsaved changes" })).toBeNull();
-    expect(document.title).toBe("Crest — Lilo");
+    expect(document.title).toBe("Crest — Embroidery Studio");
   });
 });
 

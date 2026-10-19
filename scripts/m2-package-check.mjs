@@ -23,6 +23,7 @@ assert(!base.app.security.csp['connect-src'].includes('17841'));
 assert.match(read('app/src-tauri/src/updates.rs'), /pub fn configured\(\) -> bool \{[^}]*false/s);
 const hooks = read('app/src-tauri/installer-hooks.nsh');
 assert(hooks.includes('OpenWithProgids'));
+assert(!hooks.includes('$\"'), 'Registry commands must use plain double quotes inside NSIS single-quoted strings');
 assert(!/WriteRegStr HKCU "Software\\Classes\\\.[^"\\]+" ""/.test(hooks));
 assert(!hooks.includes('DeleteRegKey HKCU "Software\\Classes\\.'));
 assert(!hooks.includes('Kadwood'));
@@ -32,6 +33,13 @@ assert(!workflow.includes('gh release'));
 assert(!workflow.includes('tags:'));
 assert(workflow.includes('macos-14'));
 assert(workflow.includes('timeout-minutes: 80'));
-const protectedDiff = execFileSync('git', ['diff', '6334c8b', '--', 'engine', 'editor/src/state', 'editor/src/project', 'editor/src/platform', 'editor/src/studio.css'], { encoding: 'utf8' });
+const websiteWorkflow = read('.github/workflows/site.yml');
+assert(!websiteWorkflow.includes('wrangler'));
+assert(websiteWorkflow.includes('if: ${{ false }}'));
+const protectedDiff = execFileSync('git', ['diff', '6334c8b', '--', 'engine', 'editor/src/state', 'editor/src/project', ':!editor/src/project/ProjectProvider.tsx', ':!editor/src/project/ui.test.tsx', 'editor/src/platform', 'editor/src/studio.css'], { encoding: 'utf8' });
 assert.equal(protectedDiff, '', 'M1 engine, editing, file/project implementation and interface CSS must remain unchanged');
+for (const path of ['editor/src/project/ProjectProvider.tsx', 'editor/src/project/ui.test.tsx']) {
+  const original = execFileSync('git', ['show', `6334c8b:${path}`], { encoding: 'utf8' });
+  assert.equal(read(path).replaceAll('\r\n', '\n'), original.replaceAll('— Lilo', '— Embroidery Studio').replaceAll('\r\n', '\n'), `${path}: only the displayed brand may change`);
+}
 console.log('PASS: separate identity, offline runtime, non-default associations, isolated bridge/projects, disabled updates, private-only workflow and protected M1 sources.');

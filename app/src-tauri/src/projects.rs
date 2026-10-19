@@ -615,11 +615,18 @@ mod tests {
 
     #[test]
     fn turns_file_urls_into_paths() {
-        let urls: Vec<tauri::Url> = ["file:///Users/me/Documents/Lilo/Crest.lilo", "file:///tmp/x.pes", "file:///tmp/x.txt", "https://example.com/a.lilo"]
-            .iter()
-            .map(|u| u.parse().unwrap())
-            .collect();
-        assert_eq!(paths_from_urls(&urls), vec![PathBuf::from("/Users/me/Documents/Lilo/Crest.lilo"), PathBuf::from("/tmp/x.pes")]);
+        // File URLs need a drive letter on Windows. Build the same fixture from
+        // this platform's absolute temporary path rather than hard-coded Unix URLs.
+        let root = std::env::temp_dir().join("studio-url-fixture");
+        let project = root.join("Crest.lilo");
+        let stitches = root.join("x.pes");
+        let urls = vec![
+            tauri::Url::from_file_path(&project).unwrap(),
+            tauri::Url::from_file_path(&stitches).unwrap(),
+            tauri::Url::from_file_path(root.join("x.txt")).unwrap(),
+            "https://example.com/a.lilo".parse().unwrap(),
+        ];
+        assert_eq!(paths_from_urls(&urls), vec![project, stitches]);
     }
 
     #[test]

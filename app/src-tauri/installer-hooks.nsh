@@ -1,11 +1,16 @@
 ; Separate identity; never write extension defaults or touch Lilo registry keys.
+!define STUDIO_LICENSE "${__FILEDIR__}\..\..\LICENSE"
+!define STUDIO_NOTICE "${__FILEDIR__}\..\..\NOTICE.md"
 !macro NSIS_HOOK_POSTINSTALL
+  SetOutPath "$INSTDIR"
+  File /oname=LICENSE.txt "${STUDIO_LICENSE}"
+  File /oname=NOTICE.txt "${STUDIO_NOTICE}"
   WriteRegStr HKCU "Software\Classes\EmbroideryStudio.Project" "" "Embroidery Studio Project"
-  WriteRegStr HKCU "Software\Classes\EmbroideryStudio.Project\DefaultIcon" "" '$"$INSTDIR\embroidery-studio.exe$",0'
-  WriteRegStr HKCU "Software\Classes\EmbroideryStudio.Project\shell\open\command" "" '$"$INSTDIR\embroidery-studio.exe$" $"%1$"'
+  WriteRegStr HKCU "Software\Classes\EmbroideryStudio.Project\DefaultIcon" "" '"$INSTDIR\embroidery-studio.exe",0'
+  WriteRegStr HKCU "Software\Classes\EmbroideryStudio.Project\shell\open\command" "" '"$INSTDIR\embroidery-studio.exe" "%1"'
   WriteRegStr HKCU "Software\Classes\EmbroideryStudio.Stitch" "" "Embroidery Studio Stitch"
-  WriteRegStr HKCU "Software\Classes\EmbroideryStudio.Stitch\DefaultIcon" "" '$"$INSTDIR\embroidery-studio.exe$",0'
-  WriteRegStr HKCU "Software\Classes\EmbroideryStudio.Stitch\shell\open\command" "" '$"$INSTDIR\embroidery-studio.exe$" $"%1$"'
+  WriteRegStr HKCU "Software\Classes\EmbroideryStudio.Stitch\DefaultIcon" "" '"$INSTDIR\embroidery-studio.exe",0'
+  WriteRegStr HKCU "Software\Classes\EmbroideryStudio.Stitch\shell\open\command" "" '"$INSTDIR\embroidery-studio.exe" "%1"'
   WriteRegStr HKCU "Software\Classes\.lilo\OpenWithProgids" "EmbroideryStudio.Project" ""
   WriteRegStr HKCU "Software\Classes\.pes\OpenWithProgids" "EmbroideryStudio.Stitch" ""
   WriteRegStr HKCU "Software\Classes\.dst\OpenWithProgids" "EmbroideryStudio.Stitch" ""

@@ -30,3 +30,5 @@ reports/M1/evidence/acceptance/FAILED.png
 reports/M1/evidence/final-journeys/*-FAILED.png
 reports/M1/evidence/native/*.bak
 reports/M2/evidence/*.txt
+reports/M2/evidence/macos/*.txt
+reports/M2/evidence/**/*.bak

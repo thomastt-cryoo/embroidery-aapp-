@@ -84,6 +84,7 @@ jobs:
           if [ -d "$B/dmg" ]; then find "$B/dmg" -name '*.dmg' -exec cp {} out/ \;; fi
           if [ -d "$B/macos/Embroidery Studio.app" ]; then ditto -c -k --sequesterRsrc --keepParent "$B/macos/Embroidery Studio.app" out/Embroidery_Studio_1.4.0_universal.app.zip; fi
           cp LICENSE out/LICENSE.txt
+          cp NOTICE.md out/NOTICE.txt
           cp reports/M2/MAC_REVIEW.md out/READ_ME_FIRST.md
           shasum -a 256 out/*.dmg out/*.zip > out/SHA256SUMS.txt 2>/dev/null || true
           du -h out/* || true
