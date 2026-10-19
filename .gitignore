@@ -35,3 +35,5 @@ reports/M2/evidence/**/*.bak
 reports/M2/build-artifacts/
 reports/M2/etsy/*.txt
 reports/M2/etsy/**/*.txt
+scripts/__pycache__/
+reports/M2/etsy/**/*.bak

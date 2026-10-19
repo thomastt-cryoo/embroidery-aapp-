@@ -9,6 +9,7 @@ parser.add_argument('command', choices=['dispatch', 'verify', 'status', 'artifac
 parser.add_argument('--id')
 parser.add_argument('--workflow', default='release.yml')
 parser.add_argument('--output')
+parser.add_argument('--artifact-name', default='Embroidery-Studio-macOS-M2-Etsy-private')
 args = parser.parse_args()
 env = dict(os.environ, GIT_TERMINAL_PROMPT='0', GCM_INTERACTIVE='never')
 p = subprocess.run(['git', '-c', 'credential.interactive=never', 'credential', 'fill'], input='protocol=https\nhost=github.com\nusername=thomastt-cryoo\n\n', text=True, capture_output=True, env=env, timeout=45)
@@ -34,7 +35,7 @@ if args.command == 'dispatch':
     print('Dispatched private macOS workflow on main; no release or public artifact created.')
 elif args.command == 'verify':
     assert args.id and args.id.isdigit(), 'A successful build run id is required.'
-    api('repos/'+REPO+'/actions/workflows/mac-zip-verification.yml/dispatches','POST',{'ref':'main','inputs':{'runId':args.id}})
+    api('repos/'+REPO+'/actions/workflows/mac-zip-verification.yml/dispatches','POST',{'ref':'main','inputs':{'runId':args.id,'artifactName':args.artifact_name}})
     print('Dispatched private native verification of the actual customer ZIP; no new application build.')
 elif args.command == 'status':
     runs = api('repos/'+REPO+'/actions/workflows/'+args.workflow+'/runs?per_page=5')['workflow_runs']
