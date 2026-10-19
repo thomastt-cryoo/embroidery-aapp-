@@ -1,0 +1,15 @@
+# M2 Etsy packaging — stopped for review
+
+Final report: root `M2_FINAL_REPORT.md`. Do not begin M3 without user approval.
+
+- Windows ZIP: **16,962,744 bytes**, under 20,000,000. Actual extracted installer installed; nine native checks passed, all 458 runtime assets served, normal release launch verified. Original Lilo and all 12 file defaults remain unchanged.
+- Complete universal Mac PKG ZIP: **38,675,724 bytes**, above the limit. No split parts, removed features or runtime download workaround. Both ARM and Intel native installations/launch/file loads verified.
+- Final Intel native UI run **39323318021**, source `5ec36f0`: five checks passed (PNG conversion, hoop, save, PES export, reopening); result **partial**, workflow red because native preview is blocked. Final evidence is `macos-intel/native-ui/results.json`. Native visual editing/simulation remain unverified.
+- Standalone native graphics run **39322724108**, source `9365791`: no app code loaded; default WebKit loses WebGL 1/2 contexts immediately with antialiasing on/off. Metal device is Apple Paravirtual. Physical/GPU-capable Mac validation is needed; do not hide the error or modify the engine.
+- All nine production browser checks passed on each OS with external HTTP(S) blocked, including 13 exports, 11 readbacks and project round-trip. Windows native Rust 110, Mac 96 passed. Earlier M2 editor 650/script 32 evidence retained; engine unchanged from approved M1.
+- Original upstream is reference-only; `origin` push disabled. Only private `distribution` receives pushes. No public publishing. Customer ZIPs are local in `dist/M2-Etsy`, exactly two files, hashes in `delivery-manifest.json`.
+- Current Windows app is `C:\Users\mazin\Applications\Embroidery Studio\embroidery-studio.exe`, normally launched with saved agent fixture. Remote debugger and preview server stopped. Native UI test tooling is outside customer packages.
+- Both packages are unsigned review builds (Mac ad-hoc signed, no notarization). Missing-WebView2 branch configuration-checked; not clean-VM tested. Consumer trust prompts and physical sew-out untested.
+- Mac recorded job wall time **52:51**, below the stated 200-minute ceiling; account free/billing balance not available. No larger paid runner or billing settings enabled.
+
+Raw downloaded GitHub archives remain under ignored `reports/M2/build-artifacts`. Final artifact download SHA-256 values matched GitHub metadata. Do not rebuild/re-ZIP the customer files without repeating their exact-package verification. Last delivery/source guards passed. The report states the remaining size, native graphics validation and signing blockers.

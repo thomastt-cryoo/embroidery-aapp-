@@ -1,0 +1,137 @@
+{
+  "repository": "thomastt-cryoo/embroidery-aapp-",
+  "private": true,
+  "selectedRunId": "39313542113",
+  "measuredMacJobSeconds": 2112,
+  "allowanceVerified": false,
+  "runs": [
+    {
+      "id": 39313542113,
+      "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39313542113",
+      "head_sha": "544c3837c0a9d8343626639aac10ea0d5a87b715",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-19T19:44:53Z",
+      "updated_at": "2026-10-19T20:01:52Z",
+      "jobs": [
+        {
+          "id": 118269056836,
+          "name": "macOS universal build and actual runner checks",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-19T19:45:01Z",
+          "completed_at": "2026-10-19T20:01:51Z",
+          "runner_name": "GitHub Actions 1000000013",
+          "labels": [
+            "macos-14"
+          ],
+          "elapsedSeconds": 1010
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12217488890,
+          "node_id": "MDg6QXJ0aWZhY3QxMjIxNzQ4ODg5MA==",
+          "name": "Embroidery-Studio-macOS-M2-Etsy-private",
+          "size_in_bytes": 43960464,
+          "url": "https://api.github.com/repos/thomastt-cryoo/embroidery-aapp-/actions/artifacts/12217488890",
+          "archive_download_url": "https://api.github.com/repos/thomastt-cryoo/embroidery-aapp-/actions/artifacts/12217488890/zip",
+          "expired": false,
+          "digest": "sha256:397fb3961283a902c5acd83f38bf76add31c074973f550972b40d8f946212406",
+          "created_at": "2026-10-19T20:01:12Z",
+          "updated_at": "2026-10-19T20:01:12Z",
+          "expires_at": "2026-10-21T20:01:10Z",
+          "workflow_run": {
+            "id": 39313542113,
+            "repository_id": 1426017176,
+            "head_repository_id": 1426017176,
+            "head_branch": "main",
+            "head_sha": "544c3837c0a9d8343626639aac10ea0d5a87b715"
+          }
+        }
+      ]
+    },
+    {
+      "id": 39307805583,
+      "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39307805583",
+      "head_sha": "6234b89c6061474bea16abe578a7b8f0f509aa2d",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-19T19:03:53Z",
+      "updated_at": "2026-10-19T19:10:26Z",
+      "jobs": [
+        {
+          "id": 118249318733,
+          "name": "macOS universal build and actual runner checks",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-19T19:04:03Z",
+          "completed_at": "2026-10-19T19:10:25Z",
+          "runner_name": "GitHub Actions 1000000012",
+          "labels": [
+            "macos-14"
+          ],
+          "elapsedSeconds": 382
+        }
+      ]
+    },
+    {
+      "id": 39306851568,
+      "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39306851568",
+      "head_sha": "7a7e19a552ee4e0dda41b224538837fd93101704",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-10-19T18:57:09Z",
+      "updated_at": "2026-10-19T18:58:49Z",
+      "jobs": [
+        {
+          "id": 118246045227,
+          "name": "macOS universal build and actual runner checks",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "started_at": "2026-10-19T18:57:17Z",
+          "completed_at": "2026-10-19T18:58:48Z",
+          "runner_name": "GitHub Actions 1000000011",
+          "labels": [
+            "macos-14"
+          ],
+          "elapsedSeconds": 91
+        }
+      ]
+    },
+    {
+      "id": 39304000663,
+      "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39304000663",
+      "head_sha": "817a37825fda3a3f2eab1a344d716042a8bc6a68",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-19T18:37:09Z",
+      "updated_at": "2026-10-19T18:47:46Z",
+      "jobs": [
+        {
+          "id": 118236212033,
+          "name": "macOS universal build and actual runner checks",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-19T18:37:16Z",
+          "completed_at": "2026-10-19T18:47:45Z",
+          "runner_name": "GitHub Actions 1000000010",
+          "labels": [
+            "macos-14"
+          ],
+          "elapsedSeconds": 629
+        }
+      ]
+    },
+    {
+      "id": 39303912516,
+      "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39303912516",
+      "head_sha": "defe821e5ba1314cc7ab60abc8f76e0c5103f43a",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-19T18:36:30Z",
+      "updated_at": "2026-10-19T18:36:30Z",
+      "jobs": []
+    }
+  ]
+}

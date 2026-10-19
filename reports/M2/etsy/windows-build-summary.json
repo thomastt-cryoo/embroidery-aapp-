@@ -1,0 +1,11 @@
+{
+  "windowsNativeTests": [
+    92,
+    18
+  ],
+  "windowsNativeWorkflowChecks": 9,
+  "runtimeFiles": 458,
+  "releaseBuild": "pass",
+  "webview": "downloadBootstrapper; absent-runtime branch not clean-VM tested",
+  "engineAndApprovedInterface": "unchanged; source guard recorded separately"
+}

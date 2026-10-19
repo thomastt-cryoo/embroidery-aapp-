@@ -1,0 +1,201 @@
+{
+  "repository": "thomastt-cryoo/embroidery-aapp-",
+  "private": true,
+  "selectedRunId": "39323318021",
+  "measuredMacJobSeconds": 1001,
+  "allowanceVerified": false,
+  "runs": [
+    {
+      "id": 39323318021,
+      "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39323318021",
+      "head_sha": "5ec36f01d9b721f29508516693043faa82b2f52f",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-19T20:55:16Z",
+      "updated_at": "2026-10-19T20:59:02Z",
+      "jobs": [
+        {
+          "id": 118302656540,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-10-19T20:55:22Z",
+          "completed_at": "2026-10-19T20:59:01Z",
+          "runner_name": "GitHub Actions 1000000021",
+          "labels": [
+            "macos-15-intel"
+          ],
+          "elapsedSeconds": 219
+        }
+      ],
+      "artifacts": [
+        {
+          "id": 12221781186,
+          "node_id": "MDg6QXJ0aWZhY3QxMjIyMTc4MTE4Ng==",
+          "name": "M2-Etsy-native-ZIP-verification",
+          "size_in_bytes": 44098110,
+          "url": "https://api.github.com/repos/thomastt-cryoo/embroidery-aapp-/actions/artifacts/12221781186",
+          "archive_download_url": "https://api.github.com/repos/thomastt-cryoo/embroidery-aapp-/actions/artifacts/12221781186/zip",
+          "expired": false,
+          "digest": "sha256:0f7ad84799cfd2bf1a2c923512a33bf74bf6b9baeba3fd1716b3b0ca5589f5ee",
+          "created_at": "2026-10-19T20:58:56Z",
+          "updated_at": "2026-10-19T20:58:56Z",
+          "expires_at": "2026-10-21T20:58:52Z",
+          "workflow_run": {
+            "id": 39323318021,
+            "repository_id": 1426017176,
+            "head_repository_id": 1426017176,
+            "head_branch": "main",
+            "head_sha": "5ec36f01d9b721f29508516693043faa82b2f52f"
+          }
+        }
+      ]
+    },
+    {
+      "id": 39322235953,
+      "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39322235953",
+      "head_sha": "95c60fe45a692d293abfb6621df76a776c8af3e5",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-10-19T20:47:20Z",
+      "updated_at": "2026-10-19T20:54:59Z",
+      "jobs": [
+        {
+          "id": 118298929695,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "started_at": "2026-10-19T20:47:26Z",
+          "completed_at": "2026-10-19T20:54:58Z",
+          "runner_name": "GitHub Actions 1000000019",
+          "labels": [
+            "macos-15-intel"
+          ],
+          "elapsedSeconds": 452
+        }
+      ]
+    },
+    {
+      "id": 39321460062,
+      "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39321460062",
+      "head_sha": "0d430966b30ea12efeb07088c919f1542ca0c485",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-19T20:41:49Z",
+      "updated_at": "2026-10-19T20:44:54Z",
+      "jobs": [
+        {
+          "id": 118296293796,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "failure",
+          "started_at": "2026-10-19T20:41:54Z",
+          "completed_at": "2026-10-19T20:44:53Z",
+          "runner_name": "GitHub Actions 1000000018",
+          "labels": [
+            "macos-15-intel"
+          ],
+          "elapsedSeconds": 179
+        }
+      ]
+    },
+    {
+      "id": 39320805458,
+      "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39320805458",
+      "head_sha": "a7d77a60d0de40ea64b6489636a6f5dc6b54a8c9",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-10-19T20:37:07Z",
+      "updated_at": "2026-10-19T20:41:40Z",
+      "jobs": [
+        {
+          "id": 118294038559,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "started_at": "2026-10-19T20:37:08Z",
+          "completed_at": "2026-10-19T20:41:39Z",
+          "runner_name": "",
+          "labels": [
+            "macos-14"
+          ],
+          "elapsedSeconds": 0,
+          "runnerNeverAssigned": true
+        }
+      ]
+    },
+    {
+      "id": 39320336117,
+      "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39320336117",
+      "head_sha": "70e254ab74f74e83083062d19f1dda4d1f52f2d2",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "created_at": "2026-10-19T20:33:45Z",
+      "updated_at": "2026-10-19T20:36:57Z",
+      "jobs": [
+        {
+          "id": 118292435765,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "started_at": "2026-10-19T20:33:47Z",
+          "completed_at": "2026-10-19T20:36:56Z",
+          "runner_name": "",
+          "labels": [
+            "macos-14"
+          ],
+          "elapsedSeconds": 0,
+          "runnerNeverAssigned": true
+        }
+      ]
+    },
+    {
+      "id": 39318694545,
+      "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39318694545",
+      "head_sha": "af36a755e0b9c25a3b201c6afb4d518b12d82569",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-19T20:21:58Z",
+      "updated_at": "2026-10-19T20:23:42Z",
+      "jobs": [
+        {
+          "id": 118286795695,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-19T20:22:06Z",
+          "completed_at": "2026-10-19T20:23:41Z",
+          "runner_name": "GitHub Actions 1000000015",
+          "labels": [
+            "macos-14"
+          ],
+          "elapsedSeconds": 95
+        }
+      ]
+    },
+    {
+      "id": 39318303455,
+      "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39318303455",
+      "head_sha": "5241aca6b44759dc72c109778630149dd435d992",
+      "status": "completed",
+      "conclusion": "success",
+      "created_at": "2026-10-19T20:19:10Z",
+      "updated_at": "2026-10-19T20:20:15Z",
+      "jobs": [
+        {
+          "id": 118285450541,
+          "name": "verify",
+          "status": "completed",
+          "conclusion": "success",
+          "started_at": "2026-10-19T20:19:18Z",
+          "completed_at": "2026-10-19T20:20:14Z",
+          "runner_name": "GitHub Actions 1000000014",
+          "labels": [
+            "macos-14"
+          ],
+          "elapsedSeconds": 56
+        }
+      ]
+    }
+  ]
+}

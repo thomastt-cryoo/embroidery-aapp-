@@ -1,0 +1,18 @@
+{
+  "zip": "C:\\Users\\mazin\\Downloads\\embroidry app\\dist\\M2-Etsy\\Embroidery-Studio-Windows.zip",
+  "zipBytes": 16962744,
+  "limitBytes": 20000000,
+  "underLimit": true,
+  "zipSha256": "765d378fe87314634cf369a0ea72ca437ae3378a9d1a38a5bf30de78e418a6c8",
+  "installerBytes": 16956277,
+  "installerSha256": "a2caba56a533d3b89ec3eeff637d7f40c6c64d6869d12e6aa25553dab73bbdb7",
+  "extractedInstaller": "C:\\Users\\mazin\\Downloads\\embroidry app\\reports\\M2\\build-artifacts\\windows-zip-765d378fe873\\Install Embroidery Studio.exe",
+  "zipIntegrity": "pass",
+  "exactInstallerReadback": "pass",
+  "webviewMode": "downloadBootstrapper",
+  "embeddedOfflineWebviewInstaller": false,
+  "runtimeAssetsRetained": 458,
+  "pngPixelsAndProfilesPreserved": true,
+  "allOtherRuntimeAssetBytesPreserved": true,
+  "applicationComponentDownloads": false
+}

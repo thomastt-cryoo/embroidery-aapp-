@@ -1,0 +1,98 @@
+{
+  "appCodeLoaded" : false,
+  "defaultMetalDevice" : "Apple Paravirtual device",
+  "metalDevices" : [
+    {
+      "lowPower" : false,
+      "name" : "Apple Paravirtual device",
+      "removable" : false
+    }
+  ],
+  "os" : "Version 15.7.9 (Build 24G830)",
+  "source" : "separate default WKWebView; default public configuration",
+  "webgl" : {
+    "observations" : [
+      {
+        "antialias" : false,
+        "contextLostAfter" : true,
+        "contextLostBefore" : true,
+        "created" : true,
+        "errorAfterPrecision" : 0,
+        "errorAfterRead" : 0,
+        "errorBefore" : 37442,
+        "fragmentHighFloat" : null,
+        "readPixel" : [
+          0,
+          0,
+          0,
+          0
+        ],
+        "renderer" : null,
+        "type" : "webgl",
+        "vendor" : null,
+        "version" : null
+      },
+      {
+        "antialias" : true,
+        "contextLostAfter" : true,
+        "contextLostBefore" : true,
+        "created" : true,
+        "errorAfterPrecision" : 0,
+        "errorAfterRead" : 0,
+        "errorBefore" : 37442,
+        "fragmentHighFloat" : null,
+        "readPixel" : [
+          0,
+          0,
+          0,
+          0
+        ],
+        "renderer" : null,
+        "type" : "webgl",
+        "vendor" : null,
+        "version" : null
+      },
+      {
+        "antialias" : false,
+        "contextLostAfter" : true,
+        "contextLostBefore" : true,
+        "created" : true,
+        "errorAfterPrecision" : 0,
+        "errorAfterRead" : 0,
+        "errorBefore" : 37442,
+        "fragmentHighFloat" : null,
+        "readPixel" : [
+          0,
+          0,
+          0,
+          0
+        ],
+        "renderer" : null,
+        "type" : "webgl2",
+        "vendor" : null,
+        "version" : null
+      },
+      {
+        "antialias" : true,
+        "contextLostAfter" : true,
+        "contextLostBefore" : true,
+        "created" : true,
+        "errorAfterPrecision" : 0,
+        "errorAfterRead" : 0,
+        "errorBefore" : 37442,
+        "fragmentHighFloat" : null,
+        "readPixel" : [
+          0,
+          0,
+          0,
+          0
+        ],
+        "renderer" : null,
+        "type" : "webgl2",
+        "vendor" : null,
+        "version" : null
+      }
+    ],
+    "userAgent" : "Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit\/605.1.15 (KHTML, like Gecko)"
+  }
+}

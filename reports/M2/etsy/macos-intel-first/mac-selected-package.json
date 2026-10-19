@@ -1,0 +1,10 @@
+{
+  "mode": "raw",
+  "kind": "pkg",
+  "bytes": 38675724,
+  "sha256": "fe0aaa12b91a7c80de7ce1ac6bfc1247fd56b36167012ed15a22ca15e8c3aa88",
+  "underEtsyLimit": false,
+  "completeUniversalApplication": true,
+  "customerInstallerName": "plain; no compression format in the filename",
+  "pkgBytes": 38647922
+}

@@ -1,0 +1,44 @@
+{
+  "decimalByteLimit": 20000000,
+  "packages": [
+    {
+      "file": "Embroidery-Studio-Windows.zip",
+      "bytes": 16962744,
+      "sha256": "765d378fe87314634cf369a0ea72ca437ae3378a9d1a38a5bf30de78e418a6c8",
+      "under20000000": true,
+      "installer": "Install Embroidery Studio.exe",
+      "installerBytes": 16956277,
+      "installerSha256": "a2caba56a533d3b89ec3eeff637d7f40c6c64d6869d12e6aa25553dab73bbdb7",
+      "zipIntegrity": "pass",
+      "completeSingleArchive": true,
+      "entries": [
+        "Install Embroidery Studio.exe",
+        "START HERE.txt",
+        "LICENSE.txt",
+        "NOTICE.txt"
+      ]
+    },
+    {
+      "file": "Embroidery-Studio-macOS.zip",
+      "bytes": 38675724,
+      "sha256": "fe0aaa12b91a7c80de7ce1ac6bfc1247fd56b36167012ed15a22ca15e8c3aa88",
+      "under20000000": false,
+      "installer": "Install Embroidery Studio.pkg",
+      "installerBytes": 38647922,
+      "installerSha256": "50212559c5433c9b51390520b3d99e4fd932bea6da843a894eaaf5b79111785c",
+      "zipIntegrity": "pass",
+      "completeSingleArchive": true,
+      "entries": [
+        "Install Embroidery Studio.pkg",
+        "LICENSE.txt",
+        "NOTICE.txt",
+        "START HERE.txt"
+      ]
+    }
+  ],
+  "macSizeLimitation": true,
+  "macNativeFunctionalPasses": 5,
+  "macNativePreview": "blocked on hosted VM; independently reproduced outside the application",
+  "signingPending": true,
+  "published": false
+}
