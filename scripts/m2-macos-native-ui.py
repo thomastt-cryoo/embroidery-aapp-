@@ -67,6 +67,8 @@ try:
     check('native canvas preview',f'Actual installed application screenshot, reference hidden: {red} red and {blue} blue pixels in central stitch area')
     # Real native simulation must visibly remove and redraw the stitched design.
     ax('set','Scrub stitches',0);time.sleep(1);snap('simulation-zero')
+    zero=next(r for r in ax('snapshot') if r['role']=='AXSlider' and r['title']=='Scrub stitches')
+    assert float(zero['value'])==0,zero
     ax('set','Playback speed',50)
     auto=next(r for r in ax('snapshot') if r['role']=='AXCheckBox' and r['title']=='Auto-continue')
     if auto['value']!='1':press('Auto-continue')
