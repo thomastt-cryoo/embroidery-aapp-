@@ -10,7 +10,7 @@ import assert from "node:assert/strict";
 const repo = resolve(import.meta.dirname, "..");
 const require = createRequire(join(repo, "editor/package.json"));
 const { chromium } = require("playwright-core");
-const out = join(repo, "reports/M2/evidence/acceptance");
+const out = process.env.LILO_EVIDENCE_OUT ? resolve(process.env.LILO_EVIDENCE_OUT) : join(repo, "reports/M2/evidence/acceptance");
 const production = process.env.LILO_PRODUCTION === "1";
 const appUrl = `${process.env.LILO_URL || "http://localhost:5173"}/${production ? "" : "?mock"}`;
 await mkdir(join(out, "exports"), { recursive: true });
