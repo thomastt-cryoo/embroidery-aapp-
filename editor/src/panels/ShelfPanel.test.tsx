@@ -103,7 +103,7 @@ describe("My Threads shelf", () => {
     render(<ShelfPanel />);
     mock.state.pickFiles = [{ name: "nope.json", bytes: new TextEncoder().encode("{\"hello\":1}") }];
     fireEvent.click(screen.getByRole("button", { name: "Import JSON…" }));
-    expect((await screen.findByRole("alert")).textContent).toMatch(/not a Lilo thread shelf/);
+    expect((await screen.findByRole("alert")).textContent).toMatch(/not a Embroidery Studio thread shelf/);
   });
 
   it("offers Search online when the catalogue has no such code, opening the brand's chart", async () => {
@@ -213,7 +213,7 @@ describe("Add a spool by photo", () => {
     render(<ShelfPanel />);
     open("shelf-photo");
     fireEvent.click(screen.getByRole("button", { name: "Choose a photo…" }));
-    expect((await screen.findByRole("alert", undefined, T)).textContent).toMatch(/needs the Lilo desktop app on a Mac/);
+    expect((await screen.findByRole("alert", undefined, T)).textContent).toMatch(/needs the Embroidery Studio desktop app on a Mac/);
   });
 
   it("accepts a dropped photo", async () => {

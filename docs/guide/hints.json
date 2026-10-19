@@ -94,11 +94,11 @@
   {"id":"hoop.show-rulers","label":"Show rulers","what":"Rulers along the top and left. Drag from one to pull out a guide.","when":"To line shapes up exactly.","typical":"On.","guideId":"sizing-and-hoops","level":"basic"},
   {"id":"hoop.placement-guide","label":"Placement guide","what":"A guide showing where a design usually sits, like a cuff or pocket.","when":"When placing a monogram or crest on a garment.","typical":"Suit lining, inside pocket.","guideId":"sizing-and-hoops","level":"basic"},
   {"id":"hoop.actual-size","label":"Actual size","what":"Shows the design at its true size on your screen.","when":"To judge size against a real garment.","typical":"Calibrate the screen once first.","guideId":"sizing-and-hoops","level":"basic"},
-  {"id":"hoop.calibrate-screen","label":"Calibrate screen","what":"Teaches Lilo how big a millimetre is on your display.","when":"Once, before you rely on Actual size.","typical":"Hold a ruler to the screen.","guideId":"sizing-and-hoops","level":"advanced"},
+  {"id":"hoop.calibrate-screen","label":"Calibrate screen","what":"Teaches Embroidery Studio how big a millimetre is on your display.","when":"Once, before you rely on Actual size.","typical":"Hold a ruler to the screen.","guideId":"sizing-and-hoops","level":"advanced"},
   {"id":"section.drawing-colour","label":"Drawing colour","what":"New shapes are drawn in this thread.","when":"Before you draw, to avoid recolouring later.","typical":"The thread you plan to use first.","guideId":"drawing-tools","level":"basic"},
 
   {"id":"sewing.chip","label":"Sewing setup","what":"Shows your fabric, thread weight and quality. Click to change.","when":"When you change fabric, thread or machine.","typical":"Suiting, 40 wt, Standard.","guideId":"sewing-setup","level":"basic"},
-  {"id":"sewing.fabric","label":"Fabric","what":"What you are sewing on. Lilo adjusts spacing, underlay and edge compensation.","when":"Whenever the cloth changes.","typical":"Suiting, shirting, twill, knit, denim, towel or leather.","guideId":"sewing-presets","level":"basic"},
+  {"id":"sewing.fabric","label":"Fabric","what":"What you are sewing on. Embroidery Studio adjusts spacing, underlay and edge compensation.","when":"Whenever the cloth changes.","typical":"Suiting, shirting, twill, knit, denim, towel or leather.","guideId":"sewing-presets","level":"basic"},
   {"id":"sewing.thread-weight","label":"Thread weight","what":"40 wt is standard. 60 wt is finer and allows smaller detail.","when":"Use 60 wt for small letters.","typical":"40 wt.","guideId":"sewing-presets","level":"basic"},
   {"id":"sewing.quality","label":"Quality","what":"Standard is quick. Premium takes more care over each column.","when":"Premium for fine logos, Standard for tests.","typical":"Standard.","guideId":"standard-vs-premium","level":"basic"},
   {"id":"sewing.checklist","label":"Before you sew","what":"Needle, stabiliser, topping and hooping tips for your setup.","when":"Read it before every real sew-out.","typical":"Follow it, then sew a test.","guideId":"sewing-presets","level":"basic"},
@@ -106,7 +106,7 @@
 
   {"id":"export.format","label":"File format","what":"The file type your machine reads.","when":"Match it to your machine. Brother and Baby Lock use PES.","typical":"PES for Brother, DST for commercial machines.","guideId":"export-formats","level":"basic"},
   {"id":"export.stats","label":"Export stats","what":"Stitches, colour changes, size and time for this file.","when":"Check them before you save.","typical":"Look for surprises, like a huge stitch count.","guideId":"export-formats","level":"basic"},
-  {"id":"export.file-name","label":"File name","what":"The name of the saved file. Lilo adds the right ending.","when":"Use plain letters and numbers for USB sticks.","typical":"Short, no accents.","guideId":"usb-stick","level":"basic"},
+  {"id":"export.file-name","label":"File name","what":"The name of the saved file. Embroidery Studio adds the right ending.","when":"Use plain letters and numbers for USB sticks.","typical":"Short, no accents.","guideId":"usb-stick","level":"basic"},
   {"id":"export.origin","label":"Origin point","what":"Which point of the design sits at the hoop's zero.","when":"Change it only if your machine starts from a corner.","typical":"Centre.","guideId":"export-formats","level":"advanced"},
   {"id":"export.save","label":"Save","what":"Writes the file where you choose.","when":"When the stats and warnings look right.","typical":"The root of a USB stick.","guideId":"usb-stick","level":"basic"},
   {"id":"send.machine","label":"Machine","what":"Which saved machine receives the file.","when":"When you have more than one machine.","typical":"The machine on your own Wi-Fi.","guideId":"lilo-link-wifi","level":"basic"},
@@ -141,7 +141,7 @@
   {"id":"tool.closed","label":"Closed shape tool","what":"Like Open shape, but the outline closes into a fill.","when":"For leaves, badge outlines and solid areas.","typical":"Key 2.","guideId":"drawing-tools","level":"basic"},
   {"id":"tool.circle","label":"Circle tool","what":"Drag a box for an ellipse. Hold Ctrl for a perfect circle.","when":"For round hat patches and dots.","typical":"Key 3.","guideId":"drawing-tools","level":"basic"},
   {"id":"tool.rect","label":"Rectangle tool","what":"Drag a box. Hold Ctrl for a square.","when":"For labels, bars and frames.","typical":"Key 4.","guideId":"drawing-tools","level":"basic"},
-  {"id":"tool.pen","label":"Pen tool","what":"Draw freehand. Lilo smooths the line when you let go.","when":"For signatures and loose sketches.","typical":"Key 5.","guideId":"drawing-tools","level":"basic"},
+  {"id":"tool.pen","label":"Pen tool","what":"Draw freehand. Embroidery Studio smooths the line when you let go.","when":"For signatures and loose sketches.","typical":"Key 5.","guideId":"drawing-tools","level":"basic"},
   {"id":"tool.satin","label":"Satin blocks tool","what":"Click the left edge, then the right edge, and repeat along a column.","when":"For curved borders where you control each stitch angle.","typical":"Key 6. Enter finishes.","guideId":"drawing-tools","level":"advanced"},
   {"id":"tool.text","label":"Text tool","what":"Click where text goes, then type in the panel.","when":"For names, initials and monograms.","typical":"Key T.","guideId":"lettering-fonts","level":"basic"},
   {"id":"tool.clickstitch","label":"Click to stitch tool","what":"Click regions of a traced picture to stitch them.","when":"When you want to choose which parts get stitched.","typical":"Key K. Open an image first.","guideId":"click-to-stitch","level":"advanced"},
@@ -187,7 +187,7 @@
   {"id":"topbar.project-name","label":"Project name","what":"The name of this project. It is also the default file name.","when":"Name it after the job.","typical":"JK lining monogram.","guideId":"projects-and-autosave","level":"basic"},
   {"id":"topbar.search","label":"Search","what":"Finds any tool or action by name.","when":"When you do not know where a command lives.","typical":"Command K.","guideId":"keyboard-shortcuts","level":"basic"},
   {"id":"topbar.export","label":"Export","what":"Saves the design as a machine file or a picture.","when":"When you are ready for a USB stick.","typical":"PES for Brother.","guideId":"export-formats","level":"basic"},
-  {"id":"topbar.send","label":"Send","what":"Sends the design to a machine over Wi-Fi.","when":"When your machine is set up in Lilo Link.","typical":"Brother and Baby Lock.","guideId":"send-a-design","level":"basic"},
+  {"id":"topbar.send","label":"Send","what":"Sends the design to a machine over Wi-Fi.","when":"When your machine is set up in Studio Link.","typical":"Brother and Baby Lock.","guideId":"send-a-design","level":"basic"},
 
   {"id":"cs.stitch-regions","label":"Stitch regions","what":"Stitches the regions you collected with Shift-click.","when":"After picking several regions.","typical":"Or press Enter.","guideId":"click-to-stitch","level":"basic"},
   {"id":"cs.clear-selection","label":"Clear selection","what":"Forgets the regions waiting to be stitched.","when":"If you picked the wrong ones.","typical":"Then pick again.","guideId":"click-to-stitch","level":"basic"},
@@ -195,7 +195,7 @@
   {"id":"cs.back","label":"Back to Select","what":"Leaves Click to stitch and goes back to the Select tool.","when":"When you are done picking regions.","typical":"Or press Esc.","guideId":"click-to-stitch","level":"basic"},
 
   {"id":"section.shelf-photo","label":"Add a spool by photo","what":"Reads a thread label from a photo and suggests the thread.","when":"To add a spool without typing its code.","typical":"A sharp photo of the label.","guideId":"add-by-photo","level":"basic"},
-  {"id":"section.shelf-manual","label":"Add by hand","what":"Add a thread Lilo does not know by typing its brand, code and name.","when":"For a spool that is not in the catalogue.","typical":"Pick the nearest colour yourself.","guideId":"my-threads","level":"advanced"},
+  {"id":"section.shelf-manual","label":"Add by hand","what":"Add a thread Embroidery Studio does not know by typing its brand, code and name.","when":"For a spool that is not in the catalogue.","typical":"Pick the nearest colour yourself.","guideId":"my-threads","level":"advanced"},
   {"id":"threads.search","label":"Search the catalogue","what":"Find a thread by brand, code or name.","when":"To add a spool you own.","typical":"A brand and a code.","guideId":"my-threads","level":"basic"},
   {"id":"threads.quantity","label":"Quantity","what":"How many spools of this thread you own.","when":"To keep track of stock.","typical":"1.","guideId":"my-threads","level":"basic"},
   {"id":"threads.backup","label":"Import and export","what":"Saves your shelf to a file or loads one back.","when":"To back up, or move to another computer.","typical":"Export now and then.","guideId":"my-threads","level":"basic"}

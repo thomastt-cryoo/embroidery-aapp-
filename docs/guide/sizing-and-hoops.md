@@ -39,7 +39,7 @@ The **hoop chip** in the top bar and in the **Hoop** section shows the current h
 - **Swap width and height** rotates the hoop between landscape and portrait.
 - **Add my own…** saves a custom hoop with your own width and height.
 
-Lilo ships a library of real hoops. Where a size could not be confirmed it says so. Check the numbers against your own hoop.
+Embroidery Studio ships a library of real hoops. Where a size could not be confirmed it says so. Check the numbers against your own hoop.
 
 ## What the frame shows
 
@@ -50,8 +50,8 @@ Lilo ships a library of real hoops. Where a size could not be confirmed it says 
 
 ## See it at real size
 
-**Actual size** (**⌘0**) shows the design at its true size on your screen. Use **Calibrate screen…** once. You hold a ruler to the screen and Lilo learns how big a millimetre is on your display.
+**Actual size** (**⌘0**) shows the design at its true size on your screen. Use **Calibrate screen…** once. You hold a ruler to the screen and Embroidery Studio learns how big a millimetre is on your display.
 
 ## Fitting a design that is too big
 
-If the design sticks out, Lilo shows a warning in the tray. Pick a larger hoop or scale the design down. Do not squeeze a dense design into a small size without checking density. Read [What the warnings mean](warnings-explained.md).
+If the design sticks out, Embroidery Studio shows a warning in the tray. Pick a larger hoop or scale the design down. Do not squeeze a dense design into a small size without checking density. Read [What the warnings mean](warnings-explained.md).

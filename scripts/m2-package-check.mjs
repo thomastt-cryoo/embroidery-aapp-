@@ -36,10 +36,14 @@ assert(workflow.includes('timeout-minutes: 80'));
 const websiteWorkflow = read('.github/workflows/site.yml');
 assert(!websiteWorkflow.includes('wrangler'));
 assert(websiteWorkflow.includes('if: ${{ false }}'));
-const protectedDiff = execFileSync('git', ['diff', '6334c8b', '--', 'engine', 'editor/src/state', 'editor/src/project', ':!editor/src/project/ProjectProvider.tsx', ':!editor/src/project/ui.test.tsx', 'editor/src/platform', 'editor/src/studio.css'], { encoding: 'utf8' });
+const protectedDiff = execFileSync('git', ['diff', '6334c8b', '--', 'engine', 'editor/src/studio.css'], { encoding: 'utf8' });
 assert.equal(protectedDiff, '', 'M1 engine, editing, file/project implementation and interface CSS must remain unchanged');
-for (const path of ['editor/src/project/ProjectProvider.tsx', 'editor/src/project/ui.test.tsx']) {
+const protectedPaths = execFileSync('git', ['ls-tree', '-r', '--name-only', '6334c8b', '--', 'editor/src/state', 'editor/src/project', 'editor/src/platform'], { encoding: 'utf8' }).trim().split('\n');
+for (const path of protectedPaths) {
   const original = execFileSync('git', ['show', `6334c8b:${path}`], { encoding: 'utf8' });
-  assert.equal(read(path).replaceAll('\r\n', '\n'), original.replaceAll('— Lilo', '— Embroidery Studio').replaceAll('\r\n', '\n'), `${path}: only the displayed brand may change`);
+  const current = read(path).replaceAll('\r\n', '\n');
+  const baseline = original.replaceAll('\r\n', '\n');
+  const branded = baseline.replaceAll('Lilo Link', 'Studio Link').replace(/\bLilo\b/g, 'Embroidery Studio');
+  assert(current === baseline || current === branded, `${path}: only branding words may change; editing, save and platform logic must remain identical`);
 }
 console.log('PASS: separate identity, offline runtime, non-default associations, isolated bridge/projects, disabled updates, private-only workflow and protected M1 sources.');

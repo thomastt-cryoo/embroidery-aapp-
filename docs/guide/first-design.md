@@ -19,13 +19,13 @@ You will turn a logo into stitches. Use any simple picture with flat colours, li
 
 1. On **Home**, click **Upload image**, or drop your artwork onto Home or the editor canvas.
 2. Choose a PNG, JPG, WEBP or SVG file.
-3. Watch Lilo trace the picture and lay stitches on screen. This takes a few seconds.
+3. Watch Embroidery Studio trace the picture and lay stitches on screen. This takes a few seconds.
 
-**Digitize** means "turn a picture into stitches". Lilo does it for you.
+**Digitize** means "turn a picture into stitches". Embroidery Studio does it for you.
 
 ## 2. Generate
 
-Lilo generates the first result automatically. Adjust **Colours**, **Width**, **Height** or **Background** in the left panel; these changes regenerate the artwork. **Generate stitches** runs it again. Specialist controls are under **Advanced generation settings**.
+Embroidery Studio generates the first result automatically. Adjust **Colours**, **Width**, **Height** or **Background** in the left panel; these changes regenerate the artwork. **Generate stitches** runs it again. Specialist controls are under **Advanced generation settings**.
 
 ## 3. Customize & Edit
 
@@ -34,7 +34,7 @@ The **hoop** is the frame that holds the cloth tight. Your design must fit insid
 1. In the left panel, set **Width** in millimetres. A logo on a suit lining often works at 40 to 80 mm.
 2. Click the hoop in **Hoop & size** on the right to choose your machine's hoop. Expand **Hoop tools & drawing colour** for **Smallest hoop that fits**, rotation and custom sizes. Read [Sizing and hoops](sizing-and-hoops.md).
 
-Open the **Sewing setup** card on the right. Pick the **fabric**, the **thread weight** and the **quality**. Lilo adjusts spacing and underlay for you. Read [Sewing setup](sewing-setup.md).
+Open the **Sewing setup** card on the right. Pick the **fabric**, the **thread weight** and the **quality**. Embroidery Studio adjusts spacing and underlay for you. Read [Sewing setup](sewing-setup.md).
 
 Select a shape to edit its colour and stitches. Use the drawing toolbar for shapes and lettering, and **Sew order** for layers and threads.
 
@@ -53,4 +53,4 @@ The strip has five steps: **Upload**, **Generate**, **Customize & Edit**, **Prev
 
 ## Before you sew for real
 
-Always sew a test on a scrap of the same cloth. Lilo's numbers are good starting points, not promises. If the test puckers or leaves gaps, go to [Fixing sew-out problems](sewout-troubleshooting.md).
+Always sew a test on a scrap of the same cloth. Embroidery Studio's numbers are good starting points, not promises. If the test puckers or leaves gaps, go to [Fixing sew-out problems](sewout-troubleshooting.md).

@@ -1,7 +1,7 @@
 ---
 id: "run-vs-fill"
 title: "Run stitches versus fills"
-summary: "The two families of stitches in Lilo, when to pick each, and how Style switches between them."
+summary: "The two families of stitches in Embroidery Studio, when to pick each, and how Style switches between them."
 section: "stitches"
 order: 1
 keywords: ["run", "fill", "outline", "style", "satin", "stitch types", "line", "area", "tatami", "convert"]

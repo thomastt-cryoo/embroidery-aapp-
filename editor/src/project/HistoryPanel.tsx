@@ -111,7 +111,7 @@ export function HistoryPanel({ onClose }: { onClose: () => void }) {
       <div ref={modal} tabIndex={-1} className="dialog dialog-wide history" role="dialog" aria-modal="true" aria-labelledby="history-title" onKeyDown={(e) => e.key === "Escape" && onClose()}>
         <h2 id="history-title">Version history</h2>
         {entries.length === 0 ? (
-          <p className="muted">No versions yet. Lilo keeps one every 30 seconds while you work, and each time you save.</p>
+          <p className="muted">No versions yet. Embroidery Studio keeps one every 30 seconds while you work, and each time you save.</p>
         ) : (
           <div className="history-body">
             <ul className="history-list" role="listbox" aria-label="Saved versions">

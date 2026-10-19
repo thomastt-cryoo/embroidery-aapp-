@@ -166,7 +166,7 @@ export function buildCommands({ state, actions, openImage, fit, app, extra }: Co
       ["editor", "Editor", "canvas"],
       ["pixel", "Pixel art", "grid cross tatami"],
       ["converter", "Converter", "convert pes dst jef vp3 png svg"],
-      ["link", "Lilo Link", "send machine wifi brother"],
+      ["link", "Studio Link", "send machine wifi brother"],
     ] as const) {
       add({ id: `go.${id}`, group: "Go", label: `Go to ${label}`, keywords: kw, enabled: app.view !== id, run: () => app.go(id) });
     }

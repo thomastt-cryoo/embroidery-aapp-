@@ -11,13 +11,13 @@ status: "ready"
 
 # Click to stitch
 
-**Auto digitize** decides everything for you. **Click to stitch** hands you the controls. Lilo traces the picture into **regions**, the coloured areas. You click the ones you want.
+**Auto digitize** decides everything for you. **Click to stitch** hands you the controls. Embroidery Studio traces the picture into **regions**, the coloured areas. You click the ones you want.
 
 Use it when you want the crest's border as satin, the fabric background left alone, and only the centre filled.
 
 ## Steps
 
-1. Open an image. Lilo traces it.
+1. Open an image. Embroidery Studio traces it.
 2. Choose the **Click to stitch** tool (press **K**), or press **Click to stitch…** in the left panel.
 3. Pick **fill** or **outline** settings in the panel.
 4. Click a region to stitch it.

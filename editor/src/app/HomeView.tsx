@@ -169,7 +169,7 @@ export function HomeView() {
             }
           />
           <Quick icon="pixel" title="Pixel art" hint="Cross-stitch style, square by square" onClick={() => app.go("pixel")} />
-          <Quick icon="open" tour="home-open" title="Open…" hint="A Lilo project, or a PES, DST or other stitch file" onClick={() => go(m.openDialog())} />
+          <Quick icon="open" tour="home-open" title="Open…" hint="An Embroidery Studio project, or a PES, DST or other stitch file" onClick={() => go(m.openDialog())} />
           <Quick icon="convert" title="Converter" hint="Change embroidery file formats" onClick={() => app.go("converter")} />
         </ul>
         {notice && (

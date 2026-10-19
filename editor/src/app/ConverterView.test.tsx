@@ -86,7 +86,7 @@ describe("convert: embroidery to embroidery", () => {
     expect(only.target).toBe("dst");
   });
 
-  it("an unknown kind of file is refused with what Lilo does read", async () => {
+  it("an unknown kind of file is refused with what Embroidery Studio does read", async () => {
     await expect(convertInput(engine, { name: "notes.txt", bytes: new Uint8Array([1]) }, ["pes"], opts)).rejects.toThrow(/can't convert "notes\.txt".*PES.*SVG/);
   });
 });
@@ -165,10 +165,10 @@ describe("Converter screen", () => {
     expect(mock.saved[2].name).toBe("crest.dst");
   });
 
-  it("a file Lilo cannot read is listed with a reason; a corrupt one fails alone", async () => {
+  it("a file Embroidery Studio cannot read is listed with a reason; a corrupt one fails alone", async () => {
     mount();
     await choose([{ name: "notes.txt", bytes: new Uint8Array([1]) }, { name: "bad.pes", bytes: new Uint8Array([1, 2, 3]) }, file("pes")]);
-    expect(screen.getByText("Lilo can't read this kind of file.")).toBeTruthy();
+    expect(screen.getByText("Embroidery Studio can't read this kind of file.")).toBeTruthy();
     fireEvent.click(screen.getByRole("button", { name: "Convert" }));
     await waitFor(() => expect(converterStore.getState().running).toBe(false), T);
     await waitFor(() => expect(converterStore.getState().items.map((i) => i.status)).toEqual(["error", "error", "done"]), T);

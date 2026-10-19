@@ -31,7 +31,7 @@ Pick one from the **Underlay** list in the **Satin** section.
 | Center + contour | Middle line plus edge walk | Columns of about 2.5 to 4 mm |
 | Double zig-zag | Two zig-zag passes | Columns wider than about 6 mm |
 
-When Lilo digitizes for you it picks one by width: centre run under 2.5 mm, centre plus edge up to 4 mm, edge plus zig-zag up to 6 mm, and double zig-zag beyond that. You can change it.
+When Embroidery Studio digitizes for you it picks one by width: centre run under 2.5 mm, centre plus edge up to 4 mm, edge plus zig-zag up to 6 mm, and double zig-zag beyond that. You can change it.
 
 ### Fill underlay
 
@@ -52,7 +52,7 @@ Thread pulls cloth inward, so stitched shapes come out smaller than you drew. **
 - **Satin columns:** widens each side. 0.15 mm per side is the Standard starting value. Premium uses 0.20 mm. The slider goes up to 0.8 mm.
 - **Fills:** grows the shape. The slider goes up to 1 mm.
 
-Stretchy cloth pulls more. Lilo's Sewing setup raises compensation for knits to about 1.8 times the woven value.
+Stretchy cloth pulls more. Embroidery Studio's Sewing setup raises compensation for knits to about 1.8 times the woven value.
 
 ### How to tell if you need more
 

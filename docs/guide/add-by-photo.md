@@ -1,7 +1,7 @@
 ---
 id: "add-by-photo"
 title: "Add a spool by photo"
-summary: "Photograph a thread label and let Lilo read it and suggest the thread."
+summary: "Photograph a thread label and let Embroidery Studio read it and suggest the thread."
 section: "threads"
 order: 3
 keywords: ["photo", "ocr", "label", "camera", "scan", "spool", "add", "read text"]
@@ -11,19 +11,19 @@ status: "ready"
 
 # Add a spool by photo
 
-You can add a spool without typing its code. Lilo reads the label from a photo.
+You can add a spool without typing its code. Embroidery Studio reads the label from a photo.
 
 ## Steps
 
 1. Open the **My Threads** tab in the Sew order panel.
 2. Open **Add a spool by photo**.
 3. Choose a photo of the label. Take it in good light, close enough to read the code, with no glare.
-4. Lilo reads the text and suggests which thread it is.
+4. Embroidery Studio reads the text and suggests which thread it is.
 5. **Check the suggestion.** Then confirm.
 
-You always confirm. Lilo never adds a spool on its own.
+You always confirm. Embroidery Studio never adds a spool on its own.
 
-## If Lilo reads it wrong
+## If Embroidery Studio reads it wrong
 
 Reading text from a picture is not perfect. If the suggestion is wrong, search the catalogue by code, or fill in the spool by hand.
 
@@ -36,7 +36,7 @@ Reading text from a picture is not perfect. If the suggestion is wrong, search t
 
 ## Privacy
 
-The photo is read on your computer. Lilo does not send it anywhere.
+The photo is read on your computer. Embroidery Studio does not send it anywhere.
 
 ## Related
 

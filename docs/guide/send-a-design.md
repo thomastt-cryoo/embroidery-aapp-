@@ -1,7 +1,7 @@
 ---
 id: "send-a-design"
 title: "Send a design to your machine"
-summary: "Press Send, choose a machine and watch the progress. What Lilo checks first."
+summary: "Press Send, choose a machine and watch the progress. What Embroidery Studio checks first."
 section: "sending"
 order: 2
 keywords: ["send", "machine", "wifi", "progress", "pes", "transfer", "before you sew", "checklist", "replace"]
@@ -11,7 +11,7 @@ status: "ready"
 
 # Send a design to your machine
 
-Before you send, set up your machine in [Lilo Link](lilo-link-wifi.md).
+Before you send, set up your machine in [Studio Link](lilo-link-wifi.md).
 
 ## Steps
 
@@ -22,7 +22,7 @@ Before you send, set up your machine in [Lilo Link](lilo-link-wifi.md).
 5. Press **Send**.
 6. A progress line shows how many bytes have gone across. When it finishes it says **Sent** and the name the machine stored it under.
 
-Lilo sends a **PES** file, the format Brother and Baby Lock use. The file keeps your thread colours.
+Embroidery Studio sends a **PES** file, the format Brother and Baby Lock use. The file keeps your thread colours.
 
 ## What the warnings at the top mean
 
@@ -34,15 +34,15 @@ The design appears in the machine's memory or its Wi-Fi inbox. The exact place d
 
 ## If a file with the same name exists
 
-Lilo asks you to confirm before it replaces it. Rename the project in the top bar if you want to keep both.
+Embroidery Studio asks you to confirm before it replaces it. Rename the project in the top bar if you want to keep both.
 
 ## If it fails
 
-Lilo shows a plain message. Look it up in [Wi-Fi troubleshooting](send-troubleshooting.md).
+Embroidery Studio shows a plain message. Look it up in [Wi-Fi troubleshooting](send-troubleshooting.md).
 
-## Sending from Lilo Link
+## Sending from Studio Link
 
-You can also send from **Lilo Link**, **Machines**, with the **Send** button next to a saved machine. That page also sends an existing file.
+You can also send from **Studio Link**, **Machines**, with the **Send** button next to a saved machine. That page also sends an existing file.
 
 ## Sending to another make of machine
 

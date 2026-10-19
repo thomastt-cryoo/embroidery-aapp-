@@ -88,7 +88,7 @@ export function HelpPanel() {
       <input ref={search} type="search" className="help-search" aria-label="Search the guide" placeholder="Search: satin, hoop, send, pucker…" value={query} onChange={(e) => setHelpQuery(e.target.value)} />
 
       <div className="help-body" ref={body}>
-        {failed && <p className="error">The guide could not be loaded. Restart Lilo and try again.</p>}
+        {failed && <p className="error">The guide could not be loaded. Restart Embroidery Studio and try again.</p>}
         {!index && !failed && <p className="muted">Loading the guide…</p>}
         {index && query.trim() && <Results pages={results} query={query} onPick={go} />}
         {index && !query.trim() && page && <PageView page={page} index={index} onNavigate={go} onBack={() => setHelpPage(null)} />}

@@ -33,7 +33,7 @@ export interface SewFacts {
   estimatedSeconds: number;
 }
 
-/** The speed Lilo advises for this design, and the sew time at that speed. */
+/** The speed Embroidery Studio advises for this design, and the sew time at that speed. */
 export interface SpeedAdvice {
   spm: number;
   reasons: string[];
@@ -49,7 +49,7 @@ export const fabricSpeedLine = (setup: SewingSetup): string => {
   return `${shortFabric(setup.fabric.label)} usually sews at ${r.minSpm} to ${r.maxSpm} stitches a minute. ${r.note} Speed advice is a rule of thumb: your machine and a test sew-out decide.`;
 };
 
-/** Generic Brother wording on purpose: Lilo does not know your machine's exact menu. */
+/** Generic Brother wording on purpose: Embroidery Studio does not know your machine's exact menu. */
 export const SPEED_HOW = "On a Brother machine, look in Settings for Max embroidery speed. A file cannot set the speed, so you set it on the machine before you start.";
 
 /** One item in the checklist: a line to tick off. */

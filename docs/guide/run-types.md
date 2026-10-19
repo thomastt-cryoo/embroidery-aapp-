@@ -1,7 +1,7 @@
 ---
 id: "run-types"
 title: "Run types"
-summary: "The seven ways Lilo can sew along a line: single, triple, satin, E-stitch, double rope, triple rope and manual."
+summary: "The seven ways Embroidery Studio can sew along a line: single, triple, satin, E-stitch, double rope, triple rope and manual."
 section: "stitches"
 order: 2
 keywords: ["run type", "single", "triple", "bean", "satin", "e-stitch", "estitch", "rope", "manual", "stitch length", "tolerance", "width", "flipped", "applique"]
@@ -11,7 +11,7 @@ status: "ready"
 
 # Run types
 
-A **run** follows a line you drew. Lilo has seven ways to sew it. Choose one in **Run type** in the left panel.
+A **run** follows a line you drew. Embroidery Studio has seven ways to sew it. Choose one in **Run type** in the left panel.
 
 ## Single
 
@@ -42,10 +42,10 @@ A thicker twisted cord from three passes. Use it for a bolder braid.
 
 ## Manual
 
-Sews exactly the stitch points you placed with the **Manual stitch** tool, in order. Lilo does not move them. Reshape the shape to move points.
+Sews exactly the stitch points you placed with the **Manual stitch** tool, in order. Embroidery Studio does not move them. Reshape the shape to move points.
 
 ## Changing the type
 
-Select the shape. Click a type. Lilo keeps your length and swaps the other settings to sensible defaults for the new type. Press **⌘Z** to undo.
+Select the shape. Click a type. Embroidery Studio keeps your length and swaps the other settings to sensible defaults for the new type. Press **⌘Z** to undo.
 
 ![Seven run types side by side](screenshots/run-types.png)

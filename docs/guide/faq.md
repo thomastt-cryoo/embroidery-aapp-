@@ -11,9 +11,9 @@ status: "ready"
 
 # Frequently asked questions
 
-## Does Lilo cost anything?
+## Does Embroidery Studio cost anything?
 
-No. Lilo is free and open source under the GPL-3.0 licence.
+No. Embroidery Studio is free and open source under the GPL-3.0 licence.
 
 ## Do I need an account?
 
@@ -21,7 +21,7 @@ No. There is no sign-in.
 
 ## Where do my designs go?
 
-They stay on your computer. Lilo only contacts one place: the GitHub Releases page, to check for updates once a day. You can switch that off.
+They stay on your computer. Updates are disabled in this private review build. Machine discovery and sending use your local network when you choose those tools.
 
 ## Which machines can I send to over Wi-Fi?
 
@@ -59,13 +59,13 @@ You can skip the tour at any step. Hints only show when you ask for them. Dismis
 
 Open **Help** and press **Replay the tour**.
 
-## What if Lilo closes without saving?
+## What if Embroidery Studio closes without saving?
 
-Lilo autosaves every 30 seconds. Reopen the project and look in **Version history**. Read [Version history](version-history.md).
+Embroidery Studio autosaves every 30 seconds. Reopen the project and look in **Version history**. Read [Version history](version-history.md).
 
 ## Windows says "Windows protected your PC".
 
-That is SmartScreen, because the installer is not signed yet. Click **More info**, then **Run anyway**. Read [Install Lilo](install.md).
+That is SmartScreen, because the installer is not signed yet. Click **More info**, then **Run anyway**. Read [Install Embroidery Studio](install.md).
 
 ## Where do I report a problem?
 

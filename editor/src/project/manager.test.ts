@@ -81,7 +81,7 @@ describe("save", () => {
     edit();
     expect(await m.save()).toBe(true);
     const path = m.store.getState().path!;
-    expect(path).toBe("/mock/Documents/Lilo/Crest.lilo");
+    expect(path).toBe("/mock/Documents/Embroidery Studio/Crest.lilo");
     expect(mock.files.has(path)).toBe(true);
     const before = mock.files.get(path)!;
     edit("d");
@@ -157,7 +157,7 @@ describe("open and revert", () => {
     const before = st().design;
     expect(await m.openFile({ path: "/x/notes.lilo", name: "notes.lilo", bytes: new TextEncoder().encode("hello, not a zip at all, certainly not") })).toBe(false);
     expect(m.store.getState().notice?.kind).toBe("error");
-    expect(m.store.getState().notice?.text).toMatch(/isn't a Lilo project|damaged/i);
+    expect(m.store.getState().notice?.text).toMatch(/isn't a Embroidery Studio project|damaged/i);
     expect(st().design).toBe(before);
   });
 
@@ -521,8 +521,8 @@ describe("the Home gallery", () => {
 
   it("a file it cannot read shows as an error card, not a crash", async () => {
     await setup();
-    mock.files.set("/mock/Documents/Lilo/bad.lilo", new Uint8Array([1, 2, 3]));
-    mock.recents = [{ path: "/mock/Documents/Lilo/bad.lilo", name: "bad", modifiedMs: 1, sizeBytes: 3 }];
+    mock.files.set("/mock/Documents/Embroidery Studio/bad.lilo", new Uint8Array([1, 2, 3]));
+    mock.recents = [{ path: "/mock/Documents/Embroidery Studio/bad.lilo", name: "bad", modifiedMs: 1, sizeBytes: 3 }];
     await m.refreshRecent();
     expect(m.store.getState().recent[0].error).toBeTruthy();
   });
@@ -563,7 +563,7 @@ describe("stitch files (PES, DST, ...)", () => {
     await m.openFile({ path: "", name: "rooster.pes", bytes: stitchFile().bytes });
     expect(await m.save()).toBe(true);
     const path = m.store.getState().path!;
-    expect(path).toBe("/mock/Documents/Lilo/rooster.lilo");
+    expect(path).toBe("/mock/Documents/Embroidery Studio/rooster.lilo");
     expect([...mock.files.keys()]).toEqual([path]);
     expect(mock.recents.map((r) => r.path)).toEqual([path]); // only the saved .lilo is recorded, never the .pes
     expect(m.store.getState().dirty).toBe(false);
@@ -609,7 +609,7 @@ describe("stitch files (PES, DST, ...)", () => {
     edit();
     const before = st().design;
     expect(await m.openFile({ path: "", name: "broken.pes", bytes: new Uint8Array([1, 2, 3, 4]) })).toBe(false);
-    expect(m.store.getState().notice).toEqual({ kind: "error", text: "Lilo couldn't read this file \u2014 it may be damaged or a format we don't support." });
+    expect(m.store.getState().notice).toEqual({ kind: "error", text: "Embroidery Studio couldn't read this file \u2014 it may be damaged or a format we don't support." });
     expect(m.store.getState().confirm).toBeNull();
     expect(st().design).toBe(before);
   });

@@ -1,6 +1,6 @@
 # Screenshots to capture
 
-The guide points at these images, but these files are not captured yet. Until then the Help panel shows a labelled placeholder. Capture each one at 1440 by 900 on the light theme, save it as a PNG in `docs/guide/screenshots/` under the name shown, and keep the alt text in the page. Once the file exists, delete its row here. Only real Lilo samples or public-domain designs may appear in a screenshot (the rooster in the sample set is fine); never a third-party commercial design.
+The guide points at these images, but these files are not captured yet. Until then the Help panel shows a labelled placeholder. Capture each one at 1440 by 900 on the light theme, save it as a PNG in `docs/guide/screenshots/` under the name shown, and keep the alt text in the page. Once the file exists, delete its row here. Only real Embroidery Studio samples or public-domain designs may appear in a screenshot (the rooster in the sample set is fine); never a third-party commercial design.
 
 | File | Page | What to show |
 | --- | --- | --- |

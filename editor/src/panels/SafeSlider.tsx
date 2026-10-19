@@ -62,7 +62,7 @@ export interface SafeSliderProps {
 /**
  * One slider with the green band drawn behind it, a status dot, a plain-words reason when it is amber and
  * a live "what will this change?" line. Used by the Stitch safety card and by each object's settings.
- * Amber never blocks anything: Lilo still sews it and still exports it.
+ * Amber never blocks anything: Embroidery Studio still sews it and still exports it.
  */
 export function SafeSlider({ label, param, value, onChange, onDone, unit = "mm", help, hint, limits, check, note, disabled, hid, preview = true }: SafeSliderProps) {
   const { state } = useEditor();

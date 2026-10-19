@@ -1,7 +1,7 @@
 ---
 id: "install"
-title: "Install Lilo on Mac, Windows or Linux"
-summary: "Download Lilo, open it the first time, and get past the Windows SmartScreen and Linux AppImage prompts."
+title: "Install Embroidery Studio on Mac or Windows"
+summary: "Use the private review package for your computer and keep your existing Lilo installation."
 section: "getting-started"
 order: 2
 keywords: ["install", "download", "mac", "macos", "windows", "smartscreen", "linux", "appimage", "deb", "update", "dmg"]
@@ -9,40 +9,38 @@ appContext: ["view.home"]
 status: "ready"
 ---
 
-# Install Lilo on Mac, Windows or Linux
+# Install Embroidery Studio on Mac or Windows
 
-Get the newest version from the **Releases page** on the Lilo GitHub project (github.com/Kadwood/lilo/releases/latest). Every release has a `SHA256SUMS` file. It lets you check that your download was not changed on the way.
+Use the **Embroidery Studio** package supplied for this private review. The package folder includes checksums, licence text and third-party notices. Lilo downloads from the original project install Lilo, not Embroidery Studio.
 
 ## Mac
 
-You need macOS 13 or newer. Apple Silicon and Intel Macs both work.
+You need macOS 13 or newer. The universal package contains Apple Silicon and Intel binaries. The M2 native launch was tested on Apple Silicon; Intel hardware has not been tested.
 
-1. Download `Lilo_<version>_universal.dmg`.
-2. Open it and drag **Lilo** onto **Applications**.
-3. Open Lilo. Lilo is signed and notarized by Apple. The first time, macOS says it was downloaded from the internet. Click **Open**.
-4. The first time you look for machines on your network, macOS asks to allow **Local Network** access. Say yes. Without it Lilo cannot find your sewing machine.
+1. Open `Embroidery Studio_1.4.0_universal.dmg`.
+2. Copy **Embroidery Studio** to **Applications**.
+3. Open Embroidery Studio.
+
+This review build uses ad-hoc signing. It has no Apple Developer ID or notarization, so macOS may prevent it from opening. A signed and notarized package is needed for general distribution. No claim of Gatekeeper approval is made.
+
+The first time you look for machines, macOS may request **Local Network** access. This is used for machines on your own network.
 
 ## Windows
 
-You need 64-bit Windows.
+You need 64-bit Windows. Run `Embroidery Studio_1.4.0_x64-setup.exe`. The installer works for your user only, uses its own folder and Start menu entry, and includes the offline WebView2 installer.
 
-1. Download `Lilo_<version>_x64-setup.exe` and run it.
-2. Windows may show a blue box that says **Windows protected your PC**. That is SmartScreen. It appears because the Lilo installer is not code-signed yet. It does not mean the file is bad.
-3. Click **More info**, then **Run anyway**.
+The review installer is unsigned. Windows may show an unknown-publisher or SmartScreen prompt. A trusted signing certificate has not been supplied.
 
-The installer works for your user only. You do not need admin rights.
+Your original Lilo installation and default file associations stay in place. Use **Open With** to choose Embroidery Studio for a compatible `.lilo` project or stitch file.
 
 ## Linux
 
-You need 64-bit Linux. Pick one file.
-
-- **AppImage:** download `Lilo_<version>_amd64.AppImage`. Make it runnable with `chmod +x Lilo_*.AppImage`, then double-click it or run it from a terminal. On newer Ubuntu you also need FUSE 2. Install it with `sudo apt install libfuse2`.
-- **Deb package:** download `Lilo_<version>_amd64.deb` and run `sudo apt install ./Lilo_*.deb`.
+M2 provides Windows and macOS review packages. No Linux package was produced or tested in this milestone.
 
 ## Updates
 
-Lilo checks the Releases page once a day when it starts. If there is a new version, a banner offers **Install and restart**. Lilo only talks to that page. You can turn the check off, or run it by hand, under **Lilo Link**, then **Settings**, then **Updates**.
+Automatic updates are disabled in this review build. It does not check Lilo's release feed. Install only a new Embroidery Studio package supplied for review.
 
 ## Next step
 
-Open Lilo and follow [Your first design in five minutes](first-design.md).
+Follow [Your first design in five minutes](first-design.md).

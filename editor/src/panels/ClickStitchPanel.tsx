@@ -28,7 +28,7 @@ export function ClickStitchPanel({ onOpen }: { onOpen: () => void }) {
     return (
       <aside className="panel panel-left" aria-label="Click to stitch">
         <h2>Click to stitch</h2>
-        <p className="muted">Open a picture first. Lilo traces it, and then you can click the regions you want stitched.</p>
+        <p className="muted">Open a picture first. Embroidery Studio traces it, and then you can click the regions you want stitched.</p>
         <button className="primary" onClick={onOpen}>
           Open image…
         </button>

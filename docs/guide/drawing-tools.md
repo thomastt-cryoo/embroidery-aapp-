@@ -27,7 +27,7 @@ The floating toolbar at the bottom of the canvas holds the tools. Press the key 
 - **Closed shape (2).** Like Open shape, but the outline closes into a fill. Click the first point or press **Enter** to close. Good for a leaf or a badge outline.
 - **Circle (3).** Drag a box for an ellipse. Hold **Ctrl** for a perfect circle. Good for a round hat patch.
 - **Rectangle (4).** Drag a box. Hold **Ctrl** for a square.
-- **Pen (5).** Draw freehand. Lilo smooths the line when you let go. Finish near the start to close it.
+- **Pen (5).** Draw freehand. Embroidery Studio smooths the line when you let go. Finish near the start to close it.
 - **Satin blocks (6).** Click the left edge, then the right edge, and repeat along the column. **Enter** finishes. You control the exact slant of each stitch block. Good for a curved border or a leaf.
 - **Manual stitch (7).** Click to place each stitch exactly where you want the needle. **Enter** finishes. Use it for small touch-ups.
 

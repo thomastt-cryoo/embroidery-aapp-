@@ -1,7 +1,7 @@
 ---
 id: "warnings-explained"
 title: "What the warnings mean"
-summary: "Every warning Lilo can show in the tray and in Export or Send, what it means and how to fix it."
+summary: "Every warning Embroidery Studio can show in the tray and in Export or Send, what it means and how to fix it."
 section: "help"
 order: 2
 keywords: ["warning", "outside hoop", "density", "stitch too long", "thin satin", "long stitch", "snag", "colour changes", "stitch count", "small region", "satin too wide", "letters too small", "tray", "fix", "empty", "object failed"]
@@ -11,7 +11,7 @@ status: "ready"
 
 # What the warnings mean
 
-Lilo watches your design while you work. When something might sew badly, a short note appears in the **warnings tray**, in the right-hand column, under the Sewing setup card. It never blocks you. Each note offers a **fix** button or a **Read more** link. You can dismiss any note.
+Embroidery Studio watches your design while you work. When something might sew badly, a short note appears in the **warnings tray**, in the right-hand column, under the Sewing setup card. It never blocks you. Each note offers a **fix** button or a **Read more** link. You can dismiss any note.
 
 ## Outside the hoop
 
@@ -27,7 +27,7 @@ Too many stitches pile up in a patch: more than 10 needle drops in each of two o
 
 ## A stitch was too long
 
-Stitches over 12 mm can snag, so Lilo split them. The design is fine, but long stitches often mean a big, open fill.
+Stitches over 12 mm can snag, so Embroidery Studio split them. The design is fine, but long stitches often mean a big, open fill.
 
 **Fix:** shorten **Stitch length** in a fill, or use a pattern with shorter stitches.
 
@@ -35,11 +35,11 @@ Stitches over 12 mm can snag, so Lilo split them. The design is fine, but long s
 
 A satin column is narrower than the thread can cover well: under 1.5 mm with 40 wt thread, or under 1 mm with 60 wt. It will not look shiny. Stitches pile up and the thread can break.
 
-**Fix:** turn it into a running stitch, make it wider, or switch to **60 wt**. Lilo still makes the file. See [Stitch safety](stitch-safety.md).
+**Fix:** turn it into a running stitch, make it wider, or switch to **60 wt**. Embroidery Studio still makes the file. See [Stitch safety](stitch-safety.md).
 
 ## A long stitch can snag
 
-Some stitches are longer than 7 mm and the fabric is something you wear. Long stitches can catch on fingers and buttons. Lilo only splits stitches over 12 mm.
+Some stitches are longer than 7 mm and the fabric is something you wear. Long stitches can catch on fingers and buttons. Embroidery Studio only splits stitches over 12 mm.
 
 **Fix:** shorten **Stitch length** in a fill or run. Read [Stitch safety](stitch-safety.md).
 

@@ -1,7 +1,7 @@
 ---
 id: "sewing-setup"
 title: "Sewing setup"
-summary: "Tell Lilo your fabric, thread weight and quality so spacing, underlay and compensation suit what you are sewing."
+summary: "Tell Embroidery Studio your fabric, thread weight and quality so spacing, underlay and compensation suit what you are sewing."
 section: "stitches"
 order: 6
 keywords: ["sewing setup", "fabric", "thread weight", "quality", "before you sew", "checklist", "needle", "stabiliser", "preset"]
@@ -19,7 +19,7 @@ The **Sewing setup** card sits at the top of the right column. Its chip shows yo
 - **Thread weight:** **40 wt** is standard. **60 wt** is fine, for small crisp detail.
 - **Quality:** **Standard** or **Premium**. Read [Standard or Premium](standard-vs-premium.md).
 
-Changing any of them updates the stitches Lilo made. Anything you edited by hand stays as you left it. One undo step reverses it.
+Changing any of them updates the stitches Embroidery Studio made. Anything you edited by hand stays as you left it. One undo step reverses it.
 
 ## What the card also shows
 

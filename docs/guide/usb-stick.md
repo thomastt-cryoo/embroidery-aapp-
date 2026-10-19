@@ -41,4 +41,4 @@ A USB stick always works. Use it when:
 
 ## Related
 
-[Set up Wi-Fi sending with Lilo Link](lilo-link-wifi.md), [File formats](formats-reference.md)
+[Set up Wi-Fi sending with Studio Link](lilo-link-wifi.md), [File formats](formats-reference.md)

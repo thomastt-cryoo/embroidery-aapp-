@@ -5,7 +5,7 @@ import { getPlatform } from "../platform";
 
 /**
  * "My Threads", app-wide (not per project): the spools the user owns. Loaded once from the platform
- * (`~/Documents/Lilo/my-threads.json` on the desktop, localStorage in the browser) and written back
+ * (`~/Documents/Embroidery Studio/my-threads.json` on the desktop, localStorage in the browser) and written back
  * after every change. The engine does the shelf maths (`threads/shelf.ts`); this is just the holder.
  */
 export interface ShelfState {

@@ -148,7 +148,7 @@ export function createProjectManager(deps: ProjectDeps) {
     const s = es();
     const design = s.design ?? emptyDesign();
     const art = pixel.store.getState().art;
-    let project = createProject({ title: s.projectName, design, shelf: deps.shelf(), app: "Lilo", now: base ? new Date(base.doc.createdAt) : t });
+    let project = createProject({ title: s.projectName, design, shelf: deps.shelf(), app: "Embroidery Studio", now: base ? new Date(base.doc.createdAt) : t });
     project = { ...project, doc: { ...project.doc, savedAt: t.toISOString(), pixelArt: isBlank(art) ? null : art } };
     fontWarnings = [];
     const customKeys = (design.textBlocks ?? []).filter((b) => b.fontId.startsWith("custom:")).map((b) => b.fontId.slice(7));

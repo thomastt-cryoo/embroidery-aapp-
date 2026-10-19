@@ -19,10 +19,10 @@ A banner at the top of the panel says the same thing: "Bottom sews first. Top se
 
 ## Two kinds of layer
 
-- A **stitch layer** holds shapes. Lilo sews them.
-- A **picture layer** holds reference images. Lilo never sews them. They are there to trace over or compare to.
+- A **stitch layer** holds shapes. Embroidery Studio sews them.
+- A **picture layer** holds reference images. Embroidery Studio never sews them. They are there to trace over or compare to.
 
-A new design starts with one stitch layer called **Stitches**. Add a picture and Lilo makes a **Picture** layer under it.
+A new design starts with one stitch layer called **Stitches**. Add a picture and Embroidery Studio makes a **Picture** layer under it.
 
 ## What each layer row shows
 
@@ -51,7 +51,7 @@ Sew big fills first, then borders, then small details on top. If a fill is sewn 
 
 ## Hidden layers are not sewn
 
-Hiding a **stitch layer** takes it out of the file too. That is how you check one part of a design at a time. It also means a forgotten hidden layer is missing from your sewing. So Lilo tells you:
+Hiding a **stitch layer** takes it out of the file too. That is how you check one part of a design at a time. It also means a forgotten hidden layer is missing from your sewing. So Embroidery Studio tells you:
 
 - The Export and Send windows list "1 layer is hidden — it won't be sewn", with its name.
 - The Before you sew card says it too.
@@ -62,8 +62,8 @@ Hiding a **picture layer** changes nothing in the file.
 ## Buttons under the banner
 
 - **New stitch layer** and **New picture layer** add an empty layer above the one you have selected.
-- **Add image…** puts a picture into the selected picture layer. If there is no picture layer yet, Lilo makes one.
-- **Delete layer** removes the selected layer. If it has things in it, Lilo asks first. You can undo it.
+- **Add image…** puts a picture into the selected picture layer. If there is no picture layer yet, Embroidery Studio makes one.
+- **Delete layer** removes the selected layer. If it has things in it, Embroidery Studio asks first. You can undo it.
 - **Merge down** folds the selected layer into the layer below it. Both must be the same kind. The sew order does not change.
 
 ## Keyboard
@@ -80,7 +80,7 @@ Hiding a **picture layer** changes nothing in the file.
 
 ## Old files
 
-A project from Lilo 1.2 or earlier opens with its pictures in a **Picture** layer and its shapes in a **Stitches** layer. The shapes keep their order, so the stitches come out exactly the same. When you save, the file is in the new format. An older Lilo cannot open it. It says the project was made with a newer Lilo.
+A project from Embroidery Studio 1.2 or earlier opens with its pictures in a **Picture** layer and its shapes in a **Stitches** layer. The shapes keep their order, so the stitches come out exactly the same. When you save, the file is in the new format. An older Embroidery Studio cannot open it. It says the project was made with a newer Embroidery Studio.
 
 ## Related
 

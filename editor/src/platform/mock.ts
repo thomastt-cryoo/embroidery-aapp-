@@ -137,7 +137,7 @@ export function createMockPlatform(init: Partial<MockState> = {}): { platform: P
       const name = nameOf(path).replace(/\.lilo$/i, "");
       state.recents = [{ path, name, modifiedMs: Date.now(), sizeBytes: bytes.length }, ...state.recents.filter((r) => r.path !== path)];
     },
-    projectsFolder: async () => "/mock/Documents/Lilo",
+    projectsFolder: async () => "/mock/Documents/Embroidery Studio",
     async readMyThreads() {
       const ok = (t: string) => {
         try {
@@ -175,7 +175,7 @@ export function createMockPlatform(init: Partial<MockState> = {}): { platform: P
       return state.pickProject;
     },
     async saveProjectAs(name, bytes) {
-      const path = `/mock/Documents/Lilo/${name}`;
+      const path = `/mock/Documents/Embroidery Studio/${name}`;
       await platform.writeProjectFile(path, bytes);
       return path;
     },

@@ -50,7 +50,7 @@ describe("tauri platform: OCR, recents, open-file", () => {
   });
 
   it("lists recent projects with an optional limit", async () => {
-    const rows = [{ path: "/Users/me/Documents/Lilo/Crest.lilo", name: "Crest", modifiedMs: 5, sizeBytes: 100 }];
+    const rows = [{ path: "/Users/me/Documents/Embroidery Studio/Crest.lilo", name: "Crest", modifiedMs: 5, sizeBytes: 100 }];
     invoke.mockResolvedValueOnce(rows);
     expect(await tauriPlatform.listRecentProjects(12)).toEqual(rows);
     expect(invoke).toHaveBeenCalledWith("list_recent_projects", { limit: 12 });
@@ -78,11 +78,11 @@ describe("tauri platform: OCR, recents, open-file", () => {
       if (cmd === "read_project_file") return new TextEncoder().encode(args!.path!).buffer;
       throw new Error(`unexpected ${cmd}`);
     });
-    const pending = ["/Users/me/Documents/Lilo/Early.lilo"];
+    const pending = ["/Users/me/Documents/Embroidery Studio/Early.lilo"];
     const off = tauriPlatform.onOpenFile((f) => opened.push(`${f.name}:${new TextDecoder().decode(f.bytes)}`));
     await flush();
     await flush();
-    expect(opened).toEqual(["Early.lilo:/Users/me/Documents/Lilo/Early.lilo"]);
+    expect(opened).toEqual(["Early.lilo:/Users/me/Documents/Embroidery Studio/Early.lilo"]);
     // a second file opened while running: Rust emits the event, the editor drains
     pending.push("/Volumes/USB/Late.lilo");
     listeners.get("lilo-open-file")!();
@@ -95,7 +95,7 @@ describe("tauri platform: OCR, recents, open-file", () => {
   });
 
   it("a stitch file the OS opens (Finder, 'Open with') is read once through its own command and handed over with no path", async () => {
-    const pending = ["/Users/me/Downloads/Rooster.PES", "/Users/me/Documents/Lilo/Crest.lilo"];
+    const pending = ["/Users/me/Downloads/Rooster.PES", "/Users/me/Documents/Embroidery Studio/Crest.lilo"];
     invoke.mockImplementation(async (cmd: string, args?: { path?: string }) => {
       if (cmd === "take_open_files") return pending.splice(0);
       if (cmd === "read_opened_stitch_file") return new Uint8Array([35, 80, 69, 83]).buffer;
@@ -109,7 +109,7 @@ describe("tauri platform: OCR, recents, open-file", () => {
     // no path for the stitch file: nothing can be saved over it, and it is never put in Recents
     expect(got).toEqual([
       { path: "", name: "Rooster.PES", n: 4 },
-      { path: "/Users/me/Documents/Lilo/Crest.lilo", name: "Crest.lilo", n: 1 },
+      { path: "/Users/me/Documents/Embroidery Studio/Crest.lilo", name: "Crest.lilo", n: 1 },
     ]);
     expect(invoke).toHaveBeenCalledWith("read_opened_stitch_file", { path: "/Users/me/Downloads/Rooster.PES" });
     expect(invoke).not.toHaveBeenCalledWith("read_project_file", { path: "/Users/me/Downloads/Rooster.PES" });

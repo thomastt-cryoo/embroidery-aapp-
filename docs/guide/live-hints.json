@@ -19,7 +19,7 @@
     "id": "stitch-too-long",
     "signal": "plan:stitch-too-long",
     "severity": "info",
-    "message": "Some stitches were longer than 12 mm, so Lilo split them. The file is safe, but a tighter fill pattern looks neater.",
+    "message": "Some stitches were longer than 12 mm, so Embroidery Studio split them. The file is safe, but a tighter fill pattern looks neater.",
     "guideId": "warnings-explained#a-stitch-was-too-long"
   },
   {

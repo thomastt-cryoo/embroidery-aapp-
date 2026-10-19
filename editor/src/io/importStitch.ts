@@ -7,7 +7,7 @@ export { MAX_STITCH_FILE_BYTES, OPEN_EXTENSIONS, STITCH_EXTENSIONS, TOO_BIG_MESS
 
 /**
  * Opening a stitch file (PES, DST, JEF, ...) as an editable design. ONE function used by every way in:
- * File > Open, the Home screen, a file dropped on the window, Finder "Open with Lilo", the command
+ * File > Open, the Home screen, a file dropped on the window, Finder "Open with Embroidery Studio", the command
  * palette, the Converter's "Open in editor" and a drop onto a design that is already open. It reads the
  * file with the engine (every needle drop kept, as manual-stitch objects) and shapes the result; the
  * callers decide where it goes (a new project, or a new layer in the open one).
@@ -59,7 +59,7 @@ export function designFromStitches(imp: StitchImport, hoops: HoopChoice = {}): {
     layers: [{ id: layerId, name: imp.name, kind: "stitch", visible: true, locked: false }],
   };
   const warnings = [...imp.warnings];
-  // Never a turned hoop: Lilo turns a design back when it exports into a turned hoop, and an imported file must go out exactly as it came in.
+  // Never a turned hoop: Embroidery Studio turns a design back when it exports into a turned hoop, and an imported file must go out exactly as it came in.
   const size = designSize(design);
   const custom = [...(hoops.custom ?? [])];
   const mine = size ? smallestFittingHoop(size, candidateHoops(design.hoop, custom), { allowRotate: false }) : null;

@@ -69,7 +69,7 @@ pub async fn serve(state: Arc<AppState>) {
         Err(e) => {
             let message = format!("could not bind {addr}: {e}");
             state.logs.error(format!(
-                "Local API failed to start ({message}). Is another copy of Lilo running?"
+                "Local API failed to start ({message}). Is another copy of Embroidery Studio running?"
             ));
             let mut health = state.server_health.write().await;
             health.running = false;

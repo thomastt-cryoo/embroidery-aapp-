@@ -20,13 +20,13 @@ export interface ConvInput {
 export type ConvKind = "embroidery" | "image" | "unknown";
 
 export const IMAGE_EXTENSIONS = ["png", "jpg", "jpeg", "webp", "svg"];
-/** What can be dropped on the Converter: everything Lilo reads (G-code is write-only), and pictures. */
+/** What can be dropped on the Converter: everything Embroidery Studio reads (G-code is write-only), and pictures. */
 export const CONVERTER_EXTENSIONS = [...READABLE_EXTENSIONS, ...IMAGE_EXTENSIONS];
 
 const extOf = (name: string) => (name.includes(".") ? name.slice(name.lastIndexOf(".") + 1).toLowerCase() : "");
 export const stemOf = (name: string) => name.replace(/\.[^.\\/]+$/, "") || name;
 
-/** What a file is, from its name: an embroidery file, a picture Lilo can trace, or neither. */
+/** What a file is, from its name: an embroidery file, a picture Embroidery Studio can trace, or neither. */
 export function classifyInput(name: string): ConvKind {
   const format = formatFromName(name);
   if (format && extOf(name) !== "" && READABLE_EXTENSIONS.includes(format)) return "embroidery";
@@ -90,7 +90,7 @@ export async function convertInput(engine: EngineClient, input: ConvInput, targe
     return out;
   }
 
-  throw new Error(`Lilo can't convert "${input.name}". It reads ${READABLE_EXTENSIONS.map((e) => e.toUpperCase()).join(", ")}, PNG, JPG, WEBP and SVG.`);
+  throw new Error(`Embroidery Studio can't convert "${input.name}". It reads ${READABLE_EXTENSIONS.map((e) => e.toUpperCase()).join(", ")}, PNG, JPG, WEBP and SVG.`);
 }
 
 /** Give outputs with the same name distinct ones ("a.pes", "a (2).pes"). */

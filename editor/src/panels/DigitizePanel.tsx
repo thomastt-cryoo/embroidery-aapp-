@@ -54,7 +54,7 @@ export function DigitizePanel({ onOpen, children }: { onOpen: () => void; childr
       <summary>Generate from a new image</summary>
       <HintScope scope="digitize">
       <h2>Auto digitize</h2>
-      <p className="panel-intro">Upload your artwork. Lilo generates the stitches automatically.</p>
+      <p className="panel-intro">Upload your artwork. Embroidery Studio generates the stitches automatically.</p>
 
       <div className="field upload-field">
         <button onClick={onOpen} disabled={working}>

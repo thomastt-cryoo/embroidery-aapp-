@@ -88,7 +88,7 @@ async function decodeRaster(bytes: Uint8Array, mime: string): Promise<DecodedRas
 
 export async function decodeFile(file: { name: string; bytes: Uint8Array; type?: string }): Promise<DecodedImport> {
   const kind = classifyFile(file.name, file.type);
-  if (!kind) throw new Error(`Can't open "${file.name}". Lilo imports PNG, JPG, WEBP and SVG.`);
+  if (!kind) throw new Error(`Can't open "${file.name}". Embroidery Studio imports PNG, JPG, WEBP and SVG.`);
   if (kind === "svg") {
     const text = new TextDecoder().decode(file.bytes);
     let reference: HTMLImageElement | null = null;

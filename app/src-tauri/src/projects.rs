@@ -271,7 +271,7 @@ fn resolve(path: &Path) -> Result<PathBuf, String> {
     // A symbolic link could point a save at any file the user can write. Checked here, so it holds
     // when the path is registered and again at every read and write.
     if std::fs::symlink_metadata(&resolved).is_ok_and(|m| m.file_type().is_symlink()) {
-        return Err("That file is a symbolic link; Lilo won't open or save through it.".into());
+        return Err("That file is a symbolic link; Embroidery Studio won't open or save through it.".into());
     }
     Ok(resolved)
 }
@@ -298,7 +298,7 @@ fn allowed(app: &tauri::AppHandle, path: &Path) -> Result<PathBuf, String> {
     if in_default || announced || in_recents(app, &resolved) {
         Ok(resolved)
     } else {
-        Err("That file wasn't opened from Lilo's projects folder.".into())
+        Err("That file wasn't opened from Embroidery Studio's projects folder.".into())
     }
 }
 
@@ -435,7 +435,7 @@ pub fn setup(app: &tauri::App) {
     app.manage(OpenFiles::default());
     if let Ok(dir) = projects_dir(app.handle()) {
         if let Err(error) = ensure_dir(&dir) {
-            tracing::warn!(%error, "Could not create the Lilo projects folder");
+            tracing::warn!(%error, "Could not create the Embroidery Studio projects folder");
         }
     }
     let args: Vec<String> = std::env::args().collect();

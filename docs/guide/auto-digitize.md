@@ -1,7 +1,7 @@
 ---
 id: "auto-digitize"
 title: "Turn a picture into stitches"
-summary: "Open a logo or sketch and let Lilo trace it, pick thread colours and lay stitches."
+summary: "Open a logo or sketch and let Embroidery Studio trace it, pick thread colours and lay stitches."
 section: "digitizing"
 order: 1
 keywords: ["auto digitize", "picture", "logo", "image", "png", "jpg", "svg", "trace", "colours", "background", "region", "digitize"]
@@ -11,18 +11,18 @@ status: "ready"
 
 # Turn a picture into stitches
 
-**Digitizing** means turning a picture into stitch instructions. Lilo can do the whole thing in one go. This is called **Auto digitize**.
+**Digitizing** means turning a picture into stitch instructions. Embroidery Studio can do the whole thing in one go. This is called **Auto digitize**.
 
 ## Open a picture
 
-Use **Upload image** on Home, or **Upload image…** in the left panel. You can also drop a PNG, JPG, WEBP or SVG onto Home or the canvas. Lilo generates the first result automatically.
+Use **Upload image** on Home, or **Upload image…** in the left panel. You can also drop a PNG, JPG, WEBP or SVG onto Home or the canvas. Embroidery Studio generates the first result automatically.
 
 Flat, high-contrast pictures work best: a logo, a crest, a simple drawing. Photos with soft shading make messy embroidery, because thread cannot blend like pixels do.
 
 ## The settings, top to bottom
 
 - **Colours** is how many thread colours to use, from 2 to 12. Fewer colours mean fewer thread changes and a faster sew. Start with the number of colours you see.
-- **Size (mm)** is the width and height of the finished design. Leave one box on **auto** and Lilo keeps the shape. Small details drop out below about 80 mm for fine serif logos, so size up if the hairlines vanish.
+- **Size (mm)** is the width and height of the finished design. Leave one box on **auto** and Embroidery Studio keeps the shape. Small details drop out below about 80 mm for fine serif logos, so size up if the hairlines vanish.
 - **Smallest region** drops tiny specks. A region smaller than this many square millimetres is merged away. Raise it if you see dust-like dots.
 - **Background** is **Remove** or **Keep**. **Remove** treats the picture's background colour as empty cloth. Choose **Keep** if the background is part of the design.
 - **Thread brand** picks the thread range to match against. Read [Thread brands and matching](thread-brands-matching.md).
@@ -31,7 +31,7 @@ Flat, high-contrast pictures work best: a logo, a crest, a simple drawing. Photo
 
 Changes regenerate the design automatically. **Generate stitches** runs it again. Region size, thread brand, fabric, weight, quality and shelf matching are under **Advanced generation settings**.
 
-## What Lilo does
+## What Embroidery Studio does
 
 1. It shrinks the picture and removes the background.
 2. It reduces the picture to your chosen number of colours.

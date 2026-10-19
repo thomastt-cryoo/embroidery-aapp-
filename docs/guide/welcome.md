@@ -1,7 +1,7 @@
 ---
 id: "welcome"
-title: "Welcome to Lilo"
-summary: "What Lilo does, who it is for, and how to use this guide."
+title: "Welcome to Embroidery Studio"
+summary: "What Embroidery Studio does, who it is for, and how to use this guide."
 section: "getting-started"
 order: 1
 keywords: ["start", "welcome", "about", "what is lilo", "overview", "guide", "help"]
@@ -9,13 +9,13 @@ appContext: ["view.home", "panel.help"]
 status: "ready"
 ---
 
-# Welcome to Lilo
+# Welcome to Embroidery Studio
 
-Lilo turns a picture, a word or your own drawing into **stitches**, the tiny thread moves an embroidery machine sews. Then it sends the design to your machine.
+Embroidery Studio turns a picture, a word or your own drawing into **stitches**, the tiny thread moves an embroidery machine sews. Then it sends the design to your machine.
 
-Say you want your logo on the inside of a suit jacket. You open Lilo, drop in the logo, press one button and watch it sew itself on screen. Then you send it to the machine over Wi-Fi.
+Say you want your logo on the inside of a suit jacket. You open Embroidery Studio, drop in the logo, press one button and watch it sew itself on screen. Then you send it to the machine over Wi-Fi.
 
-You do not need an account. Lilo does not upload your designs anywhere.
+You do not need an account. Embroidery Studio does not upload your designs anywhere.
 
 ## What you can make
 
@@ -34,7 +34,7 @@ You do not need an account. Lilo does not upload your designs anywhere.
 
 ## Four helpers inside the app
 
-- The **workflow strip** at the top of the editor shows five steps and ticks them off for you. Read [Helpers inside Lilo](learning-aids.md).
+- The **workflow strip** at the top of the editor shows five steps and ticks them off for you. Read [Helpers inside Embroidery Studio](learning-aids.md).
 - The **tour** walks you through your first design. You can replay it from Help.
 - **Hints** are the **?** buttons.
 - The **warnings tray** tells you, calmly, when something might sew badly, and offers a fix.

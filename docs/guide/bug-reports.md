@@ -11,22 +11,22 @@ status: "ready"
 
 # Report a bug or a machine
 
-Lilo is open source. Problems and machine reports go to the Lilo project on GitHub (github.com/Kadwood/lilo, **Issues**). There are two forms.
+For this private review, report problems to the person who supplied your Embroidery Studio package. The source and build evidence are kept in the private embroidery-aapp- repository. No public issue is created automatically.
 
 ## Report a bug
 
-Choose **Bug report** and fill in:
+Include:
 
 1. **What happened.** Say what you did, what you expected and what you got.
-2. **Your system.** Mac, Windows or Linux, and the Lilo version. The version is in **Lilo Link**, **Settings**.
+2. **Your system.** Mac, Windows or Linux, and the Embroidery Studio version. The version is in **Studio Link**, **Settings**.
 3. **A project file.** If you can, attach the .lilo file. It lets us see the design.
-4. **Logs.** For a send problem, copy the text from **Lilo Link**, **Logs**.
+4. **Logs.** For a send problem, copy the text from **Studio Link**, **Logs**.
 
 A screenshot helps a lot.
 
 ## Report a machine
 
-Choose **Machine report** to tell us how Lilo worked with your machine. We list machines as **tested** only after a real sew-out. Your report moves a machine from "should work" to "works". Fill in:
+Tell us how Embroidery Studio worked with your machine. A machine is **tested** only after a real sew-out. Include:
 
 - The **brand and model**.
 - Whether the **Wi-Fi scan** found it.
@@ -37,5 +37,5 @@ Choose **Machine report** to tell us how Lilo worked with your machine. We list 
 ## Before you report
 
 - Check [Wi-Fi troubleshooting](send-troubleshooting.md) or [Fixing sew-out problems](sewout-troubleshooting.md).
-- Update to the newest Lilo.
-- Do not include private information. Lilo does not send anything automatically.
+- Check the version against the latest Embroidery Studio package supplied for review.
+- Do not include private information. Embroidery Studio does not send anything automatically.

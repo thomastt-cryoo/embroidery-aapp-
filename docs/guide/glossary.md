@@ -1,7 +1,7 @@
 ---
 id: "glossary"
 title: "Glossary"
-summary: "Plain-word meanings for every embroidery and Lilo term, from appliqué to zig-zag."
+summary: "Plain-word meanings for every embroidery and Embroidery Studio term, from appliqué to zig-zag."
 section: "reference"
 order: 30
 keywords: ["glossary", "terms", "dictionary", "meaning", "definition", "words", "jargon"]
@@ -17,7 +17,7 @@ Words are in alphabetical order. A word in **bold** inside a meaning has its own
 
 - **Appliqué.** A patch of cloth stitched onto a garment. An **E-stitch** edge is often used to hold it.
 - **Aspect ratio.** The relationship between width and height. Locking it keeps a shape from squashing.
-- **Auto digitize.** Lilo turns a picture into stitches in one step. Read [Turn a picture into stitches](auto-digitize.md).
+- **Auto digitize.** Embroidery Studio turns a picture into stitches in one step. Read [Turn a picture into stitches](auto-digitize.md).
 - **Backing.** Another word for **stabiliser**.
 - **Bean stitch.** Another name for a **triple** run.
 - **Birdnesting.** A tangle of thread under the cloth that jams the machine.
@@ -45,7 +45,7 @@ Words are in alphabetical order. A word in **bold** inside a meaning has its own
 - **Inset.** How far inside the edge an **underlay** stops, so it stays hidden.
 - **Jump.** Thread that travels from one point to another without sewing.
 - **Knit.** Stretchy cloth. It needs more **pull compensation** and a firm **stabiliser**.
-- **Lilo Link.** The part of Lilo that sends designs to a machine over Wi-Fi.
+- **Studio Link.** The part of Embroidery Studio that sends designs to a machine over Wi-Fi.
 - **Lock stitches.** Tiny stitches at the start and end of a run that stop it unravelling. Also called tie-in and tie-off.
 - **Manual stitch.** A stitch placed exactly where you click.
 - **Monogram.** Initials sewn as a mark, like "JK" inside a jacket.

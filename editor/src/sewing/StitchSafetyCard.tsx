@@ -28,7 +28,7 @@ function Row({ row }: { row: SafeRow }) {
         check={row.check}
         disabled={!canSet}
         note={note}
-        help={SAFE_RANGES[row.param].source === "researched" ? `Researched. ${SAFE_RANGES[row.param].sourceNote}` : `Lilo default. ${SAFE_RANGES[row.param].sourceNote}`}
+        help={SAFE_RANGES[row.param].source === "researched" ? `Researched. ${SAFE_RANGES[row.param].sourceNote}` : `Embroidery Studio default. ${SAFE_RANGES[row.param].sourceNote}`}
         onChange={(v) => {
           const ids = new Set(row.settableIds);
           actions.updateObjects(row.settableIds, `Set ${row.label.toLowerCase()}`, (o) => ids.has(o.id) && setSafeValue(o, row.param, v), { merge: `safe:${row.param}` });
@@ -63,7 +63,7 @@ export function StitchSafetyCard() {
         <p className="muted small">Nothing to check yet. Add some shapes.</p>
       ) : (
         <>
-          <p className="muted small">Green is the range that sews well. Amber is a heads up, and Lilo still makes the file. Moving a slider here changes every shape of that kind.</p>
+          <p className="muted small">Green is the range that sews well. Amber is a heads up, and Embroidery Studio still makes the file. Moving a slider here changes every shape of that kind.</p>
           <ul className="safe-list" aria-label="Stitch safety settings">
             {rows.map((r) => (
               <Row key={r.param} row={r} />

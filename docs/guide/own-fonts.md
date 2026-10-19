@@ -15,13 +15,13 @@ You can add a font from your computer. This is how you stitch the exact typeface
 
 ## Upload
 
-In the **Text** panel, scroll to **Your fonts** and press **Upload font (TTF, OTF, TTC)...**. Choose the file. Lilo adds it to the list. Press it to use it.
+In the **Text** panel, scroll to **Your fonts** and press **Upload font (TTF, OTF, TTC)...**. Choose the file. Embroidery Studio adds it to the list. Press it to use it.
 
 Press **Remove** next to a font to take it out.
 
 ## How it sews
 
-An ordinary font has outlines, not stitches. Lilo converts each letter into **satin columns** that follow the shape of the strokes.
+An ordinary font has outlines, not stitches. Embroidery Studio converts each letter into **satin columns** that follow the shape of the strokes.
 
 - Thick strokes become columns.
 - Strokes that are too thin for a clean column are widened up to a minimum width.
@@ -39,7 +39,7 @@ If your font is too small to sew cleanly, a note says "Custom fonts sew best abo
 
 ## Licence
 
-You are responsible for the licence of any font you upload. Lilo keeps the font on your computer.
+You are responsible for the licence of any font you upload. Embroidery Studio keeps the font on your computer.
 
 ## Related
 

@@ -47,14 +47,14 @@ describe("project shortcuts work on every screen", () => {
     render(<App />);
     meta("s");
     await waitFor(() => expect(mock.files.size).toBe(1), T);
-    expect([...mock.files.keys()][0]).toBe("/mock/Documents/Lilo/Untitled design.lilo");
+    expect([...mock.files.keys()][0]).toBe("/mock/Documents/Embroidery Studio/Untitled design.lilo");
     meta("s", { shiftKey: true });
     await waitFor(() => expect(mock.files.size).toBe(1)); // same name: it overwrote the one file
   });
 
   it("⌘O opens a project and goes to the editor", async () => {
     const p = createProject({ title: "Crest", design: emptyDesign() });
-    mock.pickProject = { path: "/mock/Documents/Lilo/Crest.lilo", name: "Crest.lilo", bytes: saveProject(p) };
+    mock.pickProject = { path: "/mock/Documents/Embroidery Studio/Crest.lilo", name: "Crest.lilo", bytes: saveProject(p) };
     render(<App />);
     meta("o");
     await waitFor(() => expect(window.location.hash).toBe("#/editor"), T);

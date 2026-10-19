@@ -66,7 +66,7 @@ const ready = () => waitFor(() => expect(lastEditor?.state.planResult).not.toBeN
 describe("Home", () => {
   const seed = () => {
     for (const [name, ms] of [["Crest", 3000], ["Monogram", 2000]] as const) {
-      const path = `/mock/Documents/Lilo/${name}.lilo`;
+      const path = `/mock/Documents/Embroidery Studio/${name}.lilo`;
       mock.files.set(path, projectBytes(name, design("a", "b")));
       mock.recents.push({ path, name, modifiedMs: Date.now() - ms, sizeBytes: 10 });
     }
@@ -94,7 +94,7 @@ describe("Home", () => {
     mount(<HomeView />);
     fireEvent.click(screen.getByRole("button", { name: "New design" }));
     await waitFor(() => expect(go).toHaveBeenCalledWith("editor"), T);
-    mock.pickProject = { path: "/mock/Documents/Lilo/Crest.lilo", name: "Crest.lilo", bytes: projectBytes("Crest", design("q")) };
+    mock.pickProject = { path: "/mock/Documents/Embroidery Studio/Crest.lilo", name: "Crest.lilo", bytes: projectBytes("Crest", design("q")) };
     fireEvent.click(screen.getByRole("button", { name: "Open…" }));
     await waitFor(() => expect(lastEditor!.state.projectName).toBe("Crest"), T);
   });
@@ -137,8 +137,8 @@ describe("Home", () => {
   });
 
   it("a file that cannot be read is a disabled card, and shows the error from a bad Open", async () => {
-    mock.files.set("/mock/Documents/Lilo/bad.lilo", new Uint8Array([1, 2, 3]));
-    mock.recents.push({ path: "/mock/Documents/Lilo/bad.lilo", name: "bad", modifiedMs: Date.now(), sizeBytes: 3 });
+    mock.files.set("/mock/Documents/Embroidery Studio/bad.lilo", new Uint8Array([1, 2, 3]));
+    mock.recents.push({ path: "/mock/Documents/Embroidery Studio/bad.lilo", name: "bad", modifiedMs: Date.now(), sizeBytes: 3 });
     mount(<HomeView />);
     const card = await screen.findByRole("button", { name: "Open bad" }, T);
     await waitFor(() => expect((card as HTMLButtonElement).disabled).toBe(true), T);
@@ -173,7 +173,7 @@ describe("File menu", () => {
     expect(screen.getByRole("menuitem", { name: /Revert to saved/ }).getAttribute("aria-disabled")).toBe("true");
     expect(screen.getByRole("menuitem", { name: /Export/ }).getAttribute("aria-disabled")).toBe("false"); // it has stitches
     fireEvent.click(screen.getByRole("menuitem", { name: /^Save\b(?! As)/ }));
-    await waitFor(() => expect(manager.store.getState().path).toBe("/mock/Documents/Lilo/Untitled design.lilo"), T);
+    await waitFor(() => expect(manager.store.getState().path).toBe("/mock/Documents/Embroidery Studio/Untitled design.lilo"), T);
     open();
     fireEvent.click(screen.getByRole("menuitem", { name: /Save As/ }));
     await waitFor(() => expect(mock.files.size).toBe(1));
@@ -244,7 +244,7 @@ describe("the in-page unsaved-changes question", () => {
 describe("Version history panel", () => {
   async function openWithHistory() {
     const onClose = vi.fn();
-    const path = "/mock/Documents/Lilo/Crest.lilo";
+    const path = "/mock/Documents/Embroidery Studio/Crest.lilo";
     mock.files.set(path, projectBytes("Crest", design("a", "b", "c"), [design("a"), design("a", "b")]));
     mount(<HistoryPanel onClose={onClose} />);
     await act(async () => void (await manager.openPath(path)));
@@ -322,7 +322,7 @@ describe("autosave, open-file and close wiring", () => {
   it("a project the OS opens (double-click) is opened, and the editor is shown", async () => {
     mount(<div />);
     await waitFor(() => expect(mock.openFileCb).not.toBeNull());
-    await act(async () => mock.openFileCb!({ path: "/mock/Documents/Lilo/Crest.lilo", name: "Crest.lilo", bytes: projectBytes("Crest", design("a", "b")) }));
+    await act(async () => mock.openFileCb!({ path: "/mock/Documents/Embroidery Studio/Crest.lilo", name: "Crest.lilo", bytes: projectBytes("Crest", design("a", "b")) }));
     await waitFor(() => expect(lastEditor!.state.projectName).toBe("Crest"), T);
     await waitFor(() => expect(go).toHaveBeenCalledWith("editor"), T);
   });

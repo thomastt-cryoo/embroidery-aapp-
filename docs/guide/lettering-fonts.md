@@ -11,7 +11,7 @@ status: "ready"
 
 # Lettering: built-in fonts
 
-Lilo comes with about a hundred **embroidery fonts**. These are not ordinary computer fonts. Each one was drawn to be sewn: the stitches follow the letter shape, and each font has a height range where it sews well.
+Embroidery Studio comes with about a hundred **embroidery fonts**. These are not ordinary computer fonts. Each one was drawn to be sewn: the stitches follow the letter shape, and each font has a height range where it sews well.
 
 ## Add text
 

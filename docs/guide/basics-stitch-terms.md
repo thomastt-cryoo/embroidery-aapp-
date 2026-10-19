@@ -11,13 +11,13 @@ status: "ready"
 
 # Stitch terms: density, pull compensation and underlay
 
-Three ideas explain most of the settings in Lilo.
+Three ideas explain most of the settings in Embroidery Studio.
 
 ## Density
 
 **Density** is how close the stitches sit to each other. Closer stitches cover the cloth better. Too close, and the needle punches so many holes that the cloth tears or the thread snaps.
 
-Lilo measures density as a gap in millimetres. **Smaller gap means denser.** For satin columns with 40 wt thread, 0.40 mm is the usual starting point. Read [Satin tips](satin-tips.md).
+Embroidery Studio measures density as a gap in millimetres. **Smaller gap means denser.** For satin columns with 40 wt thread, 0.40 mm is the usual starting point. Read [Satin tips](satin-tips.md).
 
 ## Pull compensation
 
@@ -25,7 +25,7 @@ Thread pulls cloth inward as it tightens. A stitched circle ends up a little sma
 
 ![A satin column drawn at 4 mm, pulled in by the thread, then widened by pull compensation](diagrams/pull-compensation.svg)
 
-Stretchy cloth pulls more, so it needs more compensation. Lilo's **Sewing setup** adds extra for knits. Read [Underlay and pull compensation](underlay-and-pull.md).
+Stretchy cloth pulls more, so it needs more compensation. Embroidery Studio's **Sewing setup** adds extra for knits. Read [Underlay and pull compensation](underlay-and-pull.md).
 
 ## Underlay
 
@@ -37,7 +37,7 @@ You will not see underlay in a good sew-out. You will notice when it is missing:
 
 ## Satin and fill
 
-Lilo uses two main stitch types for areas.
+Embroidery Studio uses two main stitch types for areas.
 
 - **Satin** is a column of side-to-side stitches. It looks shiny and smooth. It suits letters and borders from about 1.5 to 8 mm wide.
 - **Fill** is rows of stitches that cover a large area. It suits big shapes.

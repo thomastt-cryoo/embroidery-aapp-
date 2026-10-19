@@ -16,7 +16,7 @@ const POLL_MS = 500;
 const POLL_TIMEOUT_MS = 5 * 60 * 1000;
 
 let clientPromise: Promise<BridgeClient> | null = null;
-/** One connection to the local Lilo Link API (port + token come from the Rust side). */
+/** One connection to the local Studio Link API (port + token come from the Rust side). */
 function client(): Promise<BridgeClient> {
   clientPromise ??= BridgeClient.connect().catch((e) => {
     clientPromise = null;
@@ -26,7 +26,7 @@ function client(): Promise<BridgeClient> {
 }
 
 const nameOf = (p: string) => p.split(/[\\/]/).pop() ?? p;
-/** A stitch file the OS opened for Lilo (Finder double-click, "Open with"): handed over once, by the desktop side. */
+/** A stitch file the OS opened for Embroidery Studio (Finder double-click, "Open with"): handed over once, by the desktop side. */
 async function readOpenedStitchFile(path: string): Promise<Uint8Array> {
   const data = await invoke<ArrayBuffer | number[]>("read_opened_stitch_file", { path });
   return data instanceof ArrayBuffer ? new Uint8Array(data) : Uint8Array.from(data);
@@ -163,8 +163,8 @@ export const tauriPlatform: Platform = {
       directory: false,
       defaultPath: folder,
       filters: [
-        { name: "Lilo projects and stitch files", extensions: [...OPEN_EXTENSIONS] },
-        { name: "Lilo project", extensions: ["lilo"] },
+        { name: "Embroidery Studio projects and stitch files", extensions: [...OPEN_EXTENSIONS] },
+        { name: "Embroidery Studio project", extensions: ["lilo"] },
         { name: "Stitch files", extensions: [...STITCH_EXTENSIONS] },
       ],
     });
@@ -181,7 +181,7 @@ export const tauriPlatform: Platform = {
 
   async saveProjectAs(suggestedName, bytes) {
     const folder = await invoke<string>("projects_folder").catch(() => undefined);
-    const path = await save({ defaultPath: folder ? joinPath(folder, suggestedName) : suggestedName, filters: [{ name: "Lilo project", extensions: ["lilo"] }] });
+    const path = await save({ defaultPath: folder ? joinPath(folder, suggestedName) : suggestedName, filters: [{ name: "Embroidery Studio project", extensions: ["lilo"] }] });
     if (!path) return null;
     const withExt = /\.lilo$/i.test(path) ? path : `${path}.lilo`;
     await invoke("allow_project_path", { path: withExt });
@@ -241,7 +241,7 @@ export const tauriPlatform: Platform = {
       for (const path of paths) {
         if (!active) return;
         try {
-          // a stitch file (PES, DST, ...) comes back once and with no path: Lilo never saves over it
+          // a stitch file (PES, DST, ...) comes back once and with no path: Embroidery Studio never saves over it
           const stitch = !isProjectFile(path);
           const bytes = stitch ? await readOpenedStitchFile(path) : await tauriPlatform.readProjectFile(path);
           const file: OpenedPath = { path: stitch ? "" : path, name: nameOf(path), bytes };
