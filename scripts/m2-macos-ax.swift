@@ -33,7 +33,8 @@ func visit(_ e: AXUIElement, _ depth: Int) {
 visit(app,0)
 func emit(_ value: Any) { let d=try! JSONSerialization.data(withJSONObject:value,options:[.prettyPrinted,.sortedKeys]); print(String(data:d,encoding:.utf8)!) }
 func key(_ code: CGKeyCode, _ flags: CGEventFlags = []) {
-    for down in [true,false] { let event=CGEvent(keyboardEventSource:nil,virtualKey:code,keyDown:down)!;event.flags=flags;event.post(tap:.cghidEventTap) }
+    for down in [true,false] { let event=CGEvent(keyboardEventSource:nil,virtualKey:code,keyDown:down)!;event.flags=flags;event.post(tap:.cghidEventTap);usleep(20000) }
+    RunLoop.current.run(until:Date(timeIntervalSinceNow:0.15))
 }
 if operation == "activate" {running.activate(options:[.activateIgnoringOtherApps]);emit(["result":"activated"])}
 else if operation == "snapshot" { emit(rows) }
@@ -41,6 +42,18 @@ else if operation == "key" {
     let flags=CGEventFlags(rawValue:UInt64(args[3])!)
     key(CGKeyCode(args[2])!,flags)
     emit(["result":"sent"])
+} else if operation == "type" {
+    // Unicode keyboard events avoid clipboard ownership/lifetime races between
+    // short-lived driver processes and the native file-picker service.
+    let units=Array(args[2].utf16)
+    for down in [true,false] {
+        let event=CGEvent(keyboardEventSource:nil,virtualKey:0,keyDown:down)!
+        event.flags=[]
+        units.withUnsafeBufferPointer { event.keyboardSetUnicodeString(stringLength:units.count,unicodeString:$0.baseAddress!) }
+        event.post(tap:.cghidEventTap);usleep(50000)
+    }
+    RunLoop.current.run(until:Date(timeIntervalSinceNow:0.3))
+    emit(["result":"typed test data"])
 } else if operation == "paste" {
     NSPasteboard.general.clearContents();NSPasteboard.general.setString(args[2],forType:.string)
     key(9,.maskCommand)

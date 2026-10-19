@@ -38,13 +38,13 @@ def slider_end(label,end):
     time.sleep(.5)
 
 def number_input(label,value):
-    ax('click',label);key(0,1048576);ax('paste',str(value));key(48)
+    ax('click',label);time.sleep(.4);key(0,1048576);ax('type',str(value));time.sleep(.4);key(48)
 def choose(path,saving=False):
     # macOS standard Open/Save sheet: reveal its Go to Folder field, paste
     # an absolute test-fixture path, then confirm through the normal sheet.
-    key(5,1048576|131072);time.sleep(.5)
+    key(5,1048576|131072);time.sleep(1)
     snap('path-entry')
-    ax('paste',str(path.parent if saving else path));time.sleep(.5);key(36);time.sleep(.8)
+    ax('type',str(path.parent if saving else path));time.sleep(1);snap('path-entered');key(36);time.sleep(1)
     if saving:
         snap('save-filename');ax('filename',path.name);time.sleep(.3)
     key(36);time.sleep(1)
