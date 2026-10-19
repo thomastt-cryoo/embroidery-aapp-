@@ -43,16 +43,16 @@ else if operation == "key" {
     key(CGKeyCode(args[2])!,flags)
     emit(["result":"sent"])
 } else if operation == "type" {
-    // Unicode keyboard events avoid clipboard ownership/lifetime races between
-    // short-lived driver processes and the native file-picker service.
-    let units=Array(args[2].utf16)
-    for down in [true,false] {
-        let event=CGEvent(keyboardEventSource:nil,virtualKey:0,keyDown:down)!
-        event.flags=[]
-        units.withUnsafeBufferPointer { event.keyboardSetUnicodeString(stringLength:units.count,unicodeString:$0.baseAddress!) }
-        event.post(tap:.cghidEventTap);usleep(50000)
+    // The observed runner uses the US keyboard layout. Native XPC Open sheets
+    // on macOS 14 ignore injected Unicode strings; send actual physical keys.
+    let codes:[Character:CGKeyCode] = ["a":0,"s":1,"d":2,"f":3,"h":4,"g":5,"z":6,"x":7,"c":8,"v":9,"b":11,"q":12,"w":13,"e":14,"r":15,"y":16,"t":17,"1":18,"2":19,"3":20,"4":21,"6":22,"5":23,"=":24,"9":25,"7":26,"-":27,"8":28,"0":29,"]":30,"o":31,"u":32,"[":33,"i":34,"p":35,"l":37,"j":38,"'":39,"k":40,";":41,"\\":42,",":43,"/":44,"n":45,"m":46,".":47," ":49,"`":50]
+    for character in args[2] {
+        let lower=Character(String(character).lowercased())
+        let shifted=character == "_" || character != lower
+        let base:Character=character == "_" ? "-" : lower
+        guard let code=codes[base] else {fatalError("Unsupported test-fixture character")}
+        key(code,shifted ? .maskShift : [])
     }
-    RunLoop.current.run(until:Date(timeIntervalSinceNow:0.3))
     emit(["result":"typed test data"])
 } else if operation == "paste" {
     NSPasteboard.general.clearContents();NSPasteboard.general.setString(args[2],forType:.string)
