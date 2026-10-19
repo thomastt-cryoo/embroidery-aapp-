@@ -24,12 +24,15 @@ def wait_for(expected,seconds=60):
 def press(label):
     ax('press',label);time.sleep(.6)
 def key(code,flags=0):ax('key',code,flags);time.sleep(.4)
-def choose(path):
+def choose(path,saving=False):
     # macOS standard Open/Save sheet: reveal its Go to Folder field, paste
     # an absolute test-fixture path, then confirm through the normal sheet.
     key(5,1048576|131072);time.sleep(.5)
     snap('path-entry')
-    ax('paste',str(path));time.sleep(.5);key(36);time.sleep(.8);key(36);time.sleep(1)
+    ax('paste',str(path.parent if saving else path));time.sleep(.5);key(36);time.sleep(.8)
+    if saving:
+        snap('save-filename');ax('filename',path.name);time.sleep(.3)
+    key(36);time.sleep(1)
 def check(name,detail):checks.append({'name':name,'result':'pass','detail':detail})
 app='/Applications/Embroidery Studio.app'
 try:
@@ -58,7 +61,7 @@ try:
         found=next(r for r in choices if r['role']=='AXButton' and '4 x 4 in' in (r['title']+' '+r['description']))
         press(found['title'] or found['description']);wait_for('100 × 100');check('native hoop selection','100 × 100 mm selected from search')
     else:raise AssertionError('Native hoop selector was not exposed as expected; evidence retained')
-    key(1,1048576);time.sleep(1);snap('project-save-dialog');choose(out/'Native-Mac-ZIP-sample.lilo')
+    key(1,1048576);time.sleep(1);snap('project-save-dialog');choose(out/'Native-Mac-ZIP-sample.lilo',saving=True)
     project=out/'Native-Mac-ZIP-sample.lilo'
     for _ in range(30):
         if project.exists():break
@@ -68,7 +71,7 @@ try:
     check('native project save','Actual native Save sheet wrote a valid project with six editable objects')
     press('Export');wait_for('Export stats');snap('export')
     current=ax('snapshot');save=next(r for r in current if r['role']=='AXButton' and ('Save PES' in r['title'] or 'Save PES' in r['description']))
-    press(save['title'] or save['description']);time.sleep(1);snap('pes-save-dialog');choose(out/'Native-Mac-ZIP-sample.pes')
+    press(save['title'] or save['description']);time.sleep(1);snap('pes-save-dialog');choose(out/'Native-Mac-ZIP-sample.pes',saving=True)
     pes=out/'Native-Mac-ZIP-sample.pes';time.sleep(2);assert pes.read_bytes().startswith(b'#PES')
     check('native PES export',str(pes.stat().st_size)+' bytes with valid PES header')
     # Use the OS file-open event to reopen the project saved by this native app.

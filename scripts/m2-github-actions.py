@@ -5,7 +5,7 @@ import argparse, json, os, pathlib, subprocess, urllib.request, urllib.error
 
 REPO = 'thomastt-cryoo/embroidery-aapp-'
 parser = argparse.ArgumentParser()
-parser.add_argument('command', choices=['dispatch', 'verify', 'status', 'artifacts', 'download', 'cancel-site', 'evidence'])
+parser.add_argument('command', choices=['dispatch', 'verify', 'status', 'artifacts', 'download', 'cancel', 'cancel-site', 'evidence'])
 parser.add_argument('--id')
 parser.add_argument('--workflow', default='release.yml')
 parser.add_argument('--output')
@@ -44,6 +44,12 @@ elif args.command == 'status':
         if args.id and str(run['id']) == args.id:
             jobs=api('repos/'+REPO+'/actions/runs/'+args.id+'/jobs')['jobs']
             print(json.dumps([{'id':j['id'],'status':j['status'],'conclusion':j['conclusion'],'started_at':j['started_at'],'completed_at':j['completed_at'],'steps':j['steps']} for j in jobs],indent=2))
+elif args.command == 'cancel':
+    assert args.id and args.id.isdigit()
+    run=api('repos/'+REPO+'/actions/runs/'+args.id)
+    assert run['path']=='.github/workflows/mac-zip-verification.yml', 'Only this milestone verification may be cancelled.'
+    api('repos/'+REPO+'/actions/runs/'+args.id+'/cancel','POST')
+    print('Cancelled superseded private ZIP verification run:',args.id)
 elif args.command == 'cancel-site':
     runs=api('repos/'+REPO+'/actions/workflows/site.yml/runs?per_page=10')['workflow_runs']
     for run in runs:

@@ -21,7 +21,7 @@ func visit(_ e: AXUIElement, _ depth: Int) {
     if depth > 35 || elements.count > 12000 { return }
     let index=elements.count
     elements.append(e)
-    rows.append(["index":index,"depth":depth,"role":string(e,kAXRoleAttribute),"title":string(e,kAXTitleAttribute),"description":string(e,kAXDescriptionAttribute),"value":string(e,kAXValueAttribute),"help":string(e,kAXHelpAttribute)])
+    rows.append(["index":index,"depth":depth,"role":string(e,kAXRoleAttribute),"title":string(e,kAXTitleAttribute),"description":string(e,kAXDescriptionAttribute),"value":string(e,kAXValueAttribute),"help":string(e,kAXHelpAttribute),"identifier":string(e,kAXIdentifierAttribute),"subrole":string(e,kAXSubroleAttribute)])
     if let children=attribute(e,kAXChildrenAttribute) as? [AXUIElement] { for child in children { visit(child,depth+1) } }
 }
 visit(app,0)
@@ -38,6 +38,15 @@ else if operation == "key" {
     NSPasteboard.general.clearContents();NSPasteboard.general.setString(args[2],forType:.string)
     key(9,.maskCommand)
     emit(["result":"pasted test data"])
+} else if operation == "filename" {
+    let fields=rows.filter { row in
+        let role=row["role"] as! String
+        let label=["title","description","help","identifier"].map{row[$0] as! String}.joined(separator:" ").lowercased()
+        return ["AXTextField","AXComboBox"].contains(role) && (label.contains("save as") || label.contains("saveas") || (row["value"] as! String).contains("Native Mac ZIP"))
+    }
+    guard let row=fields.first,let index=row["index"] as? Int else {emit(["error":"Save filename field unavailable","fields":rows.filter{($0["role"] as? String)=="AXTextField"}]);exit(4)}
+    let result=AXUIElementSetAttributeValue(elements[index],kAXValueAttribute as CFString,args[2] as CFString)
+    emit(["result":result.rawValue,"observed":row]);if result != .success {exit(5)}
 } else {
     let wanted=args[2]
     let matching=rows.filter { row in ["title","description","help"].contains { (row[$0] as? String)==wanted } }
