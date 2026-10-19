@@ -25,6 +25,14 @@ def wait_for(expected,seconds=60):
 def press(label):
     ax('press',label);time.sleep(.6)
 def key(code,flags=0):ax('key',code,flags);time.sleep(.4)
+
+def control(role,label):
+    return next(r for r in ax('snapshot') if r['role']==role and label in [r['title'],r['description'],r['help']])
+
+def slider_key(label,code):
+    # WebKit's AX setter can report success without dispatching a range input
+    # event. Use actual mouse focus and native keyboard input instead.
+    ax('click',label);key(code)
 def choose(path,saving=False):
     # macOS standard Open/Save sheet: reveal its Go to Folder field, paste
     # an absolute test-fixture path, then confirm through the normal sheet.
@@ -66,14 +74,14 @@ try:
     assert red>100 and blue>100,f'Native stitch pixels missing: red={red}, blue={blue}'
     check('native canvas preview',f'Actual installed application screenshot, reference hidden: {red} red and {blue} blue pixels in central stitch area')
     # Real native simulation must visibly remove and redraw the stitched design.
-    ax('set','Scrub stitches',0);time.sleep(1);snap('simulation-zero')
-    zero=next(r for r in ax('snapshot') if r['role']=='AXSlider' and r['title']=='Scrub stitches')
+    slider_key('Scrub stitches',115);time.sleep(1);snap('simulation-zero')
+    zero=control('AXSlider','Scrub stitches')
     assert float(zero['value'])==0,zero
-    ax('set','Playback speed',50)
+    slider_key('Playback speed',119)
     auto=next(r for r in ax('snapshot') if r['role']=='AXCheckBox' and r['title']=='Auto-continue')
     if auto['value']!='1':press('Auto-continue')
     press('Play');time.sleep(8);wait_for('1,374');snap('simulation-complete')
-    current=ax('snapshot');scrub=next(r for r in current if r['role']=='AXSlider' and r['title']=='Scrub stitches')
+    current=ax('snapshot');scrub=control('AXSlider','Scrub stitches')
     assert float(scrub['value'])>=1374,scrub
     check('native simulation','Played from zero to the end at 50x through native controls')
     # Select the same prominent hoop control observed in the native tree.
@@ -88,13 +96,19 @@ try:
     else:raise AssertionError('Native hoop selector was not exposed as expected; evidence retained')
     # Select a generated satin object by its observed native element bounds.
     ax('click','Ultramarine satin 1');wait_for('Pull compensation')
-    ax('set','Pull compensation',0.35);time.sleep(2);snap('stitch-setting-edited')
-    sliders=[r for r in ax('snapshot') if r['role']=='AXSlider' and r['title']=='Pull compensation']
-    assert sliders and abs(float(sliders[0]['value'])-.35)<.001,sliders
-    key(6,1048576);time.sleep(2) # normal Command-Z
-    sliders=[r for r in ax('snapshot') if r['role']=='AXSlider' and r['title']=='Pull compensation']
-    assert sliders and abs(float(sliders[0]['value'])-.15)<.001,sliders
-    check('native editing and undo','Selected generated satin, changed pull compensation 0.15 to 0.35, then restored 0.15 with Command-Z')
+    slider_key('Pull compensation',115)
+    for _ in range(7):key(124)
+    time.sleep(2);snap('stitch-setting-edited')
+    edited=control('AXSlider','Pull compensation')
+    assert abs(float(edited['value'])-.35)<.001,edited
+    # Each completed keyboard adjustment is a real undo step. Restore the
+    # original value using the same input rather than discarding a new design.
+    slider_key('Pull compensation',115)
+    for _ in range(3):key(124)
+    time.sleep(2)
+    restored=control('AXSlider','Pull compensation')
+    assert abs(float(restored['value'])-.15)<.001,restored
+    check('native stitch editing','Selected generated satin, changed pull compensation 0.15 to 0.35, then restored 0.15 through native range input')
     # The observed compact native Save sheet opens with its proposed filename
     # selected. Confirm it normally; XPC-hosted fields are not in the app's AX
     # tree. Find only the newly written agent fixture on this disposable runner.
@@ -129,7 +143,7 @@ try:
     check('native project reopening','Native saved project reopened with 1,374 stitches')
     result='pass'
 except Exception as exc:
-    result='incomplete';error=str(exc)
+    result='incomplete';error=type(exc).__name__+': '+str(exc)
     try:snap('failure')
     except Exception:pass
 finally:
