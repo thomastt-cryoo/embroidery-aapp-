@@ -29,10 +29,16 @@ def key(code,flags=0):ax('key',code,flags);time.sleep(.4)
 def control(role,label):
     return next(r for r in ax('snapshot') if r['role']==role and label in [r['title'],r['description'],r['help']])
 
-def slider_key(label,code):
-    # WebKit's AX setter can report success without dispatching a range input
-    # event. Use actual mouse focus and native keyboard input instead.
-    ax('click',label);key(code)
+def slider_end(label,end):
+    # A native range click dispatches its input event. Safari does not use
+    # Home/End like Chromium, so click the observed track end and finish with
+    # ordinary left/right keys to cover its thumb's inset.
+    ax('range',label,1 if end else 0)
+    for _ in range(12):ax('key',124 if end else 123,0)
+    time.sleep(.5)
+
+def number_input(label,value):
+    ax('click',label);key(0,1048576);ax('paste',str(value));key(48)
 def choose(path,saving=False):
     # macOS standard Open/Save sheet: reveal its Go to Folder field, paste
     # an absolute test-fixture path, then confirm through the normal sheet.
@@ -74,10 +80,12 @@ try:
     assert red>100 and blue>100,f'Native stitch pixels missing: red={red}, blue={blue}'
     check('native canvas preview',f'Actual installed application screenshot, reference hidden: {red} red and {blue} blue pixels in central stitch area')
     # Real native simulation must visibly remove and redraw the stitched design.
-    slider_key('Scrub stitches',115);time.sleep(1);snap('simulation-zero')
+    slider_end('Scrub stitches',False);time.sleep(1);snap('simulation-zero')
     zero=control('AXSlider','Scrub stitches')
     assert float(zero['value'])==0,zero
-    slider_key('Playback speed',119)
+    slider_end('Playback speed',True)
+    speed=control('AXSlider','Playback speed')
+    assert float(speed['value'])==50,speed
     auto=next(r for r in ax('snapshot') if r['role']=='AXCheckBox' and r['title']=='Auto-continue')
     if auto['value']!='1':press('Auto-continue')
     press('Play');time.sleep(8);wait_for('1,374');snap('simulation-complete')
@@ -96,15 +104,13 @@ try:
     else:raise AssertionError('Native hoop selector was not exposed as expected; evidence retained')
     # Select a generated satin object by its observed native element bounds.
     ax('click','Ultramarine satin 1');wait_for('Pull compensation')
-    slider_key('Pull compensation',115)
-    for _ in range(7):key(124)
+    number_input('Pull compensation value',.35)
     time.sleep(2);snap('stitch-setting-edited')
     edited=control('AXSlider','Pull compensation')
     assert abs(float(edited['value'])-.35)<.001,edited
     # Each completed keyboard adjustment is a real undo step. Restore the
     # original value using the same input rather than discarding a new design.
-    slider_key('Pull compensation',115)
-    for _ in range(3):key(124)
+    number_input('Pull compensation value',.15)
     time.sleep(2)
     restored=control('AXSlider','Pull compensation')
     assert abs(float(restored['value'])-.15)<.001,restored

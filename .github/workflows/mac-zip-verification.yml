@@ -48,8 +48,12 @@ jobs:
             # app. Only accept a completed installer-repair run whose actual
             # ZIP installation already passed, then repeat all native tests.
             test "$CONCLUSION" = failure
-            test "$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" --jq .path)" = .github/workflows/mac-package-repair.yml
-            test "$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID/jobs" --jq '[.jobs[].steps[] | select(.name == "Install the complete actual customer ZIP")][0].conclusion')" = success
+            SOURCE_WORKFLOW=$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID" --jq .path)
+            case "$SOURCE_WORKFLOW" in
+              .github/workflows/mac-package-repair.yml|.github/workflows/release.yml) ;;
+              *) exit 1 ;;
+            esac
+            test "$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$SOURCE_RUN_ID/jobs" --jq '[.jobs[].steps[] | select(.name == "Install the complete actual customer ZIP" or .name == "Extract actual customer ZIP, install and launch on macOS")][0].conclusion')" = success
           fi
           gh run download "$SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" --name "$SOURCE_ARTIFACT" --dir received
       - name: Install actual ZIP and verify native project/PES rendering

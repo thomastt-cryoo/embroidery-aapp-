@@ -60,14 +60,16 @@ else if operation == "key" {
     let candidates=matching.filter { row in
         let role=row["role"] as! String
         if operation == "click" {return row["bounds"] != nil}
+        if operation == "range" {return role == "AXSlider" && row["bounds"] != nil}
         return operation == "press" ? ["AXButton","AXLink","AXRadioButton","AXCheckBox","AXMenuItem"].contains(role) : ["AXTextField","AXTextArea","AXSlider","AXComboBox"].contains(role)
     }
     guard let row=candidates.first, let index=row["index"] as? Int else { emit(["error":"No matching actionable element","wanted":wanted,"matches":matching]);exit(2) }
     let element=elements[index]
     let result: AXError
-    if operation == "click" {
+    if operation == "click" || operation == "range" {
         let b=row["bounds"] as! [String:CGFloat]
-        let point=CGPoint(x:b["x"]!+b["width"]!/2,y:b["y"]!+b["height"]!/2)
+        let fraction=operation == "range" ? CGFloat(Double(args[3])!) : 0.5
+        let point=CGPoint(x:b["x"]!+max(1,min(b["width"]!-1,b["width"]!*fraction)),y:b["y"]!+b["height"]!/2)
         for type in [CGEventType.leftMouseDown,CGEventType.leftMouseUp] {CGEvent(mouseEventSource:nil,mouseType:type,mouseCursorPosition:point,mouseButton:.left)!.post(tap:.cghidEventTap)}
         result = .success
     } else if operation == "press" { result=AXUIElementPerformAction(element,kAXPressAction as CFString) }

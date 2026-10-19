@@ -25,12 +25,17 @@ const errors=[];page.on("pageerror",e=>errors.push(e.message));
 await page.route("**/renderer-check",r=>r.fulfill({contentType:"text/html",body:'<!DOCTYPE html><html><body style="margin:0;background:white"></body></html>'}));
 try {
   await page.goto((process.env.LILO_URL||"http://127.0.0.1:5173")+"/renderer-check");
-  const checks=await page.evaluate(async()=>{
+  const checks=await page.evaluate(async(expectLost)=>{
     const {Scene}=await import("/src/canvas/scene.ts");
     const host=document.createElement("div");host.style.cssText="width:900px;height:700px";document.body.append(host);
     const scene=await Scene.create(host,{grid:0x888888,gridMajor:0x666666,hoop:0x333333,accent:0xff00ff,needle:0xffff00});
     const checks=[];
     const check=(name,condition,detail)=>{if(!condition)throw Error(name+": "+JSON.stringify(detail));checks.push({name,result:"pass",detail});};
+    if(expectLost){
+      const gl=document.createElement("canvas").getContext("webgl");
+      const probe={created:!!gl,lost:gl?.isContextLost(),precision:gl?.getShaderPrecisionFormat(gl.FRAGMENT_SHADER,gl.HIGH_FLOAT)};
+      check("Real WebGL context was created then lost",probe.created&&probe.lost&&probe.precision===null,probe);
+    }
     check("Broken WebGL chooses Canvas 2D",!!scene.app.canvas.getContext("2d"),scene.app.renderer.type);
     const frame=()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)));
     const pixel=(x,y)=>Array.from(scene.app.canvas.getContext("2d").getImageData(x,y,1,1).data);
@@ -65,7 +70,7 @@ try {
     check("Large design draws with chunked geometry",pixel(250,200)[2]>100&&milliseconds<15000,{stitches:100001,initialMilliseconds:Math.round(milliseconds)});
     window.testScene=scene;
     return checks;
-  });
+  },lostContext);
   assert.deepEqual(errors,[]);
   await page.screenshot({path:join(out,"large-design-canvas2d.png")});
   await writeFile(join(out,lostContext?"lost-context-results.json":"results.json"),JSON.stringify({result:"pass",checks,errors,webglDisabled:!lostContext,lostWebGLContext:lostContext},null,2)+"\n");
