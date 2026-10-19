@@ -119,7 +119,11 @@ try:
     # selected. Confirm it normally; XPC-hosted fields are not in the app's AX
     # tree. Find only the newly written agent fixture on this disposable runner.
     save_start=time.time()
-    key(1,1048576);time.sleep(1);snap('project-save-dialog');key(36)
+    # Leave stitch-input focus through the visible File menu. The application's
+    # normal keyboard guard intentionally ignores shortcuts while typing.
+    press('File');snap('project-file-menu')
+    for _ in range(3):key(125)
+    key(36);time.sleep(1);snap('project-save-dialog');key(36)
     project=None
     for _ in range(30):
         candidates=[p for p in (pathlib.Path.home()/'Documents/Embroidery Studio').glob('*.lilo') if p.stat().st_mtime>=save_start]
