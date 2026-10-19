@@ -121,7 +121,7 @@ try:
     save_start=time.time()
     # Leave stitch-input focus through the visible File menu. The application's
     # normal keyboard guard intentionally ignores shortcuts while typing.
-    press('File');snap('project-file-menu')
+    ax('click','File');time.sleep(.7);snap('project-file-menu')
     for _ in range(3):key(125)
     key(36);time.sleep(1);snap('project-save-dialog');key(36)
     project=None

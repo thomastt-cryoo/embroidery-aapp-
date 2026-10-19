@@ -62,7 +62,7 @@ elif args.command == 'artifacts':
     print(json.dumps(api('repos/'+REPO+'/actions/runs/'+args.id+'/artifacts'),indent=2))
 elif args.command == 'evidence':
     from datetime import datetime
-    runs = api('repos/'+REPO+'/actions/workflows/'+args.workflow+'/runs?per_page=10')['workflow_runs']
+    runs = api('repos/'+REPO+'/actions/workflows/'+args.workflow+'/runs?per_page=100')['workflow_runs']
     selected = []
     total_seconds = 0
     for run in runs:
