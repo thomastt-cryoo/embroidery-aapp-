@@ -1,0 +1,23 @@
+name: Private M2 native graphics diagnostics
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: macos-15-intel
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe native Metal and an independent default WebKit view
+        run: |
+          mkdir -p graphics-evidence
+          swiftc scripts/m2-macos-graphics-probe.swift -o "$RUNNER_TEMP/studio-graphics-probe"
+          "$RUNNER_TEMP/studio-graphics-probe" "$PWD/graphics-evidence/native-webkit-graphics.json" > graphics-evidence/probe.log 2>&1
+          screencapture -x graphics-evidence/standalone-probe.png
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: M2-native-graphics-probe-private
+          path: graphics-evidence/
+          retention-days: 2
