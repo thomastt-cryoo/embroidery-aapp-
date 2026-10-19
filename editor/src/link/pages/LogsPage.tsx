@@ -47,9 +47,9 @@ export function LogsPage() {
     try {
       const [status, logs] = await Promise.all([client.status(), client.logs(0)]);
       const lines = [
-        "Lilo diagnostics",
+        "Embroidery Studio diagnostics",
         `Generated: ${new Date().toISOString()}`,
-        `Lilo version: ${status.version}`,
+        `Embroidery Studio version: ${status.version}`,
         `API version: ${status.apiVersion}`,
         `Platform: ${navigator.userAgent}`,
         `API: ${status.server.running ? "running" : "stopped"} on port ${status.server.port}`,

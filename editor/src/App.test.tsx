@@ -34,7 +34,7 @@ describe("App navigation", () => {
     fireEvent.click(screen.getByRole("button", { name: "Converter" }));
     expect(screen.getByRole("heading", { name: "Converter" })).toBeTruthy();
 
-    fireEvent.click(screen.getByRole("button", { name: "Lilo Link" }));
+    fireEvent.click(screen.getByRole("button", { name: "Studio Link" }));
     // LinkApp is lazy-loaded; allow for a cold module cache.
     expect(await screen.findByText(/Could not reach the app backend/, undefined, { timeout: 20_000 })).toBeTruthy();
     expect(window.location.hash).toBe("#/link");

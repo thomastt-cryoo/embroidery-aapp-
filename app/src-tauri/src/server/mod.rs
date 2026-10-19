@@ -21,7 +21,7 @@ use std::net::{Ipv4Addr, SocketAddr};
 use std::sync::Arc;
 
 /// Fixed port of the Lilo local API.
-pub const PORT: u16 = 17841;
+pub const PORT: u16 = 17842;
 
 /// Build the axum application. Public for integration tests.
 pub fn build_router(state: Arc<AppState>) -> Router {

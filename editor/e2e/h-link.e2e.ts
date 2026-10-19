@@ -8,7 +8,7 @@ afterAll(stopStack);
 const API = "http://127.0.0.1:47999";
 
 /**
- * The Lilo Link view talks to the Rust bridge: `invoke("local_api_info")` for the port and token, then
+ * The Studio Link view talks to the Rust bridge: `invoke("local_api_info")` for the port and token, then
  * HTTP on localhost. In a browser neither exists, so the tauri bridge object is faked in the page and the
  * HTTP calls are answered here with a canned machine.
  */
@@ -53,14 +53,14 @@ async function fakeBridge(context: BrowserContext, calls: string[]): Promise<voi
   });
 }
 
-describe("journey h: Lilo Link and Send", () => {
-  it("opens the Lilo Link view against a mock bridge and sends a design to a mock machine", async () => {
+describe("journey h: Studio Link and Send", () => {
+  it("opens the Studio Link view against a mock bridge and sends a design to a mock machine", async () => {
     const calls: string[] = [];
     const j = await openApp("h", { setup: (c) => fakeBridge(c, calls) });
     const { page } = j;
     await j.run(async () => {
-      // the Lilo Link view loads and lists the machine
-      await page.getByRole("button", { name: "Lilo Link" }).click();
+      // the Studio Link view loads and lists the machine
+      await page.getByRole("button", { name: "Studio Link" }).click();
       await page.getByText("Local bridge ready").waitFor({ timeout: 20_000 });
       await j.shot("1-link-machines");
       await expect.poll(() => page.locator("body").innerText(), { timeout: 20_000 }).toMatch(/NV2700|Suit room/);

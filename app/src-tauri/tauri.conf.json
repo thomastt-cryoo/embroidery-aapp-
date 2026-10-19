@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Lilo",
+  "productName": "Embroidery Studio",
   "version": "1.4.0",
-  "identifier": "com.kadwood.lilo",
+  "identifier": "io.github.thomasttcryoo.embroiderystudio",
   "build": {
     "beforeDevCommand": "pnpm --filter editor dev",
     "devUrl": "http://localhost:5173",
@@ -13,9 +13,9 @@
     "macOSPrivateApi": true,
     "windows": [
       {
-        "title": "Lilo",
-        "width": 1280,
-        "height": 800,
+        "title": "Embroidery Studio",
+        "width": 1440,
+        "height": 900,
         "minWidth": 960,
         "minHeight": 600,
         "visible": false,
@@ -27,7 +27,7 @@
         "default-src": "'self' customprotocol: asset:",
         "script-src": "'self' 'wasm-unsafe-eval' 'unsafe-eval'",
         "worker-src": "'self' blob:",
-        "connect-src": "'self' ipc: http://ipc.localhost http://127.0.0.1:17841",
+        "connect-src": "'self' ipc: http://ipc.localhost http://127.0.0.1:17842",
         "img-src": "'self' asset: http://asset.localhost data: blob:",
         "style-src": "'self' 'unsafe-inline'"
       }
@@ -36,26 +36,36 @@
   "bundle": {
     "active": true,
     "targets": "all",
-    "publisher": "Kadwood",
-    "copyright": "© Kadwood",
+    "publisher": "Embroidery Studio",
+    "copyright": "Embroidery Studio contributors; based on Lilo (GPL-3.0)",
     "category": "GraphicsAndDesign",
-    "shortDescription": "Free, open-source embroidery digitizer",
-    "longDescription": "Lilo turns pictures and drawings into embroidery stitches, with lettering, a stitch player, thread catalogues and Wi-Fi send to embroidery machines.",
+    "shortDescription": "Offline embroidery design studio",
+    "longDescription": "Embroidery Studio turns artwork into embroidery with lettering, editing, hoop selection, thread catalogues, simulation and machine-file export. Based on Lilo; licensed under GPL-3.0-only.",
     "fileAssociations": [
       {
-        "ext": ["lilo"],
-        "name": "Lilo Project",
-        "description": "Lilo embroidery project",
+        "ext": [
+          "lilo"
+        ],
+        "name": "Compatible embroidery project",
+        "description": "Embroidery project (.lilo)",
         "mimeType": "application/x-lilo-project",
         "role": "Editor",
-        "rank": "Owner",
-        "exportedType": {
-          "identifier": "com.kadwood.lilo.project",
-          "conformsTo": ["public.data", "public.archive"]
-        }
+        "rank": "Alternate"
       },
       {
-        "ext": ["pes", "dst", "jef", "vp3", "exp", "xxx", "u01", "pec", "hus", "vip", "tbf"],
+        "ext": [
+          "pes",
+          "dst",
+          "jef",
+          "vp3",
+          "exp",
+          "xxx",
+          "u01",
+          "pec",
+          "hus",
+          "vip",
+          "tbf"
+        ],
         "name": "Embroidery stitch file",
         "description": "Embroidery stitch file",
         "role": "Viewer",
@@ -74,32 +84,46 @@
       "hardenedRuntime": true,
       "entitlements": "Entitlements.plist",
       "dmg": {
-        "background": "dmg/dmg-background.png",
-        "windowSize": { "width": 660, "height": 400 },
-        "appPosition": { "x": 180, "y": 170 },
-        "applicationFolderPosition": { "x": 480, "y": 170 }
+        "windowSize": {
+          "width": 660,
+          "height": 400
+        },
+        "appPosition": {
+          "x": 180,
+          "y": 170
+        },
+        "applicationFolderPosition": {
+          "x": 480,
+          "y": 170
+        }
       }
     },
     "windows": {
       "nsis": {
-        "installMode": "currentUser"
+        "installMode": "currentUser",
+        "installerHooks": "installer-hooks.nsh",
+        "startMenuFolder": "Embroidery Studio"
+      },
+      "webviewInstallMode": {
+        "type": "offlineInstaller",
+        "silent": true
       }
-    }
+    },
+    "license": "GPL-3.0-only"
   },
   "plugins": {
     "updater": {
       "pubkey": "REPLACE_WITH_UPDATER_PUBLIC_KEY",
-      "endpoints": [
-        "https://github.com/Kadwood/lilo/releases/latest/download/latest.json"
-      ],
+      "endpoints": [],
       "requireSignedVersion": true
     },
     "deep-link": {
       "desktop": {
         "schemes": [
-          "lilo"
+          "embroidery-studio"
         ]
       }
     }
-  }
+  },
+  "mainBinaryName": "embroidery-studio"
 }

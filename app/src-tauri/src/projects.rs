@@ -22,7 +22,7 @@ pub const STITCH_EXTENSIONS: [&str; 11] = ["pes", "dst", "jef", "vp3", "exp", "x
 /// Refuse stitch files bigger than this (a big real PES is a few MB). Same figure as the editor's `MAX_STITCH_FILE_BYTES`.
 pub const MAX_STITCH_BYTES: u64 = 32 * 1024 * 1024;
 /// Folder inside the user's Documents.
-pub const FOLDER: &str = "Lilo";
+pub const FOLDER: &str = "Embroidery Studio";
 /// Event the editor listens to for files opened while it is running.
 pub const OPEN_EVENT: &str = "lilo-open-file";
 /// Refuse project files bigger than this (the engine enforces its own unzip limits too).

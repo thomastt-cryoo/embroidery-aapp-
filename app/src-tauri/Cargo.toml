@@ -1,7 +1,7 @@
 [package]
 name = "lilo"
 version = "1.4.0"
-description = "Lilo — free, open-source embroidery digitizer with Wi-Fi send to embroidery machines"
+description = "Embroidery Studio — offline embroidery design software"
 authors = ["Kadwood"]
 edition = "2021"
 license = "GPL-3.0-only"

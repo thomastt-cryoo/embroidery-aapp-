@@ -17,7 +17,7 @@ The editor has the same layout every time. Here is where things live.
 
 ## Navigation and project bar
 
-- The left **navigation** (Home, Editor, Pixel art, Converter, Lilo Link) switches between the parts of the app. In the editor, hover over an icon to see its name. **Help** opens this guide; **Appearance** switches light, dark or system mode.
+- The left **navigation** (Home, Editor, Pixel art, Converter, Studio Link) switches between the parts of the app. In the editor, hover over an icon to see its name. **Help** opens this guide; **Appearance** switches light, dark or system mode.
 - The **top bar** holds the project menu, the project name, the **hoop** chooser, a search box (**⌘K**), **Export** and **Send**.
 - The **workflow strip** shows your five steps. Read [Helpers inside Lilo](learning-aids.md).
 

@@ -119,7 +119,7 @@ function Shell() {
   if (connectError) {
     return (
       <div className="boot-error">
-        <h1>Lilo Link</h1>
+        <h1>Studio Link</h1>
         <p>Could not reach the app backend: {connectError}</p>
       </div>
     );
@@ -129,7 +129,7 @@ function Shell() {
     <div className="shell">
       <nav className="sidebar">
         <div className="brand">
-          Lilo Link
+          Studio Link
         </div>
         {PAGES.map((p) => (
           <button
@@ -168,7 +168,7 @@ function Shell() {
   );
 }
 
-/** The "Lilo Link" view: machine discovery, send, jobs, logs, settings, pairing. */
+/** The "Studio Link" view: machine discovery, send, jobs, logs, settings, pairing. */
 export default function LinkApp() {
   return (
     <div className="link-root">

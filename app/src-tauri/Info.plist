@@ -3,6 +3,6 @@
 <plist version="1.0">
 <dict>
     <key>NSLocalNetworkUsageDescription</key>
-    <string>Lilo finds and connects to your embroidery machine on your local network.</string>
+    <string>Embroidery Studio finds and connects to your embroidery machine on your local network.</string>
 </dict>
 </plist>

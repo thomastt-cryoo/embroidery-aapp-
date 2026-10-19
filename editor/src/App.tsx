@@ -29,7 +29,7 @@ const NAV: { id: View; label: string }[] = [
   { id: "editor", label: "Editor" },
   { id: "pixel", label: "Pixel art" },
   { id: "converter", label: "Converter" },
-  { id: "link", label: "Lilo Link" },
+  { id: "link", label: "Studio Link" },
 ];
 
 const isTyping = (t: EventTarget | null): boolean => t instanceof HTMLElement && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT" || t.isContentEditable);
@@ -97,8 +97,8 @@ function Shell() {
       <nav className="app-nav" aria-label="Views" data-tauri-drag-region>
         <span className="app-logo" data-tauri-drag-region>
           <BrandMark size={24} />
-          <span className="app-wordmark" data-tauri-drag-region>
-            Lilo
+          <span className="app-wordmark" data-tauri-drag-region style={{ fontSize: 15, lineHeight: 1.25 }}>
+            Embroidery Studio
           </span>
         </span>
         {NAV.map((n) => (
@@ -130,7 +130,7 @@ function Shell() {
         {app.view === "pixel" && <PixelView />}
         {app.view === "converter" && <ConverterView />}
         {app.view === "link" && (
-          <Suspense fallback={<div className="app-loading">Loading Lilo Link…</div>}>
+          <Suspense fallback={<div className="app-loading">Loading Studio Link…</div>}>
             <LinkApp />
           </Suspense>
         )}

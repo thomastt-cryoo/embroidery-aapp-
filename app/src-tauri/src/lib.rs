@@ -124,11 +124,11 @@ pub fn run() {
             // ---- system tray ------------------------------------------------
             // The bridge is a background service, so it lives in the tray: the
             // window can be closed without stopping uploads or the local API.
-            let show_item = MenuItemBuilder::with_id("show", "Show Lilo").build(app)?;
+            let show_item = MenuItemBuilder::with_id("show", "Show Embroidery Studio").build(app)?;
             let autostart_item = CheckMenuItemBuilder::with_id("autostart", "Launch at login")
                 .checked(app.autolaunch().is_enabled().unwrap_or(false))
                 .build(app)?;
-            let quit_item = MenuItemBuilder::with_id("quit", "Quit Lilo").build(app)?;
+            let quit_item = MenuItemBuilder::with_id("quit", "Quit Embroidery Studio").build(app)?;
             let menu = MenuBuilder::new(app)
                 .item(&show_item)
                 .separator()
@@ -139,7 +139,7 @@ pub fn run() {
 
             let autostart_check = autostart_item.clone();
             let mut tray = TrayIconBuilder::with_id("main")
-                .tooltip("Lilo")
+                .tooltip("Embroidery Studio")
                 .menu(&menu)
                 // Left-click shows the window (handled below); the menu opens
                 // on right-click only.

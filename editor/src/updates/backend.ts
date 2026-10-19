@@ -16,10 +16,11 @@ export const tauriUpdater: UpdaterBackend = {
   async unavailableReason() {
     // The shell says no while updater.pub is still the placeholder (a build from source or a fork).
     const enabled = await invoke<boolean>("updater_enabled");
-    return enabled ? null : "This build has no update key, so it can't check for updates. Get new versions from the Lilo releases page on GitHub.";
+    return enabled ? null : "Automatic updates are disabled for this private review build. Install only an Embroidery Studio package supplied for review.";
   },
 
   async check() {
+    if (await tauriUpdater.unavailableReason()) throw new Error("Updates are disabled in this distribution.");
     const update = await check({ timeout: CHECK_TIMEOUT_MS });
     if (!update) return null;
     const found: AvailableUpdate = {
@@ -46,7 +47,7 @@ export const tauriUpdater: UpdaterBackend = {
 
 /** Where there is nothing to update (the browser build). */
 export const noUpdater: UpdaterBackend = {
-  unavailableReason: async () => "Updates are only available in the Lilo desktop app.",
+  unavailableReason: async () => "Updates are only available in the Embroidery Studio desktop app.",
   check: async () => null,
   relaunch: async () => {},
 };

@@ -25,7 +25,8 @@ pub fn is_configured(key: &str) -> bool {
 }
 
 pub fn configured() -> bool {
-    is_configured(pubkey())
+    // M2 distributions have no update channel. Enabling a key alone must not enable it.
+    false
 }
 
 /// The updater plugin, verifying with the key from `updater.pub`.
@@ -43,6 +44,11 @@ pub fn updater_enabled() -> bool {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn distribution_updates_are_disabled() {
+        assert!(!configured());
+    }
 
     #[test]
     fn placeholder_and_blank_keys_are_not_configured() {

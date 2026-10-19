@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-19",
+  "originalInstalledExe": "C:\\Users\\mazin\\AppData\\Local\\Lilo\\lilo.exe",
+  "originalSha256": "2FE59440A3441F001B88835B0620FF67B2FB8C7AF47E36D6864FD11920D1811C",
+  "extensionDefaults": {
+    "dst": "Embroidery stitch file",
+    "tbf": "Embroidery stitch file",
+    "exp": "Embroidery stitch file",
+    "pec": "Embroidery stitch file",
+    "pes": "Embroidery stitch file",
+    "jef": "Embroidery stitch file",
+    "u01": "Embroidery stitch file",
+    "xxx": "Embroidery stitch file",
+    "lilo": "Lilo Project",
+    "hus": "Embroidery stitch file",
+    "vip": "Embroidery stitch file",
+    "vp3": "Embroidery stitch file"
+  },
+  "sourceM1": "6334c8b",
+  "newIdentifier": "io.github.thomasttcryoo.embroiderystudio",
+  "newPort": 17842,
+  "newDocumentsFolder": "Embroidery Studio"
+}

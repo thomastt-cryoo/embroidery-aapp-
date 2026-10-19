@@ -20,12 +20,12 @@ function Inner({ updates, version }: { updates: Updates; version?: string }) {
   if (status === "checking") message = "Checking for updates…";
   else if (status === "error") message = `Couldn't check for updates: ${error ?? "unknown error"}`;
   else if (status === "unavailable") message = unavailable;
-  else if (update) message = `Lilo ${update.version} is available.`;
-  else if (status === "up-to-date") message = "Lilo is up to date.";
+  else if (update) message = `Embroidery Studio ${update.version} is available.`;
+  else if (status === "up-to-date") message = "Embroidery Studio is up to date.";
 
   return (
     <Section title="Updates">
-      {version && <p className="dim">You have Lilo {version}.</p>}
+      {version && <p className="dim">You have Embroidery Studio {version}.</p>}
       <label className="update-auto">
         <input type="checkbox" checked={auto} onChange={(e) => updates.setAutoCheck(e.target.checked)} />
         Automatically check for updates

@@ -7,7 +7,6 @@ import { isProjectFile, isStitchFile } from "../io/stitchFiles";
 import { openImagePicker } from "./openImage";
 import { useApp } from "./AppContext";
 import { useEditor } from "../state/store";
-import { KadwoodWordmark } from "../shell/BrandMark";
 import { NavIcon } from "../shell/NavIcon";
 
 /** One card: the thumbnail from inside the file, its title and when it was last saved. */
@@ -36,7 +35,7 @@ export function Card({ card, onOpen }: { card: RecentCard; onOpen: () => void })
   );
 }
 
-const KADWOOD_URL = "https://kadwood.com";
+const SOURCE_URL = "https://github.com/Kadwood/lilo";
 
 const ICONS = {
   new: <path d="M12 5v14M5 12h14" />,
@@ -126,9 +125,8 @@ export function HomeView() {
           <span className="eyebrow">YOUR EMBROIDERY STUDIO</span>
           <h1>A little idea.<br />Ready to stitch.</h1>
           <p className="muted">Turn your artwork into embroidery, one simple step at a time.</p>
-          <button className="lockup" onClick={() => void getPlatform().openUrl(KADWOOD_URL)} title="kadwood.com">
-            <span>Lilo by</span>
-            <KadwoodWordmark height={14} />
+          <button className="lockup" onClick={() => void getPlatform().openUrl(SOURCE_URL)} title="Original Lilo source and GPL licence">
+            <span>Embroidery Studio · based on Lilo · GPL-3.0</span>
           </button>
         </div>
       </header>
@@ -185,7 +183,7 @@ export function HomeView() {
         <h2 id="recent-title">Recent projects</h2>
         {recent.length === 0 ? (
           <p className="muted" role="status">
-            {loading ? "Looking in your Lilo folder…" : desktop ? "Nothing here yet. Projects you save show up here, along with anything in Documents/Lilo." : "Recent projects show up here in the desktop app. Use Open… to pick a project or a stitch file."}
+            {loading ? "Looking in your Embroidery Studio folder…" : desktop ? "Nothing here yet. Projects you save show up here, along with anything in Documents/Embroidery Studio." : "Recent projects show up here in the desktop app. Use Open… to pick a project or a stitch file."}
           </p>
         ) : (
           <ul className="recent-grid" aria-label="Recent projects">

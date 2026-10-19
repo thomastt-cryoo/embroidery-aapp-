@@ -1,6 +1,6 @@
 {
   "welcome": {
-    "title": "Hi, I am your Lilo guide",
+    "title": "Hi, I am your Embroidery Studio guide",
     "body": "I will show you around. What do you want to make first? You can skip me at any time, and bring me back from Help.",
     "choices": [
       { "path": "picture", "label": "Stitch a picture", "hint": "Turn a logo or sketch into stitches, like the Kadwood hibiscus." },

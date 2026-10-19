@@ -83,14 +83,14 @@ export function SendDialog({ onClose }: { onClose: () => void }) {
     <div className="dialog-backdrop" role="presentation">
       <div className="dialog" role="dialog" aria-modal="true" aria-labelledby="send-title">
         <h2 id="send-title">Send to machine</h2>
-        <p className="muted">Sends {label}.pes{prepared ? ` (${prepared.stats.stitchCount.toLocaleString()} stitches, ${prepared.stats.colorChanges} colour changes)` : ""}. Pair and save machines under Lilo Link.</p>
+        <p className="muted">Sends {label}.pes{prepared ? ` (${prepared.stats.stitchCount.toLocaleString()} stitches, ${prepared.stats.colorChanges} colour changes)` : ""}. Pair and save machines under Studio Link.</p>
         {prepError && <p className="error">{prepError}</p>}
         {prepared && <WarningList warnings={prepared.warnings} extra={notes} />}
         <BeforeYouSew />
 
         {loadError && <p className="error">{loadError}</p>}
         {machines && machines.length === 0 && (
-          <p>No saved machines yet. Search the network, or add one under Lilo Link.</p>
+          <p>No saved machines yet. Search the network, or add one under Studio Link.</p>
         )}
         {machines && machines.length > 0 && (
           <label className="field">

@@ -2,11 +2,11 @@ import "./updates.css";
 import { getPlatform } from "../platform";
 import { useOptionalUpdates, useUpdateState, type Updates } from "./updates";
 
-export const RELEASES_URL = "https://github.com/Kadwood/lilo/releases";
+export const RELEASES_URL = "https://github.com/thomastt-cryoo/embroidery-aapp-/releases";
 export const releaseUrl = (version: string): string => `${RELEASES_URL}/tag/v${version}`;
 
 /**
- * "Lilo 1.0.1 is available — What's new · Install and restart". A thin bar under the nav, never a
+ * "Embroidery Studio 1.0.1 is available — What's new · Install and restart". A thin bar under the nav, never a
  * modal: the user keeps working until they choose to install.
  */
 export function UpdateBanner() {
@@ -22,7 +22,7 @@ function Banner({ updates }: { updates: Updates }) {
   const error = useUpdateState(updates, (s) => s.error);
 
   if (!update || (dismissed === update.version && !installing && !error)) return null;
-  const name = `Lilo ${update.version}`;
+  const name = `Embroidery Studio ${update.version}`;
 
   if (installing) {
     return (

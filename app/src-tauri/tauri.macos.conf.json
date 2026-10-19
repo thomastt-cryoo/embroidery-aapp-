@@ -3,9 +3,9 @@
   "app": {
     "windows": [
       {
-        "title": "Lilo",
-        "width": 1280,
-        "height": 800,
+        "title": "Embroidery Studio",
+        "width": 1440,
+        "height": 900,
         "minWidth": 960,
         "minHeight": 600,
         "visible": false,
@@ -13,7 +13,10 @@
         "transparent": true,
         "titleBarStyle": "Overlay",
         "hiddenTitle": true,
-        "trafficLightPosition": { "x": 18, "y": 19 },
+        "trafficLightPosition": {
+          "x": 18,
+          "y": 19
+        },
         "acceptFirstMouse": true
       }
     ]

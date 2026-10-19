@@ -428,9 +428,9 @@ describe("<TourOverlay>", () => {
     );
     expect(screen.queryByRole("dialog")).toBeNull();
     act(() => startTour());
-    const welcome = screen.getByRole("dialog", { name: /Hi, I am your Lilo guide/ });
+    const welcome = screen.getByRole("dialog", { name: /Hi, I am your Embroidery Studio guide/ });
     expect(within(welcome).getAllByRole("button").map((b) => b.getAttribute("data-path")).filter(Boolean)).toEqual(["picture", "draw", "monogram", "open"]);
-    expect(within(welcome).getByRole("img").getAttribute("alt")).toMatch(/mascot/);
+    expect(within(welcome).getByRole("img").getAttribute("alt")).toMatch(/Embroidery Studio hoop/);
 
     fireEvent.click(within(welcome).getByRole("button", { name: /Draw from scratch/ }));
     // step 1 wants the editor view; this host is on "home", so "New design" is still waiting

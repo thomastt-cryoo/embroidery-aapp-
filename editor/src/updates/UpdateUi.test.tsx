@@ -37,7 +37,7 @@ describe("update banner", () => {
     );
     expect(screen.queryByRole("status")).toBeNull();
     await act(() => updates.checkNow());
-    expect(screen.getByRole("status").textContent).toMatch(/Lilo 1\.0\.1 is available/);
+    expect(screen.getByRole("status").textContent).toMatch(/Embroidery Studio 1\.0\.1 is available/);
     expect(screen.getByRole("button", { name: "Install and restart" })).toBeTruthy();
   });
 
@@ -50,7 +50,7 @@ describe("update banner", () => {
     );
     await act(() => updates.checkNow());
     fireEvent.click(screen.getByRole("button", { name: "What's new" }));
-    expect(mock.openedUrls).toEqual(["https://github.com/Kadwood/lilo/releases/tag/v1.0.1"]);
+    expect(mock.openedUrls).toEqual(["https://github.com/thomastt-cryoo/embroidery-aapp-/releases/tag/v1.0.1"]);
     fireEvent.click(screen.getByRole("button", { name: "Dismiss" }));
     expect(screen.queryByRole("status")).toBeNull();
   });
@@ -106,7 +106,7 @@ describe("Settings > Updates", () => {
     fireEvent.click(box);
     expect(c.updates.store.getState().autoCheck).toBe(false);
     fireEvent.click(screen.getByRole("button", { name: "Check for updates now" }));
-    await screen.findByText("Lilo is up to date.");
+    await screen.findByText("Embroidery Studio is up to date.");
   });
 
   it("shows failures for the manual check", async () => {
@@ -116,9 +116,9 @@ describe("Settings > Updates", () => {
   });
 
   it("explains when this build can't update", async () => {
-    section(controller({ unavailableReason: async () => "Updates are only available in the Lilo desktop app." }));
+    section(controller({ unavailableReason: async () => "Updates are only available in the Embroidery Studio desktop app." }));
     fireEvent.click(screen.getByRole("button", { name: "Check for updates now" }));
-    await screen.findByText("Updates are only available in the Lilo desktop app.");
+    await screen.findByText("Updates are only available in the Embroidery Studio desktop app.");
   });
 
   it("renders nothing without a provider", () => {
