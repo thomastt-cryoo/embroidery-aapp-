@@ -10,7 +10,7 @@ assert.equal(base.identifier, 'io.github.thomasttcryoo.embroiderystudio');
 assert.equal(base.mainBinaryName, 'embroidery-studio');
 assert.deepEqual(base.plugins.updater.endpoints, []);
 assert.deepEqual(base.plugins['deep-link'].desktop.schemes, ['embroidery-studio']);
-assert.equal(base.bundle.windows.webviewInstallMode.type, 'offlineInstaller');
+assert.equal(base.bundle.windows.webviewInstallMode.type, 'downloadBootstrapper');
 assert.equal(base.bundle.windows.nsis.installMode, 'currentUser');
 assert.deepEqual(win.bundle.fileAssociations, []);
 assert(base.bundle.fileAssociations.every(a => a.rank === 'Alternate'));

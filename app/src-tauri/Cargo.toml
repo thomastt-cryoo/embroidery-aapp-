@@ -20,7 +20,7 @@ tauri-build = { version = "2", features = [] }
 # `macos-private-api` = a transparent webview, so the window's glass shows through the page. It must
 # match `app.macOSPrivateApi` in tauri.conf.json (tauri-build checks) and rules out the Mac App Store,
 # which is fine for direct-download releases. It does nothing off macOS.
-tauri = { version = "2", features = ["tray-icon", "macos-private-api"] }
+tauri = { version = "2", default-features = false, features = ["wry", "common-controls-v6", "dynamic-acl", "x11", "dbus", "tray-icon", "macos-private-api"] }
 tauri-plugin-opener = "2"
 # Native Open/Save dialogs and file I/O for the editor (paths picked in a dialog are auto-scoped).
 tauri-plugin-dialog = "2"
@@ -58,7 +58,7 @@ futures = "0.3"
 bytes = "1"
 
 [dev-dependencies]
-tauri = { version = "2", features = ["test"] }
+tauri = { version = "2", default-features = false, features = ["test"] }
 tower = { version = "0.5", features = ["util"] }
 http-body-util = "0.1"
 
@@ -73,3 +73,17 @@ objc2-app-kit = { version = "0.3.2", default-features = false, features = ["std"
 # Pinned: 0.7 -> 0.8 changed the Liquid Glass API (positional args -> LiquidGlassOptions).
 [target.'cfg(any(target_os = "macos", target_os = "windows"))'.dependencies]
 window-vibrancy = "=0.8.1"
+
+# Optimize the native shell, retaining panic unwinding and all runtime features.
+# The embroidery engine runs in the unchanged frontend/WASM assets.
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = "symbols"
+debug = 0
+
+[features]
+# Compare native asset compression with outer solid installer compression.
+# Only storage representation changes; every runtime asset remains present.
+asset-compression = ["tauri/compression"]

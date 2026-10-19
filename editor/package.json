@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --experimental-strip-types ../scripts/import-fonts.mjs --ensure && vite",
-    "build": "node --experimental-strip-types ../scripts/import-fonts.mjs --ensure && pnpm typecheck && vite build",
+    "build": "node --experimental-strip-types ../scripts/import-fonts.mjs --ensure && pnpm typecheck && vite build && python ../scripts/m2-optimize-assets.py",
     "preview": "vite preview",
     "test": "node --experimental-strip-types ../scripts/import-fonts.mjs --ensure && vitest run",
     "e2e": "node --experimental-strip-types ../scripts/import-fonts.mjs --ensure && vitest run -c vitest.e2e.config.ts",

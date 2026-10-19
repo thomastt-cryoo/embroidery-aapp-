@@ -27,7 +27,7 @@ The first time you look for machines, macOS may request **Local Network** access
 
 ## Windows
 
-You need 64-bit Windows. Run `Embroidery Studio_1.4.0_x64-setup.exe`. The installer works for your user only, uses its own folder and Start menu entry, and includes the offline WebView2 installer.
+You need 64-bit Windows. Run `Embroidery Studio_1.4.0_x64-setup.exe`. The installer works for your user only, uses its own folder and Start menu entry, and uses Microsoft’s standard WebView2 bootstrapper if the runtime is missing. That step needs internet access; the installed application processes designs offline.
 
 The review installer is unsigned. Windows may show an unknown-publisher or SmartScreen prompt. A trusted signing certificate has not been supplied.
 
