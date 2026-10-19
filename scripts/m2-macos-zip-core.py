@@ -34,13 +34,14 @@ subprocess.run(['pkill','-x','embroidery-studio'],check=False)
 pkg_work=pathlib.Path(os.environ.get('RUNNER_TEMP',tempfile.gettempdir()))/'studio-etsy-pkg'
 pkg_work.mkdir(exist_ok=True)
 pkg=pkg_work/'Install Embroidery Studio.pkg'
-trial=subprocess.run(['pkgbuild','--component','/Applications/Embroidery Studio.app',
+reuse_pkg=selected['kind']=='pkg'
+trial=subprocess.CompletedProcess([],0,stdout='Reused the exact verified customer PKG; no repackaging.\n',stderr='') if reuse_pkg else subprocess.run(['pkgbuild','--component','/Applications/Embroidery Studio.app',
     '--install-location','/Applications','--identifier','io.github.thomasttcryoo.embroiderystudio',
     '--version','1.4.0','--min-os-version','13.0','--compression','latest',str(pkg)],
     text=True,capture_output=True,timeout=240)
 (out/'mac-pkg-compression.log').write_text(trial.stdout+trial.stderr)
-comparison={'minimumMacOS':'13.0','compression':'latest','exitCode':trial.returncode}
-if trial.returncode==0:
+comparison=json.loads((out/'mac-pkg-comparison.json').read_text()) if reuse_pkg else {'minimumMacOS':'13.0','compression':'latest','exitCode':trial.returncode}
+if trial.returncode==0 and not reuse_pkg:
     alternatives=[]
     with zipfile.ZipFile(final) as original:
         legal=[(name,original.read(name)) for name in ['LICENSE.txt','NOTICE.txt']]

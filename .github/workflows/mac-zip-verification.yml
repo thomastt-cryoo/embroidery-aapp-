@@ -13,12 +13,19 @@ on:
         options:
           - Embroidery-Studio-macOS-M2-Etsy-private
           - M2-Etsy-native-ZIP-verification
+      runner:
+        description: Standard macOS runner pool
+        type: choice
+        default: macos-14
+        options:
+          - macos-14
+          - macos-15-intel
 permissions:
   contents: read
   actions: read
 jobs:
   verify:
-    runs-on: macos-14
+    runs-on: ${{ inputs.runner }}
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4

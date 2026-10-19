@@ -10,6 +10,7 @@ parser.add_argument('--id')
 parser.add_argument('--workflow', default='release.yml')
 parser.add_argument('--output')
 parser.add_argument('--artifact-name', default='Embroidery-Studio-macOS-M2-Etsy-private')
+parser.add_argument('--runner', choices=['macos-14','macos-15-intel'], default='macos-14')
 args = parser.parse_args()
 env = dict(os.environ, GIT_TERMINAL_PROMPT='0', GCM_INTERACTIVE='never')
 p = subprocess.run(['git', '-c', 'credential.interactive=never', 'credential', 'fill'], input='protocol=https\nhost=github.com\nusername=thomastt-cryoo\n\n', text=True, capture_output=True, env=env, timeout=45)
@@ -35,7 +36,7 @@ if args.command == 'dispatch':
     print('Dispatched private macOS workflow on main; no release or public artifact created.')
 elif args.command == 'verify':
     assert args.id and args.id.isdigit(), 'A successful build run id is required.'
-    api('repos/'+REPO+'/actions/workflows/mac-zip-verification.yml/dispatches','POST',{'ref':'main','inputs':{'runId':args.id,'artifactName':args.artifact_name}})
+    api('repos/'+REPO+'/actions/workflows/mac-zip-verification.yml/dispatches','POST',{'ref':'main','inputs':{'runId':args.id,'artifactName':args.artifact_name,'runner':args.runner}})
     print('Dispatched private native verification of the actual customer ZIP; no new application build.')
 elif args.command == 'status':
     runs = api('repos/'+REPO+'/actions/workflows/'+args.workflow+'/runs?per_page=5')['workflow_runs']
@@ -69,10 +70,13 @@ elif args.command == 'evidence':
         jobs = api('repos/'+REPO+'/actions/runs/'+str(run['id'])+'/jobs')['jobs']
         item['jobs'] = [{k:j[k] for k in ['id','name','status','conclusion','started_at','completed_at','runner_name','labels']} for j in jobs]
         for job in item['jobs']:
-            if job['completed_at'] and job['started_at']:
+            if job['completed_at'] and job['started_at'] and job['runner_name']:
                 seconds = int((datetime.fromisoformat(job['completed_at'].replace('Z','+00:00')) - datetime.fromisoformat(job['started_at'].replace('Z','+00:00'))).total_seconds())
                 job['elapsedSeconds'] = seconds
                 total_seconds += seconds
+            elif not job['runner_name']:
+                job['elapsedSeconds'] = 0
+                job['runnerNeverAssigned'] = True
         if str(run['id']) == args.id:
             item['artifacts'] = api('repos/'+REPO+'/actions/runs/'+args.id+'/artifacts')['artifacts']
         selected.append(item)
