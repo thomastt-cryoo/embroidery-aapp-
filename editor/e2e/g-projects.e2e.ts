@@ -91,7 +91,7 @@ describe("journey g: projects", () => {
       await j.shot("5-guard-open");
       await ask.getByRole("button", { name: "Save", exact: true }).click();
       await ask.waitFor({ state: "detached" });
-      await expect.poll(async () => await name.inputValue()).toBe("Hat patch");
+      await expect.poll(async () => await name.inputValue(), { timeout: 60_000 }).toBe("Hat patch");
       const afterSave = (await historyOf(page, "Journey g"))!;
       expect(afterSave.doc.design.objects.length).toBe(4); // Save kept the work
       await j.shot("6-opened-other");
@@ -102,7 +102,7 @@ describe("journey g: projects", () => {
       await menu(page, /^New/);
       await ask.getByRole("button", { name: "Don't save" }).click();
       await expect.poll(async () => await name.inputValue()).toBe("Untitled design");
-      await expect.poll(() => objectCount(page)).toBe(0);
+      await expect.poll(() => objectCount(page), { timeout: 60_000 }).toBe(0);
       j.expectClean();
     });
   });

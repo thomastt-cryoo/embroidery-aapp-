@@ -190,22 +190,22 @@
     "panel.digitize"
    ],
    "status": "ready",
-   "words": 350,
+   "words": 418,
    "headings": [
     {
      "level": 2,
-     "text": "1. Get a design",
-     "slug": "1-get-a-design"
+     "text": "1. Upload",
+     "slug": "1-upload"
     },
     {
      "level": 2,
-     "text": "2. Size it and pick a hoop",
-     "slug": "2-size-it-and-pick-a-hoop"
+     "text": "2. Generate",
+     "slug": "2-generate"
     },
     {
      "level": 2,
-     "text": "3. Tell Lilo what you are sewing on",
-     "slug": "3-tell-lilo-what-you-are-sewing-on"
+     "text": "3. Customize & Edit",
+     "slug": "3-customize-edit"
     },
     {
      "level": 2,
@@ -214,8 +214,8 @@
     },
     {
      "level": 2,
-     "text": "5. Send or export",
-     "slug": "5-send-or-export"
+     "text": "5. Export",
+     "slug": "5-export"
     },
     {
      "level": 2,
@@ -228,7 +228,7 @@
      "slug": "before-you-sew-for-real"
     }
    ],
-   "body": "# Your first design in five minutes\n\nYou will turn a logo into stitches. Use any simple picture with flat colours, like the Kadwood hibiscus.\n\n![The Home screen with the six starting cards](screenshots/home-start.png)\n\n## 1. Get a design\n\n1. On **Home**, click **Digitize a picture…**.\n2. Choose a PNG, JPG, WEBP or SVG file.\n3. Watch Lilo trace the picture and lay stitches on screen. This takes a few seconds.\n\n**Digitize** means \"turn a picture into stitches\". Lilo does it for you.\n\n## 2. Size it and pick a hoop\n\nThe **hoop** is the frame that holds the cloth tight. Your design must fit inside it.\n\n1. In the left panel, set **Width** in millimetres. A logo on a suit lining often works at 40 to 80 mm.\n2. Check the **hoop** chip. If your design sticks out of the frame, press **Smallest hoop that fits**, or choose your machine's hoop. Read [Sizing and hoops](sizing-and-hoops.md).\n\n## 3. Tell Lilo what you are sewing on\n\nOpen the **Sewing setup** card on the right. Pick the **fabric**, the **thread weight** and the **quality**. Lilo adjusts spacing and underlay for you. Read [Sewing setup](sewing-setup.md).\n\n## 4. Preview\n\nPress **Play** in the stitch player under the canvas. The needle sews the design stitch by stitch. It stops at each colour change and tells you which thread to swap in.\n\n## 5. Send or export\n\n- Press **Send** to send it to a Brother or Baby Lock machine over Wi-Fi. Read [Send a design](send-a-design.md).\n- Press **Export** to save a file for a USB stick or another machine. Read [Choosing a format](export-formats.md).\n\n## Watch the workflow strip\n\nThe strip at the top of the editor has five steps: **Get a design**, **Size and hoop**, **Stitches**, **Preview** and **Send**. Each ticks itself off when you finish it. Click a step to open the right panel and see a tip.\n\n## Before you sew for real\n\nAlways sew a test on a scrap of the same cloth. Lilo's numbers are good starting points, not promises. If the test puckers or leaves gaps, go to [Fixing sew-out problems](sewout-troubleshooting.md).\n"
+   "body": "# Your first design in five minutes\n\nYou will turn a logo into stitches. Use any simple picture with flat colours, like the Kadwood hibiscus.\n\n![The Home screen with the six starting cards](screenshots/home-start.png)\n\n## 1. Upload\n\n1. On **Home**, click **Upload image**, or drop your artwork onto Home or the editor canvas.\n2. Choose a PNG, JPG, WEBP or SVG file.\n3. Watch Lilo trace the picture and lay stitches on screen. This takes a few seconds.\n\n**Digitize** means \"turn a picture into stitches\". Lilo does it for you.\n\n## 2. Generate\n\nLilo generates the first result automatically. Adjust **Colours**, **Width**, **Height** or **Background** in the left panel; these changes regenerate the artwork. **Generate stitches** runs it again. Specialist controls are under **Advanced generation settings**.\n\n## 3. Customize & Edit\n\nThe **hoop** is the frame that holds the cloth tight. Your design must fit inside it.\n\n1. In the left panel, set **Width** in millimetres. A logo on a suit lining often works at 40 to 80 mm.\n2. Click the hoop in **Hoop & size** on the right to choose your machine's hoop. Expand **Hoop tools & drawing colour** for **Smallest hoop that fits**, rotation and custom sizes. Read [Sizing and hoops](sizing-and-hoops.md).\n\nOpen the **Sewing setup** card on the right. Pick the **fabric**, the **thread weight** and the **quality**. Lilo adjusts spacing and underlay for you. Read [Sewing setup](sewing-setup.md).\n\nSelect a shape to edit its colour and stitches. Use the drawing toolbar for shapes and lettering, and **Sew order** for layers and threads.\n\n## 4. Preview\n\nPress **Play** in the stitch player under the canvas. The needle sews the design stitch by stitch. It stops at each colour change and tells you which thread to swap in.\n\n## 5. Export\n\n- Press **Send** to send it to a Brother or Baby Lock machine over Wi-Fi. Read [Send a design](send-a-design.md).\n- Press **Export** to save a file for a USB stick or another machine. Read [Choosing a format](export-formats.md).\n\n## Watch the workflow strip\n\nThe strip has five steps: **Upload**, **Generate**, **Customize & Edit**, **Preview** and **Export**. It reads the actual artwork, stitch plan, hoop/quality checks, preview and export state. Click a step for its tip and action. Customizing is ready when the plan fits the hoop and its quality checks pass.\n\n## Before you sew for real\n\nAlways sew a test on a scrap of the same cloth. Lilo's numbers are good starting points, not promises. If the test puckers or leaves gaps, go to [Fixing sew-out problems](sewout-troubleshooting.md).\n"
   },
   {
    "id": "screen-tour",
@@ -252,12 +252,12 @@
     "panel.toolbar"
    ],
    "status": "ready",
-   "words": 342,
+   "words": 457,
    "headings": [
     {
      "level": 2,
-     "text": "Top of the window",
-     "slug": "top-of-the-window"
+     "text": "Navigation and project bar",
+     "slug": "navigation-and-project-bar"
     },
     {
      "level": 2,
@@ -290,7 +290,7 @@
      "slug": "the-warnings-tray"
     }
    ],
-   "body": "# The screen at a glance\n\n![The editor with a digitized rooster: the top bar, workflow strip, left panel, canvas, toolbar, player and the Sew order panel on the right](screenshots/editor-overview.png)\n\nThe editor has the same layout every time. Here is where things live.\n\n## Top of the window\n\n- **Views** (Home, Editor, Pixel art, Converter, Lilo Link) switch between the parts of the app. **Help** opens this guide.\n- The **top bar** holds the project menu, the project name, the **hoop** chooser, a search box (**⌘K**), **Export** and **Send**.\n- The **workflow strip** shows your five steps. Read [Helpers inside Lilo](learning-aids.md).\n\n## Left panel\n\nThis panel changes with what you have selected.\n\n- **Nothing selected:** **Auto-digitize** settings and the hoop.\n- **A shape selected:** its size, colour, stitch type and fill settings.\n- **Text tool or a word selected:** the lettering panel.\n- **Click to stitch tool:** the regions panel.\n\n## The canvas\n\nThe big middle area. It shows your hoop, a grid and your design. Zoom with scroll or pinch. Pan by holding **Space** and dragging. The small checkboxes in the corner switch the **Realistic**, **Grid**, **Reference** and **Jumps** views.\n\nWhen you select a shape, a small **shape bar** floats above it with actions like **Reshape**, **Cut hole**, **Knife** and **Duplicate**.\n\n## The toolbar\n\nThe floating bar at the bottom holds the drawing tools, **Undo**, **Redo** and your **drawing colour**. Read [Drawing tools](drawing-tools.md).\n\n## The stitch player\n\nUnder the canvas. **Play**, scrub and change the speed. It also shows the totals: stitches, size, colour changes and sewing time. Read [The stitch player](stitch-player.md).\n\n## Right column\n\n- **Sewing setup:** fabric, thread weight and quality. Read [Sewing setup](sewing-setup.md).\n- **Sew order:** the layers, in the order they are sewn (bottom first). It has tabs for layers, colours, images and your threads. Read [Layers and sew order](layers.md).\n\n## The warnings tray\n\nWhen Lilo spots something that may sew badly, a small tray appears in the right-hand column, under the Sewing setup card. It is calm and never blocks you. Read [What the warnings mean](warnings-explained.md).\n"
+   "body": "# The screen at a glance\n\n![The editor with a digitized rooster: the top bar, workflow strip, left panel, canvas, toolbar, player and the Sew order panel on the right](screenshots/editor-overview.png)\n\nThe editor has the same layout every time. Here is where things live.\n\n## Navigation and project bar\n\n- The left **navigation** (Home, Editor, Pixel art, Converter, Lilo Link) switches between the parts of the app. In the editor, hover over an icon to see its name. **Help** opens this guide; **Appearance** switches light, dark or system mode.\n- The **top bar** holds the project menu, the project name, the **hoop** chooser, a search box (**⌘K**), **Export** and **Send**.\n- The **workflow strip** shows your five steps. Read [Helpers inside Lilo](learning-aids.md).\n\n## Left panel\n\nThis panel changes with what you have selected.\n\n- **Nothing selected in a new design:** **Auto digitize** shows upload, colours, size, background and **Generate stitches**. Open **Advanced generation settings** for region size, thread brand, quality, fabric, thread weight and My Threads matching.\n- **A saved or drawn design:** **Customize & Edit** offers selection for resizing and lettering. **Generate from a new image** keeps image-generation controls together below it.\n- **A shape selected:** its size, colour, stitch type and fill settings.\n- **Text tool or a word selected:** the lettering panel.\n- **Click to stitch tool:** the regions panel.\n\n## The canvas\n\nThe big middle area. It shows your hoop, a grid and your design. Zoom with scroll or pinch. Pan by holding **Space** and dragging. The small checkboxes in the corner switch the **Realistic**, **Grid**, **Reference** and **Jumps** views.\n\nWhen you select a shape, a small **shape bar** floats above it with actions like **Reshape**, **Cut hole**, **Knife** and **Duplicate**.\n\n## The toolbar\n\nThe floating bar at the bottom holds the drawing tools, **Undo**, **Redo** and your **drawing colour**. Read [Drawing tools](drawing-tools.md).\n\n## The stitch player\n\nUnder the canvas. **Play**, scrub and change the speed. It also shows the totals: stitches, size, colour changes and sewing time. Read [The stitch player](stitch-player.md).\n\n## Right column\n\n- **Hoop & size:** always available, including while shapes or lettering are selected. Click the hoop to choose your machine and frame. Expand **Hoop tools & drawing colour** for the smallest fitting hoop, rotation, custom hoops, rulers, margins, placement guides and screen calibration.\n- **Sewing setup:** fabric, thread weight and quality. Read [Sewing setup](sewing-setup.md).\n- **Sew order:** the layers, in the order they are sewn (bottom first). It has tabs for layers, colours, images and your threads. Read [Layers and sew order](layers.md).\n\n## The warnings tray\n\nWhen Lilo spots something that may sew badly, a small tray appears in the right-hand column, under the Sewing setup card. It is calm and never blocks you. Read [What the warnings mean](warnings-explained.md).\n"
   },
   {
    "id": "basics-materials",
@@ -477,7 +477,7 @@
     "panel.digitize"
    ],
    "status": "ready",
-   "words": 433,
+   "words": 453,
    "headings": [
     {
      "level": 2,
@@ -500,7 +500,7 @@
      "slug": "if-the-result-looks-wrong"
     }
    ],
-   "body": "# Turn a picture into stitches\n\n**Digitizing** means turning a picture into stitch instructions. Lilo can do the whole thing in one go. This is called **Auto digitize**.\n\n## Open a picture\n\nUse **Digitize a picture…** on Home, or **Open image…** in the left panel. You can also drop a PNG, JPG, WEBP or SVG file onto the canvas.\n\nFlat, high-contrast pictures work best: a logo, a crest, a simple drawing. Photos with soft shading make messy embroidery, because thread cannot blend like pixels do.\n\n## The settings, top to bottom\n\n- **Colours** is how many thread colours to use, from 2 to 12. Fewer colours mean fewer thread changes and a faster sew. Start with the number of colours you see.\n- **Size (mm)** is the width and height of the finished design. Leave one box on **auto** and Lilo keeps the shape. Small details drop out below about 80 mm for fine serif logos, so size up if the hairlines vanish.\n- **Smallest region** drops tiny specks. A region smaller than this many square millimetres is merged away. Raise it if you see dust-like dots.\n- **Background** is **Remove** or **Keep**. **Remove** treats the picture's background colour as empty cloth. Choose **Keep** if the background is part of the design.\n- **Thread brand** picks the thread range to match against. Read [Thread brands and matching](thread-brands-matching.md).\n- **Quality**, **Thread weight** and **Fabric** make up the Sewing setup. Read [Standard or Premium](standard-vs-premium.md).\n- **Use my threads** matches colours to the spools you own first. Read [My Threads](my-threads.md).\n\nPress **Digitize** to run it again after you change a setting.\n\n## What Lilo does\n\n1. It shrinks the picture and removes the background.\n2. It reduces the picture to your chosen number of colours.\n3. It snaps each colour to the nearest real thread.\n4. It traces the shapes.\n5. It decides how to stitch each shape. Thin lines become a running stitch. Medium shapes become satin columns. Wide shapes become fills with underlay.\n6. It orders the shapes so the machine jumps as little as possible.\n\nEverything it makes is editable. Select any shape and change it.\n\n## If the result looks wrong\n\n- **Too many colours:** lower **Colours**.\n- **Missing thin lines:** make the design larger, or choose **Premium**, which sews fine strokes as narrow satin.\n- **Messy specks:** raise **Smallest region**.\n- **Wrong colours:** change the thread in the left panel after selecting a shape, or use the **Colours** tab in the Sew order panel to merge or swap.\n\nWhen you want control over which parts get stitched, use [Click to stitch](click-to-stitch.md).\n"
+   "body": "# Turn a picture into stitches\n\n**Digitizing** means turning a picture into stitch instructions. Lilo can do the whole thing in one go. This is called **Auto digitize**.\n\n## Open a picture\n\nUse **Upload image** on Home, or **Upload image…** in the left panel. You can also drop a PNG, JPG, WEBP or SVG onto Home or the canvas. Lilo generates the first result automatically.\n\nFlat, high-contrast pictures work best: a logo, a crest, a simple drawing. Photos with soft shading make messy embroidery, because thread cannot blend like pixels do.\n\n## The settings, top to bottom\n\n- **Colours** is how many thread colours to use, from 2 to 12. Fewer colours mean fewer thread changes and a faster sew. Start with the number of colours you see.\n- **Size (mm)** is the width and height of the finished design. Leave one box on **auto** and Lilo keeps the shape. Small details drop out below about 80 mm for fine serif logos, so size up if the hairlines vanish.\n- **Smallest region** drops tiny specks. A region smaller than this many square millimetres is merged away. Raise it if you see dust-like dots.\n- **Background** is **Remove** or **Keep**. **Remove** treats the picture's background colour as empty cloth. Choose **Keep** if the background is part of the design.\n- **Thread brand** picks the thread range to match against. Read [Thread brands and matching](thread-brands-matching.md).\n- **Quality**, **Thread weight** and **Fabric** make up the Sewing setup. Read [Standard or Premium](standard-vs-premium.md).\n- **Use my threads** matches colours to the spools you own first. Read [My Threads](my-threads.md).\n\nChanges regenerate the design automatically. **Generate stitches** runs it again. Region size, thread brand, fabric, weight, quality and shelf matching are under **Advanced generation settings**.\n\n## What Lilo does\n\n1. It shrinks the picture and removes the background.\n2. It reduces the picture to your chosen number of colours.\n3. It snaps each colour to the nearest real thread.\n4. It traces the shapes.\n5. It decides how to stitch each shape. Thin lines become a running stitch. Medium shapes become satin columns. Wide shapes become fills with underlay.\n6. It orders the shapes so the machine jumps as little as possible.\n\nEverything it makes is editable. Select any shape and change it.\n\n## If the result looks wrong\n\n- **Too many colours:** lower **Colours**.\n- **Missing thin lines:** make the design larger, or choose **Premium**, which sews fine strokes as narrow satin.\n- **Messy specks:** raise **Smallest region**.\n- **Wrong colours:** change the thread in the left panel after selecting a shape, or use the **Colours** tab in the Sew order panel to merge or swap.\n\nWhen you want control over which parts get stitched, use [Click to stitch](click-to-stitch.md).\n"
   },
   {
    "id": "click-to-stitch",

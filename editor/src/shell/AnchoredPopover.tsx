@@ -32,10 +32,19 @@ export function AnchoredPopover({
       const el = anchor.current;
       if (!el) return;
       const r = el.getBoundingClientRect();
-      const s: CSSProperties = align === "end" ? { right: Math.max(8, window.innerWidth - r.right) } : { left: Math.max(8, r.left) };
-      if (placement === "above") s.bottom = window.innerHeight - r.top + 10;
-      else s.top = r.bottom + 6;
-      setStyle(s);
+      const w = box.current?.offsetWidth ?? 0;
+      const h = box.current?.offsetHeight ?? 0;
+      const left = align === "end" ? r.right - w : r.left;
+      const below = r.bottom + 6;
+      const above = r.top - h - 10;
+      const top = placement === "above" ? (above >= 8 ? above : below) : (below + h <= window.innerHeight - 8 ? below : above);
+      setStyle({
+        left: Math.max(8, Math.min(left, window.innerWidth - w - 8)),
+        top: Math.max(8, Math.min(top, window.innerHeight - h - 8)),
+        maxWidth: "calc(100vw - 16px)",
+        maxHeight: "calc(100vh - 16px)",
+        overflow: "auto",
+      });
     };
     place();
     window.addEventListener("resize", place);

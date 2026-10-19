@@ -12,13 +12,16 @@ const size = async (page: Page): Promise<{ w: number; h: number }> => ({
 });
 async function settled(page: Page): Promise<number> {
   let last = -1;
-  for (let i = 0; i < 40; i++) {
+  let stable = 0;
+  for (let i = 0; i < 240; i++) {
     await page.waitForTimeout(250);
     const n = await stitchTotal(page);
-    if (n === last && n > 0) return n;
+    const planning = await page.locator(".status-pill").filter({ hasText: "Stitching…" }).count();
+    stable = !planning && n === last && n > 0 ? stable + 1 : 0;
+    if (stable >= 3) return n;
     last = n;
   }
-  return last;
+  throw new Error(`Stitch planning did not settle; last total was ${last}`);
 }
 
 describe("journey c: monogram lettering", () => {

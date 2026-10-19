@@ -16,7 +16,7 @@
       "title": "Stitch a picture",
       "steps": [
         { "id": "open", "target": "home-picture", "title": "Choose your picture", "body": "Click here and pick a logo or drawing. Flat colours work best. I will wait for it to finish.", "advanceOn": { "type": "state", "cond": "has-objects" }, "guideId": "auto-digitize" },
-        { "id": "colours", "target": "digitize-colours", "title": "How many colours?", "body": "Fewer colours mean fewer thread swaps. Try a lower number, then press Digitize again.", "advanceOn": { "type": "next" }, "guideId": "auto-digitize" },
+        { "id": "colours", "target": "digitize-colours", "title": "How many colours?", "body": "Fewer colours mean fewer thread swaps. Try a lower number. Lilo regenerates the stitches automatically.", "advanceOn": { "type": "next" }, "guideId": "auto-digitize" },
         { "id": "size", "target": "digitize-size", "title": "Set the size", "body": "Type a width in millimetres. A logo on a suit lining is often 40 to 80 mm wide.", "advanceOn": { "type": "next" }, "guideId": "sizing-and-hoops" },
         { "id": "sewing", "target": "sewing-chip", "title": "What are you sewing on?", "body": "Open this card and pick your fabric, thread weight and quality. Lilo tunes the stitches to match.", "advanceOn": { "type": "state", "cond": "sewing-open" }, "guideId": "sewing-setup" },
         { "id": "hoop", "target": "hoop-chip", "title": "Check the hoop", "body": "The hoop is the frame that holds the cloth. Your design must fit inside it. Click here to change it.", "advanceOn": { "type": "next" }, "guideId": "sizing-and-hoops" },

@@ -7,6 +7,7 @@ import "./screens.css";
 import "./views.css";
 import "./glass.css";
 import "./guide/guide.css";
+import "./studio.css";
 
 async function boot() {
   // `?mock` (development only): sample projects and an in-memory platform, to look at every screen

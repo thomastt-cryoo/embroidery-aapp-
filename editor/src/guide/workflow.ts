@@ -8,16 +8,17 @@ export interface StripInput {
   planResult: PlanResult | null;
   previewed: boolean;
   exported: boolean;
+  hasSource?: boolean;
 }
 
-/** Plan warnings that mean "the stitches have a quality problem" (outside-hoop belongs to step 2). */
+/** Plan warnings that mean the design needs attention before previewing or exporting. */
 export const QUALITY_WARNING_CODES = ["density", "stitch-too-long", "object-failed", "empty"] as const;
 
 /**
  * Which steps are done, from real state:
- * 1. the canvas has objects,
- * 2. the stitched design fits the hoop (no `outside-hoop` warning from `validatePlan`),
- * 3. `validatePlan` found no quality warnings,
+ * 1. artwork is loaded or the canvas has objects,
+ * 2. a stitch plan has been generated,
+ * 3. the plan fits the hoop and `validatePlan` found no quality warnings,
  * 4. the player was played or the realistic view was used,
  * 5. the design was exported or sent.
  */
@@ -26,9 +27,9 @@ export function workflowTicks(i: StripInput): Record<WorkflowStepId, boolean> {
   const planned = has && !!i.planResult && i.planResult.stats.stitchCount > 0;
   const codes = new Set((i.planResult?.warnings ?? []).map((w) => w.code));
   return {
-    design: has,
-    size: planned && !codes.has("outside-hoop"),
-    stitches: planned && QUALITY_WARNING_CODES.every((c) => !codes.has(c)),
+    design: has || !!i.hasSource,
+    size: planned,
+    stitches: planned && !codes.has("outside-hoop") && QUALITY_WARNING_CODES.every((c) => !codes.has(c)),
     preview: has && i.previewed,
     send: has && i.exported,
   };

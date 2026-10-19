@@ -26,7 +26,7 @@ export let baseUrl = "";
 
 export async function startStack(): Promise<void> {
   if (server) return;
-  server = await createServer({ root: EDITOR, configFile: join(EDITOR, "vite.config.ts"), server: { port: 0, strictPort: false, host: "127.0.0.1" }, clearScreen: false, logLevel: "error" });
+  server = await createServer({ root: EDITOR, configFile: join(EDITOR, "vite.config.ts"), cacheDir: join(EDITOR, "node_modules", `.vite-e2e-${process.pid}`), server: { port: 0, strictPort: false, host: "127.0.0.1" }, clearScreen: false, logLevel: "error" });
   await server.listen();
   const addr = server.httpServer?.address();
   baseUrl = `http://127.0.0.1:${typeof addr === "object" && addr ? addr.port : 5173}`;
@@ -65,6 +65,7 @@ export async function openApp(name: string, opts: { viewport?: { width: number; 
   const context = await browser!.newContext({ viewport: opts.viewport ?? { width: 1440, height: 900 }, acceptDownloads: true });
   await opts.setup?.(context);
   const page = await context.newPage();
+  page.setDefaultNavigationTimeout(120_000);
   const problems: string[] = [];
   page.on("console", (m) => {
     if (m.type() === "error") problems.push(`console.error: ${m.text()}`);

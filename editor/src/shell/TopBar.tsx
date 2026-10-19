@@ -46,11 +46,11 @@ export function TopBar() {
         Search… <kbd>⌘K</kbd>
       </button>
       <Hint id="topbar.search" />
-      <button onClick={() => actions.setDialog("export")} disabled={!hasDesign} title={hasDesign ? undefined : "Draw or digitize something first"}>
+      <button className="primary" onClick={() => actions.setDialog("export")} disabled={!hasDesign} title={hasDesign ? undefined : "Draw or digitize something first"}>
         Export
       </button>
       <Hint id="topbar.export" />
-      <button className="primary" data-tour="topbar-send" onClick={() => actions.setDialog("send")} disabled={!hasDesign} title={hasDesign ? undefined : "Draw or digitize something first"}>
+      <button data-tour="topbar-send" onClick={() => actions.setDialog("send")} disabled={!hasDesign} title={hasDesign ? undefined : "Draw or digitize something first"}>
         Send
       </button>
       <Hint id="topbar.send" />

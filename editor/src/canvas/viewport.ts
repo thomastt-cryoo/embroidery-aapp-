@@ -55,6 +55,13 @@ export function fitView(width: number, height: number, rect: Rect, margin = 0.15
   return { zoom, x: width / 2 - cx * zoom, y: height / 2 - cy * zoom };
 }
 
+/** Keep a fitted hoop fitted on resize; otherwise preserve the user's zoom and centre point. */
+export function resizeView(v: View, previous: { w: number; h: number }, next: { w: number; h: number }, rect: Rect): View {
+  const fitted = fitView(previous.w, previous.h, rect, 0.2);
+  const wasFitted = Math.abs(v.x - fitted.x) < 0.01 && Math.abs(v.y - fitted.y) < 0.01 && Math.abs(v.zoom - fitted.zoom) < 0.0001;
+  return wasFitted ? fitView(next.w, next.h, rect, 0.2) : panBy(v, (next.w - previous.w) / 2, (next.h - previous.h) / 2);
+}
+
 /** The world rectangle currently visible. */
 export function visibleRect(v: View, width: number, height: number): Rect {
   const [minX, minY] = screenToWorld(v, 0, 0);

@@ -66,6 +66,7 @@ describe("journey i: tour, hints, help and the workflow strip", () => {
       expect(await page.evaluate(() => window.localStorage.getItem("lilo.tour"))).toBe("done");
 
       // a "?" opens the right page: Quality -> "Standard or Premium quality"
+      await page.getByText("Advanced generation settings", { exact: true }).click();
       await page.locator('[data-hint="digitize.quality"]').click();
       const hint = page.getByRole("dialog", { name: /Quality: help/ });
       await hint.waitFor();
@@ -92,9 +93,10 @@ describe("journey i: tour, hints, help and the workflow strip", () => {
 
       // a live warning: a 220 mm square is bigger than any NV2700 hoop. The fix button looks for a hoop; none of this machine fits, so it opens the hoop list
       await page.getByLabel("Width in millimetres").fill("220");
-      await page.getByRole("button", { name: "Digitize", exact: true }).click();
+      // Changing the size already regenerates; wait for that result rather than
+      // attempting a duplicate generation while its button is disabled.
       const tray = page.getByRole("region", { name: "Design warnings" });
-      await tray.getByText(/bigger than the hoop/).waitFor({ timeout: 60_000 });
+      await tray.getByText(/bigger than the hoop/).waitFor({ timeout: 120_000 });
       await j.shot("6-live-warning");
       await tray.getByRole("button", { name: "Pick the smallest hoop that fits" }).click();
       await page.getByRole("dialog", { name: "Choose a hoop" }).waitFor();

@@ -15,6 +15,7 @@ export function DigitizePanel({ onOpen, children }: { onOpen: () => void; childr
   const { options, source, design, palette, status } = state;
   const sewing = useSewing();
   const working = status.kind === "working";
+  const editingProject = !source && (design?.objects.length ?? 0) > 0;
   const { shelf } = useShelf();
   useEffect(() => void loadShelf(), []);
 
@@ -41,15 +42,26 @@ export function DigitizePanel({ onOpen, children }: { onOpen: () => void; childr
 
   return (
     <aside className="panel panel-left" aria-label="Settings" data-tour="settings-panel">
+      {editingProject && (
+        <section className="design-start" aria-label="Edit the current design">
+          <h2>Customize & Edit</h2>
+          <p className="panel-intro">Select a shape on the canvas or in Layers to change its colour and stitches.</p>
+          <button className="primary wide" title="Select all visible, unlocked shapes" onClick={() => { actions.setTool("select"); actions.selectAll(); }}>Select all to resize</button>
+          <button className="wide" onClick={() => actions.setTool("text")}>Add lettering</button>
+        </section>
+      )}
+      <details className={`image-flow${editingProject ? " can-collapse" : ""}`} open={!editingProject}>
+      <summary>Generate from a new image</summary>
       <HintScope scope="digitize">
       <h2>Auto digitize</h2>
+      <p className="panel-intro">Upload your artwork. Lilo generates the stitches automatically.</p>
 
-      <div className="field">
+      <div className="field upload-field">
         <button onClick={onOpen} disabled={working}>
-          {source ? "Open another image…" : "Open image…"}
+          {source ? "Replace image…" : "Upload image…"}
         </button>
         <Hint id="digitize.open-image" />
-        <span className="muted small">{source ? source.name : "or drop PNG / JPG / WEBP / SVG (or a stitch file like PES) on the canvas"}</span>
+        <span className="muted small">{source ? source.name : "PNG, JPG, WEBP or SVG. You can also drop a file on the canvas."}</span>
       </div>
 
       <label className="field" data-tour="digitize-colours">
@@ -99,6 +111,26 @@ export function DigitizePanel({ onOpen, children }: { onOpen: () => void; childr
         </label>
       </div>
 
+      <div className="field" role="group" aria-label="Background">
+        <span className="field-row">Background <Hint id="digitize.background" /></span>
+        <div className="segmented">
+          <button className={options.removeBackground ? "active" : ""} aria-pressed={options.removeBackground} onClick={() => actions.setOptions({ removeBackground: true })}>Remove</button>
+          <button className={!options.removeBackground ? "active" : ""} aria-pressed={!options.removeBackground} onClick={() => actions.setOptions({ removeBackground: false })}>Keep</button>
+        </div>
+      </div>
+
+      <div className="generate-actions">
+        <div className="with-hint">
+          <button className="primary wide" onClick={() => void actions.digitize()} disabled={!source || working}>
+            {working ? "Generating…" : "Generate stitches"}
+          </button>
+          <Hint id="digitize.digitize" />
+        </div>
+        <span className="muted small">{working ? "Keep this window open while your design is prepared." : source ? "Changes to these settings regenerate your design." : "Choose an image to get started."}</span>
+      </div>
+
+      <details className="advanced-options">
+      <summary>Advanced generation settings</summary>
       <label className="field">
         <span className="field-row">
           Smallest region <output>{options.minRegionMm2} mm²</output> <Hint id="digitize.smallest-region" />
@@ -113,20 +145,6 @@ export function DigitizePanel({ onOpen, children }: { onOpen: () => void; childr
           onChange={(e) => actions.setOptions({ minRegionMm2: Number(e.target.value) })}
         />
       </label>
-
-      <div className="field" role="group" aria-label="Background">
-        <span className="field-row">
-          Background <Hint id="digitize.background" />
-        </span>
-        <div className="segmented">
-          <button className={options.removeBackground ? "active" : ""} aria-pressed={options.removeBackground} onClick={() => actions.setOptions({ removeBackground: true })}>
-            Remove
-          </button>
-          <button className={!options.removeBackground ? "active" : ""} aria-pressed={!options.removeBackground} onClick={() => actions.setOptions({ removeBackground: false })}>
-            Keep
-          </button>
-        </div>
-      </div>
 
       <label className="field">
         <span className="field-row">
@@ -193,12 +211,7 @@ export function DigitizePanel({ onOpen, children }: { onOpen: () => void; childr
         )}
       </div>
 
-      <div className="with-hint">
-        <button className="primary wide" onClick={() => void actions.digitize()} disabled={!source || working}>
-          {working ? "Digitizing…" : "Digitize"}
-        </button>
-        <Hint id="digitize.digitize" />
-      </div>
+      </details>
       <div className="with-hint">
       <button className="wide" onClick={() => actions.setTool("clickstitch")} disabled={!state.trace || working} title={state.trace ? "Pick the regions of the trace to stitch yourself" : "Open an image first"}>
         Click to stitch…
@@ -230,6 +243,7 @@ export function DigitizePanel({ onOpen, children }: { onOpen: () => void; childr
       )}
       </HintScope>
       {children}
+      </details>
     </aside>
   );
 }

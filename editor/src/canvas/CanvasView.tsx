@@ -24,7 +24,7 @@ import { TraceOutlines } from "./TraceOutlines";
 import { Hint } from "../guide/Hint";
 import { markPreviewed } from "../guide/guideStore";
 import { useShortcuts } from "./useShortcuts";
-import { classifyWheel, fitRect, fitView, wheelZoomFactor, zoomAt, panBy, type View } from "./viewport";
+import { classifyWheel, fitRect, fitView, resizeView, wheelZoomFactor, zoomAt, panBy, type View } from "./viewport";
 
 const STAGE_LABEL: Record<AnimPhase, string> = {
   quantize: "Matching thread colours",
@@ -146,15 +146,25 @@ export function CanvasView({ onOpen }: { onOpen: () => void }) {
     setViewState(v);
   }, []);
 
-  // track the stage size for the floating shape bar
+  // Track the stage size and keep the hoop centred when the window or panels resize.
   useEffect(() => {
     const host = hostRef.current;
     if (!host || typeof ResizeObserver === "undefined") return;
-    const ro = new ResizeObserver(() => setSize({ w: host.clientWidth, h: host.clientHeight }));
+    let previous = { w: host.clientWidth, h: host.clientHeight };
+    const ro = new ResizeObserver(() => {
+      const next = { w: host.clientWidth, h: host.clientHeight };
+      if (next.w > 0 && next.h > 0 && previous.w > 0 && previous.h > 0 && (next.w !== previous.w || next.h !== previous.h)) {
+        const d = api.getState().design;
+        const bounds = d?.objects.length ? designBounds(d) : null;
+        applyView(resizeView(viewRef.current, previous, next, fitRect(bounds, d?.hoop, DEFAULT_HOOP)));
+      }
+      previous = next;
+      setSize(next);
+    });
     ro.observe(host);
     setSize({ w: host.clientWidth, h: host.clientHeight });
     return () => ro.disconnect();
-  }, []);
+  }, [api, applyView]);
 
   const design = state.design;
   const hasObjects = (design?.objects.length ?? 0) > 0;
@@ -501,8 +511,8 @@ export function CanvasView({ onOpen }: { onOpen: () => void }) {
       )}
       {empty && !glError && (
         <div className="canvas-empty">
-          <p className="canvas-empty-title">Drop an image to auto-digitize</p>
-          <p className="muted">PNG, JPG, WEBP or SVG. Or pick a drawing tool below and sketch a shape.</p>
+          <p className="canvas-empty-title">Your next design starts here</p>
+          <p className="muted">Drop your artwork to generate stitches.<br />PNG, JPG, WEBP or SVG<br />Or choose a drawing tool below.</p>
           <button className="primary" onClick={onOpen}>
             Open image…
           </button>

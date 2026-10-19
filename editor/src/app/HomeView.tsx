@@ -7,8 +7,8 @@ import { isProjectFile, isStitchFile } from "../io/stitchFiles";
 import { openImagePicker } from "./openImage";
 import { useApp } from "./AppContext";
 import { useEditor } from "../state/store";
-import iconUrl from "../assets/brand/lilo-icon.svg";
 import { KadwoodWordmark } from "../shell/BrandMark";
+import { NavIcon } from "../shell/NavIcon";
 
 /** One card: the thumbnail from inside the file, its title and when it was last saved. */
 export function Card({ card, onOpen }: { card: RecentCard; onOpen: () => void }) {
@@ -93,10 +93,17 @@ export function HomeView() {
 
   const go = (p: Promise<boolean>) => void p.then((ok) => ok && app.go("editor"));
   const [over, setOver] = useState(false);
-  // a project or a stitch file dropped on Home opens, like Open…
+  // Home accepts the same artwork as the editor as well as saved projects and stitch files.
   const drop = async (list: FileList) => {
     const f = [...list].find((x) => isStitchFile(x.name) || isProjectFile(x.name));
     if (f) go(m.openFile({ path: "", name: f.name, bytes: new Uint8Array(await f.arrayBuffer()) }));
+    else {
+      const image = [...list].find((x) => /\.(png|jpe?g|webp|svg)$/i.test(x.name));
+      if (image) {
+        app.go("editor");
+        await actions.importFile({ name: image.name, bytes: new Uint8Array(await image.arrayBuffer()), type: image.type });
+      }
+    }
   };
 
   return (
@@ -115,10 +122,10 @@ export function HomeView() {
       }}
     >
       <header className="home-hero">
-        <img className="home-icon" src={iconUrl} alt="" width={96} height={96} />
         <div className="home-welcome">
-          <h1>Welcome to Lilo</h1>
-          <p className="muted">Free embroidery digitizing. Turn a picture into stitches, type a monogram, or pick up where you left off.</p>
+          <span className="eyebrow">YOUR EMBROIDERY STUDIO</span>
+          <h1>A little idea.<br />Ready to stitch.</h1>
+          <p className="muted">Turn your artwork into embroidery, one simple step at a time.</p>
           <button className="lockup" onClick={() => void getPlatform().openUrl(KADWOOD_URL)} title="kadwood.com">
             <span>Lilo by</span>
             <KadwoodWordmark height={14} />
@@ -126,10 +133,20 @@ export function HomeView() {
         </div>
       </header>
 
+      <section className="home-upload" aria-label="Start with an image">
+        <span className="upload-symbol"><NavIcon name="upload" /></span>
+        <div><h2>Start with your artwork</h2><p className="muted">Drop an image here, or choose a file.<br /><span className="small">PNG, JPG, WEBP or SVG · processed on your computer</span></p></div>
+        <button className="primary" onClick={() => { app.go("editor"); void openImagePicker(actions); }}>Upload image</button>
+      </section>
+
+      <ol className="home-workflow" aria-label="Your design workflow">
+        {["Upload", "Generate", "Customize & Edit", "Preview", "Export"].map((label, i) => <li key={label}><span>{String(i + 1).padStart(2, "0")}</span>{label}</li>)}
+      </ol>
+
       <section aria-labelledby="start-title">
-        <h2 id="start-title">Start</h2>
+        <h2 id="start-title">Other ways to create</h2>
         <ul className="quick-grid" aria-label="Ways to start">
-          <Quick icon="new" title="New design" hint="A blank hoop to draw in" primary tour="home-new" onClick={() => go(m.newProject())} />
+          <Quick icon="new" title="New design" hint="Start with a blank hoop" tour="home-new" onClick={() => go(m.newProject())} />
           <Quick
             icon="picture"
             tour="home-picture"
@@ -165,7 +182,7 @@ export function HomeView() {
       </section>
 
       <section aria-labelledby="recent-title">
-        <h2 id="recent-title">Recent</h2>
+        <h2 id="recent-title">Recent projects</h2>
         {recent.length === 0 ? (
           <p className="muted" role="status">
             {loading ? "Looking in your Lilo folder…" : desktop ? "Nothing here yet. Projects you save show up here, along with anything in Documents/Lilo." : "Recent projects show up here in the desktop app. Use Open… to pick a project or a stitch file."}

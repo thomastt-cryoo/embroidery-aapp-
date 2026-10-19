@@ -24,7 +24,7 @@ const read = (rel) => readFileSync(p(rel), "utf8");
 /** The `version = "x"` line of the [package] table (the first one in the file). */
 const CARGO_TOML_RE = /^(version\s*=\s*")([^"]+)(")/m;
 /** The lockfile entry for this crate: `name = "lilo"` followed by its version line. */
-const CARGO_LOCK_RE = /(\[\[package\]\]\nname = "lilo"\nversion = ")([^"]+)(")/;
+const CARGO_LOCK_RE = /(\[\[package\]\]\r?\nname = "lilo"\r?\nversion = ")([^"]+)(")/;
 /** JSON files are edited as text so their formatting survives. */
 const JSON_VERSION_RE = /^(\s*"version"\s*:\s*")([^"]+)(")/m;
 

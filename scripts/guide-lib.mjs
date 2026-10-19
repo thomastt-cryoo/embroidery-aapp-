@@ -14,7 +14,7 @@ export const TOUR_CONDITIONS = ["has-objects", "tool:closed", "tool:text", "dial
 export const LIVE_SIGNALS = ["plan:outside-hoop", "plan:density", "plan:stitch-too-long", "plan:thin-satin", "plan:long-stitch-snag", "plan:object-failed", "colour-changes", "stitch-count", "sewing-time", "tiny-region", "satin-too-wide", "letters-small"];
 export const LIVE_FIXES = ["smallest-hoop", "group-by-colour", "set-60wt", "enable-split", "loosen-spacing", "delete-tiny"];
 export const WORKFLOW_IDS = ["design", "size", "stitches", "preview", "send"];
-export const WORKFLOW_ACTIONS = ["open-digitize", "open-hoop", "open-sewing", "focus-player", "open-send", "none"];
+export const WORKFLOW_ACTIONS = ["open-digitize", "generate", "open-hoop", "open-sewing", "focus-player", "open-send", "open-export", "none"];
 
 export const slug = (text) =>
   text
@@ -28,6 +28,7 @@ export const wordCount = (s) => (s.trim() ? s.trim().split(/\s+/).length : 0);
 
 /** Split `---` frontmatter (key: JSON value) from the body. */
 export function parsePage(text, file) {
+  text = text.replace(/\r\n/g, "\n");
   const m = /^---\n([\s\S]*?)\n---\n?/.exec(text);
   if (!m) throw new Error(`${file}: no frontmatter`);
   const meta = {};

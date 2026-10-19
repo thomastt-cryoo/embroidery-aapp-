@@ -9,7 +9,7 @@ type P = [number, number];
 
 /** Where the hoop centre is on screen. The tool dock floats over the bottom of the canvas, so stay above it (offsets up to about +200). */
 async function centre(page: Page): Promise<P> {
-  const box = (await page.getByRole("main", { name: "Canvas" }).boundingBox())!;
+  const box = (await page.locator(".canvas-area").boundingBox())!;
   return [box.x + box.width / 2, box.y + box.height / 2];
 }
 
@@ -28,13 +28,18 @@ const stitches = async (page: Page): Promise<number> => {
 /** Wait until the stitch total has settled (re-stitching is debounced and runs in a worker). */
 async function settled(page: Page): Promise<number> {
   let last = -1;
-  for (let i = 0; i < 40; i++) {
+  let stable = 0;
+  for (let i = 0; i < 240; i++) {
     await page.waitForTimeout(250);
     const n = await stitches(page);
-    if (n === last && n > 0) return n;
+    // A previous plan can stay visible while the worker is still stitching.
+    // Wait for that work to finish before comparing the new stitch total.
+    const planning = await page.locator(".status-pill").filter({ hasText: "Stitching…" }).count();
+    stable = !planning && n === last && n > 0 ? stable + 1 : 0;
+    if (stable >= 3) return n;
     last = n;
   }
-  return last;
+  throw new Error(`Stitch planning did not settle; last total was ${last}`);
 }
 
 /** The design inside the one `.lilo` the app saved last (path, parsed design as JSON text). */

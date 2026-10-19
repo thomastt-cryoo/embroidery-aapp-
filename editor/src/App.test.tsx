@@ -20,7 +20,7 @@ afterEach(() => {
 describe("App navigation", () => {
   it("launches on Home, and switches between Home, the editor, pixel art, the converter and Lilo Link", async () => {
     render(<App />);
-    expect(screen.getByLabelText("Home")).toBeTruthy();
+    expect(screen.getByRole("heading", { name: /A little idea/ })).toBeTruthy();
     expect(screen.getByRole("button", { name: "Home" }).getAttribute("aria-current")).toBe("page");
 
     fireEvent.click(screen.getByRole("button", { name: "Editor" }));

@@ -63,6 +63,8 @@ describe("Curve control in the Text panel", () => {
     const calls: LayoutRequest[] = [];
     renderEditor(<TextPanel services={services(calls)} />, { design: testDesign() });
     await waitFor(() => expect(screen.getAllByRole("img").length).toBeGreaterThan(50), T);
+    // Font thumbnails can resolve before the asynchronously preloaded design is ready.
+    await waitFor(() => expect(lastEditor!.state.planResult).not.toBeNull(), T);
     const buttons = screen.getByRole("group", { name: "Curve" });
     expect(Array.from(buttons.querySelectorAll("button")).map((b) => b.textContent)).toEqual(["Straight", "Arc up", "Arc down"]);
     expect(screen.queryByLabelText("Curve radius")).toBeNull();

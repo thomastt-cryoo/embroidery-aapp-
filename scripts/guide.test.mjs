@@ -20,6 +20,13 @@ test("parsePage reads JSON frontmatter and the body", () => {
   assert.equal(body, "# Hi\n");
 });
 
+test("parsePage accepts Windows CRLF checkouts", () => {
+  const { meta, body } = parsePage('---\r\nid: "a"\r\norder: 2\r\n---\r\n\r\n# Hi\r\n', "a.md");
+  assert.equal(meta.id, "a");
+  assert.equal(meta.order, 2);
+  assert.equal(body, "# Hi\n");
+});
+
 test("headings get stable slugs, code fences are skipped", () => {
   const hs = headingsOf("## Pull compensation\n```\n## nope\n```\n### A high stitch count (long)\n");
   assert.deepEqual(hs.map((h) => h.slug), ["pull-compensation", "a-high-stitch-count-long"]);
@@ -69,7 +76,7 @@ test("tour rules: 6 to 10 steps per path, known conditions", () => {
 
 test("workflow and live-hint rules", () => {
   const wf = JSON.parse(readFileSync(join(root, "docs/guide/workflow.json"), "utf8"));
-  assert.deepEqual(checkWorkflow(wf, new Map([...pages, ["first-design", { headings: [] }], ["sizing-and-hoops", { headings: [] }], ["sewing-setup", { headings: [] }], ["stitch-player", { headings: [] }], ["send-a-design", { headings: [] }]])), []);
+  assert.deepEqual(checkWorkflow(wf, new Map([...pages, ["first-design", { headings: [] }], ["auto-digitize", { headings: [] }], ["export-formats", { headings: [] }], ["sizing-and-hoops", { headings: [] }], ["sewing-setup", { headings: [] }], ["stitch-player", { headings: [] }], ["send-a-design", { headings: [] }]])), []);
   assert.match(checkWorkflow({ steps: [] }, pages).join(), /steps must be/);
   const live = { id: "x", signal: "plan:density", severity: "care", message: "Short.", guideId: "a" };
   assert.deepEqual(checkLiveHints([live], pages), []);

@@ -66,8 +66,8 @@ describe("DigitizePanel", () => {
   it("disables Digitize until an image is loaded, and calls onOpen", () => {
     let opened = 0;
     renderEditor(<DigitizePanel onOpen={() => opened++} />);
-    expect((screen.getByRole("button", { name: "Digitize" }) as HTMLButtonElement).disabled).toBe(true);
-    fireEvent.click(screen.getByRole("button", { name: /^Open image/ }));
+    expect((screen.getByRole("button", { name: "Generate stitches" }) as HTMLButtonElement).disabled).toBe(true);
+    fireEvent.click(screen.getByRole("button", { name: /^Upload image/ }));
     expect(opened).toBe(1);
   });
 });

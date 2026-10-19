@@ -1,0 +1,21 @@
+{
+  "productName": "Lilo M1 Review",
+  "identifier": "com.kadwood.lilo.m1-review",
+  "app": {
+    "windows": [
+      {
+        "title": "Lilo M1 Review",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 960,
+        "minHeight": 600,
+        "visible": false,
+        "dragDropEnabled": false
+      }
+    ]
+  },
+  "bundle": { "active": false },
+  "plugins": {
+    "deep-link": { "desktop": { "schemes": [] } }
+  }
+}

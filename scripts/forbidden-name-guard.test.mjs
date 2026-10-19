@@ -5,11 +5,12 @@ import { execFileSync } from "node:child_process";
 import { mkdtempSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { test } from "node:test";
 import { scanFile, scanRepo } from "./check-no-ember.mjs";
 
 const W = ["Em", "ber"].join("");
-const SCRIPT = new URL("./check-no-ember.mjs", import.meta.url).pathname;
+const SCRIPT = fileURLToPath(new URL("./check-no-ember.mjs", import.meta.url));
 
 test("flags the word in any case, as a word start or camelCase, with its line number", () => {
   const hits = scanFile("a.ts", `fine\nconst x = "${W}Link";\n// ${W.toUpperCase()}_TOKEN\nlet useX = isLoggedIn${W};`);

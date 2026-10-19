@@ -2,22 +2,22 @@ import { useEffect, useRef } from "react";
 import { setHoopView } from "../state/hoopViewStore";
 import { useEditor } from "../state/store";
 import { WORKFLOW, type WorkflowStep } from "./data";
-import { openHelp, resetMilestones, setSewingOpen, setStepperTip, useGuide } from "./guideStore";
+import { markPreviewed, openHelp, resetMilestones, setSewingOpen, setStepperTip, useGuide } from "./guideStore";
 import { currentStep, workflowTicks } from "./workflow";
 
 /**
- * The always-visible strip at the top of the editor: Get a design, Size and hoop, Stitches, Preview, Send.
+ * The always-visible strip: Upload, Generate, Customize & Edit, Preview, Export.
  * Each step ticks itself from real state (see `workflowTicks`). A click opens the relevant panel and a tip
  * card from `docs/guide/workflow.json`.
  */
-export function WorkflowStepper() {
+export function WorkflowStepper({ onOpen }: { onOpen?: () => void } = {}) {
   const { state, actions } = useEditor();
   const previewed = useGuide((s) => s.previewed);
   const exported = useGuide((s) => s.exported);
   const tipId = useGuide((s) => s.stepperTip);
   const root = useRef<HTMLElement>(null);
 
-  const ticks = workflowTicks({ design: state.design, planResult: state.planResult, previewed, exported });
+  const ticks = workflowTicks({ design: state.design, planResult: state.planResult, previewed, exported, hasSource: !!state.source });
   const now = currentStep(ticks, WORKFLOW.map((s) => s.id));
   const hasObjects = (state.design?.objects.length ?? 0) > 0;
 
@@ -46,6 +46,12 @@ export function WorkflowStepper() {
       case "open-digitize":
         actions.setTool("select");
         actions.setSelection([]); // nothing selected shows the Auto digitize panel
+        onOpen?.();
+        break;
+      case "generate":
+        actions.setTool("select");
+        actions.setSelection([]);
+        if (state.source && state.status.kind !== "working") void actions.digitize();
         break;
       case "open-hoop":
         setHoopView({ pickerOpen: true });
@@ -54,7 +60,12 @@ export function WorkflowStepper() {
         setSewingOpen(true);
         break;
       case "focus-player":
+        actions.setView({ realistic: true });
+        markPreviewed();
         document.querySelector<HTMLElement>('[data-tour="player-play"]')?.focus();
+        break;
+      case "open-export":
+        if ((state.planResult?.stats.stitchCount ?? 0) > 0) actions.setDialog("export");
         break;
       case "open-send":
         if (hasObjects) actions.setDialog("send");
@@ -88,12 +99,12 @@ export function WorkflowStepper() {
           </li>
         ))}
       </ol>
-      {step && <TipCard step={step} done={ticks[step.id]} onAction={() => run(step.tip.action.kind)} />}
+      {step && <TipCard step={step} done={ticks[step.id]} disabled={(step.tip.action.kind === "generate" && (!state.source || state.status.kind === "working")) || (step.tip.action.kind === "open-export" && (state.planResult?.stats.stitchCount ?? 0) === 0)} onAction={() => run(step.tip.action.kind)} />}
     </nav>
   );
 }
 
-function TipCard({ step, done, onAction }: { step: WorkflowStep; done: boolean; onAction: () => void }) {
+function TipCard({ step, done, disabled, onAction }: { step: WorkflowStep; done: boolean; disabled?: boolean; onAction: () => void }) {
   const { tip } = step;
   return (
     <div className="step-tip" role="region" aria-label={`${step.label}: tip`}>
@@ -102,7 +113,7 @@ function TipCard({ step, done, onAction }: { step: WorkflowStep; done: boolean; 
       <p className="muted small">{done ? "This step is done." : "This step is not done yet."}</p>
       <div className="button-row">
         {tip.action.kind !== "none" && (
-          <button type="button" className="primary" onClick={onAction}>
+          <button type="button" className="primary" disabled={disabled} onClick={onAction}>
             {tip.action.label}
           </button>
         )}

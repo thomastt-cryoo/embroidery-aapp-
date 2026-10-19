@@ -12,13 +12,16 @@ const stitchTotal = async (page: Page): Promise<number> => {
 };
 async function settled(page: Page): Promise<number> {
   let last = -1;
-  for (let i = 0; i < 40; i++) {
+  let stable = 0;
+  for (let i = 0; i < 240; i++) {
     await page.waitForTimeout(250);
     const n = await stitchTotal(page);
-    if (n === last && n >= 0) return n;
+    const planning = await page.locator(".status-pill").filter({ hasText: "Stitching…" }).count();
+    stable = !planning && n === last && n >= 0 ? stable + 1 : 0;
+    if (stable >= 3) return n;
     last = n;
   }
-  return last;
+  throw new Error(`Stitch planning did not settle; last total was ${last}`);
 }
 const shelfCodes = (page: Page) => page.getByRole("list", { name: "Spools on my shelf" }).locator("strong").allInnerTexts();
 
@@ -40,11 +43,13 @@ describe("journey d: click to stitch and My Threads", () => {
       await panel.getByRole("button", { name: "Clear the automatic stitches" }).click();
       expect(await settled(page)).toBeLessThan(auto);
       await j.shot("1-click-stitch-empty");
-      const box = (await page.getByRole("main", { name: "Canvas" }).boundingBox())!;
-      const cx = box.x + box.width / 2;
-      const cy = box.y + box.height / 2;
+      const centre = async () => {
+        const box = (await page.locator(".canvas-area").boundingBox())!;
+        return [box.x + box.width / 2, box.y + box.height / 2] as const;
+      };
       const stitchedAt = async (dx: number) => {
         const before = await stitchTotal(page);
+        const [cx, cy] = await centre();
         await page.mouse.move(cx + dx, cy);
         await page.mouse.click(cx + dx, cy);
         await page.waitForTimeout(400);
@@ -54,9 +59,10 @@ describe("journey d: click to stitch and My Threads", () => {
       expect(red).toBeGreaterThan(50);
       await j.shot("2-clicked-red");
       // shift-click two more regions, then stitch them together
+      const [cx, cy] = await centre();
       await page.keyboard.down("Shift");
-      await page.mouse.click(cx + 30, cy); // gold ring
-      await page.mouse.click(cx + 45, cy); // outer navy ring
+      await page.mouse.click(cx + 43, cy); // gold ring
+      await page.mouse.click(cx + 54, cy); // outer navy ring
       await page.keyboard.up("Shift");
       await j.shot("3-two-selected");
       await panel.getByRole("button", { name: /Stitch \d+ selected/ }).click();
@@ -99,11 +105,12 @@ describe("journey d: click to stitch and My Threads", () => {
       // use my threads in Auto digitize: every colour of the result is a spool from the shelf
       await page.getByRole("tab", { name: "Layers" }).click();
       await page.keyboard.press("Escape"); // nothing selected: the Auto digitize panel is back
+      await page.getByText("Advanced generation settings", { exact: true }).click();
       await page.getByLabel("Use my threads").check();
-      await page.getByRole("button", { name: "Digitize", exact: true }).click();
+      await page.getByRole("button", { name: "Generate stitches", exact: true }).click({ timeout: 120_000 });
       // wait for the NEW result: the button reads "Digitizing…" while it runs, and the old palette is still on screen until then
       await page.getByRole("button", { name: "Digitizing…" }).waitFor({ timeout: 5_000 }).catch(() => undefined);
-      await page.getByRole("button", { name: "Digitize", exact: true }).waitFor({ timeout: 60_000 });
+      await page.getByRole("button", { name: "Generate stitches", exact: true }).waitFor({ timeout: 60_000 });
       await expect.poll(() => page.getByLabel("Palette").getByRole("listitem").count(), { timeout: 60_000 }).toBeGreaterThan(1);
       await settled(page);
       const used = await page.getByLabel("Palette").getByRole("listitem").locator("strong").allInnerTexts();

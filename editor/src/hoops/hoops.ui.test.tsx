@@ -325,7 +325,8 @@ describe("Home", () => {
     renderEditor(<HomeView />, { app: app() });
     const grid = screen.getByRole("list", { name: "Ways to start" });
     for (const name of ["New design", "Digitize a picture…", "Type a monogram", "Pixel art", "Open…", "Converter"]) expect(within(grid).getByRole("button", { name })).toBeTruthy();
-    expect(screen.getByText("Welcome to Lilo")).toBeTruthy();
+    expect(screen.getByRole("heading", { name: /A little idea/ })).toBeTruthy();
+    expect(screen.getByRole("button", { name: "Upload image" })).toBeTruthy();
     fireEvent.click(screen.getByTitle("kadwood.com"));
     await waitFor(() => expect(mock.openedUrls).toEqual(["https://kadwood.com"]));
     expect(screen.getByRole("img", { name: "Kadwood" })).toBeTruthy();

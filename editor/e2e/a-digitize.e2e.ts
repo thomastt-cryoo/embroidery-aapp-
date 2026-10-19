@@ -1,11 +1,20 @@
 import { afterAll, describe, expect, it } from "vitest";
 import { readEmbroidery } from "@lilo/engine";
 import { fixture, openApp, pickFile, savedFiles, stopStack } from "./harness";
+import type { Page } from "playwright-core";
 
 afterAll(stopStack);
 
 /** The stitches a machine file holds, via the engine's own reader. */
 const stitchesOf = (name: string, bytes: number[]) => readEmbroidery(new Uint8Array(bytes), name.split(".").pop()!);
+
+async function generated(page: Page): Promise<void> {
+  // Option changes debounce for 450 ms. Do not edit sewing setup against an
+  // older generation that is still in flight.
+  await page.waitForTimeout(600);
+  await page.getByRole("button", { name: "Generate stitches", exact: true }).waitFor({ timeout: 120_000 });
+  await expect.poll(() => page.locator(".status-pill").filter({ hasText: "Stitching…" }).count(), { timeout: 120_000 }).toBe(0);
+}
 
 describe("journey a: picture -> stitches -> export -> before you sew", () => {
   it("digitizes a picture, adjusts it, plays it through a colour change and exports all 8 formats", async () => {
@@ -29,13 +38,16 @@ describe("journey a: picture -> stitches -> export -> before you sew", () => {
 
     // adjust: colours, size, quality, fabric. Each re-runs the digitizer.
     const palette = () => page.getByLabel("Palette").getByRole("listitem").count();
-    const before = await palette();
     await page.getByLabel("Colour count").fill("3");
-    await page.waitForFunction((n) => document.querySelectorAll('[aria-label="Palette"] li').length !== n || true, before);
+    await generated(page);
+    expect(await palette()).toBeLessThanOrEqual(3);
     await page.getByLabel("Width in millimetres").fill("80");
+    await generated(page);
+    await page.getByText("Advanced generation settings", { exact: true }).click();
     await page.getByLabel("Quality").selectOption("premium");
     await page.getByLabel("Fabric").selectOption({ label: "Twill / caps" });
-    await page.getByRole("button", { name: "Digitize" }).click();
+    await page.getByRole("button", { name: "Generate stitches", exact: true }).click({ timeout: 120_000 });
+    await generated(page);
     await page.waitForFunction(() => /7[5-9]\.\d × /.test((document.querySelector('[aria-label="Design totals"]') as HTMLElement | null)?.innerText ?? ""), null, { timeout: 60_000 });
     await j.shot("4-adjusted");
     expect(await stitchLine()).toMatch(/7[5-9]\.\d × /); // the artwork is about 80 mm wide (its box has a margin)

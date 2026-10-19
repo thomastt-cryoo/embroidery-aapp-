@@ -1,7 +1,7 @@
 import { CanvasView } from "../canvas/CanvasView";
 import { Toolbar } from "../canvas/Toolbar";
 import { IMPORT_EXTENSIONS } from "../io/decode";
-import { DesignSection } from "../panels/DesignSection";
+import { WorkspaceCard } from "./WorkspaceCard";
 import { TextPanel } from "../lettering/TextPanel";
 import { ClickStitchPanel } from "../panels/ClickStitchPanel";
 import { DigitizePanel } from "../panels/DigitizePanel";
@@ -46,7 +46,7 @@ export function EditorShell() {
   return (
     <div className="editor">
       <TopBar />
-      <WorkflowStepper />
+      <WorkflowStepper onOpen={open} />
       <div className="editor-body">
         {state.tool === "clickstitch" ? (
           <ClickStitchPanel onOpen={open} />
@@ -55,9 +55,7 @@ export function EditorShell() {
         ) : state.selectedIds.length > 0 ? (
           <SettingsPanel />
         ) : (
-          <DigitizePanel onOpen={open}>
-            <DesignSection />
-          </DigitizePanel>
+          <DigitizePanel onOpen={open} />
         )}
 
         <main className="canvas" aria-label="Canvas" data-tour="canvas">
@@ -70,6 +68,7 @@ export function EditorShell() {
         </main>
 
         <div className="right-col">
+          <WorkspaceCard />
           <SewingCard />
           <LiveWarnings />
           <Sequencer />

@@ -210,7 +210,7 @@ let stale = 0;
 for (const [name, text] of Object.entries(pages)) {
   const path = join(GUIDE, name);
   if (check) {
-    const now = existsSync(path) ? readFileSync(path, "utf8") : "";
+    const now = existsSync(path) ? readFileSync(path, "utf8").replace(/\r\n/g, "\n") : "";
     if (now !== text) {
       console.error(`stale: docs/guide/${name} (run node scripts/gen-guide-reference.mjs)`);
       stale++;

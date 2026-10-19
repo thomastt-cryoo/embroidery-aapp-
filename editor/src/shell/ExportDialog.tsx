@@ -170,7 +170,7 @@ export function ExportPanel({
 
   return (
     <div className="dialog-backdrop" role="presentation">
-      <div ref={modal} tabIndex={-1} className="dialog dialog-wide" role="dialog" aria-modal="true" aria-labelledby="export-title" onKeyDown={(e) => e.key === "Escape" && onClose()}>
+      <div ref={modal} tabIndex={-1} className="dialog dialog-wide export-dialog" role="dialog" aria-modal="true" aria-labelledby="export-title" onKeyDown={(e) => e.key === "Escape" && onClose()}>
         <h2 id="export-title">Export</h2>
 
         <div className="format-list" role="radiogroup" aria-label="File format">

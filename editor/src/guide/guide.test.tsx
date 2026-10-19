@@ -285,7 +285,7 @@ describe("workflow ticks (pure)", () => {
     expect(workflowTicks({ design: null, planResult: null, previewed: false, exported: false })).toEqual({ design: false, size: false, stitches: false, preview: false, send: false });
     expect(workflowTicks({ design: d, planResult: plan([]), previewed: false, exported: false })).toEqual({ design: true, size: true, stitches: true, preview: false, send: false });
     const outside = workflowTicks({ design: d, planResult: plan([{ code: "outside-hoop", message: "x" }]), previewed: true, exported: true });
-    expect(outside).toEqual({ design: true, size: false, stitches: true, preview: true, send: true });
+    expect(outside).toEqual({ design: true, size: true, stitches: false, preview: true, send: true });
     const dense = workflowTicks({ design: d, planResult: plan([{ code: "density", message: "x" }]), previewed: false, exported: false });
     expect(dense.stitches).toBe(false);
     expect(dense.size).toBe(true);
@@ -309,17 +309,17 @@ describe("<WorkflowStepper>", () => {
     act(() => markExported());
     expect(strip.querySelector('[data-step="send"]')!.getAttribute("data-done")).toBe("true");
 
-    fireEvent.click(screen.getByRole("button", { name: /^Size and hoop/ }));
-    const tip = screen.getByRole("region", { name: "Size and hoop: tip" });
-    expect(tip.textContent).toMatch(/fits inside the sewing area/);
+    fireEvent.click(screen.getByRole("button", { name: /^Generate/ }));
+    const tip = screen.getByRole("region", { name: "Generate: tip" });
+    expect(tip.textContent).toMatch(/generated when you upload/);
     fireEvent.click(within(tip).getByRole("button", { name: "Read the guide" }));
-    expect(guideStore.getState().helpPage).toBe("sizing-and-hoops");
+    expect(guideStore.getState().helpPage).toBe("auto-digitize");
   });
 
   it("an empty design ticks nothing, and the tip action opens the right panel", () => {
     renderEditor(<WorkflowStepper />, { app: app() });
     expect(document.querySelectorAll('[data-done="true"]')).toHaveLength(0);
-    fireEvent.click(screen.getByRole("button", { name: /^Stitches/ }));
+    fireEvent.click(screen.getByRole("button", { name: /^Customize & Edit/ }));
     fireEvent.click(screen.getByRole("button", { name: "Open Sewing setup" }));
     expect(guideStore.getState().sewingOpen).toBe(true);
   });

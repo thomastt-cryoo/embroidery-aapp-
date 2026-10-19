@@ -86,7 +86,7 @@ const out = {
 const text = `${JSON.stringify(out, null, 1)}\n`;
 const target = join(GUIDE, "index.json");
 if (check) {
-  const now = existsSync(target) ? readFileSync(target, "utf8") : "";
+  const now = existsSync(target) ? readFileSync(target, "utf8").replace(/\r\n/g, "\n") : "";
   if (now !== text) problems.push("index.json is stale (run: node scripts/build-guide-index.mjs)");
 } else writeFileSync(target, text);
 

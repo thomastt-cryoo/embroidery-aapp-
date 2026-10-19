@@ -1,0 +1,42 @@
+[WARN] The "pnpm" field in package.json is no longer read by pnpm. The following keys were ignored: "pnpm.onlyBuiltDependencies". See https://pnpm.io/settings for the new home of each setting.
+$ node --test scripts/release-scripts.test.mjs scripts/forbidden-name-guard.test.mjs scripts/compat-docs.test.mjs scripts/guide.test.mjs
+✔ reads the engine's format list (13.5217ms)
+✔ reads which formats the engine can only write (7.0066ms)
+✔ a format marked write-only in formats.json but readable in the engine is rejected (22.5531ms)
+✔ output is deterministic (162.8146ms)
+✔ counts come from the data (12.9068ms)
+✔ no machine claims Wi-Fi was tested yet (13.9702ms)
+✔ a wrong support level is rejected (34.6281ms)
+✔ formats.json out of step with the engine is rejected (85.5667ms)
+✔ README block is replaced in place and inserted once (4.0879ms)
+✔ flags the word in any case, as a word start or camelCase, with its line number (16.5439ms)
+✔ ignores ordinary words that merely contain it (0.6215ms)
+✔ NOTICE.md is exempt, other markdown is not (0.7331ms)
+✔ a file name that carries the word is reported at line 0 (0.5911ms)
+✔ vendor thread colour names in the palette data are allowed, nothing else in data/ (1.2362ms)
+✔ scanRepo only looks at tracked files (3411.8791ms)
+✔ the CLI passes on this repo (what CI runs) (2792.1357ms)
+✔ parsePage reads JSON frontmatter and the body (11.0902ms)
+✔ parsePage accepts Windows CRLF checkouts (0.8327ms)
+✔ headings get stable slugs, code fences are skipped (1.5503ms)
+✔ frontmatter problems are reported (5.5877ms)
+✔ guide references need a real page and heading (1.2416ms)
+✔ voice check catches banned words and emoji (9.7ms)
+✔ hint rules: word limits, ids, guide links (2.2146ms)
+✔ tour rules: 6 to 10 steps per path, known conditions (2.7432ms)
+✔ workflow and live-hint rules (4.5575ms)
+✔ the real guide passes every check and index.json is current (1742.5758ms)
+✔ bump moves Unreleased notes into a dated section and keeps an empty Unreleased (7.9522ms)
+✔ bump with nothing under Unreleased writes a TODO that the release refuses (2.6873ms)
+✔ bump refuses a version that already has a section (6.5244ms)
+✔ every recorded version matches the root package.json (30.9843ms)
+✔ latest.json covers every platform with the .sig content and tag URLs (3.0768ms)
+✔ latest.json refuses a missing bundle or signature (7.5559ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6804.3359

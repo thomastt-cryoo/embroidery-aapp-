@@ -1,5 +1,22 @@
 import { describe, expect, it } from "vitest";
-import { MAX_ZOOM, MIN_ZOOM, classifyWheel, fitRect, fitView, panBy, screenToWorld, visibleRect, wheelZoomFactor, zoomAt } from "./viewport";
+import { MAX_ZOOM, MIN_ZOOM, classifyWheel, fitRect, fitView, resizeView, panBy, screenToWorld, visibleRect, wheelZoomFactor, zoomAt } from "./viewport";
+
+describe("window resizing", () => {
+  const hoop = { minX: -50, minY: -50, maxX: 50, maxY: 50 };
+  it("keeps a fitted hoop fully framed when the window shrinks", () => {
+    const before = { w: 838, h: 800 }, after = { w: 420, h: 390 };
+    const v = resizeView(fitView(before.w, before.h, hoop, 0.2), before, after, hoop);
+    expect(v).toEqual(fitView(after.w, after.h, hoop, 0.2));
+    expect(v.x - 50 * v.zoom).toBeGreaterThan(0);
+    expect(v.y + 50 * v.zoom).toBeLessThan(after.h);
+  });
+  it("preserves actual-size zoom and the world point at the centre", () => {
+    const v = { x: 300, y: 280, zoom: 3.78 };
+    const resized = resizeView(v, { w: 838, h: 800 }, { w: 420, h: 390 }, hoop);
+    expect(resized.zoom).toBe(3.78);
+    expect(screenToWorld(resized, 210, 195)).toEqual(screenToWorld(v, 419, 400));
+  });
+});
 
 describe("viewport", () => {
   it("zooms about the cursor: the world point under it does not move", () => {

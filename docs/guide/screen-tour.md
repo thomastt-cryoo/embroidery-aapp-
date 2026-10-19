@@ -15,9 +15,9 @@ status: "ready"
 
 The editor has the same layout every time. Here is where things live.
 
-## Top of the window
+## Navigation and project bar
 
-- **Views** (Home, Editor, Pixel art, Converter, Lilo Link) switch between the parts of the app. **Help** opens this guide.
+- The left **navigation** (Home, Editor, Pixel art, Converter, Lilo Link) switches between the parts of the app. In the editor, hover over an icon to see its name. **Help** opens this guide; **Appearance** switches light, dark or system mode.
 - The **top bar** holds the project menu, the project name, the **hoop** chooser, a search box (**⌘K**), **Export** and **Send**.
 - The **workflow strip** shows your five steps. Read [Helpers inside Lilo](learning-aids.md).
 
@@ -25,7 +25,8 @@ The editor has the same layout every time. Here is where things live.
 
 This panel changes with what you have selected.
 
-- **Nothing selected:** **Auto-digitize** settings and the hoop.
+- **Nothing selected in a new design:** **Auto digitize** shows upload, colours, size, background and **Generate stitches**. Open **Advanced generation settings** for region size, thread brand, quality, fabric, thread weight and My Threads matching.
+- **A saved or drawn design:** **Customize & Edit** offers selection for resizing and lettering. **Generate from a new image** keeps image-generation controls together below it.
 - **A shape selected:** its size, colour, stitch type and fill settings.
 - **Text tool or a word selected:** the lettering panel.
 - **Click to stitch tool:** the regions panel.
@@ -46,6 +47,7 @@ Under the canvas. **Play**, scrub and change the speed. It also shows the totals
 
 ## Right column
 
+- **Hoop & size:** always available, including while shapes or lettering are selected. Click the hoop to choose your machine and frame. Expand **Hoop tools & drawing colour** for the smallest fitting hoop, rotation, custom hoops, rulers, margins, placement guides and screen calibration.
 - **Sewing setup:** fabric, thread weight and quality. Read [Sewing setup](sewing-setup.md).
 - **Sew order:** the layers, in the order they are sewn (bottom first). It has tabs for layers, colours, images and your threads. Read [Layers and sew order](layers.md).
 

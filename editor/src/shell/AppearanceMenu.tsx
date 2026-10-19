@@ -27,7 +27,7 @@ export function AppearanceMenu() {
 
   return (
     <div className="appearance" ref={ref}>
-      <button className="appearance-button" aria-haspopup="dialog" aria-expanded={open} onClick={() => setOpen((v) => !v)} title="Appearance">
+      <button className="appearance-button" aria-label="Appearance" aria-haspopup="dialog" aria-expanded={open} onClick={() => setOpen((v) => !v)} title="Appearance">
         Appearance
       </button>
       {open && (

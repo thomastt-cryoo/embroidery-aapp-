@@ -8,6 +8,7 @@ import { ConfirmDialog } from "./project/ConfirmDialog";
 import { ProjectProvider, useProject, useProjectState } from "./project/ProjectProvider";
 import { AppearanceMenu } from "./shell/AppearanceMenu";
 import { BrandMark } from "./shell/BrandMark";
+import { NavIcon } from "./shell/NavIcon";
 import { CommandPalette } from "./shell/CommandPalette";
 import { useApplyAppearance } from "./shell/useAppearance";
 import { EditorShell } from "./shell/EditorShell";
@@ -92,7 +93,7 @@ function Shell() {
   useApplyAppearance();
 
   return (
-    <div className="app">
+    <div className={`app${app.view === "editor" ? " editor-mode" : ""}`}>
       <nav className="app-nav" aria-label="Views" data-tauri-drag-region>
         <span className="app-logo" data-tauri-drag-region>
           <BrandMark size={24} />
@@ -101,8 +102,8 @@ function Shell() {
           </span>
         </span>
         {NAV.map((n) => (
-          <button key={n.id} className={app.view === n.id ? "active" : ""} aria-current={app.view === n.id ? "page" : undefined} onClick={() => app.go(n.id)}>
-            {n.label}
+          <button key={n.id} className={app.view === n.id ? "active" : ""} aria-label={n.label} title={n.label} aria-current={app.view === n.id ? "page" : undefined} onClick={() => app.go(n.id)}>
+            <NavIcon name={n.id} /><span className="nav-label">{n.label}</span>
           </button>
         ))}
         <span className="spacer" data-tauri-drag-region />

@@ -15,7 +15,7 @@ status: "ready"
 
 ## Open a picture
 
-Use **Digitize a picture…** on Home, or **Open image…** in the left panel. You can also drop a PNG, JPG, WEBP or SVG file onto the canvas.
+Use **Upload image** on Home, or **Upload image…** in the left panel. You can also drop a PNG, JPG, WEBP or SVG onto Home or the canvas. Lilo generates the first result automatically.
 
 Flat, high-contrast pictures work best: a logo, a crest, a simple drawing. Photos with soft shading make messy embroidery, because thread cannot blend like pixels do.
 
@@ -29,7 +29,7 @@ Flat, high-contrast pictures work best: a logo, a crest, a simple drawing. Photo
 - **Quality**, **Thread weight** and **Fabric** make up the Sewing setup. Read [Standard or Premium](standard-vs-premium.md).
 - **Use my threads** matches colours to the spools you own first. Read [My Threads](my-threads.md).
 
-Press **Digitize** to run it again after you change a setting.
+Changes regenerate the design automatically. **Generate stitches** runs it again. Region size, thread brand, fabric, weight, quality and shelf matching are under **Advanced generation settings**.
 
 ## What Lilo does
 

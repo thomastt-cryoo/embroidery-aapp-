@@ -20,3 +20,12 @@ private/
 # Playwright journey screenshots (editor/e2e)
 editor/e2e/.shots/
 site/.wrangler/
+
+# Local M1 preview binary and interrupted/diagnostic run output.
+M1 Preview/
+reports/M1/evidence/*.txt
+reports/M1/evidence/baseline/
+reports/M1/evidence/journeys/
+reports/M1/evidence/acceptance/FAILED.png
+reports/M1/evidence/final-journeys/*-FAILED.png
+reports/M1/evidence/native/*.bak

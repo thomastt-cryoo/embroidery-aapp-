@@ -28,6 +28,8 @@ describe("journey f: hoops and the Sewing setup", () => {
       await expect.poll(async () => (await hoopButton(page).getAttribute("aria-label")) ?? "").toMatch(/130 × 180|130x180/i);
       await j.shot("2-picked-130x180");
 
+      await page.getByText("Hoop tools & drawing colour", { exact: true }).click();
+
       // ---- smallest hoop that fits ---------------------------------------------------------
       await page.getByRole("button", { name: "Smallest hoop that fits" }).first().click();
       await page.waitForTimeout(500);
