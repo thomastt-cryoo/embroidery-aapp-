@@ -31,5 +31,5 @@ jobs:
         if: always()
         with:
           name: M2-Etsy-native-ZIP-verification
-          path: received/evidence/
+          path: received/
           retention-days: 2

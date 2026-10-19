@@ -1,4 +1,7 @@
 ; Separate identity; never write extension defaults or touch Lilo registry keys.
+; A standard 64 MiB LZMA dictionary improves solid compression across the
+; complete offline font library. It changes packaging only, not application data.
+SetCompressorDictSize 64
 !define STUDIO_LICENSE "${__FILEDIR__}\..\..\LICENSE"
 !define STUDIO_NOTICE "${__FILEDIR__}\..\..\NOTICE.md"
 !macro NSIS_HOOK_POSTINSTALL

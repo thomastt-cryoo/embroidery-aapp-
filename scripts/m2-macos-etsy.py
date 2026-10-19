@@ -25,7 +25,7 @@ def zip_installer(source, target, instruction):
     for method, tag in [(zipfile.ZIP_STORED,'store'),(zipfile.ZIP_DEFLATED,'deflate')]:
         candidate=target.with_name(target.stem+'-'+tag+'.zip')
         with zipfile.ZipFile(candidate,'w',compression=method,compresslevel=9 if method==zipfile.ZIP_DEFLATED else None) as z:
-            z.write(source,source.name);docs(z,instruction)
+            z.write(source,'Install Embroidery Studio'+source.suffix);docs(z,instruction)
         alternatives.append(candidate)
     winner=min(alternatives,key=lambda p:p.stat().st_size)
     shutil.copy2(winner,target)
