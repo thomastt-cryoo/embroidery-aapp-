@@ -42,13 +42,15 @@ with tempfile.TemporaryDirectory(prefix='studio-pkg-compression-') as folder:
     # both architectures and every asset stay in the exact original cpio.
     assert len(raw)<256*1024*1024
     options={'id':lzma.FILTER_LZMA2,'dict_size':128*1024*1024,'preset':9|lzma.PRESET_EXTREME}
-    packed=lzma.compress(raw,format=lzma.FORMAT_XZ,check=lzma.CHECK_NONE,filters=[options])
-    candidates=[{'filter':'LZMA2','bytes':len(packed)}];selected='LZMA2'
+    # The complete format comparison established BCJ + LZMA2 as the smallest.
+    # Start with that verified setting to avoid spending runner time twice.
+    packed=lzma.compress(raw,format=lzma.FORMAT_XZ,check=lzma.CHECK_NONE,filters=[{'id':lzma.FILTER_X86},options])
+    candidates=[{'filter':'X86 + LZMA2','bytes':len(packed)}];selected='X86 + LZMA2'
     if len(packed)>=19_900_000:
         alternate=lzma.compress(raw,format=lzma.FORMAT_XZ,check=lzma.CHECK_NONE,
-            filters=[{'id':lzma.FILTER_X86},options])
-        candidates.append({'filter':'X86 + LZMA2','bytes':len(alternate)})
-        if len(alternate)<len(packed):packed=alternate;selected='X86 + LZMA2'
+            filters=[options])
+        candidates.append({'filter':'LZMA2','bytes':len(alternate)})
+        if len(alternate)<len(packed):packed=alternate;selected='LZMA2'
     container=b'pbzx'+struct.pack('>QQQ',256*1024*1024,len(raw),len(packed))+packed
     assert decode(container)==raw,'Compression changed decoded payload bytes'
     payload.write_bytes(container)

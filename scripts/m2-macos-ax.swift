@@ -66,7 +66,7 @@ else if operation == "key" {
     let element=elements[index]
     let result: AXError
     if operation == "click" {
-        let b=row["bounds"] as! [String:Double]
+        let b=row["bounds"] as! [String:CGFloat]
         let point=CGPoint(x:b["x"]!+b["width"]!/2,y:b["y"]!+b["height"]!/2)
         for type in [CGEventType.leftMouseDown,CGEventType.leftMouseUp] {CGEvent(mouseEventSource:nil,mouseType:type,mouseCursorPosition:point,mouseButton:.left)!.post(tap:.cghidEventTap)}
         result = .success

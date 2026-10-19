@@ -9,8 +9,18 @@ const require=createRequire(join(root,"editor/package.json"));
 const {chromium}=require("playwright-core");
 const out=join(root,"reports/M2/etsy/renderer-integration");
 await mkdir(out,{recursive:true});
-const browser=await chromium.launch({executablePath:process.env.LILO_CHROMIUM||chromium.executablePath(),args:["--disable-webgl"]});
+const lostContext=process.env.LILO_LOST_WEBGL==="1";
+const browser=await chromium.launch({executablePath:process.env.LILO_CHROMIUM||chromium.executablePath(),args:lostContext?
+  ["--use-gl=angle","--use-angle=swiftshader","--enable-unsafe-swiftshader"]:["--disable-webgl"]});
 const page=await browser.newPage({viewport:{width:900,height:700}});
+if(lostContext)await page.addInitScript(()=>{
+  const getContext=HTMLCanvasElement.prototype.getContext;
+  HTMLCanvasElement.prototype.getContext=function(type,...args){
+    const context=getContext.call(this,type,...args);
+    if(type.startsWith("webgl")&&context&&!context.isContextLost())context.getExtension("WEBGL_lose_context")?.loseContext();
+    return context;
+  };
+});
 const errors=[];page.on("pageerror",e=>errors.push(e.message));
 await page.route("**/renderer-check",r=>r.fulfill({contentType:"text/html",body:'<!DOCTYPE html><html><body style="margin:0;background:white"></body></html>'}));
 try {
@@ -58,6 +68,6 @@ try {
   });
   assert.deepEqual(errors,[]);
   await page.screenshot({path:join(out,"large-design-canvas2d.png")});
-  await writeFile(join(out,"results.json"),JSON.stringify({result:"pass",checks,errors,webglDisabled:true},null,2)+"\n");
+  await writeFile(join(out,lostContext?"lost-context-results.json":"results.json"),JSON.stringify({result:"pass",checks,errors,webglDisabled:!lostContext,lostWebGLContext:lostContext},null,2)+"\n");
   console.log(JSON.stringify(checks,null,2));
 } finally {await browser.close();}
