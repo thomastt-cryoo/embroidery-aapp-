@@ -28,7 +28,10 @@ let script="""
    row.contextLostAfter=gl.isContextLost();row.errorAfterRead=gl.getError();
   }catch(error){row.exception=String(error);}
  }
- window.graphicsProbe=observations;return JSON.stringify({userAgent:navigator.userAgent,observations});
+ const cpu=document.createElement('canvas');cpu.width=128;cpu.height=128;document.body.append(cpu);
+ const context=cpu.getContext('2d');let canvas2d={created:!!context};
+ if(context){context.fillStyle='#00ff00';context.fillRect(0,0,128,128);canvas2d.pixel=Array.from(context.getImageData(64,64,1,1).data);}
+ window.graphicsProbe=observations;return JSON.stringify({userAgent:navigator.userAgent,observations,canvas2d});
 })()
 """
 class Probe: NSObject, WKNavigationDelegate {

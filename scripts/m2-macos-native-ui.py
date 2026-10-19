@@ -1,7 +1,8 @@
 """Native macOS ZIP regression through existing, already-authorized accessibility."""
 import hashlib,json,os,pathlib,shutil,subprocess,time,zipfile
+from PIL import Image
 root=pathlib.Path(__file__).resolve().parent.parent
-out=root/'received/evidence/native-ui';out.mkdir(parents=True,exist_ok=True)
+out=root/os.environ.get('M2_MAC_DELIVERY_DIR','received')/'evidence/native-ui';out.mkdir(parents=True,exist_ok=True)
 tool=pathlib.Path(os.environ['RUNNER_TEMP'])/'studio-native-ax'
 subprocess.run(['swiftc',root/'scripts/m2-macos-ax.swift','-o',tool],check=True)
 checks=[];events=[];result='incomplete'
@@ -49,9 +50,30 @@ try:
     snap('image-picker');choose(root/'engine/test/fixtures/k-logo.png')
     wait_for('1,374',90);snap('converted');check('native image conversion','1,374 stitches from actual PNG file picker')
     current=ax('snapshot')
-    graphics_error='The canvas needs WebGL' in text(current)
-    if graphics_error:
-        checks.append({'name':'native canvas preview','result':'blocked','detail':'Native WebView reports WebGL unavailable on the hosted VM. No application or graphics settings were changed.'})
+    assert 'could not start' not in text(current) and 'needs WebGL' not in text(current),'Native drawing canvas failed'
+    # Remove the original picture so screenshot colour evidence proves stitch
+    # rendering rather than the imported PNG. No browser or test hooks are used.
+    reference=next(r for r in current if r['role']=='AXCheckBox' and r['title']=='Reference')
+    if reference['value']=='1':press('Reference')
+    press('Fit');time.sleep(2);snap('stitches-without-reference')
+    pixels=Image.open(out/'stitches-without-reference.png').convert('RGB')
+    # The runner's app window is centred; this crop excludes sidebars and toolbars.
+    w,h=pixels.size;crop=pixels.crop((int(w*.32),int(h*.23),int(w*.72),int(h*.74)))
+    red=blue=0
+    for r,g,b in crop.getdata():
+        if r>100 and r>g*1.5 and r>b*1.5:red+=1
+        if b>60 and b>r*1.5 and b>g*1.2:blue+=1
+    assert red>100 and blue>100,f'Native stitch pixels missing: red={red}, blue={blue}'
+    check('native canvas preview',f'Actual installed application screenshot, reference hidden: {red} red and {blue} blue pixels in central stitch area')
+    # Real native simulation must visibly remove and redraw the stitched design.
+    ax('set','Scrub stitches',0);time.sleep(1);snap('simulation-zero')
+    ax('set','Playback speed',50)
+    auto=next(r for r in ax('snapshot') if r['role']=='AXCheckBox' and r['title']=='Auto-continue')
+    if auto['value']!='1':press('Auto-continue')
+    press('Play');time.sleep(8);wait_for('1,374');snap('simulation-complete')
+    current=ax('snapshot');scrub=next(r for r in current if r['role']=='AXSlider' and r['title']=='Scrub stitches')
+    assert float(scrub['value'])>=1374,scrub
+    check('native simulation','Played from zero to the end at 50x through native controls')
     # Select the same prominent hoop control observed in the native tree.
     hoop=next((r for r in current if r['role']=='AXButton' and (r['title'].startswith('Hoop:') or r['description'].startswith('Hoop:'))),None)
     if hoop:
@@ -62,6 +84,15 @@ try:
         found=next(r for r in choices if r['role']=='AXButton' and '4 x 4 in' in (r['title']+' '+r['description']))
         press(found['title'] or found['description']);wait_for('100 × 100');check('native hoop selection','100 × 100 mm selected from search')
     else:raise AssertionError('Native hoop selector was not exposed as expected; evidence retained')
+    # Select a generated satin object by its observed native element bounds.
+    ax('click','Ultramarine satin 1');wait_for('Pull compensation')
+    ax('set','Pull compensation',0.35);time.sleep(2);snap('stitch-setting-edited')
+    sliders=[r for r in ax('snapshot') if r['role']=='AXSlider' and r['title']=='Pull compensation']
+    assert sliders and abs(float(sliders[0]['value'])-.35)<.001,sliders
+    key(6,1048576);time.sleep(2) # normal Command-Z
+    sliders=[r for r in ax('snapshot') if r['role']=='AXSlider' and r['title']=='Pull compensation']
+    assert sliders and abs(float(sliders[0]['value'])-.15)<.001,sliders
+    check('native editing and undo','Selected generated satin, changed pull compensation 0.15 to 0.35, then restored 0.15 with Command-Z')
     # The observed compact native Save sheet opens with its proposed filename
     # selected. Confirm it normally; XPC-hosted fields are not in the app's AX
     # tree. Find only the newly written agent fixture on this disposable runner.
@@ -94,7 +125,7 @@ try:
     # Use the OS file-open event to reopen the project saved by this native app.
     subprocess.run(['open','-a',app,project],check=True);wait_for('1,374');snap('project-reopened')
     check('native project reopening','Native saved project reopened with 1,374 stitches')
-    result='partial' if graphics_error else 'pass'
+    result='pass'
 except Exception as exc:
     result='incomplete';error=str(exc)
     try:snap('failure')

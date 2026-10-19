@@ -53,10 +53,12 @@ jobs:
           pnpm check-versions | tee out/evidence/versions.txt
           pnpm guide:check | tee out/evidence/guide.txt
           node scripts/m2-package-check.mjs | tee out/evidence/isolation.txt
-      - name: Compare complete universal Mac packaging options
+      - name: Build complete universal Mac app and compare delivery formats
         run: |
           set -o pipefail
-          for mode in raw compressed; do
+          # Earlier complete comparisons proved raw assets + native LZMA PKG
+          # smallest. Reuse that setting when verifying the graphics repair.
+          for mode in raw; do
             EXTRA=()
             if [ "$mode" = compressed ]; then EXTRA=(--features asset-compression); fi
             pnpm tauri build --target universal-apple-darwin --bundles app "${EXTRA[@]}" 2>&1 | tee "out/evidence/macos-build-$mode.txt"
@@ -74,6 +76,10 @@ jobs:
         run: |
           set -euo pipefail
           python scripts/m2-macos-etsy.py install
+      - name: Verify visible stitches, simulation and native file dialogs from actual ZIP
+        env:
+          M2_MAC_DELIVERY_DIR: out
+        run: python scripts/m2-macos-native-ui.py
       - name: Real conversion, editing, projects and all exports on macOS browser
         run: |
           set -euo pipefail

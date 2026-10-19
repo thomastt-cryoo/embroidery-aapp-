@@ -506,7 +506,7 @@ export function CanvasView({ onOpen }: { onOpen: () => void }) {
 
       {glError && (
         <p className="canvas-message error" role="alert">
-          The canvas needs WebGL, which isn&apos;t available here ({glError}).
+          The drawing canvas could not start ({glError}).
         </p>
       )}
       {empty && !glError && (

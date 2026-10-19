@@ -1,4 +1,6 @@
-# M2 Etsy packaging — stopped for review
+# M2 Etsy packaging — active graphics compatibility work
+
+User explicitly requested a working graphics solution before the final report. M2 is reopened; do not stop with only a VM limitation. Upstream `origin/main` was fetched read-only and its scene/stitch renderer/glass code is identical to ours. Installed Pixi 8.22 includes CanvasRenderer/CanvasGraphics but no Canvas mesh pipe. Implement automatic healthy-WebGL selection plus Canvas 2D fallback drawing the existing stitch mesh geometry; preserve the engine, M1 layout, layering, colours, hoop, images, selection and simulation. Test actual native Mac preview before issuing final report. Existing ZIP sizes and evidence below refer to the previous build and must be regenerated after graphics changes. All changes remain private. Do not begin M3.
 
 Final report: root `M2_FINAL_REPORT.md`. Do not begin M3 without user approval.
 

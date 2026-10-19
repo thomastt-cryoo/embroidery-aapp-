@@ -20,7 +20,14 @@ func visit(_ e: AXUIElement, _ depth: Int) {
     if depth > 35 || elements.count > 12000 { return }
     let index=elements.count
     elements.append(e)
-    rows.append(["index":index,"depth":depth,"role":string(e,kAXRoleAttribute),"title":string(e,kAXTitleAttribute),"description":string(e,kAXDescriptionAttribute),"value":string(e,kAXValueAttribute),"help":string(e,kAXHelpAttribute),"identifier":string(e,kAXIdentifierAttribute),"subrole":string(e,kAXSubroleAttribute)])
+    var row:[String:Any] = ["index":index,"depth":depth,"role":string(e,kAXRoleAttribute),"title":string(e,kAXTitleAttribute),"description":string(e,kAXDescriptionAttribute),"value":string(e,kAXValueAttribute),"help":string(e,kAXHelpAttribute),"identifier":string(e,kAXIdentifierAttribute),"subrole":string(e,kAXSubroleAttribute)]
+    if let p=attribute(e,kAXPositionAttribute),let s=attribute(e,kAXSizeAttribute) {
+        var position=CGPoint.zero;var size=CGSize.zero
+        if AXValueGetValue(p as! AXValue,.cgPoint,&position) && AXValueGetValue(s as! AXValue,.cgSize,&size) {
+            row["bounds"]=["x":position.x,"y":position.y,"width":size.width,"height":size.height]
+        }
+    }
+    rows.append(row)
     if let children=attribute(e,kAXChildrenAttribute) as? [AXUIElement] { for child in children { visit(child,depth+1) } }
 }
 visit(app,0)
@@ -49,15 +56,21 @@ else if operation == "key" {
     emit(["result":result.rawValue,"observed":row]);if result != .success {exit(5)}
 } else {
     let wanted=args[2]
-    let matching=rows.filter { row in ["title","description","help"].contains { (row[$0] as? String)==wanted } }
+    let matching=rows.filter { row in ["title","description","help","value"].contains { (row[$0] as? String)==wanted } }
     let candidates=matching.filter { row in
         let role=row["role"] as! String
+        if operation == "click" {return row["bounds"] != nil}
         return operation == "press" ? ["AXButton","AXLink","AXRadioButton","AXCheckBox","AXMenuItem"].contains(role) : ["AXTextField","AXTextArea","AXSlider","AXComboBox"].contains(role)
     }
     guard let row=candidates.first, let index=row["index"] as? Int else { emit(["error":"No matching actionable element","wanted":wanted,"matches":matching]);exit(2) }
     let element=elements[index]
     let result: AXError
-    if operation == "press" { result=AXUIElementPerformAction(element,kAXPressAction as CFString) }
+    if operation == "click" {
+        let b=row["bounds"] as! [String:Double]
+        let point=CGPoint(x:b["x"]!+b["width"]!/2,y:b["y"]!+b["height"]!/2)
+        for type in [CGEventType.leftMouseDown,CGEventType.leftMouseUp] {CGEvent(mouseEventSource:nil,mouseType:type,mouseCursorPosition:point,mouseButton:.left)!.post(tap:.cghidEventTap)}
+        result = .success
+    } else if operation == "press" { result=AXUIElementPerformAction(element,kAXPressAction as CFString) }
     else {
         let value: CFTypeRef = (row["role"] as? String)=="AXSlider" ? NSNumber(value:Double(args[3])!) : args[3] as CFString
         result=AXUIElementSetAttributeValue(element,kAXValueAttribute as CFString,value)

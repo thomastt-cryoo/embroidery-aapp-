@@ -8,7 +8,7 @@ import type { PlayerController } from "../state/player";
 /**
  * A small read-only view of a stitch plan (thread shading, playback from a `PlayerController`), for
  * screens that show stitches without being the editor: the pixel-art preview. Same renderer as the
- * editor canvas; WebGL is created lazily so tests fall back to a message.
+ * editor canvas; graphics support is detected lazily, with Canvas 2D as a fallback.
  */
 export function PlanPreview({ plan, player, label }: { plan: StitchPlan | null; player: PlayerController; label: string }) {
   const host = useRef<HTMLDivElement>(null);
@@ -83,7 +83,7 @@ export function PlanPreview({ plan, player, label }: { plan: StitchPlan | null; 
 
   return (
     <div className="plan-preview" ref={host} role="img" aria-label={label}>
-      {problem && <p className="canvas-message muted">The stitch preview needs WebGL, which isn&apos;t available here.</p>}
+      {problem && <p className="canvas-message muted">The stitch preview could not start here.</p>}
     </div>
   );
 }

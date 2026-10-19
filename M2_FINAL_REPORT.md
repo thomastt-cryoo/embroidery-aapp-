@@ -1,5 +1,7 @@
 # M2 — Etsy packaging results
 
+**WORK IN PROGRESS — reopened at the user's request.** The results below describe the last verified packages. Native graphics compatibility is now being implemented and tested before the final M2 handoff. Do not treat this draft as final approval.
+
 **Windows meets the size requirement. macOS remains above it.** Native Mac canvas preview also remains unverified: the Intel virtual runner reports WebGL unavailable. Each platform has one complete ZIP. M3 has not started. Working name: **Embroidery Studio 1.4.0**. Updated 20 October 2026. Nothing was published publicly.
 
 ## Finished downloads

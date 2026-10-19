@@ -1,10 +1,11 @@
 // The webview's CSP forbids `unsafe-eval`; this swaps Pixi's generated uniform-sync code for static code.
 import "pixi.js/unsafe-eval";
-import { Application, Container, Graphics, Sprite, Texture } from "pixi.js";
+import { Application, Container, Graphics, Sprite, Texture, RendererType } from "pixi.js";
 import type { DesignObject, Hoop, PlanStitch, StitchPlan } from "@lilo/engine";
 import { drawHoop, type HoopDrawOptions } from "./hoopArt";
 import { StitchLayer, type StitchStyle } from "./stitchLayer";
 import { visibleRect, type Rect, type View } from "./viewport";
+import { createDrawingApplication } from "./renderer";
 
 export interface Theme {
   grid: number;
@@ -70,9 +71,14 @@ export class Scene {
   private highlighted: DesignObject | null = null;
   private plan: StitchPlan | null = null;
   private destroyed = false;
+  private renderFrame: number | null = null;
+  private lastProgress: { count: number; needle: boolean } | null = null;
 
   private constructor(app: Application, theme: Theme) {
     this.app = app;
+    // Native Canvas 2D redraws only when something changes. The GPU path keeps
+    // its existing ticker; software rendering must not burn CPU while idle.
+    if (app.renderer.type === RendererType.CANVAS) app.stop();
     this.theme = theme;
     this.reference.visible = false;
     this.quant.visible = false;
@@ -80,23 +86,30 @@ export class Scene {
     this.layoutStack();
     this.world.addChild(this.grid, this.hoopG, this.reference, this.quant, this.stack, this.highlightG, this.needleG);
     app.stage.addChild(this.world);
+    this.requestRender();
   }
 
-  /** Create the renderer inside `host`. Rejects when WebGL is unavailable. */
+  /** Keep the same scene on GPU or Canvas 2D, depending on working graphics support. */
   static async create(host: HTMLElement, theme: Theme): Promise<Scene> {
-    const app = new Application();
-    await app.init({
+    const app = await createDrawingApplication({
       resizeTo: host,
       antialias: true,
       backgroundAlpha: 0,
       resolution: window.devicePixelRatio || 1,
       autoDensity: true,
-      preference: "webgl",
     });
     host.appendChild(app.canvas);
     const scene = new Scene(app, theme);
     app.renderer.on("resize", () => scene.redrawBackdrop());
     return scene;
+  }
+
+  private requestRender(): void {
+    if (this.destroyed || this.app.renderer.type !== RendererType.CANVAS || this.renderFrame !== null) return;
+    this.renderFrame = requestAnimationFrame(() => {
+      this.renderFrame = null;
+      if (!this.destroyed) this.app.render();
+    });
   }
 
   get width(): number {
@@ -142,6 +155,7 @@ export class Scene {
   /** Grid + hoop, redrawn on every view change (cheap: a few dozen lines). */
   private redrawBackdrop(): void {
     if (this.destroyed) return;
+    this.requestRender();
     const z = this.view.zoom;
     const r: Rect = visibleRect(this.view, this.width, this.height);
     const g = this.grid;
@@ -174,6 +188,7 @@ export class Scene {
 
   /** The user's original artwork, drawn behind the stitches. */
   setReference(src: HTMLCanvasElement | HTMLImageElement | null, p: Placement | null, srcWidth: number, srcHeight: number): void {
+    this.requestRender();
     if (!src || !p) {
       this.reference.visible = false;
       return;
@@ -188,6 +203,7 @@ export class Scene {
   }
 
   setReferenceAlpha(a: number): void {
+    this.requestRender();
     this.reference.alpha = a;
   }
 
@@ -217,6 +233,7 @@ export class Scene {
    * picture groups with the others of its band. Sprites are reused while the list keeps its shape.
    */
   setRefImages(list: RefSprite[]): void {
+    this.requestRender();
     this.refList = list;
     const groups = this.picGroups;
     groups.forEach((g, k) => {
@@ -240,6 +257,7 @@ export class Scene {
 
   /** The quantised image shown during the tracing animation. */
   setQuantized(img: { width: number; height: number; data: Uint8ClampedArray | Uint8Array } | null, p: Placement | null): void {
+    this.requestRender();
     if (!img || !p) {
       this.quant.visible = false;
       return;
@@ -258,12 +276,14 @@ export class Scene {
   }
 
   setQuantizedAlpha(a: number): void {
+    if (this.quant.alpha !== a) this.requestRender();
     this.quant.alpha = a;
     this.quant.visible = a > 0.001 && this.quant.texture !== Texture.EMPTY;
   }
 
   /** `splits`: plan indices where stitch band 1, 2, ... start (a picture layer sits between two bands). */
   setPlan(plan: StitchPlan | null, style: StitchStyle, splits: readonly number[] = []): void {
+    this.lastProgress = null;
     this.plan = plan;
     const total = plan?.stitches.length ?? 0;
     const starts = [0, ...splits.map((x) => Math.min(Math.max(0, x), total))];
@@ -280,12 +300,16 @@ export class Scene {
   }
 
   setStitchAlpha(a: number): void {
+    if (this.stitchAlpha !== a) this.requestRender();
     this.stitchAlpha = a;
     for (const b of this.bands) b.container.alpha = a;
   }
 
   /** Reveal the first `count` stitches and put the needle at the last one. */
   setProgress(count: number, showNeedle: boolean): void {
+    if (this.lastProgress?.count === count && this.lastProgress.needle === showNeedle) return;
+    this.lastProgress = { count, needle: showNeedle };
+    this.requestRender();
     this.bands.forEach((b, k) => b.setProgress(Math.max(0, Math.min(count - this.bandRanges[k][0], this.bandRanges[k][1] - this.bandRanges[k][0]))));
     const list = this.plan?.stitches;
     if (!list || !showNeedle || count <= 0) {
@@ -311,6 +335,7 @@ export class Scene {
   }
 
   private drawHighlight(): void {
+    this.requestRender();
     const g = this.highlightG;
     g.clear();
     const o = this.highlighted;
@@ -344,6 +369,7 @@ export class Scene {
 
   destroy(): void {
     this.destroyed = true;
+    if (this.renderFrame !== null) cancelAnimationFrame(this.renderFrame);
     for (const b of this.bands) b.clear();
     this.app.destroy({ removeView: true }, { children: true });
   }

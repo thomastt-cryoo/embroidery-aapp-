@@ -14,7 +14,8 @@ const out = process.env.LILO_EVIDENCE_OUT ? resolve(process.env.LILO_EVIDENCE_OU
 const production = process.env.LILO_PRODUCTION === "1";
 const appUrl = `${process.env.LILO_URL || "http://localhost:5173"}/${production ? "" : "?mock"}`;
 await mkdir(join(out, "exports"), { recursive: true });
-const browser = await chromium.launch({ executablePath: process.env.LILO_CHROMIUM || chromium.executablePath(), args: ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader"] });
+const disableWebGL = process.env.LILO_DISABLE_WEBGL === "1";
+const browser = await chromium.launch({ executablePath: process.env.LILO_CHROMIUM || chromium.executablePath(), args: ["--use-gl=angle", "--use-angle=swiftshader", "--enable-unsafe-swiftshader", ...(disableWebGL ? ["--disable-webgl"] : [])] });
 const context = await browser.newContext({ viewport: { width: 1440, height: 960 } });
 const remoteRequests = [];
 await context.route(/^https?:/, route => {
@@ -52,6 +53,24 @@ try {
   const totals = await page.getByLabel("Design totals").innerText();
   assert.match(totals, /stitches/);
   check("PNG conversion", totals.replaceAll("\n", "; "));
+  if (disableWebGL) {
+    // Hide the source image: coloured pixels must come from the stitch meshes.
+    await page.getByRole("checkbox", { name: "Reference", exact: true }).uncheck();
+    await page.getByRole("button", { name: "Fit", exact: true }).click();
+    await page.waitForFunction(() => {
+      const canvas = document.querySelector('[data-testid="canvas-host"] canvas');
+      const context = canvas?.getContext("2d");
+      if (!context) return false;
+      const data = context.getImageData(0, 0, canvas.width, canvas.height).data;
+      let blue = 0, red = 0;
+      for (let i = 0; i < data.length; i += 4) {
+        if (data[i + 2] > 60 && data[i + 2] > data[i] * 1.5 && data[i + 3] > 100) blue++;
+        if (data[i] > 100 && data[i] > data[i + 2] * 1.5 && data[i + 3] > 100) red++;
+      }
+      return blue > 100 && red > 100;
+    }, undefined, { timeout: 60_000 });
+    check("Canvas 2D fallback rendering", "WebGL disabled; the actual canvas contains both blue and red stitch pixels");
+  }
   await shot("generated-light");
 
   // Select a real generated object; the contextual editor and hoop remain available together.
@@ -165,7 +184,7 @@ try {
   }
   assert.equal(problems.length, 0, problems.join("\n"));
   check("Offline processing", "External HTTP(S) blocked throughout conversion, editing, simulation, export and project round-trip");
-  await writeFile(join(out, "results.json"), JSON.stringify({ production, externalNetworkBlocked: true, remoteRequests, checks, exports, problems }, null, 2));
+  await writeFile(join(out, "results.json"), JSON.stringify({ production, disableWebGL, externalNetworkBlocked: true, remoteRequests, checks, exports, problems }, null, 2));
 } catch (error) {
   await shot("FAILED").catch(() => {});
   await writeFile(join(out, "results.json"), JSON.stringify({ checks, problems, failure: String(error) }, null, 2));
