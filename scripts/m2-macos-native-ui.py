@@ -4,7 +4,7 @@ root=pathlib.Path(__file__).resolve().parent.parent
 out=root/'received/evidence/native-ui';out.mkdir(parents=True,exist_ok=True)
 tool=pathlib.Path(os.environ['RUNNER_TEMP'])/'studio-native-ax'
 subprocess.run(['swiftc',root/'scripts/m2-macos-ax.swift','-o',tool],check=True)
-checks=[];events=[]
+checks=[];events=[];result='incomplete'
 def ax(*args):
     p=subprocess.run([tool,*map(str,args)],text=True,capture_output=True,timeout=30)
     if p.returncode:raise RuntimeError(p.stdout+p.stderr)
@@ -33,12 +33,14 @@ def choose(path,saving=False):
     if saving:
         snap('save-filename');ax('filename',path.name);time.sleep(.3)
     key(36);time.sleep(1)
-def check(name,detail):checks.append({'name':name,'result':'pass','detail':detail})
+def check(name,detail):
+    checks.append({'name':name,'result':'pass','detail':detail})
+    (out/'checks-live.json').write_text(json.dumps(checks,indent=2)+'\n')
 app='/Applications/Embroidery Studio.app'
 try:
     # The runner contains only the scripted test document, never user work.
     subprocess.run(['pkill','-x','embroidery-studio'],check=False);time.sleep(1)
-    subprocess.run(['open','-na',app],check=True);time.sleep(4)
+    subprocess.run(['open','-na',app],check=True);time.sleep(4);ax('activate');time.sleep(.5)
     initial=snap('initial')
     if 'Skip the tour' in text(initial):press('Skip the tour')
     current=ax('snapshot')
@@ -67,7 +69,7 @@ try:
     key(1,1048576);time.sleep(1);snap('project-save-dialog');key(36)
     project=None
     for _ in range(30):
-        candidates=[p for p in pathlib.Path.home().rglob('k-logo.lilo') if p.stat().st_mtime>=save_start]
+        candidates=[p for p in (pathlib.Path.home()/'Documents/Embroidery Studio').glob('*.lilo') if p.stat().st_mtime>=save_start]
         if candidates:project=max(candidates,key=lambda p:p.stat().st_mtime);break
         time.sleep(.5)
     assert project is not None,'Native Save sheet did not produce a new project'
@@ -81,7 +83,8 @@ try:
     press(save['title'] or save['description']);time.sleep(1);snap('pes-save-dialog');key(36)
     pes=None
     for _ in range(30):
-        candidates=[p for p in pathlib.Path.home().rglob('k-logo.pes') if p.stat().st_mtime>=export_start]
+        folders=[pathlib.Path.home()/'Documents/Embroidery Studio',pathlib.Path.home()/'Documents',pathlib.Path.home()/'Desktop',root]
+        candidates=[p for folder in folders for p in folder.glob('*.pes') if p.stat().st_mtime>=export_start]
         if candidates:pes=max(candidates,key=lambda p:p.stat().st_mtime);break
         time.sleep(.5)
     assert pes is not None,'Native Save sheet did not produce a new PES file'

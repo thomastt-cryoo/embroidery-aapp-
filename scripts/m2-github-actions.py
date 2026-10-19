@@ -5,7 +5,7 @@ import argparse, json, os, pathlib, subprocess, urllib.request, urllib.error
 
 REPO = 'thomastt-cryoo/embroidery-aapp-'
 parser = argparse.ArgumentParser()
-parser.add_argument('command', choices=['dispatch', 'verify', 'status', 'artifacts', 'download', 'cancel', 'cancel-site', 'evidence'])
+parser.add_argument('command', choices=['dispatch', 'verify', 'status', 'artifacts', 'download', 'job-logs', 'cancel', 'cancel-site', 'evidence'])
 parser.add_argument('--id')
 parser.add_argument('--workflow', default='release.yml')
 parser.add_argument('--output')
@@ -84,10 +84,11 @@ elif args.command == 'evidence':
     target.parent.mkdir(parents=True,exist_ok=True)
     target.write_text(json.dumps({'repository':REPO,'private':repo['private'],'selectedRunId':args.id,'measuredMacJobSeconds':total_seconds,'allowanceVerified':False,'runs':selected},indent=2)+'\n')
     print('Saved private run, artifact and measured runner-time evidence:',target)
-elif args.command == 'download':
+elif args.command in ['download','job-logs']:
     class NoRedirect(urllib.request.HTTPRedirectHandler):
         def redirect_request(self, req, fp, code, msg, hdrs, newurl): return None
-    req=urllib.request.Request('https://api.github.com/repos/'+REPO+'/actions/artifacts/'+args.id+'/zip',headers=headers)
+    endpoint='artifacts/'+args.id+'/zip' if args.command=='download' else 'jobs/'+args.id+'/logs'
+    req=urllib.request.Request('https://api.github.com/repos/'+REPO+'/actions/'+endpoint,headers=headers)
     try:
         response=urllib.request.build_opener(NoRedirect).open(req,timeout=30)
     except urllib.error.HTTPError as e:

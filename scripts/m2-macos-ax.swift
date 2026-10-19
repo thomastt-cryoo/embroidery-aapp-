@@ -7,7 +7,6 @@ let args = CommandLine.arguments
 let operation = args.count > 1 ? args[1] : "snapshot"
 guard let running = NSRunningApplication.runningApplications(withBundleIdentifier: "io.github.thomasttcryoo.embroiderystudio").first else { fatalError("Installed app is not running") }
 guard AXIsProcessTrusted() else { fatalError("Runner accessibility is unavailable; no permissions were changed") }
-running.activate(options: [.activateIgnoringOtherApps])
 let app = AXUIElementCreateApplication(running.processIdentifier)
 func attribute(_ e: AXUIElement, _ key: String) -> CFTypeRef? {
     var value: CFTypeRef?
@@ -29,7 +28,8 @@ func emit(_ value: Any) { let d=try! JSONSerialization.data(withJSONObject:value
 func key(_ code: CGKeyCode, _ flags: CGEventFlags = []) {
     for down in [true,false] { let event=CGEvent(keyboardEventSource:nil,virtualKey:code,keyDown:down)!;event.flags=flags;event.post(tap:.cghidEventTap) }
 }
-if operation == "snapshot" { emit(rows) }
+if operation == "activate" {running.activate(options:[.activateIgnoringOtherApps]);emit(["result":"activated"])}
+else if operation == "snapshot" { emit(rows) }
 else if operation == "key" {
     let flags=CGEventFlags(rawValue:UInt64(args[3])!)
     key(CGKeyCode(args[2])!,flags)
