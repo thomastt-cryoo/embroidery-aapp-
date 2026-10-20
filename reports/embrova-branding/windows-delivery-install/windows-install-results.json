@@ -1,0 +1,10 @@
+{
+  "installerExitCode": 0,
+  "productName": "Embrova",
+  "securitySettingsChanged": false,
+  "windowTitle": "Embrova",
+  "customerZipSha256": "1c783fd2ddcd98519d09aefad023c9bf08774f170f809ae1c238b5372864f43b",
+  "result": "pass",
+  "scope": "Standard CI installation and launch; no clean consumer warning claim",
+  "consumerSmartScreenTested": false
+}

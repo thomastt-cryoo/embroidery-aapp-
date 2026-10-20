@@ -88,15 +88,23 @@ if args.action == 'package':
         delivery=modework/'pkg.zip'
         zip_installer(pkg,delivery,'Open Install Embrova.pkg and follow the installer. Then open Embrova in Applications.')
         record(delivery,'pkg',{'pkgBytes':pkg.stat().st_size})
+        compact=modework/'Compact Embrova.pkg'
+        compact_evidence=evidence/'mac-lossless-pkg-compression.json'
+        # A verified checkpoint belongs only to this exact invocation.
+        for stale in [compact,compact_evidence]:
+            if stale.exists():stale.unlink()
         try:
-            compact=modework/'Compact Embrova.pkg'
-            subprocess.run([sys.executable,ROOT/'scripts/m2-macos-recompress.py',pkg,compact,evidence/'mac-lossless-pkg-compression.json'],check=True,timeout=900)
-            compact_delivery=modework/'pkg-long-window.zip'
-            zip_installer(compact,compact_delivery,'Open Install Embrova.pkg and follow the installer. Then open Embrova in Applications.')
-            record(compact_delivery,'pkg',{'pkgBytes':compact.stat().st_size,'payloadCompression':'long-window-lzma2','nativeExtractionVerified':True})
+            subprocess.run([sys.executable,ROOT/'scripts/m2-macos-recompress.py',pkg,compact,compact_evidence],check=True,timeout=900)
         except Exception as exc:
             records.append({'mode':args.mode,'kind':'pkg-long-window','error':str(exc)})
             result_path.write_text(json.dumps(records,indent=2)+'\n')
+        if compact.exists() and compact_evidence.exists():
+            verified=json.loads(compact_evidence.read_text())
+            assert verified['result']=='pass' and verified['decodedPayloadByteIdentical'] and verified['nativeExpandFullIdentical']
+            assert verified['pkgBytes']==compact.stat().st_size and verified['pkgSha256']==sha(compact), 'Invalid compression checkpoint'
+            compact_delivery=modework/'pkg-long-window.zip'
+            zip_installer(compact,compact_delivery,'Open Install Embrova.pkg and follow the installer. Then open Embrova in Applications.')
+            record(compact_delivery,'pkg',{'pkgBytes':compact.stat().st_size,'payloadCompression':'long-window-lzma2','nativeExtractionVerified':True})
     except Exception as exc:
         records.append({'mode':args.mode,'kind':'pkg','error':str(exc)})
         result_path.write_text(json.dumps(records,indent=2)+'\n')

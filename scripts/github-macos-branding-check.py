@@ -2,6 +2,7 @@
 import hashlib
 import json
 import os
+import platform
 from pathlib import Path
 import subprocess
 import time
@@ -24,20 +25,23 @@ subprocess.run(['open', '-a', app], check=True)
 time.sleep(12)
 subprocess.run(['screencapture', '-x', EVIDENCE / 'native-menu-bar-branding.png'], check=True)
 result = {'ciInstallation': 'pass', 'installedManifest': 'matches sealed build',
+          'nativeArchitecture': platform.machine(),
           'sourceTrayPngSha256': hashlib.sha256((ROOT / 'app/src-tauri/icons/tray-mono.png').read_bytes()).hexdigest(),
           'screenshot': 'native-menu-bar-branding.png', 'visualReview': 'pending owner/agent inspection',
           'securitySettingsChanged': False, 'functionalTestsRepeated': False,
           'consumerGatekeeperTested': False}
 (EVIDENCE / 'native-branding-check.json').write_text(json.dumps(result, indent=2) + '\n')
+size = json.loads((EVIDENCE / 'size-gate.json').read_text())
 (OUT / 'MACOS_BRANDING_REPORT.md').write_text(
     '# Mac menu-bar branding package\n\n'
     'The owner-supplied full Embrova flower and wordmark replace the temporary identity '
     'in the application, system icons and menu bar. The image is fitted without cropping. '
     'Product labels and project-folder compatibility were updated; embroidery processing is unchanged.\n\n'
-    'The rebuilt ZIP passed the strict size gate. Command-line installation, all installed files/modes '
+    f"The rebuilt ZIP is {size['zipBytes']:,} bytes; strict Etsy size gate: {'PASS' if size['underLimit'] else 'FAIL — not Etsy-ready'}. "
+    'Command-line installation, all installed files/modes '
     'and strict universal signature verification passed. Actual Mac menu-bar screenshot: '
     'evidence/native-menu-bar-branding.png; visual review pending.\n\n'
     'The earlier eight native functional checks passed on ARM and Intel before this branding change. '
-    'The workflow runs native ARM checks again for Embrova; consult evidence/native-ui/results.json '
+    f'This runner executes {platform.machine()} checks for Embrova; consult evidence/native-ui/results.json '
     'for their actual outcome, which is not implied by this installation report. Clean consumer Gatekeeper and the full '
     'installer authentication walkthrough remain incomplete. Signing is still ad-hoc.\n', encoding='utf-8')

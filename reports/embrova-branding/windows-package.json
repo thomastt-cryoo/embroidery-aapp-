@@ -1,0 +1,11 @@
+{
+  "zipBytes": 17037065,
+  "limitBytes": 20000000,
+  "zipSha256": "1c783fd2ddcd98519d09aefad023c9bf08774f170f809ae1c238b5372864f43b",
+  "installerBytes": 17030782,
+  "zipIntegrity": "pass",
+  "installerReadback": "pass",
+  "underLimit": true,
+  "webviewMode": "downloadBootstrapper",
+  "runtimeAssets": 459
+}

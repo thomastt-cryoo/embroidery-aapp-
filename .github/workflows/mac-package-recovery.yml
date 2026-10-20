@@ -1,0 +1,66 @@
+name: Embrova - recover packaging without rebuilding app
+on:
+  workflow_dispatch:
+    inputs:
+      source_run:
+        description: Completed Embrova Mac build run ID whose universal app will be reused
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+jobs:
+  package:
+    runs-on: macos-15-intel
+    timeout-minutes: 30
+    env:
+      SOURCE_BUILD_RUN: ${{ inputs.source_run }}
+      MAC_COMPRESSION_TUNING_SECONDS: '600'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Receive existing complete build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: Embrova-macOS-current
+          run-id: ${{ inputs.source_run }}
+          github-token: ${{ github.token }}
+          path: received
+      - name: Restore and verify the unchanged universal application
+        id: restore
+        run: |
+          python -m venv .codemagic-venv
+          .codemagic-venv/bin/python -m pip install Pillow==12.3.0
+          .codemagic-venv/bin/python scripts/github-macos-repackage.py
+      - name: Retain smallest verified complete package and measure Etsy limit
+        id: packaging
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          .codemagic-venv/bin/python scripts/m2-macos-etsy.py package --app "$RECOVERED_APP" --mode raw --pkg-only --out out 2>&1 | tee out/evidence/packaging.txt
+          .codemagic-venv/bin/python scripts/codemagic-macos-report.py --check-package
+      - name: Install actual ZIP and capture native branding
+        if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
+        run: .codemagic-venv/bin/python scripts/github-macos-branding-check.py
+      - name: Native editing, saving, reopening and export
+        if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
+        env:
+          M2_MAC_DELIVERY_DIR: out
+          M3_SCREENSHOT_DIR: out/02-macOS/functional/originals
+        run: .codemagic-venv/bin/python scripts/m2-macos-native-ui.py
+      - name: Enforce strict Etsy limit for final success
+        if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
+        run: .codemagic-venv/bin/python scripts/codemagic-macos-report.py --check-package
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Embrova-macOS-repackaged
+          path: |
+            out/Embrova-macOS.zip
+            out/MACOS_BRANDING_REPORT.md
+            out/SHA256SUMS.txt
+            out/evidence/
+            out/02-macOS/
+          retention-days: 2
