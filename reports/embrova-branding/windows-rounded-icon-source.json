@@ -40,5 +40,31 @@
       "cornerAlpha": 0,
       "sha256": "49a71a4fd280c00a7d0680076c29e8203c7f74ffddf05e10cd8fc4f7db7267a4"
     }
+  ],
+  "roundingMaskVerification": [
+    {
+      "file": "32x32.png",
+      "alphaReductionConfinedToNearBlackCornerBackground": true,
+      "maximumAffectedBackgroundValue": 1,
+      "roundedEdgePixels": 48
+    },
+    {
+      "file": "128x128.png",
+      "alphaReductionConfinedToNearBlackCornerBackground": true,
+      "maximumAffectedBackgroundValue": 1,
+      "roundedEdgePixels": 498
+    },
+    {
+      "file": "128x128@2x.png",
+      "alphaReductionConfinedToNearBlackCornerBackground": true,
+      "maximumAffectedBackgroundValue": 8,
+      "roundedEdgePixels": 1899
+    },
+    {
+      "file": "icon.ico",
+      "alphaReductionConfinedToNearBlackCornerBackground": true,
+      "maximumAffectedBackgroundValue": 8,
+      "roundedEdgePixels": 1899
+    }
   ]
 }
