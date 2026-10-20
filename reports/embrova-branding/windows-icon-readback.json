@@ -1,0 +1,44 @@
+{
+  "result": "pass",
+  "scope": "Native Windows executable resource readback; exact new icon payloads at every ICO size",
+  "executableSha256": "a2a703b8ca53d1507e1ab0db9f82dd265b8e518487a2c4438f060ec9c8eef3e2",
+  "sourceIconSha256": "308d1803e5ca6667a51e5d7577f6afad03a5b6bbfe2f5b9d63473473cc6e2420",
+  "frames": [
+    {
+      "width": 16,
+      "height": 16,
+      "imageSha256": "8f12356936ff5f48fb7472d7e74f31a732e4fa3f626bd9f1f5b8d4db1bc914b2",
+      "exactIconPayloadPresentInExecutable": true
+    },
+    {
+      "width": 24,
+      "height": 24,
+      "imageSha256": "72dadd5ca23d1b78e2c22186c079fbf2d579b0a127c9bcfb9bab79c73a4577c0",
+      "exactIconPayloadPresentInExecutable": true
+    },
+    {
+      "width": 32,
+      "height": 32,
+      "imageSha256": "958b3ff317f53648d038d896d2f65de3ce527295386f4c79b96a45a6f43cba43",
+      "exactIconPayloadPresentInExecutable": true
+    },
+    {
+      "width": 48,
+      "height": 48,
+      "imageSha256": "003ce4b887443aa69bd97d5ad7958e0aa6fb9244efeef1898719bd14f0fc7ba4",
+      "exactIconPayloadPresentInExecutable": true
+    },
+    {
+      "width": 64,
+      "height": 64,
+      "imageSha256": "0c5615982c519a9dd1ce32278a47817c4aa61d6de34b2bc055b28337b7adafde",
+      "exactIconPayloadPresentInExecutable": true
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "imageSha256": "71aeb0e6c434e3e462635ee7d1c81fccf82305f29993bb7415e7cfb938e1dedc",
+      "exactIconPayloadPresentInExecutable": true
+    }
+  ]
+}
