@@ -51,7 +51,7 @@ with tempfile.TemporaryDirectory(prefix='studio-pkg-compression-') as folder:
         container=b'pbzx'+struct.pack('>QQQ',256*1024*1024,len(raw),len(packed))+packed
         assert decode(container)==raw,'Compression changed decoded payload bytes'
         payload.write_bytes(container)
-        pending=target.with_name(target.name+'.pending')
+        pending=target.with_name(target.stem+'.pending.pkg')
         if pending.exists():pending.unlink()
         run('pkgutil','--flatten',expanded,pending)
         after=work/('native-after-'+str(len(candidates)))

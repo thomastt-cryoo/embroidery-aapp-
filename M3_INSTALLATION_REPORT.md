@@ -1,5 +1,7 @@
 # M3 — current Mac verification and installation screenshots
 
+> **Branding status:** This report's native screenshots and functional results refer to the earlier temporary-name package. The final Embrova build is being verified separately. Its Windows delivery is already verified; [branding checkpoint](reports/embrova-branding/CHECKPOINT_2_WINDOWS.md) records the exact new ZIP and source. Earlier Mac files below retain their historical names and must not be presented as the final Embrova download.
+
 20 October 2026. **The installed application passed all eight native functional checks on both Apple silicon and Intel Macs. The reported sidebar defect is visibly corrected. The complete customer installation/security walkthrough remains incomplete.** Windows was left alone, as requested.
 
 ## Tested package
