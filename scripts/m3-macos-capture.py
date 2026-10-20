@@ -52,18 +52,22 @@ try:
     assert not pathlib.Path('/Applications/Embroidery Studio.app').exists(),'This capture needs a fresh Mac without the application'
     status=run(['spctl','--status'])
     result.update({'os':run(['sw_vers']).stdout,'zipSha256':expected,'zipBytes':source.stat().st_size,'cleanApplicationState':True,'gatekeeperBaseline':status.stdout.strip() or status.stderr.strip(),'downloadOrigin':'Actual Safari download from local-only test server; no public upload or security attribute modification'})
-    server=http.server.HTTPServer(('127.0.0.1',8765),Download);threading.Thread(target=server.serve_forever,daemon=True).start()
-    app_open('Safari','http://127.0.0.1:8765/Embroidery-Studio-macOS.zip')
-    ax(SAFARI,'activate');time.sleep(1)
-    for attempt in range(4):
-        t=snapshot('browser-download-'+str(attempt+1),SAFARI,False)
-        if archive.exists() and archive.stat().st_size==source.stat().st_size:break
-        available=[r['title'] or r['description'] for r in t if r['role']=='AXButton']
-        # Do not accept Safari security/privacy/download permission prompts.
-        choice=next((v for v in available if v in ['Continue','Start Using Safari']),None)
-        if choice:press(SAFARI,choice)
-        else:time.sleep(2)
-    assert archive.exists() and hashlib.sha256(archive.read_bytes()).hexdigest()==expected,'Safari did not finish the customer ZIP download'
+    if os.environ.get('M3_USE_CI_TRANSFER')=='1':
+        shutil.copy2(source,archive)
+        result['downloadOrigin']='Exact sealed customer ZIP fetched through private Git and copied to Downloads. No Safari/Etsy download or consumer quarantine claim.'
+    else:
+        server=http.server.HTTPServer(('127.0.0.1',8765),Download);threading.Thread(target=server.serve_forever,daemon=True).start()
+        app_open('Safari','http://127.0.0.1:8765/Embroidery-Studio-macOS.zip')
+        ax(SAFARI,'activate');time.sleep(1)
+        for attempt in range(4):
+            t=snapshot('browser-download-'+str(attempt+1),SAFARI,False)
+            if archive.exists() and archive.stat().st_size==source.stat().st_size:break
+            available=[r['title'] or r['description'] for r in t if r['role']=='AXButton']
+            # Do not accept Safari security/privacy/download permission prompts.
+            choice=next((v for v in available if v in ['Continue','Start Using Safari']),None)
+            if choice:press(SAFARI,choice)
+            else:time.sleep(2)
+    assert archive.exists() and hashlib.sha256(archive.read_bytes()).hexdigest()==expected,'Customer ZIP transfer did not finish'
     result['zipQuarantine']=quarantine(archive)
     subprocess.run(['open','-R',str(archive)],check=True);time.sleep(2);ax(FINDER,'activate')
     snapshot('downloaded-zip-in-finder',FINDER)
@@ -92,7 +96,17 @@ try:
         buttons=[r['title'] or r['description'] for r in current if r['role']=='AXButton']
         content=words(current)
         if any(s in content.lower() for s in ['password','authenticate','unidentified developer','cannot be opened','can’t be opened','cannot check','can’t check','malware','unverified','not verified']):
-            result['stopReason']='Actual warning or authentication screen requires inspection';break
+            result['stopReason']='Actual warning or authentication screen requires inspection'
+            if os.environ.get('M3_OWNER_ASSISTED')=='1':
+                print('OWNER ACTION: Inspect the actual Mac warning/authentication screen in VNC. Only you may approve it; automation is paused.',flush=True)
+                snapshot('owner-approval-required',app)
+                for _ in range(45):
+                    time.sleep(2);current=tree(app)
+                    if not any(s in words(current).lower() for s in ['password','authenticate','unidentified developer','cannot be opened','can’t be opened','cannot check','can’t check','malware','unverified','not verified']):
+                        snapshot('after-owner-action',app);result.pop('stopReason',None);break
+                else:break
+                continue
+            break
         action=next((s for s in ['Continue','Install','Close'] if s in buttons),None)
         if not action:result['stopReason']='No known native installer action; inspect actual screenshot';break
         press(app,action);current=snapshot('installer-step-'+str(step+1),app)

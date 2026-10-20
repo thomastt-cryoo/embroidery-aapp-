@@ -30,6 +30,7 @@ def main():
     assert Path(os.environ['CM_BUILD_DIR']).resolve() == ROOT, 'Disposable Codemagic checkout required'
     EVIDENCE.mkdir(parents=True, exist_ok=True)
     stages = []
+    verify_only = os.environ.get('M3_VERIFY_ONLY') == '1'
 
     def record(name, status, detail):
         stages.append({'name': name, 'status': status, 'detail': detail})
@@ -119,7 +120,15 @@ def main():
                     hashlib.sha256(p.read_bytes()).hexdigest(), p.lstat().st_mode & 0o7777)
                     for p in folder.rglob('*') if p.is_symlink() or p.is_file()}
 
-        assert manifest(app) == manifest(built), 'Installed content differs from the built universal app'
+        if verify_only:
+            # Compare to the exact application manifest verified by Apple's
+            # native PKG reader in the original successful build, no rebuild.
+            sealed = read_json(EVIDENCE / 'mac-lossless-pkg-compression.json')
+            expected = {item['path']: (item.get('link', item.get('sha256')), item['mode'])
+                        for item in sealed['nativeAppManifest']}
+            assert manifest(app) == expected, 'Installed content differs from the sealed original package'
+        else:
+            assert manifest(app) == manifest(built), 'Installed content differs from the built universal app'
         result = {'result': 'pass', 'zipSha256': hashlib.sha256(package.read_bytes()).hexdigest(),
                   'binaryArchitectures': arches.strip(), 'allInstalledFilesAndModesMatchBuild': True,
                   'method': 'sudo -n installer on disposable CI; not a customer Gatekeeper test',
@@ -162,7 +171,8 @@ def main():
         assert len(result.get('exports', [])) == 13 and result.get('externalNetworkBlocked')
         return 'Production frontend: real engine, 13 exports, save/reopen, simulation and offline regression; not native UI'
 
-    stage('Separate production browser regression', browser_tests)
+    if not verify_only:
+        stage('Separate production browser regression', browser_tests)
     return 0 if all(s['status'] == 'pass' for s in stages) else 1
 
 

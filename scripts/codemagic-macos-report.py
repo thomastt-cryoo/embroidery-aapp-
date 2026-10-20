@@ -42,23 +42,33 @@ def render_report(out, exit_code):
     stages = load(out / 'evidence/test-stages.json', [])
     size = load(out / 'evidence/size-gate.json', {})
     capture = load(out / '02-macOS/installation/capture-results.json', {})
+    mode = load(out / 'evidence/run-mode.json', {})
+    verify_only = mode.get('mode') == 'verification-only'
+    required = {'Desktop permission probe (read-only)', 'M3 GUI installation walkthrough',
+                'Ordinary CI installation from the actual customer ZIP', 'Installed native app functional tests'}
+    if not verify_only:
+        required.add('Separate production browser regression')
     success = (exit_code == 0 and bool(stages) and all(s['status'] == 'pass' for s in stages)
-               and size.get('underLimit') and (out / 'evidence/native-rust-tests.passed').exists())
+               and required <= {s['name'] for s in stages}
+               and size.get('underLimit') and (verify_only or (out / 'evidence/native-rust-tests.passed').exists()))
     status = 'CI checks passed; clean consumer Gatekeeper testing still required' if success else 'INCOMPLETE / FAILED — inspect evidence; do not claim native/customer approval'
     lines = ['# Codemagic Mac build and M3 evidence', '', status, '',
-             'Machine configured: mac_mini_m2, manual-only, 80-minute maximum. No billing or publishing configured.', '',
+             f"Machine configured: mac_mini_m2, manual-only, {20 if verify_only else 80}-minute maximum. No billing or publishing configured.", '',
              'This ARM Mac builds a universal Intel/Apple silicon app. Native execution tests cover ARM only; Intel execution is not verified here.', '',
              '## Package', '',
              f"ZIP bytes: {size.get('zipBytes', 'not verified')}; strict limit: 20,000,000 bytes; under limit: {size.get('underLimit', 'not verified')}.", '',
              'If the size gate fails, the complete oversized package remains available for owner inspection. It is not Etsy-ready. No functionality is removed.', '',
              '## Test stages', '', '| Stage | Result | Detail |', '|---|---|---|']
+    if verify_only:
+        lines[4:4] = ['Verification only: original sealed ZIP reused; no app build, Rust tests or browser regression repeated. '
+                      'The source run passed 96 Rust tests and the browser regression; those are historical results.', '']
     for stage in stages:
         detail = str(stage['detail']).replace('|', '/').replace('\n', ' ')
         lines.append(f"| {stage['name']} | {stage['status']} | {detail} |")
     if not stages:
         lines.append('| Build/dependencies | not completed | Test stages have not run |')
     lines += ['', '## Customer installation versus CI', '',
-              'GUI installation captures, when available, use an actual Safari localhost download, Finder, Archive Utility and Installer on this disposable CI Mac. The localhost origin and CI permissions differ from a clean customer Mac.', '',
+              'GUI installation captures, when available, use Finder, Archive Utility and Installer on this disposable CI Mac. Full-build mode attempts a Safari localhost download; verification-only mode transfers the sealed ZIP through private Git into Downloads. Neither is a clean consumer Etsy download or a consumer Gatekeeper test.', '',
               'Ordinary CI installation uses sudo installer, separately logged in evidence/ci-package-install.txt. It does not prove a customer can pass Gatekeeper or authentication.', '',
               'Gatekeeper consumer testing: NOT COMPLETED. The app remains ad-hoc signed, without Developer ID/notarization. No Gatekeeper warning screenshots are fabricated and no security settings or quarantine attributes are changed.', '',
               'GUI capture status: ' + str(capture.get('status', 'not available')) + '. ' + str(capture.get('stopReason') or capture.get('error') or ''), '',

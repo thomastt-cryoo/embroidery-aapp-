@@ -1,0 +1,9 @@
+{
+  "zipBytes": 19861169,
+  "zipSha256": "cf594cb3c34373aee45a150aca7cb2f9326fff9c19fa41fe5a4f4bdd2012b426",
+  "gitBlob": "0a9a9d4f0b495a19e2ae52be8505285a46b8a1c3",
+  "privatePackageBranch": "codex/m3-macos-verification-package",
+  "packageCommit": "10c900b41d4ad6c78a52b7332afdcc250e01d389",
+  "applicationRebuilt": false,
+  "publiclyPublished": false
+}

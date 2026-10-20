@@ -71,6 +71,21 @@ class ReportAndPackageTests(unittest.TestCase):
             self.assertIsNone(z.testzip())
             self.assertNotIn('Embroidery-Studio-macOS.zip', z.namelist())
 
+    def test_verification_only_cannot_pass_without_all_native_stages(self):
+        (self.out / 'evidence/run-mode.json').write_text(json.dumps({'mode': 'verification-only'}))
+        (self.out / 'evidence/size-gate.json').write_text(json.dumps({'underLimit': True, 'zipBytes': 19861169}))
+        stages = [dict(name='Desktop permission probe (read-only)', status='pass', detail='authorized')]
+        (self.out / 'evidence/test-stages.json').write_text(json.dumps(stages))
+        self.assertFalse(report.render_report(self.out, 0))
+        for name in ['M3 GUI installation walkthrough', 'Ordinary CI installation from the actual customer ZIP',
+                     'Installed native app functional tests']:
+            stages.append(dict(name=name, status='pass', detail='test fixture'))
+        (self.out / 'evidence/test-stages.json').write_text(json.dumps(stages))
+        self.assertTrue(report.render_report(self.out, 0))
+        text = (self.out / 'M3_MACOS_RUN_REPORT.md').read_text()
+        self.assertIn('those are historical results', text)
+        self.assertIn('Gatekeeper consumer testing: NOT COMPLETED', text)
+
 
 if __name__ == '__main__':
     unittest.main()
