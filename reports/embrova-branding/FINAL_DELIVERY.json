@@ -1,0 +1,24 @@
+{
+  "version": "1.4.0",
+  "brand": "Embrova",
+  "directory": "C:\\Users\\mazin\\Downloads\\embroidry app\\dist\\Embrova-Customer-Release-20261020",
+  "packages": [
+    {
+      "file": "Embrova-Windows.zip",
+      "bytes": 17042356,
+      "sha256": "68f1cbd8f34790ccdf3781388d49f581e5496bc58eed8751c58953c9489dcfbd",
+      "completeSingleInstallerZip": true
+    },
+    {
+      "file": "Embrova-macOS.zip",
+      "bytes": 20172883,
+      "sha256": "94ef8b1f9798419adc96b7c1c202f99ca83ff936564136cc620fd26bac620e01",
+      "completeSingleInstallerZip": true
+    }
+  ],
+  "windowsRun": "39392991337",
+  "macRun": "39392239556",
+  "ownerAcceptedMacSizeException": true,
+  "securityWarningTestingDeferredByOwner": true,
+  "commercialCertificateSigning": false
+}

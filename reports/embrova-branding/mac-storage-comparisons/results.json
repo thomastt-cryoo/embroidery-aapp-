@@ -1,0 +1,26 @@
+[
+  {
+    "run": "39389898561",
+    "filter": "X86 + LZMA2 lc=4 pb=0",
+    "zipBytes": 20235322,
+    "zipSha256": "fba80dc212e620bcf3b395995e8f54729e8cb4930ad2e7dbd8a2e645f39127f0",
+    "installerBytes": 20219132,
+    "limitBytes": 20000000,
+    "underLimit": false,
+    "completeUniversalApplication": true,
+    "installerCount": 1,
+    "sameApplicationFilesAsNativeEightCheckRun": true
+  },
+  {
+    "run": "39389911359",
+    "filter": "X86 + LZMA2 lc=2 pb=2",
+    "zipBytes": 20209019,
+    "zipSha256": "781f6feb4034d663122575bba4cc345ed0d8f8baf2dc093a4c0ae2fbd5fe3c5a",
+    "installerBytes": 20192860,
+    "limitBytes": 20000000,
+    "underLimit": false,
+    "completeUniversalApplication": true,
+    "installerCount": 1,
+    "sameApplicationFilesAsNativeEightCheckRun": true
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "sourceBuildRun": "39383934688",
+  "sourceZipSha256": "6394d586b8ef70b06ec4cbf49f5db722bd9cabe197fee3d3cc32ea612b503e8a",
+  "applicationSourceCommit": "1a524f3c0609f8d8e647968ad4ac2cc23ed58fd9",
+  "nativeIconSha256": "f0f9f25676452400b290db6eddc92b9e5f8aaaab3cb5f7cfdfac76ace7dca1e1",
+  "binarySha256": "6fffb83d85cceb76a53e0c118760b6e20fd0a459f64e0985c823dd54dac109ad",
+  "architectures": [
+    "x86_64",
+    "arm64"
+  ],
+  "originalBinarySha256": "5a1dacc9f8d30a33c233b05c446ae3a79d69718aca9cde63d99bb7d3a75d2daf",
+  "executableCodeAndEmbeddedAssetsUnchanged": true,
+  "normalizedCodeHashes": {
+    "x86_64": "a52d9b0a413c2403d09ad33f460f3f6f8c0c7cccd48d8c0cac06741c3b9ed587",
+    "arm64": "520ff382e0f78c7f0a1f307d8511ace046a0e22f8a19e65c186b7bcc8d396a47"
+  },
+  "changedFiles": [
+    "Contents/_CodeSignature/CodeResources",
+    "Contents/MacOS/embrova",
+    "Contents/Resources/icon.icns"
+  ],
+  "applicationRebuilt": false,
+  "applicationFilesModified": true,
+  "nativeIconRefreshed": true,
+  "originalSignature": "verified strict, all architectures",
+  "finalSignature": "verified strict, all architectures; ad-hoc"
+}

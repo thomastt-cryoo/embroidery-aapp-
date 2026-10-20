@@ -1,6 +1,9 @@
 {
-  "packageCommit": "167b38ed4da89909c9ebdd765a5935fce4685c87",
-  "applicationSourceCommit": "1a524f3c0609f8d8e647968ad4ac2cc23ed58fd9",
-  "sha256": "1c783fd2ddcd98519d09aefad023c9bf08774f170f809ae1c238b5372864f43b",
-  "bytes": 17037065
+  "packageCommit": "285c102619b0ebb2254300165073b0a3fee1e178",
+  "applicationSourceCommit": "b09ab66",
+  "sha256": "68f1cbd8f34790ccdf3781388d49f581e5496bc58eed8751c58953c9489dcfbd",
+  "bytes": 17042356,
+  "executableSha256": "63835512062e35199f315de56ddbfde4b912541f0ba8007a1eca0d573c14ae63",
+  "unbundledExecutableSha256": "45602612862a774e8b97e0b15b4b3909c18ed8efc6ec5e2dd6f50d1a20496c92",
+  "checksumSource": "App extracted directly from the final NSIS installer; Tauri NSIS bundle marker included"
 }

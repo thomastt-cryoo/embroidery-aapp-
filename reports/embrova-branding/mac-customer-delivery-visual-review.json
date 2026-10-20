@@ -1,0 +1,11 @@
+{
+  "ciInstallation": "pass",
+  "installedManifest": "matches sealed build",
+  "nativeArchitecture": "x86_64",
+  "sourceTrayPngSha256": "48da49faa761854cfbdd0a8d32489c595276741e8a9073dd3698b0166ac0977f",
+  "screenshot": "native-menu-bar-branding.png",
+  "visualReview": "Reviewed actual full-resolution home screenshot; Embrova name and rounded sidebar logo confirmed; rounded Dock icon confirmed",
+  "securitySettingsChanged": false,
+  "functionalTestsRepeated": false,
+  "consumerGatekeeperTested": false
+}

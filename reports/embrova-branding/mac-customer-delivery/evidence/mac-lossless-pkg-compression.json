@@ -1,0 +1,43 @@
+{
+  "result": "pass",
+  "originalPkgBytes": 39454841,
+  "pkgBytes": 20156946,
+  "pkgSha256": "e7a5cd22eb26cd0d46f4219449d69f29c17f7f90eb1c2e83a06fb73dc5087d66",
+  "decodedPayloadBytes": 162808832,
+  "decodedPayloadSha256": "b21197b3f00ca9fd5fa7a9d9702520664b0ab13feb51838c9089bcb1d247d727",
+  "decodedPayloadByteIdentical": true,
+  "nativeExpandFullIdentical": true,
+  "nativeAppManifest": [
+    {
+      "path": "Contents/Info.plist",
+      "mode": 420,
+      "sha256": "7ea493bd26f43a337a3436e1882b9ee49963622aa0bf9cd87154b94a88e7426f"
+    },
+    {
+      "path": "Contents/MacOS/embrova",
+      "mode": 493,
+      "sha256": "6fffb83d85cceb76a53e0c118760b6e20fd0a459f64e0985c823dd54dac109ad"
+    },
+    {
+      "path": "Contents/Resources/icon.icns",
+      "mode": 420,
+      "sha256": "f0f9f25676452400b290db6eddc92b9e5f8aaaab3cb5f7cfdfac76ace7dca1e1"
+    },
+    {
+      "path": "Contents/_CodeSignature/CodeResources",
+      "mode": 420,
+      "sha256": "a6553129fc14b2bb37c596af633c077c97041f3e5a2313502385b1a237627b50"
+    }
+  ],
+  "signatureVerification": "all architectures; strict",
+  "compression": "native pbzx / one XZ stream / 128 MiB dictionary / 256 MiB block limit",
+  "selectedFilter": "X86 + LZMA2",
+  "compressionCandidates": [
+    {
+      "filter": "X86 + LZMA2",
+      "bytes": 20154572
+    }
+  ],
+  "customerInstallScripts": false,
+  "seconds": 308.14
+}

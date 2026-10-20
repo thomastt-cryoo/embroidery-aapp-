@@ -1,0 +1,122 @@
+[
+  {
+    "number": 1,
+    "file": "001-initial.png",
+    "label": "initial",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 2,
+    "file": "002-home-sidebar.png",
+    "label": "home-sidebar",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 3,
+    "file": "003-image-picker.png",
+    "label": "image-picker",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 4,
+    "file": "004-path-entry.png",
+    "label": "path-entry",
+    "source": "actual installed macOS app",
+    "customerCandidate": false,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 5,
+    "file": "005-path-entered.png",
+    "label": "path-entered",
+    "source": "actual installed macOS app",
+    "customerCandidate": false,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 6,
+    "file": "006-converted.png",
+    "label": "converted",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 7,
+    "file": "007-stitches-without-reference.png",
+    "label": "stitches-without-reference",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 8,
+    "file": "008-simulation-zero.png",
+    "label": "simulation-zero",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 9,
+    "file": "009-simulation-complete.png",
+    "label": "simulation-complete",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 10,
+    "file": "010-hoop-picker.png",
+    "label": "hoop-picker",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 11,
+    "file": "011-stitch-setting-edited.png",
+    "label": "stitch-setting-edited",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 12,
+    "file": "012-project-save-dialog.png",
+    "label": "project-save-dialog",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 13,
+    "file": "013-export.png",
+    "label": "export",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 14,
+    "file": "014-pes-save-dialog.png",
+    "label": "pes-save-dialog",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  },
+  {
+    "number": 15,
+    "file": "015-project-reopened.png",
+    "label": "project-reopened",
+    "source": "actual installed macOS app",
+    "customerCandidate": true,
+    "privacyReview": "required before customer use"
+  }
+]

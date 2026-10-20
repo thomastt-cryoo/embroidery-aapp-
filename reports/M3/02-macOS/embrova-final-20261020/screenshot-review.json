@@ -1,0 +1,107 @@
+[
+  {
+    "file": "001-initial.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "fd1b4f23717886cd0f54c907e949757e57ed2a3eeada72a2a00765bd2bee0bc8",
+    "customerGuideVisualAndPrivacyReview": "internal original; not approved for customer guide"
+  },
+  {
+    "file": "002-home-sidebar.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "f7aeef2ef61f58c71c9c68ecaa2b85f904bd9f0466f10353ee05754b9acf85bf",
+    "customerGuideVisualAndPrivacyReview": "reviewed; no personal accounts or private owner paths"
+  },
+  {
+    "file": "003-image-picker.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "7c110e47728ad0c210e36799496aff030120e0d02a2ffed20f558f61034bdd46",
+    "customerGuideVisualAndPrivacyReview": "reviewed; no personal accounts or private owner paths"
+  },
+  {
+    "file": "004-path-entry.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "af8d279f013709be171096f80069d64b5417890b198de94a193040e535fac054",
+    "customerGuideVisualAndPrivacyReview": "internal original; not approved for customer guide"
+  },
+  {
+    "file": "005-path-entered.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "f81b52b6024ef89ddbe9c923e9b59a8b3b9df230ff33610a3e299effb2950087",
+    "customerGuideVisualAndPrivacyReview": "internal original; not approved for customer guide"
+  },
+  {
+    "file": "006-converted.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "3c15b47897957724a6d6e595cf214aa8aee924d24ea8056b7d982d5eb0755714",
+    "customerGuideVisualAndPrivacyReview": "reviewed; no personal accounts or private owner paths"
+  },
+  {
+    "file": "007-stitches-without-reference.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "3b69d82420919cafd203d790b72f902d4ffb875ce801cd6dceaaeb29b0f2d4bf",
+    "customerGuideVisualAndPrivacyReview": "internal original; not approved for customer guide"
+  },
+  {
+    "file": "008-simulation-zero.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "76fcafd2c7110bdd10fb278a62353f915434524655ebe0b27cbd3a7bb495cf5a",
+    "customerGuideVisualAndPrivacyReview": "internal original; not approved for customer guide"
+  },
+  {
+    "file": "009-simulation-complete.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "7715ba49c1f5c4f6ad00ad8ccc67b8f612839d99695290b9ac4667f5fc9e0ab7",
+    "customerGuideVisualAndPrivacyReview": "internal original; not approved for customer guide"
+  },
+  {
+    "file": "010-hoop-picker.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "1ac7f01071a898c15260b291ebcb7688eac89d000f87794af34a77abba6ac30e",
+    "customerGuideVisualAndPrivacyReview": "reviewed; no personal accounts or private owner paths"
+  },
+  {
+    "file": "011-stitch-setting-edited.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "4bce3b61cafa8db279b985ecdffcb79c37a76fc63f7a40f869dc354a86e06f7f",
+    "customerGuideVisualAndPrivacyReview": "reviewed; no personal accounts or private owner paths"
+  },
+  {
+    "file": "012-project-save-dialog.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "c785408f12571aad2388fe4ca9f82499f9f2d0bf4b2e935e3c3c80cd3789c4ee",
+    "customerGuideVisualAndPrivacyReview": "reviewed; no personal accounts or private owner paths"
+  },
+  {
+    "file": "013-export.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "a3fc6a090da67aca4fd3e434c6d2d5c264c667ae83709589f6da1b2819f4e959",
+    "customerGuideVisualAndPrivacyReview": "internal original; not approved for customer guide"
+  },
+  {
+    "file": "014-pes-save-dialog.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "01ca3e33e350889092e3bbd67c7324dd62d5dc5c6aa010202c66344e62eded51",
+    "customerGuideVisualAndPrivacyReview": "reviewed; no personal accounts or private owner paths"
+  },
+  {
+    "file": "015-project-reopened.png",
+    "width": 1920,
+    "height": 1080,
+    "sha256": "1a4a8ae5525b39ee2635ae1ef4e23c4abc5f23164aa89b8d5ef2dc26700756cf",
+    "customerGuideVisualAndPrivacyReview": "internal original; not approved for customer guide"
+  }
+]

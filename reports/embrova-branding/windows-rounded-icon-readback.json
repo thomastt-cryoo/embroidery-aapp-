@@ -70,5 +70,11 @@
       "exactIconPayloadPresentInExecutable": true
     }
   ],
-  "note": "Smallest 16px frame retains normal faint edge antialiasing; taskbar-size frames have fully transparent corners."
+  "note": "Smallest 16px frame retains normal faint edge antialiasing; taskbar-size frames have fully transparent corners.",
+  "roundedRuntimeWindowAndTrayRgbaEmbedded": true,
+  "previousOpaqueRuntimeRgbaAbsent": true,
+  "packagedExecutableSha256": "63835512062e35199f315de56ddbfde4b912541f0ba8007a1eca0d573c14ae63",
+  "packagedExecutableAllRoundedIconsVerified": true,
+  "sourceAndPackagedDifferenceBytes": 3,
+  "differenceReason": "Tauri embeds the NSIS bundle-type marker during packaging, then restores the unbundled executable"
 }
