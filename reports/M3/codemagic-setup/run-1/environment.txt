@@ -1,7 +1,0 @@
-ProductName:		macOS
-ProductVersion:		15.5
-BuildVersion:		24F74
-Xcode 16.4
-Build version 16F6
-v24.22.0
-48349f4428b79421937cde0c8fca712d43c07c57

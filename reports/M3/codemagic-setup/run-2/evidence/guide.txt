@@ -1,5 +1,0 @@
-
-> lilo@1.4.0 guide:check /Users/builder/clone
-> node --experimental-strip-types --no-warnings scripts/gen-guide-reference.mjs --check && node scripts/build-guide-index.mjs --check
-
-51 pages, 21746 words, 183 hints, 30 tour steps, 12 live warnings

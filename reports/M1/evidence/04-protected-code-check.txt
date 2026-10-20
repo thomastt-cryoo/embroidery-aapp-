@@ -1,1 +1,0 @@
-PASS: engine, editor state, platform I/O, project management, native Rust and standard Tauri config unchanged from c82a9d7.

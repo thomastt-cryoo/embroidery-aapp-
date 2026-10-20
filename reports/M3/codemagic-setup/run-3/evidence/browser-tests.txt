@@ -1,9 +1,0 @@
-PASS PNG conversion: 1,374 / 1,374 stitches; 1 colour change; 49.4 × 60.9 mm; ≈ 4 min 16 s; ?
-PASS Hoop while editing: Selected a 100 × 100 mm hoop with a generated shape selected
-PASS Layout 960 × 600: No horizontal overflow; canvas 420px; appearance menu inside window
-PASS Layout 1280 × 800: No horizontal overflow; canvas 678px; appearance menu inside window
-PASS Layout 1440 × 960: No horizontal overflow; canvas 838px; appearance menu inside window
-PASS Simulation: Playback completed at 50× with auto-continue enabled
-PASS All exports: 13 files written; 11 readable machine formats re-read, write-only G-code checked, and PNG signature verified
-PASS Project save and reopen: k-logo.lilo: 1,374 / 1,374 stitches; 1 colour change; 49.4 × 60.9 mm; ≈ 4 min 16 s; ?; Embroidery Studio page title verified
-PASS Offline processing: External HTTP(S) blocked throughout conversion, editing, simulation, export and project round-trip

@@ -1,4 +1,0 @@
-# Keep first-time Windows builds usable on machines with limited free memory.
-# `cargo build -j N` can override this for larger development machines.
-[build]
-jobs = 2

@@ -1,9 +1,0 @@
-{
-  "buildId": "6ad6d39a7550aed810905add",
-  "sourceCommit": "48349f4428b79421937cde0c8fca712d43c07c57",
-  "archiveSha256": "188e2d6bf0ae3e41058ddea4b1f710718a08cfc84fc781f4fca6806ccde857be",
-  "failedStage": "pnpm setup",
-  "error": "EEXIST /usr/local/bin/pnpm",
-  "applicationBuildStarted": false,
-  "fix": "Install pinned pnpm in disposable workspace; preserve preinstalled system shim"
-}

@@ -1,8 +1,0 @@
-{
-  "applicationSourceCommit": "471e1fc1a3544dda51048afcecc177844b7602f6",
-  "zipSha256": "3381ddb207a0e535b780752c58957c3f95d68465921022ab90d306ea54d5e33d",
-  "applicationRebuilt": false,
-  "architecture": "arm64",
-  "system": "macOS-14.8.9-arm64-arm-64bit-Mach-O",
-  "noSecuritySettingsChanged": true
-}

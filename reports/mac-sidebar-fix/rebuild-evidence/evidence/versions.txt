@@ -1,5 +1,0 @@
-
-> lilo@1.4.0 check-versions /Users/builder/clone
-> node scripts/check-versions.mjs
-
-All versions are 1.4.0.
