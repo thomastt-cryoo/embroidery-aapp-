@@ -1,3 +1,5 @@
+> **Current Mac package update — 20 October 2026:** The UI-corrected Mac ZIP is now `dist/Mac-Verified-Latest/Embroidery-Studio-macOS.zip`, **19,866,936 bytes**, SHA-256 `3381ddb207a0e535b780752c58957c3f95d68465921022ab90d306ea54d5e33d`. Its installed native conversion, rendering, playback, hoop selection, stitch editing, project save/reopen and PES export passed on both ARM and Intel GitHub Macs. See [current M3 report](M3_INSTALLATION_REPORT.md) for actual screenshots and remaining installation/Gatekeeper limitations. The owner has since made the repository public; the private-repository and pre-M3 statements below are historical. The original delivery files below remain archived unchanged.
+
 # M2 — Embroidery Studio packaging and compatibility report
 
 20 October 2026. **Both complete ZIPs are below 20,000,000 bytes. The Mac preview issue is fixed, and native workflows passed on Windows, Apple Silicon Mac and Intel Mac.** Commercial signing remains unfinished, so these are private review builds. Nothing was published publicly. Work stops at M2 for approval; M3 has not started.

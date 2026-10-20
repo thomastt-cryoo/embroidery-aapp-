@@ -1,0 +1,16 @@
+[
+  {
+    "runner": "macos-14",
+    "checks": 8,
+    "nativeResult": "pass",
+    "exportedPesBytes": 4072,
+    "exportedPesSha256": "ae57a02eb4892f4425a4e84ff0bf294d22a5670ae948b3f10f4d3f03d2ad563d"
+  },
+  {
+    "runner": "macos-15-intel",
+    "checks": 8,
+    "nativeResult": "pass",
+    "exportedPesBytes": 4072,
+    "exportedPesSha256": "ae57a02eb4892f4425a4e84ff0bf294d22a5670ae948b3f10f4d3f03d2ad563d"
+  }
+]

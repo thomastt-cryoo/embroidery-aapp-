@@ -1,0 +1,9 @@
+{
+  "zipBytes": 19866936,
+  "zipSha256": "3381ddb207a0e535b780752c58957c3f95d68465921022ab90d306ea54d5e33d",
+  "installerBytes": 19851396,
+  "limitBytes": 20000000,
+  "underLimit": true,
+  "completeUniversalApplication": true,
+  "installerCount": 1
+}
