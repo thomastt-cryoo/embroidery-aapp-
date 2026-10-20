@@ -1,8 +1,8 @@
 {
-  "zipBytes": 17037065,
+  "zipBytes": 17042356,
   "limitBytes": 20000000,
-  "zipSha256": "1c783fd2ddcd98519d09aefad023c9bf08774f170f809ae1c238b5372864f43b",
-  "installerBytes": 17030782,
+  "zipSha256": "68f1cbd8f34790ccdf3781388d49f581e5496bc58eed8751c58953c9489dcfbd",
+  "installerBytes": 17035951,
   "zipIntegrity": "pass",
   "installerReadback": "pass",
   "underLimit": true,

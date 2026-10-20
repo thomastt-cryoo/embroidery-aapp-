@@ -6,6 +6,10 @@ on:
         description: SHA-256 of the exact Embrova Windows customer ZIP
         required: true
         type: string
+      exe_sha256:
+        description: Expected installed executable checksum, including the final native icons
+        required: true
+        type: string
 permissions:
   contents: read
 jobs:
@@ -27,6 +31,8 @@ jobs:
           python -c "import zipfile; z=zipfile.ZipFile('Embrova-Windows.zip'); assert z.testzip() is None; assert sorted(z.namelist())==['Install Embrova.exe','LICENSE.txt','NOTICE.txt','START HERE.txt']; z.extractall('received')"
       - name: Install and launch actual Embrova customer package
         shell: pwsh
+        env:
+          EXPECTED_EXE_SHA256: ${{ inputs.exe_sha256 }}
         run: |
           New-Item -ItemType Directory -Force out | Out-Null
           $installDir = Join-Path $env:RUNNER_TEMP 'Embrova-install-test'
@@ -35,6 +41,9 @@ jobs:
           if ($installation.ExitCode -ne 0) { throw "Installer exited $($installation.ExitCode)" }
           $exe = Join-Path $installDir 'embrova.exe'
           if (-not (Test-Path -LiteralPath $exe)) { throw 'Installed executable is missing' }
+          if ($env:EXPECTED_EXE_SHA256 -notmatch '^[a-f0-9]{64}$') { throw 'Invalid executable checksum' }
+          $installedHash = (Get-FileHash -LiteralPath $exe -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($installedHash -ne $env:EXPECTED_EXE_SHA256) { throw 'Installed app does not match the verified rounded-icon executable' }
           $metadata = (Get-Item -LiteralPath $exe).VersionInfo
           if ($metadata.ProductName -ne 'Embrova') { throw 'Installed product name was not updated' }
           $app = Start-Process -FilePath $exe -PassThru -WindowStyle Hidden
@@ -48,7 +57,7 @@ jobs:
               if ($title -like '*Embrova*') { break }
             }
             if ($title -notlike '*Embrova*') { throw 'No Embrova application window observed' }
-            @{ result='pass'; installerExitCode=$installation.ExitCode; productName=$metadata.ProductName; windowTitle=$title; customerZipSha256=(Get-FileHash -LiteralPath Embrova-Windows.zip -Algorithm SHA256).Hash.ToLowerInvariant(); consumerSmartScreenTested=$false; securitySettingsChanged=$false; scope='Standard CI installation and launch; no clean consumer warning claim' } | ConvertTo-Json | Set-Content -LiteralPath out/windows-install-results.json
+            @{ result='pass'; installerExitCode=$installation.ExitCode; productName=$metadata.ProductName; windowTitle=$title; installedExecutableSha256=$installedHash; roundedIconExecutableMatched=$true; customerZipSha256=(Get-FileHash -LiteralPath Embrova-Windows.zip -Algorithm SHA256).Hash.ToLowerInvariant(); consumerSmartScreenTested=$false; securitySettingsChanged=$false; scope='Standard CI installation and launch; exact executable resource checksum checked; no clean consumer warning claim' } | ConvertTo-Json | Set-Content -LiteralPath out/windows-install-results.json
           } finally {
             if (-not $app.HasExited) { Stop-Process -Id $app.Id }
           }

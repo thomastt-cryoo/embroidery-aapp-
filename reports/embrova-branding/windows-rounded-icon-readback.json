@@ -1,0 +1,74 @@
+{
+  "result": "pass",
+  "executableSha256": "45602612862a774e8b97e0b15b4b3909c18ed8efc6ec5e2dd6f50d1a20496c92",
+  "sourceIconSha256": "4d241700b153125e6aa19fce158840c9c5f188f1ea34ee9cadfcb0aae95807bf",
+  "frames": [
+    {
+      "width": 16,
+      "height": 16,
+      "cornerAlpha": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "exactIconPayloadPresentInExecutable": true
+    },
+    {
+      "width": 24,
+      "height": 24,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "exactIconPayloadPresentInExecutable": true
+    },
+    {
+      "width": 32,
+      "height": 32,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "exactIconPayloadPresentInExecutable": true
+    },
+    {
+      "width": 48,
+      "height": 48,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "exactIconPayloadPresentInExecutable": true
+    },
+    {
+      "width": 64,
+      "height": 64,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "exactIconPayloadPresentInExecutable": true
+    },
+    {
+      "width": 256,
+      "height": 256,
+      "cornerAlpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "exactIconPayloadPresentInExecutable": true
+    }
+  ],
+  "note": "Smallest 16px frame retains normal faint edge antialiasing; taskbar-size frames have fully transparent corners."
+}
