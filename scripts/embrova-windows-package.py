@@ -16,7 +16,8 @@ assert assets['allPreviewPixelsAndColourProfilesIdentical'] and assets['allOther
 out = ROOT / 'dist/Embrova'
 out.mkdir(exist_ok=True)
 archive = out / 'Embrova-Windows.zip'
-with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+pending = evidence / 'windows-package.pending'
+with zipfile.ZipFile(pending, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:
     z.write(source, 'Install Embrova.exe')
     z.writestr('START HERE.txt', 'Extract this ZIP, open Install Embrova.exe, and follow the installer.\n\n'
                 'The complete application is included. If Microsoft WebView2 is missing, the installer '
@@ -25,10 +26,12 @@ with zipfile.ZipFile(archive, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:
                 'Automatic updates are disabled. This installer is unsigned.\n')
     z.write(ROOT / 'LICENSE', 'LICENSE.txt')
     z.write(ROOT / 'NOTICE.md', 'NOTICE.txt')
-with zipfile.ZipFile(archive) as z:
+with zipfile.ZipFile(pending) as z:
     assert z.testzip() is None
     assert sorted(z.namelist()) == ['Install Embrova.exe', 'LICENSE.txt', 'NOTICE.txt', 'START HERE.txt']
     assert hashlib.sha256(z.read('Install Embrova.exe')).hexdigest() == hashlib.sha256(source.read_bytes()).hexdigest()
+assert pending.stat().st_size < 20_000_000, 'Complete installer exceeds Etsy limit; no parts or runtime assets removed'
+pending.replace(archive)
 result = {'zipBytes': archive.stat().st_size, 'limitBytes': 20_000_000,
           'zipSha256': hashlib.sha256(archive.read_bytes()).hexdigest(),
           'installerBytes': source.stat().st_size, 'zipIntegrity': 'pass',

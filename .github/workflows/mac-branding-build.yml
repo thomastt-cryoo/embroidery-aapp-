@@ -30,7 +30,7 @@ jobs:
             ~/.cargo/git
             ~/Library/Caches/Embrova/fonts
             app/src-tauri/target
-          key: mac-universal-branding-${{ hashFiles('app/src-tauri/Cargo.lock', 'pnpm-lock.yaml') }}
+          key: mac-universal-branding-intel-${{ hashFiles('app/src-tauri/Cargo.lock', 'pnpm-lock.yaml') }}
       - name: Build complete universal ZIP and enforce Etsy size limit
         run: bash scripts/codemagic-macos.sh
       - name: Verify installed branding package and capture actual Mac menu bar
