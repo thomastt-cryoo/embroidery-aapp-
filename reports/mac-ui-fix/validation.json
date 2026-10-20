@@ -1,0 +1,371 @@
+{
+  "date": "2026-10-20",
+  "host": "Windows",
+  "nativeMacOSTested": false,
+  "macRunnerStarted": false,
+  "unitTests": {
+    "command": "pnpm --filter editor exec vitest run src/panels/Layers.test.tsx src/panels/Sequencer.test.tsx src/state/reorder.test.ts --maxWorkers=1",
+    "exitCode": 0,
+    "filesPassed": 3,
+    "testsPassed": 43
+  },
+  "typecheck": {
+    "command": "pnpm --filter editor typecheck",
+    "exitCode": 0
+  },
+  "productionFrontendBuild": {
+    "command": "pnpm --filter editor build",
+    "exitCode": 0,
+    "runtimeAssetCount": 458,
+    "pngPreviews": 137
+  },
+  "sourcePreservation": {
+    "command": "node scripts/m2-package-check.mjs",
+    "exitCode": 0,
+    "engineAndStateUnchanged": true,
+    "windowsCSSDeclarationsUnchanged": true
+  },
+  "macBrowser": {
+    "platform": "mac",
+    "nativeMacOS": false,
+    "browserEmulation": true,
+    "passed": 12,
+    "checks": [
+      {
+        "name": "mac layout applied (browser emulation)",
+        "result": "pass",
+        "detail": "1,374 / 1,374 stitches\n1 colour change\n49.4 \u00c3\u2014 60.9 mm\n\u00e2\u2030\u02c6 4 min 16 s\n?"
+      },
+      {
+        "name": "Top Stitches expand/collapse",
+        "result": "pass",
+        "detail": [
+          "Red satin 1",
+          "Ultramarine satin 5",
+          "Ultramarine satin 4",
+          "Ultramarine satin 3",
+          "Ultramarine satin 2",
+          "Ultramarine satin 1"
+        ]
+      },
+      {
+        "name": "Clicking the active Stitches heading responds",
+        "result": "pass",
+        "detail": "Clicking the heading collapses and expands its contents"
+      },
+      {
+        "name": "Single-layer arrows explained",
+        "result": "pass",
+        "detail": "No other layer exists to move above/below"
+      },
+      {
+        "name": "Layer visibility and locking",
+        "result": "pass",
+        "detail": "Both toggled and restored"
+      },
+      {
+        "name": "Shape reorder, undo and details",
+        "result": "pass",
+        "detail": "Red satin 1"
+      },
+      {
+        "name": "Colour-block reorder and undo",
+        "result": "pass",
+        "detail": "Whole block reordered then restored"
+      },
+      {
+        "name": "Layer options and whole-layer reordering",
+        "result": "pass",
+        "detail": "Added a layer, moved it, undid both operations"
+      },
+      {
+        "name": "Readable rows 960",
+        "result": "pass",
+        "detail": {
+          "panelWidth": 213,
+          "viewport": 960,
+          "documentWidth": 960,
+          "names": [
+            {
+              "name": "Red satin 1",
+              "width": 123
+            },
+            {
+              "name": "Ultramarine satin 5",
+              "width": 123
+            },
+            {
+              "name": "Ultramarine satin 4",
+              "width": 123
+            },
+            {
+              "name": "Ultramarine satin 3",
+              "width": 123
+            },
+            {
+              "name": "Ultramarine satin 2",
+              "width": 123
+            },
+            {
+              "name": "Ultramarine satin 1",
+              "width": 123
+            }
+          ],
+          "overflow": []
+        }
+      },
+      {
+        "name": "Readable rows 1280",
+        "result": "pass",
+        "detail": {
+          "panelWidth": 247,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "names": [
+            {
+              "name": "Red satin 1",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 5",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 4",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 3",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 2",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 1",
+              "width": 157
+            }
+          ],
+          "overflow": []
+        }
+      },
+      {
+        "name": "Readable rows 1440",
+        "result": "pass",
+        "detail": {
+          "panelWidth": 247,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "names": [
+            {
+              "name": "Red satin 1",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 5",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 4",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 3",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 2",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 1",
+              "width": 157
+            }
+          ],
+          "overflow": []
+        }
+      },
+      {
+        "name": "Dark theme",
+        "result": "pass",
+        "detail": "Same layout rendered in dark mode"
+      }
+    ],
+    "errors": []
+  },
+  "windowsBrowser": {
+    "platform": "windows",
+    "nativeMacOS": false,
+    "browserEmulation": false,
+    "passed": 12,
+    "checks": [
+      {
+        "name": "windows layout applied",
+        "result": "pass",
+        "detail": "1,374 / 1,374 stitches\n1 colour change\n49.4 \u00c3\u2014 60.9 mm\n\u00e2\u2030\u02c6 4 min 16 s\n?"
+      },
+      {
+        "name": "Top Stitches expand/collapse",
+        "result": "pass",
+        "detail": [
+          "Red satin 1",
+          "Ultramarine satin 5",
+          "Ultramarine satin 4",
+          "Ultramarine satin 3",
+          "Ultramarine satin 2",
+          "Ultramarine satin 1"
+        ]
+      },
+      {
+        "name": "Clicking the active Stitches heading responds",
+        "result": "pass",
+        "detail": "Clicking the heading collapses and expands its contents"
+      },
+      {
+        "name": "Single-layer arrows explained",
+        "result": "pass",
+        "detail": "No other layer exists to move above/below"
+      },
+      {
+        "name": "Layer visibility and locking",
+        "result": "pass",
+        "detail": "Both toggled and restored"
+      },
+      {
+        "name": "Shape reorder, undo and details",
+        "result": "pass",
+        "detail": "Red satin 1"
+      },
+      {
+        "name": "Colour-block reorder and undo",
+        "result": "pass",
+        "detail": "Whole block reordered then restored"
+      },
+      {
+        "name": "Layer options and whole-layer reordering",
+        "result": "pass",
+        "detail": "Added a layer, moved it, undid both operations"
+      },
+      {
+        "name": "Readable rows 960",
+        "result": "pass",
+        "detail": {
+          "panelWidth": 213,
+          "viewport": 960,
+          "documentWidth": 960,
+          "names": [
+            {
+              "name": "Red satin 1",
+              "width": 123
+            },
+            {
+              "name": "Ultramarine satin 5",
+              "width": 123
+            },
+            {
+              "name": "Ultramarine satin 4",
+              "width": 123
+            },
+            {
+              "name": "Ultramarine satin 3",
+              "width": 123
+            },
+            {
+              "name": "Ultramarine satin 2",
+              "width": 123
+            },
+            {
+              "name": "Ultramarine satin 1",
+              "width": 123
+            }
+          ],
+          "overflow": []
+        }
+      },
+      {
+        "name": "Readable rows 1280",
+        "result": "pass",
+        "detail": {
+          "panelWidth": 247,
+          "viewport": 1280,
+          "documentWidth": 1280,
+          "names": [
+            {
+              "name": "Red satin 1",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 5",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 4",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 3",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 2",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 1",
+              "width": 157
+            }
+          ],
+          "overflow": []
+        }
+      },
+      {
+        "name": "Readable rows 1440",
+        "result": "pass",
+        "detail": {
+          "panelWidth": 247,
+          "viewport": 1440,
+          "documentWidth": 1440,
+          "names": [
+            {
+              "name": "Red satin 1",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 5",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 4",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 3",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 2",
+              "width": 157
+            },
+            {
+              "name": "Ultramarine satin 1",
+              "width": 157
+            }
+          ],
+          "overflow": []
+        }
+      },
+      {
+        "name": "Dark theme",
+        "result": "pass",
+        "detail": "Same layout rendered in dark mode"
+      }
+    ],
+    "errors": []
+  },
+  "limitations": [
+    "Browser rendering used Chromium with a Mac user agent; not Safari, WKWebView or native macOS.",
+    "No new Mac installer or ZIP built; exact ZIP size requires the next native Mac build.",
+    "No clean consumer Gatekeeper testing or native Mac screenshots produced in this change."
+  ]
+}

@@ -82,7 +82,8 @@ const rowKey = {
 };
 
 export function LayersPanel() {
-  const windows = /Windows/.test(navigator.userAgent);
+  // Use the same readable Sew order panel in both desktop webviews.
+  const desktopLayers = /Windows|Macintosh|Mac OS X/.test(navigator.userAgent);
   const { state, actions } = useEditor();
   const design = state.design as Design;
   const { planResult, selectedIds } = state;
@@ -320,7 +321,7 @@ export function LayersPanel() {
       case "Enter":
         stop();
         if (type === "layer") {
-          if (windows && id === activeId) setCollapsed(toggle(collapsed, id));
+          if (desktopLayers && id === activeId) setCollapsed(toggle(collapsed, id));
           actions.setActiveLayer(id);
         }
         else if (type === "obj") actions.select(id);
@@ -389,7 +390,7 @@ export function LayersPanel() {
         <span className="seq-meta">
           <span className="seq-kind">{KIND_LABEL[o.kind]}</span>
           <span className="seq-count" title="stitches">
-            {(counts.get(i) ?? 0).toLocaleString()}{windows ? " stitches" : ""}
+            {(counts.get(i) ?? 0).toLocaleString()}{desktopLayers ? " stitches" : ""}
           </span>
         </span>
         <button
@@ -484,7 +485,7 @@ export function LayersPanel() {
         </span>
         <span className="seq-meta">
           <span className="seq-kind">Text</span>
-          <span className="seq-count" title="stitches">{total.toLocaleString()}{windows ? " stitches" : ""}</span>
+          <span className="seq-count" title="stitches">{total.toLocaleString()}{desktopLayers ? " stitches" : ""}</span>
         </span>
         <button
           tabIndex={-1}
@@ -636,16 +637,16 @@ export function LayersPanel() {
   const blocks = top.reduce((n, l) => n + (l.kind === "stitch" ? groupObjects(objectsIn(l.id).map((i) => design.objects[i])).length : 0), 0);
 
   return (
-    <div className={`layers${windows ? " windows-layers" : ""}`}>
+    <div className={`layers${desktopLayers ? " desktop-layers" : ""}`}>
       <p className="layers-banner" role="note">
-        {windows ? "Bottom sews first · Top sews last" : "Bottom sews first. Top sews last and sits on top."}
+        {desktopLayers ? "Bottom sews first · Top sews last" : "Bottom sews first. Top sews last and sits on top."}
       </p>
       <p className="muted small">
-        {stitches} objects · {blocks} colour block{blocks === 1 ? "" : "s"}{windows ? "" : ". Drag to reorder, or press Alt and an arrow key."}
+        {stitches} objects · {blocks} colour block{blocks === 1 ? "" : "s"}{desktopLayers ? "" : ". Drag to reorder, or press Alt and an arrow key."}
       </p>
-      <details className="layers-options" open={windows ? undefined : true}>
+      <details className="layers-options" open={desktopLayers ? undefined : true}>
       <summary>Layer options &amp; help</summary>
-      {windows && <p className="muted small">Drag shapes or layers to reorder. Use Alt + ↑ / ↓ with a row focused. Layer arrows move whole layers; colour arrows move whole colour blocks.</p>}
+      {desktopLayers && <p className="muted small">Drag shapes or layers to reorder. Use Alt + ↑ / ↓ with a row focused. Layer arrows move whole layers; colour arrows move whole colour blocks.</p>}
       <div className="hint-strip" aria-label="Layers help">
         <span>
           Views <Hint id="seq.tabs" />
@@ -732,7 +733,7 @@ export function LayersPanel() {
               <div
                 className={`seq-group-head layer-head${isActive ? " active" : ""}${mk === "above" ? " drop-before" : mk === "below" ? " drop-after" : mk === "into" ? " drop-into" : ""}`}
                 draggable
-                title={windows ? `${isActive ? (isCollapsed ? "Expand" : "Collapse") : "Select"} layer ${l.name}` : undefined}
+                title={desktopLayers ? `${isActive ? (isCollapsed ? "Expand" : "Collapse") : "Select"} layer ${l.name}` : undefined}
                 onDragStart={(e) => {
                   e.dataTransfer.effectAllowed = "move";
                   e.dataTransfer.setData("text/plain", `layer:${l.id}`);
@@ -742,7 +743,7 @@ export function LayersPanel() {
                 onDragOver={(e) => overLayer(e, l)}
                 onDrop={(e) => dropOnLayer(e, l)}
                 onClick={() => {
-                  if (windows && isActive) setCollapsed(toggle(collapsed, l.id));
+                  if (desktopLayers && isActive) setCollapsed(toggle(collapsed, l.id));
                   actions.setActiveLayer(l.id);
                 }}
               >

@@ -45,8 +45,11 @@ function twoLayerDesign(): Design {
 const dt = { setData: () => {}, effectAllowed: "" } as unknown as DataTransfer;
 
 describe("Layers panel", () => {
-  it("on Windows, clicking or pressing Enter on the active layer expands and collapses it without editing the design", async () => {
-    vi.spyOn(navigator, "userAgent", "get").mockReturnValue("Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+  it.each([
+    ["Windows", "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"],
+    ["macOS", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 Version/18.5 Safari/605.1.15"],
+  ])("on %s, clicking or pressing Enter on the active layer expands and collapses it without editing the design", async (_platform, userAgent) => {
+    vi.spyOn(navigator, "userAgent", "get").mockReturnValue(userAgent);
     renderEditor(<Sequencer />, { design: testDesign() });
     await loaded();
     const original = JSON.stringify(lastEditor!.state.design);
@@ -60,6 +63,22 @@ describe("Layers panel", () => {
     expect(JSON.stringify(lastEditor!.state.design)).toBe(original);
     expect(screen.getByRole("button", { name: "Move layer Stitches up" }).title).toContain("Only one layer");
     expect(document.querySelector(".layers-options")!.hasAttribute("open")).toBe(false);
+    expect(document.querySelector(".desktop-layers")).toBeTruthy();
+  });
+
+  it("on macOS, selecting another layer keeps it open and its controls do not toggle the heading", async () => {
+    vi.spyOn(navigator, "userAgent", "get").mockReturnValue("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)");
+    renderEditor(<Sequencer />, { design: twoLayerDesign() });
+    await loaded();
+    fireEvent.click(screen.getByText("Back", { selector: ".seq-name" }));
+    const layer = screen.getByRole("treeitem", { name: "Stitch layer Back" });
+    expect(lastEditor!.state.activeLayerId).toBe("back");
+    expect(layer.getAttribute("aria-expanded")).toBe("true");
+    fireEvent.click(screen.getByLabelText("Lock layer Back"));
+    expect(layersOf()[0].locked).toBe(true);
+    expect(layer.getAttribute("aria-expanded")).toBe("true");
+    fireEvent.click(screen.getByText("Back", { selector: ".seq-name" }));
+    expect(layer.getAttribute("aria-expanded")).toBe("false");
   });
 
   it("shows the banner, the top layer first, and each layer's sew range", async () => {
