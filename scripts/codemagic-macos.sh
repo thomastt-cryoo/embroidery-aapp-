@@ -31,7 +31,12 @@ fi
 python3 -m venv .codemagic-venv
 source .codemagic-venv/bin/activate
 python -m pip install --disable-pip-version-check Pillow==12.3.0 > out/evidence/python-setup.txt 2>&1
-npm install --global pnpm@10.0.0 > out/evidence/pnpm-setup.txt 2>&1
+# Codemagic already provides a pnpm/Corepack shim in /usr/local/bin. Install
+# our pinned tool locally so setup never collides with or replaces that shim.
+npm install --prefix "$RUNNER_TEMP/node-tools" --no-package-lock --ignore-scripts --no-audit --no-fund \
+  pnpm@10.0.0 > out/evidence/pnpm-setup.txt 2>&1
+export PATH="$RUNNER_TEMP/node-tools/node_modules/.bin:$PATH"
+test "$(pnpm --version)" = '10.0.0'
 if ! command -v rustup >/dev/null; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o "$RUNNER_TEMP/rustup-init.sh"
   sh "$RUNNER_TEMP/rustup-init.sh" -y --profile minimal --default-toolchain stable

@@ -5,6 +5,6 @@ test_rejects_changed_zip (__main__.ReportAndPackageTests.test_rejects_changed_zi
 test_rejects_limit_boundary_preserving_oversize_evidence (__main__.ReportAndPackageTests.test_rejects_limit_boundary_preserving_oversize_evidence) ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.332s
+Ran 5 tests in 0.467s
 
 OK

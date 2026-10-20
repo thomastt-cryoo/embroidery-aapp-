@@ -66,3 +66,9 @@ A localhost Safari download on a CI machine and `sudo installer` are different f
 - [Optional, manually enabled SSH/VNC access](https://docs.codemagic.io/troubleshooting/accessing-builder-machine-via-ssh/)
 
 Setup is ready for the first manual account-authorized run. M3 installation screenshots and clean consumer testing are not marked complete.
+
+## First-run correction
+
+The first Codemagic run (`6ad6d39a7550aed810905add`, source `48349f4`) reached macOS 15.5/Xcode 16.4 and installed Pillow successfully, then stopped during pnpm setup: `EEXIST: file already exists, /usr/local/bin/pnpm`. No application compilation or installation tests ran.
+
+The setup script now installs the pinned pnpm 10.0.0 inside the disposable workspace and places its local executable first on PATH. It does not replace Codemagic's existing pnpm/Corepack shim. The corrected installation was exercised locally, including a second installation into the same directory, and pnpm reported 10.0.0. Shell syntax and the existing package/report tests also passed. This local check is not a new Mac build result. One new manual build of the latest main commit is needed; do not retry the old commit.
