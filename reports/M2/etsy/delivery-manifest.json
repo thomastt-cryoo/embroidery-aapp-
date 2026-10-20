@@ -3,12 +3,12 @@
   "packages": [
     {
       "file": "Embroidery-Studio-Windows.zip",
-      "bytes": 16962744,
-      "sha256": "765d378fe87314634cf369a0ea72ca437ae3378a9d1a38a5bf30de78e418a6c8",
+      "bytes": 16955299,
+      "sha256": "a67119b7c0035cb35b25f1f987ddce3d5a0312c2a40ed86b7e95156c89883f47",
       "under20000000": true,
       "installer": "Install Embroidery Studio.exe",
-      "installerBytes": 16956277,
-      "installerSha256": "a2caba56a533d3b89ec3eeff637d7f40c6c64d6869d12e6aa25553dab73bbdb7",
+      "installerBytes": 16948891,
+      "installerSha256": "8df265e48c311f2a97fadede8e0e2e55633f6f7e82e4c7f91392aee227dcab69",
       "zipIntegrity": "pass",
       "completeSingleArchive": true,
       "entries": [
@@ -20,25 +20,36 @@
     },
     {
       "file": "Embroidery-Studio-macOS.zip",
-      "bytes": 38675724,
-      "sha256": "fe0aaa12b91a7c80de7ce1ac6bfc1247fd56b36167012ed15a22ca15e8c3aa88",
-      "under20000000": false,
+      "bytes": 19870862,
+      "sha256": "bfcc78a2f28f7b2f55d7112135f828dd1ad1d11220b15f0e815091f6a563bf17",
+      "under20000000": true,
       "installer": "Install Embroidery Studio.pkg",
-      "installerBytes": 38647922,
-      "installerSha256": "50212559c5433c9b51390520b3d99e4fd932bea6da843a894eaaf5b79111785c",
+      "installerBytes": 19855347,
+      "installerSha256": "1776ec45940302d682f9cac4baaf7cbf1d1cc638dc9e9197c0bc467a9ea59fb8",
       "zipIntegrity": "pass",
       "completeSingleArchive": true,
       "entries": [
         "Install Embroidery Studio.pkg",
+        "START HERE.txt",
         "LICENSE.txt",
-        "NOTICE.txt",
-        "START HERE.txt"
+        "NOTICE.txt"
       ]
     }
   ],
-  "macSizeLimitation": true,
-  "macNativeFunctionalPasses": 5,
-  "macNativePreview": "blocked on hosted VM; independently reproduced outside the application",
+  "macSizeLimitation": false,
+  "macNativeResults": {
+    "arm": {
+      "checks": 8,
+      "result": "pass",
+      "zipSha256": "bfcc78a2f28f7b2f55d7112135f828dd1ad1d11220b15f0e815091f6a563bf17"
+    },
+    "intel": {
+      "checks": 8,
+      "result": "pass",
+      "zipSha256": "bfcc78a2f28f7b2f55d7112135f828dd1ad1d11220b15f0e815091f6a563bf17"
+    }
+  },
+  "macNativePreview": "pass on native Apple Silicon and Intel macOS runners",
   "signingPending": true,
   "published": false
 }

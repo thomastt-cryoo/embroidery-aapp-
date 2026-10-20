@@ -1,0 +1,23 @@
+{
+  "result": "pass",
+  "zipBytes": 19870862,
+  "zipSha256": "bfcc78a2f28f7b2f55d7112135f828dd1ad1d11220b15f0e815091f6a563bf17",
+  "selected": {
+    "mode": "raw",
+    "kind": "pkg",
+    "bytes": 19870862,
+    "sha256": "bfcc78a2f28f7b2f55d7112135f828dd1ad1d11220b15f0e815091f6a563bf17",
+    "underEtsyLimit": true,
+    "completeUniversalApplication": true,
+    "pkgBytes": 19855347,
+    "payloadCompression": "long-window-lzma2",
+    "nativeExtractionVerified": true,
+    "customerInstallerName": "plain; no compression format in the filename"
+  },
+  "installedApp": "/Applications/Embroidery Studio.app",
+  "source": "actual final customer ZIP, extracted with ditto",
+  "nativeProjectOpen": "pass",
+  "nativePesOpenRequested": true,
+  "signatureVerify": "pass; ad-hoc, not notarized",
+  "detailedNativeEditingDialogs": "not automated; separate production browser checks follow"
+}

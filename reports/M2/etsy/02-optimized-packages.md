@@ -1,5 +1,7 @@
 # M2 Etsy packaging — checkpoint 2
 
+**Historical checkpoint.** Sizes and graphics limitations below describe an earlier build. Checkpoint 5 supersedes them; use the root `M2_FINAL_REPORT.md` for current delivery files.
+
 ## Completed
 
 Built the optimized Windows installer and compared complete universal Mac app ZIPs, three standard disk-image compression formats, and the native Mac installer. No engine, editing-state or M1 interface changes were needed.

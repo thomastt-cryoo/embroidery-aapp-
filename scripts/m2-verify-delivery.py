@@ -21,15 +21,26 @@ for name,installer in expected.items():
                 'installerBytes':len(payload),'installerSha256':hashlib.sha256(payload).hexdigest(),
                 'zipIntegrity':'pass','completeSingleArchive':True,'entries':z.namelist()}
         records.append(record)
-win=json.loads((evidence/'windows-package.json').read_text());mac=json.loads((evidence/'macos/mac-selected-package.json').read_text())
+win=json.loads((evidence/'windows-package.json').read_text());mac=json.loads((evidence/'macos-fixed/mac-selected-package.json').read_text())
 assert records[0]['sha256']==win['zipSha256'] and records[0]['under20000000']
 assert records[1]['sha256']==mac['sha256'] and records[1]['bytes']==mac['bytes']
-native=json.loads((evidence/'windows-native/results.json').read_text())
-assert len(native['checks'])==9 and all(c['result']=='pass' for c in native['checks'])
-mac_native=json.loads((evidence/'macos-intel/native-ui/results.json').read_text())
-assert mac_native['result']=='partial'
-assert sum(c['result']=='pass' for c in mac_native['checks'])==5
-assert any(c['name']=='native canvas preview' and c['result']=='blocked' for c in mac_native['checks'])
+assert records[1]['under20000000'],'The complete universal Mac ZIP must meet the decimal byte limit'
+native=json.loads((evidence/'windows-native-final/results.json').read_text())
+assert len(native['checks'])>=11 and all(c['result']=='pass' for c in native['checks'])
+assert native['zipSha256']==records[0]['sha256']
+compressed=json.loads((evidence/'macos-fixed/mac-lossless-pkg-compression.json').read_text())
+assert compressed['result']=='pass' and compressed['decodedPayloadByteIdentical'] and compressed['nativeExpandFullIdentical']
+assert compressed['pkgBytes']==records[1]['installerBytes']
+mac_results={}
+for architecture in ['arm','intel']:
+    directory=evidence/('macos-'+architecture+'-final')
+    result=json.loads((directory/'native-ui/results.json').read_text())
+    install=json.loads((directory/'mac-zip-install.json').read_text())
+    assert result['result']=='pass' and len(result['checks'])>=8
+    assert all(c['result']=='pass' for c in result['checks'])
+    assert install['zipSha256']==records[1]['sha256'],'Native test used a different customer ZIP'
+    assert any(c['name']=='native canvas preview' for c in result['checks'])
+    mac_results[architecture]={'checks':len(result['checks']),'result':'pass','zipSha256':install['zipSha256']}
 graphics=json.loads((evidence/'graphics-probe/native-webkit-graphics.json').read_text())
 assert graphics['appCodeLoaded'] is False
 assert len(graphics['webgl']['observations'])==4 and all(c['contextLostBefore'] for c in graphics['webgl']['observations'])
@@ -40,13 +51,13 @@ assert 'Finished 1 bundle' in windows_build
 tests=(evidence/'windows-native-tests.txt').read_text(encoding='utf-8-sig')
 counts=re.findall(r'test result: ok\. (\d+) passed; 0 failed',tests)
 assert counts==['92','18'],counts
-summary={'windowsNativeTests':[int(x) for x in counts],'windowsNativeWorkflowChecks':9,
+summary={'windowsNativeTests':[int(x) for x in counts],'windowsNativeWorkflowChecks':len(native['checks']),
          'runtimeFiles':458,'releaseBuild':'pass','webview':'downloadBootstrapper; absent-runtime branch not clean-VM tested',
-         'engineAndApprovedInterface':'unchanged; source guard recorded separately'}
+         'engineAndApprovedInterface':'engine, editing/project logic and M1 layout unchanged; graphics fallback only; source guard recorded separately'}
 (evidence/'windows-build-summary.json').write_text(json.dumps(summary,indent=2)+'\n')
 (evidence/'delivery-manifest.json').write_text(json.dumps({'decimalByteLimit':20_000_000,'packages':records,
-    'macSizeLimitation':not records[1]['under20000000'],'macNativeFunctionalPasses':5,
-    'macNativePreview':'blocked on hosted VM; independently reproduced outside the application',
+    'macSizeLimitation':False,'macNativeResults':mac_results,
+    'macNativePreview':'pass on native Apple Silicon and Intel macOS runners',
     'signingPending':True,'published':False},indent=2)+'\n')
 (evidence/'SHA256SUMS.txt').write_text(''.join(r['sha256']+'  '+r['file']+'\n' for r in records))
 print(json.dumps(records,indent=2))

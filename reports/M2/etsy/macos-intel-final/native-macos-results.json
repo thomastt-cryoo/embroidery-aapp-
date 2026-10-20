@@ -1,0 +1,18 @@
+{
+  "os": "macOS-15.7.9-x86_64-i386-64bit-Mach-O",
+  "architecture": "x86_64",
+  "appIdentifier": "io.github.thomasttcryoo.embroiderystudio",
+  "version": "1.4.0",
+  "binaryArchitectures": "x86_64 arm64",
+  "nativeLaunch": "pass",
+  "health": {
+    "apiVersion": 1,
+    "app": "embroidery-studio",
+    "port": 17842,
+    "version": "1.4.0"
+  },
+  "nativeScreenshot": "native-macos-desktop.png",
+  "sampleOpenRequested": "k-logo.lilo",
+  "signature": "ad-hoc; not Developer ID or notarized",
+  "scope": "Native application launched on actual macOS; health and package identity checked. Inspect screenshot for rendered sample. Detailed conversion/edit/export acceptance runs separately in Chromium on this same macOS runner."
+}

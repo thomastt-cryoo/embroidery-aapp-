@@ -1,5 +1,7 @@
 # M2 Etsy packaging — checkpoint 3
 
+**Historical checkpoint, superseded.** The Mac size and preview blockers below were resolved in checkpoint 5. This earlier verification remains as evidence of what passed and failed at that time. Use the root `M2_FINAL_REPORT.md` for current delivery files.
+
 ## Completed
 
 Final delivery contains exactly one complete Windows ZIP and one complete universal Mac ZIP. Windows: **16,962,744 bytes**, below the required 20,000,000-byte ceiling. Mac: **38,675,724 bytes**, above it. Both archives passed CRC checks, expected-file checks, installer-header checks and legal-text preservation. Exact SHA-256 hashes are in [delivery-manifest.json](delivery-manifest.json).

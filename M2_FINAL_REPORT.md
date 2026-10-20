@@ -1,126 +1,99 @@
-# M2 — Etsy packaging results
+# M2 — Embroidery Studio packaging and compatibility report
 
-**WORK IN PROGRESS — reopened at the user's request.** The results below describe the last verified packages. Native graphics compatibility is now being implemented and tested before the final M2 handoff. Do not treat this draft as final approval.
-
-**Windows meets the size requirement. macOS remains above it.** Native Mac canvas preview also remains unverified: the Intel virtual runner reports WebGL unavailable. Each platform has one complete ZIP. M3 has not started. Working name: **Embroidery Studio 1.4.0**. Updated 20 October 2026. Nothing was published publicly.
+20 October 2026. **Both complete ZIPs are below 20,000,000 bytes. The Mac preview issue is fixed, and native workflows passed on Windows, Apple Silicon Mac and Intel Mac.** Commercial signing remains unfinished, so these are private review builds. Nothing was published publicly. Work stops at M2 for approval; M3 has not started.
 
 ## Finished downloads
 
-| Platform | Complete ZIP | Exact bytes | Below 20,000,000? |
+| Platform | Complete download | Exact ZIP bytes | Below 20,000,000 bytes |
 |---|---|---:|---|
-| Windows x64 | [Windows ZIP](<C:/Users/mazin/Downloads/embroidry app/dist/M2-Etsy/Embroidery-Studio-Windows.zip>) | **16,962,744** | **Yes**, 3,037,256 bytes to spare |
-| macOS 13+, Intel and Apple Silicon | [macOS ZIP](<C:/Users/mazin/Downloads/embroidry app/dist/M2-Etsy/Embroidery-Studio-macOS.zip>) | **38,675,724** | **No**, 18,675,724 bytes over |
+| Windows x64 | [Windows ZIP](<C:/Users/mazin/Downloads/embroidry app/dist/M2-Etsy/Embroidery-Studio-Windows.zip>) | **16,955,299** | Yes; 3,044,701 bytes spare |
+| macOS, Intel and Apple Silicon | [Mac ZIP](<C:/Users/mazin/Downloads/embroidry app/dist/M2-Etsy/Embroidery-Studio-macOS.zip>) | **19,870,862** | Yes; 129,138 bytes spare |
 
-Both files are retained on this computer. The delivery folder contains exactly these two ZIPs. Each includes an installer, plain instructions, licence and notices. No package parts or reconstruction scripts are required.
+The delivery folder contains exactly these two ZIPs. Each includes one complete installer, short instructions, the licence and notices. No extra parts, reconstruction scripts or technical setup are required by the packages. Working name: **Embroidery Studio 1.4.0**.
 
-Windows customers extract the ZIP and run **Install Embroidery Studio.exe**. The complete application is included. If WebView2 is missing, Tauri's standard bootstrapper downloads it from Microsoft during installation. No other application components are downloaded. Embroidery processing works offline after installation.
+Windows customers extract and run **Install Embroidery Studio.exe**, which is **16,948,891 bytes**. Tauri's standard bootstrapper downloads Microsoft WebView2 only when it is missing. No other application components are downloaded. Embroidery processing works offline after installation.
 
-Mac customers extract the ZIP and open **Install Embroidery Studio.pkg**. Apple's standard installer places the complete universal application in Applications. Both processor architectures, all fonts and runtime assets are included; no component downloads are required.
+Mac customers extract and open **Install Embroidery Studio.pkg**, which is **19,855,347 bytes**, then launch the app from Applications. The standard Apple installer includes both processor architectures and all runtime assets. A PKG replaces the larger DMG for this Etsy delivery. The configured minimum OS is macOS 13; actual native tests ran on macOS 14 Apple Silicon and macOS 15 Intel.
 
-## Optimizations performed
+## Optimizations and preservation
 
-- Removed the bundled Windows offline WebView2 installer and enabled the standard download bootstrapper.
-- Optimized native release builds for size with whole-program optimization, stripped symbols and no debug information. Preserved panic unwinding and existing runtime capabilities.
-- Used solid LZMA with a 64 MB dictionary for Windows. Compared raw embedded assets against Tauri's internal storage compression for Mac.
-- Losslessly optimized 137 PNG previews, saving **2,111,315 bytes**. Verified identical decoded pixels and colour profiles. Restored two original previews when exact metadata equivalence could not be proven.
-- Compared complete Mac app ZIP, UDZO/UDBZ/ULMO disk-image ZIPs and native PKG compression. The best uses raw assets and Apple's latest PKG compression, targeting the existing minimum macOS 13.
-- Kept development dependencies, source maps, test tooling and reports outside customer packages. Required runtime assets, fonts, WebAssembly and thread data remain included.
+- Removed the Windows offline WebView2 installer and retained the normal bootstrapper.
+- Optimized native release settings, stripped debug symbols, and used solid LZMA compression for Windows. Required runtime dependencies remain.
+- Losslessly optimized 137 preview images, saving **2,111,315 bytes**, with identical pixels and colour profiles. Two other previews were retained unchanged when metadata equivalence could not be proven.
+- Compared complete Mac app ZIPs, disk images and native installers. The final build compresses across the duplicated architecture assets using a longer compression window. Every decoded installer payload byte remained identical; Apple's native extraction verified identical files, permissions and signatures. Customers run only a normal PKG.
+- Kept development dependencies, source maps, test tools, screenshots and reports outside customer packages.
 
-All **458 frontend files** remain. The installed Windows application served all 458: **457 matched exact final-build SHA-256 hashes**; the HTML wrapper had identical elements and attributes after Tauri's normal HTML serialization. Source checks confirm the embroidery engine, editing/project logic and approved M1 interface were preserved.
+All **458 frontend runtime files**, including fonts, WebAssembly and thread data, remain. The embroidery engine, stitch geometry, editing/project logic and approved M1 layout were preserved. Final application source is `2204598af6c3bfcd9667d68d91958e21cd8d1fc5`; later commits repair test drivers and document evidence.
 
-## Mac size limitation and recommendation
+## Mac preview fix
 
-The smallest complete Mac package built and installation-tested is **38,675,724 bytes**. Its PKG alone is **38,647,922 bytes**, already above the ZIP ceiling before instructions and archive overhead. The earlier M2 application ZIP was 53,515,689 bytes.
+The virtual Mac's WebGL contexts were immediately lost, even in an independent native WebKit application containing no embroidery code. Embroidery Studio now automatically draws through Canvas 2D when WebGL is unavailable or already lost at startup. It draws the **existing stitch geometry and colours**; it does not change embroidery processing. Healthy graphics retain the existing WebGL renderer.
 
-The complete frontend includes roughly **52.9 MB of essential font/data JSON**, plus JavaScript, previews and WebAssembly before compression. Tauri embeds frontend assets in each architecture's executable; the universal Mac application retains both Intel and Apple Silicon slices. Standard Mac package compression preserving that full application did not reach 20,000,000 bytes.
+The fallback preserves pictures, layers, selection, hoop graphics, pan/zoom and simulation. Cached paths and drawing on demand avoid continuous idle rendering. Native screenshots on both Mac architectures prove visible stitches with the imported reference picture hidden.
 
-| Complete universal Mac delivery tested | ZIP bytes |
-|---|---:|
-| Raw assets, application ZIP | 53,441,507 |
-| Internally compressed assets, application ZIP | 43,702,214 |
-| Raw assets, UDZO disk image | 59,926,947 |
-| Raw assets, UDBZ disk image | 47,458,369 |
-| Raw assets, ULMO disk image | 41,479,399 |
-| Internally compressed assets, best disk image | 42,204,065 |
-| **Raw assets, native PKG** | **38,675,724** |
+## Actual ZIP installation and native tests
 
-These are measured candidates, not a mathematical minimum for every possible future implementation. Further reductions would require a different asset-packaging design or compatibility changes beyond the verified compression work. No fonts, architectures or features were removed to force compliance.
+| Native application check | Windows | Apple Silicon Mac | Intel Mac |
+|---|---|---|---|
+| Install actual ZIP contents and launch | Passed | Passed | Passed |
+| Visible stitches | Passed, healthy GPU and lost-WebGL fallback | Passed | Passed |
+| PNG conversion to 1,374 stitches / six objects | Passed | Passed | Passed |
+| Stitch editing | Passed, with Undo | Passed | Passed |
+| 100 × 100 mm hoop selection | Passed | Passed | Passed |
+| Simulation from zero to completion at 50× | Passed | Passed | Passed |
+| Save editable project through native dialog | Passed | Passed | Passed |
+| PES export through native dialog | Passed | Passed | Passed |
+| Reopen saved project | Passed | Passed | Passed |
 
-**Recommendation:** retain the complete Mac ZIP and deliver it through a private download service or storefront accepting at least 39 MB. Customers still download one ZIP, extract and install. This requires a delivery decision; it is not an Etsy-sized attachment. Etsy's [official digital-listing help](https://help.etsy.com/hc/en-us/articles/115015628347-How-to-Manage-Your-Digital-Listings) confirms its 20 MB per-file limit. No customer-facing upload or publication has been performed.
+Windows completed **11 native checks** against the final ZIP and relaunched normally without debugging. Its installed runtime served all 458 files: 457 exact hashes plus equivalent Tauri-normalized HTML. At the user's latest request, its computer-use session was reset. Windows testing is finished.
 
-## Tests and results
+Both Mac architectures completed **eight native workflow checks**, in addition to installation, signatures, launch and existing project/PES loading. These are actual installed native applications on GitHub Mac runners, not browser substitutes. Their native runs both succeeded:
 
-| Check | Windows | macOS |
-|---|---|---|
-| ZIP integrity and hashes | Passed | Passed |
-| Installation from actual final ZIP | Passed, extracted installer exit code 0 | Passed, Apple's PKG installer reported success |
-| Normal native launch | Passed, debugger removed | Passed on Apple Silicon and Intel runners; native canvas has a separate graphics blocker |
-| Native project/PES loading | Passed | Passed; names and 1,374 stitches checked in real screenshots |
-| Detailed native workflows | Nine checks passed | **Five passed:** PNG conversion, hoop, project save, PES export and reopening. **Canvas preview blocked** on the VM |
-| Production image/hoop/simulation/project/export workflows | Nine passed | Nine passed in Chromium on actual macOS |
-| Native Rust tests | 92 library + 18 API passed | 96 library passed |
-| Runtime assets | All 458 retained and served | All 458 retained in both builds; PNG equivalence passed |
-| Original Lilo isolation | Executable, handler and 12 file defaults unchanged | Separate application identity verified |
+- [Apple Silicon test run](https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39346926486)
+- [Intel test run](https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39346935897)
 
-The native Windows application converted the PNG into **1,374 stitches** and six editable objects. Pull compensation changed **0.15 → 0.33 mm**, then Undo restored **0.15 mm**. A **100 × 100 mm** hoop was selected. Native Save wrote a valid `.lilo` project; reopening preserved it. Native PES Save As wrote **4,072 bytes** with the expected header. Simulation completed at 50×. A final normal launch reopened the saved design without a debugger or development server.
+The sample PNG produced **1,374 stitches and six editable objects**. Pull compensation changed **0.15 → 0.35 mm**, then returned to **0.15 mm**; Windows used Undo. All three native applications exported a **4,072-byte PES file** with a valid header. Mac reopening was tested after starting an empty document, so an already visible stitch count could not accidentally satisfy that check. Saved projects and exports are retained with the evidence.
 
-Production browser checks on **both operating systems** blocked external HTTP(S) and used the real engine, file inputs and downloads. All **13 exports**, **11 readable machine-format round-trips**, PNG/G-code validation, editable project save/reopen, hoop, simulation and three window sizes passed. Browser and native desktop results are kept distinct.
+Earlier failed runs remain recorded as failures. Test-driver problems included Safari slider key differences, injected text timing, menu/focus handling and a saved-file location assumption. The native Mac dialog sometimes remembered the image folder; the test incorrectly searched only Documents. Fixing these tests did not rebuild or alter the sealed customer ZIP. One Intel OCR diagnostic also timed out; the final Intel run passed that check and the full workflow.
 
-On **macOS 15.7.9 Intel**, the actual installed ZIP also passed native PNG conversion to 1,374 stitches, 100 × 100 mm hoop selection, project saving through the native sheet, a **4,072-byte PES export**, and reopening that saved six-object project. That native run is deliberately recorded as **partial**, with a failing overall workflow status, because canvas graphics remained blocked. Native visual editing and simulation are not signed off. macOS 14.8.9 Apple Silicon separately passed installation, launch and saved-project/PES loading.
+## Supporting regressions
 
-Earlier approved regression evidence remains applicable: 650 editor tests and 32 script tests passed in M2; the unchanged engine's M1 baseline was 899 passed with 22 upstream skips. The full engine/editor suites were not rerun solely for compression. Packaging protection, production build, TypeScript, guide and version checks passed.
+Software rendering passed **13 integration checks**, and a genuinely created then lost WebGL context passed **14 checks**, including partial simulation/rewind, transparency, image ordering, pan/zoom, idle redraw and a 100,001-stitch fixture. **59 controller/geometry tests** passed. An initial overloaded parallel controller run timed out; its isolated rerun passed all 36 controller tests, with the other 23 tests passing separately.
 
-## Actual application screenshots
+Production browser fallback workflows passed all **13 export formats**, **11 machine-format readbacks**, PNG/G-code validation, editable project save/reopen, hoop, simulation and three window sizes, with external HTTP(S) blocked. These browser workflows preceded only the final additional startup guard; that guard has separate lost-context integration and final native testing.
 
-Installed Windows application, normal launch from this final ZIP build:
+Earlier M2 evidence remains applicable: **650 editor tests, 32 script tests, Windows native Rust 92 library + 18 API tests, and Mac native Rust 96 tests** passed. The unchanged engine's M1 baseline was **899 passed with 22 upstream skips**. Full engine suites were not repeated solely for compression. Source/identity protection and TypeScript checks passed. Final archive CRCs, contents, legal text, exact hashes, size limits and native evidence checks all passed.
 
-![Windows normal launch](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/windows-native/normal-launch.jpg>)
+## Real application screenshots
 
-Native Windows PES export:
+Final installed Windows application, launched normally:
 
-![Native Windows export](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/windows-native/export-pes.png>)
+![Windows normal launch](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/windows-native-final/normal-launch.jpg>)
 
-Actual Intel Mac application installed from the ZIP: PNG conversion and hoop selection worked, but native graphics failed on the VM. This screenshot shows the limitation directly:
+Apple Silicon Mac after saving, exporting and reopening:
 
-![Native Mac graphics limitation](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/macos-intel-first/native-ui/converted.png>)
+![Apple Silicon native application](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/macos-arm-final/native-ui/project-reopened.png>)
 
-Separate production browser editing/hoop check on that Mac runner:
+Intel Mac after saving, exporting and reopening:
 
-![Mac browser editing and hoop](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/macos/acceptance/editing-and-hoop.png>)
+![Intel native application](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/macos-intel-final/native-ui/project-reopened.png>)
 
-## Issues, limits and isolation
+## Remaining distribution limits
 
-- **Mac size remains unresolved.** Its verified ZIP cannot be one Etsy attachment. No splitting, reconstruction or application-component download workaround was used.
-- **Native Mac preview is not validated.** After dismissing the welcome, the Intel runner's native WebView showed “The canvas needs WebGL” while the renderer read null shader-precision information. Native conversion still produced 1,374 stitches and six objects, and hoop selection worked. The independent diagnostic below reproduced graphics failure without loading the embroidery application. A consumer Mac preview test remains necessary. No graphics or engine change was made to bypass the failure. Browser software-rendered tests are not a substitute for native preview validation.
-- **Signing remains unfinished.** Windows is unsigned; Mac is ad-hoc signed without Apple Developer ID/notarization. These are private review builds. Clean consumer trust-prompt journeys remain untested. Intel native launch and file loading are now verified.
-- Windows already has WebView2. The missing-runtime branch was checked in installer configuration, not exercised by removing the shared runtime or using a clean VM.
-- Early Windows test interception disrupted native IPC saving. Removing interception and fully reloading the WebView resolved it. All recorded native checks were repeated successfully without interception; no app patch was needed.
-- The first PKG experiment omitted its minimum-OS argument. Specifying the existing macOS 13 target enabled stronger compression and successful installation.
-- Physical machine sew-out and network machine transfer were not tested.
+**Signing is the remaining customer-distribution blocker.** Windows is unsigned. Mac has an ad-hoc signature, without Apple Developer ID or notarization. Operating systems may block or warn about these builds. Clean consumer trust-prompt journeys were not certified. The archives meet the size and completeness requirements, but they are not yet certified for a frictionless commercial installation. Re-signing/repackaging will require renewed size checks, especially with the Mac archive's small margin.
 
-Identity remains `io.github.thomasttcryoo.embroiderystudio`, with separate shortcuts, uninstall entry, directories and protocol. Automatic updates are disabled; no Lilo update endpoint is configured. **Your installed Lilo and upstream `Kadwood/lilo` were not changed.** All pushes/artifacts remain in your approved private repository.
+Windows already has WebView2; the missing-runtime branch was checked in installer configuration without removing the shared runtime or using a clean VM. macOS 13 itself, physical Mac GPU behaviour, physical embroidery-machine sew-out and network machine transfer were not tested. Native virtual Mac testing is clearly distinguished from physical consumer Mac testing.
 
-## WebGL investigation and fix plan
+Application identity remains `io.github.thomasttcryoo.embroiderystudio`, with separate shortcuts, uninstall identity, protocol and application directories. Updates are disabled, with no original Lilo update channel configured. The installed Lilo executable, its protocol and all 12 file defaults remain unchanged. Upstream `Kadwood/lilo` is reference-only, with pushing disabled. Only the approved private repository received changes.
 
-A separate, default native **WKWebView** on the Intel runner reproduced the failure with **no embroidery code or assets loaded**. WebGL 1 and WebGL 2 both created contexts that were immediately lost, returned no shader precision, and failed a simple green-pixel readback. Turning antialiasing off made no difference. The runner exposes an **Apple Paravirtual device**. This proves this graphics failure can occur independently of the packaged application; it does not establish that a physical Mac works.
-
-The next validation step is the exact customer ZIP on a **physical Mac or a Mac runner with working native graphics**. Verify visible stitches, zoom/pan, realistic preview and simulation, then saving/reopening and exports. If a graphics-capable Mac reproduces an app-specific failure, investigate the Tauri window and renderer initialization and fix that layer while preserving the engine and M1 interface. Hiding the error or changing stitch processing is not a valid resolution.
-
-[Standalone diagnostic results](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/graphics-probe/native-webkit-graphics.json>) · [private diagnostic run](https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39322724108). The [WebGL specification](https://registry.khronos.org/webgl/specs/latest/1.0/) documents null query results when a context is lost.
+Measured Mac job elapsed time across M2 was **156 minutes 42 seconds**, including failed/superseded jobs that ran, below the stated 200-minute ceiling. This is measured elapsed time, not a verified billing balance. The account's remaining free allowance was unavailable. Only standard runners were used; no paid larger runner or billing setting was enabled. No Mac jobs remain running.
 
 ## Evidence and checkpoints
 
-- [Checkpoint 1: audit/preservation](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/01-size-audit.md>)
-- [Checkpoint 2: packages/installation](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/02-optimized-packages.md>)
-- [Checkpoint 3: final verification](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/03-final-verification.md>)
-- [Checkpoint 4: native Mac graphics diagnosis](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/04-mac-graphics-diagnosis.md>)
-- [Windows native results](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/windows-native/results.json>) · [installation isolation](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/windows-isolation.json>)
-- [Windows production checks](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/windows-acceptance/results.json>) · [Mac production checks](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/macos/acceptance/results.json>)
-- [Mac ZIP installation](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/macos/mac-zip-install.json>) · [Mac native screenshot checks](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/macos/mac-native-core-from-zip.json>)
-- [Final native Intel Mac results](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/macos-intel/native-ui/results.json>) · [native UI test run, partial](https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39323318021)
-- [Exact delivery sizes, contents and SHA-256 hashes](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/delivery-manifest.json>)
-- [Private Mac build/comparison](https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39313542113) · [PKG install verification](https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39318694545)
+- [Checkpoint 1: audit](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/01-size-audit.md>), [checkpoint 2: earlier packages](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/02-optimized-packages.md>), [checkpoint 3: earlier verification](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/03-final-verification.md>), [checkpoint 4: graphics diagnosis](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/04-mac-graphics-diagnosis.md>), [checkpoint 5: preview/size fixes](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/05-native-preview-and-size-fix.md>), [checkpoint 6: final verification](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/06-final-native-verification.md>)
+- [Exact sizes, installer contents and SHA-256 hashes](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/delivery-manifest.json>)
+- [Windows final native results](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/windows-native-final/results.json>), [Apple Silicon results](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/macos-arm-final/native-ui/results.json>), [Intel results](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/macos-intel-final/native-ui/results.json>)
+- [Lossless Mac installer verification](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/macos-fixed/mac-lossless-pkg-compression.json>), [source/runtime preservation](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/asset-preservation.json>), [installation isolation](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/windows-isolation.json>), [runner-time evidence](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/mac-runner-time.json>)
+- [Private universal Mac build artifact](https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39332712597/artifacts/12225119001): compilation, 96 Rust tests, packaging and native installation passed; its original all-in-one job failed later in the UI driver. The two successful final native runs reused that exact ZIP.
 
-The earlier larger M2 packages are archived separately and superseded by these two ZIPs. **Work stops at M2 for approval. M3 has not begun.**
-
-Recorded Mac job elapsed time across M2 is **52 minutes 51 seconds**, including superseded runs that actually started. Queue-only cancellations are excluded. This is below the stated 200-minute ceiling, but the account's remaining free/billing allowance could not be verified. No paid larger runner or billing setting was enabled. [Build time evidence](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/actions-build.json>) · [native verification time](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/actions-zip-verification.json>) · [graphics diagnostic time](<C:/Users/mazin/Downloads/embroidry app/reports/M2/etsy/actions-graphics-probe.json>).
+The GitHub test artifacts have short retention. Both final customer ZIPs, screenshots, saved files and evidence have also been copied to this computer. Earlier larger packages are superseded. **M2 stops here for approval; M3 has not begun.**

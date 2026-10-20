@@ -1,0 +1,3124 @@
+[
+  {
+    "depth": 0,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 0,
+    "role": "AXApplication",
+    "subrole": "",
+    "title": "Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 900,
+      "width": 1440,
+      "x": 240,
+      "y": 43
+    },
+    "depth": 1,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 1,
+    "role": "AXWindow",
+    "subrole": "AXStandardWindow",
+    "title": "Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 900,
+      "width": 1440,
+      "x": 240,
+      "y": 43
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 2,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 900,
+      "width": 1440,
+      "x": 240,
+      "y": 43
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 3,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 900,
+      "width": 1440,
+      "x": 240,
+      "y": 43
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 4,
+    "role": "AXScrollArea",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 900,
+      "width": 1440,
+      "x": 240,
+      "y": 43
+    },
+    "depth": 5,
+    "description": "k-logo \u2022 \u2014 Embroidery Studio",
+    "help": "",
+    "identifier": "",
+    "index": 5,
+    "role": "AXWebArea",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 18,
+      "x": 405,
+      "y": 386
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 6,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "6"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 14,
+      "x": 402,
+      "y": 449
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 7,
+    "role": "AXIncrementor",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 402,
+      "y": 449
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 8,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXIncrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 402,
+      "y": 458
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 9,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXDecrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 13,
+      "x": 525,
+      "y": 449
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 10,
+    "role": "AXIncrementor",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 13,
+      "x": 525,
+      "y": 449
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 11,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXIncrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 13,
+      "x": 525,
+      "y": 458
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 12,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXDecrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 18,
+      "x": 354,
+      "y": 761
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 13,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "2"
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 18,
+      "x": 913,
+      "y": 889
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 14,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "1386"
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 18,
+      "x": 1083,
+      "y": 889
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 15,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "50"
+  },
+  {
+    "bounds": {
+      "height": 418,
+      "width": 880,
+      "x": 520,
+      "y": 284
+    },
+    "depth": 6,
+    "description": "Choose a hoop",
+    "help": "",
+    "identifier": "",
+    "index": 16,
+    "role": "AXGroup",
+    "subrole": "AXApplicationDialog",
+    "title": "Choose a hoop",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 29,
+      "width": 129,
+      "x": 541,
+      "y": 305
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 17,
+    "role": "AXHeading",
+    "subrole": "",
+    "title": "Choose a hoop",
+    "value": "2"
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 130,
+      "x": 541,
+      "y": 307
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 18,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Choose a hoop"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 32,
+      "x": 682,
+      "y": 314
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 19,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Now: "
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 106,
+      "x": 713,
+      "y": 314
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 20,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "NV2700 160 x 260"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 9,
+      "x": 818,
+      "y": 314
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 21,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": " ("
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 83,
+      "x": 826,
+      "y": 314
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 22,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "160 \u00d7 260 mm"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 5,
+      "x": 908,
+      "y": 314
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 23,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": ")"
+  },
+  {
+    "bounds": {
+      "height": 33,
+      "width": 57,
+      "x": 1322,
+      "y": 305
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 24,
+    "role": "AXButton",
+    "subrole": "",
+    "title": "Close",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 43,
+      "width": 838,
+      "x": 541,
+      "y": 349
+    },
+    "depth": 7,
+    "description": "Search hoops",
+    "help": "",
+    "identifier": "",
+    "index": 25,
+    "role": "AXTextField",
+    "subrole": "AXSearchField",
+    "title": "Search hoops",
+    "value": "100x100"
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 240,
+      "y": 43
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 26,
+    "role": "AXGroup",
+    "subrole": "AXEmptyGroup",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 19,
+      "width": 788,
+      "x": 555,
+      "y": 361
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 27,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 51,
+      "x": 555,
+      "y": 362
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 28,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "100x100"
+  },
+  {
+    "bounds": {
+      "height": 23,
+      "width": 22,
+      "x": 1343,
+      "y": 359
+    },
+    "depth": 8,
+    "description": "cancel",
+    "help": "",
+    "identifier": "",
+    "index": 29,
+    "role": "AXButton",
+    "subrole": "",
+    "title": "cancel",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 19,
+      "width": 293,
+      "x": 541,
+      "y": 410
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 30,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 19,
+      "width": 293,
+      "x": 541,
+      "y": 410
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 31,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "Turn the hoop a quarter (swap width and height)",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 272,
+      "x": 563,
+      "y": 411
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 32,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Turn the hoop a quarter (swap width and height)"
+  },
+  {
+    "bounds": {
+      "height": 33,
+      "width": 243,
+      "x": 1136,
+      "y": 403
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 33,
+    "role": "AXButton",
+    "subrole": "",
+    "title": "Smallest that fits: NV2700 130 x 180",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 205,
+      "width": 838,
+      "x": 541,
+      "y": 447
+    },
+    "depth": 7,
+    "description": "Search results",
+    "help": "",
+    "identifier": "",
+    "index": 34,
+    "role": "AXGroup",
+    "subrole": "AXApplicationGroup",
+    "title": "Search results",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 838,
+      "x": 541,
+      "y": 447
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 35,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 838,
+      "x": 541,
+      "y": 447
+    },
+    "depth": 9,
+    "description": "",
+    "help": "Brother USA product pages (Maximum Embroidery Area / Hoops spec rows): PE550D, PE800, PE900, SE600, SE625, SE1900, SE2000, NQ1700E, NQ3600D, NQ3700D, VM5100, VM6200D, PR670E, PR680W, PR1050X, PR1055X, PRS100",
+    "identifier": "",
+    "index": 36,
+    "role": "AXButton",
+    "subrole": "",
+    "title": "4 x 4 in 100 \u00d7 100 mm \u00b7 rectangle \u00b7 PE550D, SE600, SE625\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 838,
+      "x": 541,
+      "y": 498
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 37,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 838,
+      "x": 541,
+      "y": 498
+    },
+    "depth": 9,
+    "description": "",
+    "help": "UNVERIFIED: author's recall of manufacturer catalogues; the manufacturer sites could not be fetched (bot-blocked or JS-only) when this was compiled\nUNVERIFIED.",
+    "identifier": "",
+    "index": 38,
+    "role": "AXButton",
+    "subrole": "",
+    "title": "Small (100 x 100) 100 \u00d7 100 mm \u00b7 rectangle \u00b7 Husqvarna Viking Designer Epic, Pfaff Creative Icon 2, Pfaff Creative Ambition UNVERIFIED",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 838,
+      "x": 541,
+      "y": 549
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 39,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 838,
+      "x": 541,
+      "y": 549
+    },
+    "depth": 9,
+    "description": "",
+    "help": "UNVERIFIED: author's recall of manufacturer catalogues; the manufacturer sites could not be fetched (bot-blocked or JS-only) when this was compiled\nUNVERIFIED. Baby Lock embroidery machines are Brother-built; sizes follow the Brother standard.",
+    "identifier": "",
+    "index": 40,
+    "role": "AXButton",
+    "subrole": "",
+    "title": "4 x 4 in (100 x 100) 100 \u00d7 100 mm \u00b7 rectangle \u00b7 Ellure Plus, Ellegante, Altair UNVERIFIED",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 838,
+      "x": 541,
+      "y": 600
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 41,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 838,
+      "x": 541,
+      "y": 600
+    },
+    "depth": 9,
+    "description": "",
+    "help": "UNVERIFIED: author's recall of manufacturer catalogues; the manufacturer sites could not be fetched (bot-blocked or JS-only) when this was compiled\nUNVERIFIED.",
+    "identifier": "",
+    "index": 42,
+    "role": "AXButton",
+    "subrole": "",
+    "title": "4 x 4 in (100 x 100) 100 \u00d7 100 mm \u00b7 rectangle \u00b7 Legacy SE300, Legacy SE340 UNVERIFIED",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 838,
+      "x": 541,
+      "y": 663
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 43,
+    "role": "AXGroup",
+    "subrole": "AXDetails",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 838,
+      "x": 541,
+      "y": 663
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 44,
+    "role": "AXDisclosureTriangle",
+    "subrole": "AXSummary",
+    "title": "Where these sizes come from",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 168,
+      "x": 549,
+      "y": 664
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 45,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Where these sizes come from"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 16,
+      "x": 257,
+      "y": 56
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 46,
+    "role": "AXButton",
+    "subrole": "AXCloseButton",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 16,
+      "x": 297,
+      "y": 56
+    },
+    "depth": 2,
+    "description": "",
+    "help": "this button also has an action to zoom the window",
+    "identifier": "",
+    "index": 47,
+    "role": "AXButton",
+    "subrole": "AXFullScreenButton",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 14,
+      "x": 298,
+      "y": 56
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 48,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 14,
+      "x": 298,
+      "y": 56
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 49,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 16,
+      "x": 277,
+      "y": 56
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 50,
+    "role": "AXButton",
+    "subrole": "AXMinimizeButton",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 1920,
+      "x": 0,
+      "y": 0
+    },
+    "depth": 1,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 51,
+    "role": "AXMenuBar",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 34,
+      "x": 10,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 52,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "Apple",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 53,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_aboutThisMacRequested:",
+    "index": 54,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "About This Mac",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_systemInformationRequested:",
+    "index": 55,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "System Information",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 56,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_systemSettingsRequested:",
+    "index": 57,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "System Settings\u2026, 1 update",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_appStoreRequested:",
+    "index": 58,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "App Store",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 59,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_recentsRequested:",
+    "index": 60,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Recent Items",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 5,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 61,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 62,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Applications",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_recentItemRequested:",
+    "index": 63,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_recentItemRequested:",
+    "index": 64,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Show \u201cEmbroidery Studio\u201d in Finder",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 65,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 66,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Documents",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_recentItemRequested:",
+    "index": 67,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Studio-sample.pes",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_recentItemRequested:",
+    "index": 68,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Show \u201cStudio-sample.pes\u201d in Finder",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 69,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 70,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Servers",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 71,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_clearRecentItemsRequested:",
+    "index": 72,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Clear Menu",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 73,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_forceQuitPanelRequested:",
+    "index": 74,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Force Quit\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_forceQuitRequested:",
+    "index": 75,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Force Quit Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 76,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_sleepRequested:",
+    "index": 77,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Sleep",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_restartRequested:",
+    "index": 78,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Restart\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_restartNowRequested:",
+    "index": 79,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Restart",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_shutDownRequested:",
+    "index": 80,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Shut Down\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_shutDownNowRequested:",
+    "index": 81,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Shut Down",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 82,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_lockScreenRequested:",
+    "index": 83,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Lock Screen",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_logOutRequested:",
+    "index": 84,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Log Out runner\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_logOutNowRequested:",
+    "index": 85,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Log Out runner",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 86,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 141,
+      "x": 44,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 87,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 88,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "customShowAboutPanel:",
+    "index": 89,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "About Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 90,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 91,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Services",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 5,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 92,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 93,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Activity Monitor",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 94,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Allocations & Leaks",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 95,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "File Activity",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 96,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "System Trace",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 97,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Time Profile Active Application",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 98,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Time Profile App Under Mouse",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 99,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Time Profile Entire System",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 100,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Toggle Instruments Recording",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_configureServicesMenu:",
+    "index": 101,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Services Settings\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 102,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "hide:",
+    "index": 103,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Hide Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "hideOtherApplications:",
+    "index": 104,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Hide Others",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 105,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "terminate:",
+    "index": 106,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Quit Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "NSAlternateQuitMenuItem",
+    "index": 107,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Quit and Keep Windows",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 42,
+      "x": 185,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 108,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "File",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 109,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "performClose:",
+    "index": 110,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Close Window",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "closeAll:",
+    "index": 111,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Close All",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 44,
+      "x": 227,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 112,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "Edit",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 113,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "undo:",
+    "index": 114,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Undo",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "redo:",
+    "index": 115,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Redo",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 116,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "cut:",
+    "index": 117,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Cut",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "copy:",
+    "index": 118,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Copy",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "paste:",
+    "index": 119,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Paste",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "selectAll:",
+    "index": 120,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Select All",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 121,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_NSMenuItemAutoFillIdentifier",
+    "index": 122,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "AutoFill",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 5,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 123,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_handleInsertFromContactsCommand:",
+    "index": 124,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Contact\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_handleInsertFromPasswordsCommand:",
+    "index": 125,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Passwords\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "startDictation:",
+    "index": 126,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Start Dictation\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "orderFrontCharacterPalette:",
+    "index": 127,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Emoji & Symbols",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 50,
+      "x": 271,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 128,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "View",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 129,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "toggleFullScreen:",
+    "index": 130,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Toggle Full Screen",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 69,
+      "x": 321,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 131,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "Window",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 132,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "performMiniaturize:",
+    "index": 133,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Minimize",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "miniaturizeAll:",
+    "index": 134,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Minimize All",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "performZoom:",
+    "index": 135,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Zoom",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "zoomAll:",
+    "index": 136,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Zoom All",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomFill:",
+    "index": 137,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Fill",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomCenter:",
+    "index": 138,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Center",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 139,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 140,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Move & Resize",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 5,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 141,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 142,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Halves",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomLeft:",
+    "index": 143,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Left",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomRight:",
+    "index": 144,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Right",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomTop:",
+    "index": 145,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Top",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomBottom:",
+    "index": 146,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Bottom",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 147,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 148,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Quarters",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomTopLeft:",
+    "index": 149,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Top Left",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomTopRight:",
+    "index": 150,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Top Right",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomBottomLeft:",
+    "index": 151,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Bottom Left",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomBottomRight:",
+    "index": 152,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Bottom Right",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 153,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 154,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Arrange",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomLeftAndRight:",
+    "index": 155,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Left & Right",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomLeftThreeUp:",
+    "index": 156,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Left & Quarters",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomRightAndLeft:",
+    "index": 157,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Right & Left",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomRightThreeUp:",
+    "index": 158,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Right & Quarters",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomTopAndBottom:",
+    "index": 159,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Top & Bottom",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomTopThreeUp:",
+    "index": 160,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Top & Quarters",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomBottomAndTop:",
+    "index": 161,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Bottom & Top",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomBottomThreeUp:",
+    "index": 162,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Bottom & Quarters",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomQuarters:",
+    "index": 163,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Quarters",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 164,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomUntile:",
+    "index": 165,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Return to Previous Size",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 166,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Full Screen Tile",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 5,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 167,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_tileLeft:",
+    "index": 168,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Left of Screen",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_tileRight:",
+    "index": 169,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Right of Screen",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 170,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_removeWindowFromStageManagerSet:",
+    "index": 171,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Remove Window from Set",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 172,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "performClose:",
+    "index": 173,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Close Window",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 174,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "makeKeyAndOrderFront:",
+    "index": 175,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 48,
+      "x": 390,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 176,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "Help",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 177,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "searchFieldAction:",
+    "index": 178,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 354,
+      "x": -1,
+      "y": 1057
+    },
+    "depth": 5,
+    "description": "",
+    "help": "",
+    "identifier": "_SC_SEARCH_FIELD",
+    "index": 179,
+    "role": "AXTextField",
+    "subrole": "AXSearchField",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 7,
+      "width": 362,
+      "x": -1,
+      "y": 1074
+    },
+    "depth": 5,
+    "description": "search result",
+    "help": "",
+    "identifier": "_SC_RESULTS_TABLE",
+    "index": 180,
+    "role": "AXTable",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 5,
+      "width": 350,
+      "x": 0,
+      "y": 1075
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "Title",
+    "index": 181,
+    "role": "AXColumn",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 36,
+      "x": 1661,
+      "y": 0
+    },
+    "depth": 1,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 182,
+    "role": "AXMenuBar",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 36,
+      "x": 1661,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "Embroidery Studio",
+    "identifier": "",
+    "index": 183,
+    "role": "AXMenuBarItem",
+    "subrole": "AXMenuExtra",
+    "title": "",
+    "value": ""
+  }
+]

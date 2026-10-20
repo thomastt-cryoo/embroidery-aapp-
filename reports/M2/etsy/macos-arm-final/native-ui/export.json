@@ -1,0 +1,6235 @@
+[
+  {
+    "depth": 0,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 0,
+    "role": "AXApplication",
+    "subrole": "",
+    "title": "Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 900,
+      "width": 1440,
+      "x": 240,
+      "y": 43
+    },
+    "depth": 1,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 1,
+    "role": "AXWindow",
+    "subrole": "AXStandardWindow",
+    "title": "Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 900,
+      "width": 1440,
+      "x": 240,
+      "y": 43
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 2,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 900,
+      "width": 1440,
+      "x": 240,
+      "y": 43
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 3,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 900,
+      "width": 1440,
+      "x": 240,
+      "y": 43
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 4,
+    "role": "AXScrollArea",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 900,
+      "width": 1440,
+      "x": 240,
+      "y": 43
+    },
+    "depth": 5,
+    "description": "k-logo \u2014 Embroidery Studio",
+    "help": "",
+    "identifier": "",
+    "index": 5,
+    "role": "AXWebArea",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 868,
+      "width": 640,
+      "x": 640,
+      "y": 59
+    },
+    "depth": 6,
+    "description": "Export",
+    "help": "",
+    "identifier": "",
+    "index": 6,
+    "role": "AXGroup",
+    "subrole": "AXApplicationDialog",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 28,
+      "width": 586,
+      "x": 661,
+      "y": 80
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 7,
+    "role": "AXHeading",
+    "subrole": "",
+    "title": "Export",
+    "value": "2"
+  },
+  {
+    "bounds": {
+      "height": 23,
+      "width": 58,
+      "x": 661,
+      "y": 82
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 8,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Export"
+  },
+  {
+    "bounds": {
+      "height": 284,
+      "width": 586,
+      "x": 661,
+      "y": 112
+    },
+    "depth": 7,
+    "description": "File format",
+    "help": "",
+    "identifier": "",
+    "index": 9,
+    "role": "AXRadioGroup",
+    "subrole": "",
+    "title": "",
+    "value": "<AXUIElement 0x600003001200> {pid=35529}"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 191,
+      "x": 661,
+      "y": 112
+    },
+    "depth": 8,
+    "description": "",
+    "help": "Keeps thread colours.",
+    "identifier": "",
+    "index": 10,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "PES Brother PES",
+    "value": "1"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 192,
+      "x": 858,
+      "y": 112
+    },
+    "depth": 8,
+    "description": "",
+    "help": "No thread colours in this format: only the colour changes are kept.",
+    "identifier": "",
+    "index": 11,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "DST Tajima DST",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 192,
+      "x": 1055,
+      "y": 112
+    },
+    "depth": 8,
+    "description": "",
+    "help": "Keeps thread colours.",
+    "identifier": "",
+    "index": 12,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "JEF Janome JEF",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 191,
+      "x": 661,
+      "y": 170
+    },
+    "depth": 8,
+    "description": "",
+    "help": "Keeps thread colours.",
+    "identifier": "",
+    "index": 13,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "VP3 Pfaff/Viking VP3",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 192,
+      "x": 858,
+      "y": 170
+    },
+    "depth": 8,
+    "description": "",
+    "help": "No thread colours in this format: only the colour changes are kept.",
+    "identifier": "",
+    "index": 14,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "EXP Melco EXP",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 192,
+      "x": 1055,
+      "y": 170
+    },
+    "depth": 8,
+    "description": "",
+    "help": "Keeps thread colours.",
+    "identifier": "",
+    "index": 15,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "XXX Singer XXX",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 191,
+      "x": 661,
+      "y": 228
+    },
+    "depth": 8,
+    "description": "",
+    "help": "No thread colours in this format: only the colour changes are kept.",
+    "identifier": "",
+    "index": 16,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "U01 Barudan U01",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 192,
+      "x": 858,
+      "y": 228
+    },
+    "depth": 8,
+    "description": "",
+    "help": "Keeps thread colours.",
+    "identifier": "",
+    "index": 17,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "PEC Brother PEC",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 192,
+      "x": 1055,
+      "y": 228
+    },
+    "depth": 8,
+    "description": "",
+    "help": "Keeps thread colours, matched to the nearest of Husqvarna's 29.",
+    "identifier": "",
+    "index": 18,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "HUS Husqvarna Viking HUS",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 191,
+      "x": 661,
+      "y": 286
+    },
+    "depth": 8,
+    "description": "",
+    "help": "Keeps thread colours.",
+    "identifier": "",
+    "index": 19,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "VIP Pfaff/Viking VIP",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 192,
+      "x": 858,
+      "y": 286
+    },
+    "depth": 8,
+    "description": "",
+    "help": "Keeps thread colours.",
+    "identifier": "",
+    "index": 20,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "TBF Tajima TBF",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 192,
+      "x": 1055,
+      "y": 286
+    },
+    "depth": 8,
+    "description": "",
+    "help": "Not a sewing machine file: a stitch path for CNC and plotter tools, with a pause at each colour change.",
+    "identifier": "",
+    "index": 21,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "GCODE G-code (stitch path)",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 52,
+      "width": 191,
+      "x": 661,
+      "y": 344
+    },
+    "depth": 8,
+    "description": "",
+    "help": "A picture of the stitches, 1600 px, not a machine file.",
+    "identifier": "",
+    "index": 22,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "PNG PNG image",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 586,
+      "x": 661,
+      "y": 408
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 23,
+    "role": "AXGroup",
+    "subrole": "AXDocumentNote",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 123,
+      "x": 661,
+      "y": 409
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 24,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Keeps thread colours."
+  },
+  {
+    "bounds": {
+      "height": 102,
+      "width": 586,
+      "x": 661,
+      "y": 437
+    },
+    "depth": 7,
+    "description": "Export stats",
+    "help": "",
+    "identifier": "",
+    "index": 25,
+    "role": "AXList",
+    "subrole": "AXDescriptionList",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 172,
+      "x": 670,
+      "y": 444
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 26,
+    "role": "AXGroup",
+    "subrole": "AXTerm",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 43,
+      "x": 670,
+      "y": 445
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 27,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Stitches"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 172,
+      "x": 670,
+      "y": 459
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 28,
+    "role": "AXGroup",
+    "subrole": "AXDescription",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 34,
+      "x": 670,
+      "y": 460
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 29,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "1,374"
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 172,
+      "x": 868,
+      "y": 444
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 30,
+    "role": "AXGroup",
+    "subrole": "AXTerm",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 41,
+      "x": 868,
+      "y": 445
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 31,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Objects"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 172,
+      "x": 868,
+      "y": 459
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 32,
+    "role": "AXGroup",
+    "subrole": "AXDescription",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 9,
+      "x": 868,
+      "y": 460
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 33,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "6"
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 172,
+      "x": 1066,
+      "y": 444
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 34,
+    "role": "AXGroup",
+    "subrole": "AXTerm",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 82,
+      "x": 1066,
+      "y": 445
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 35,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Colour changes"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 172,
+      "x": 1066,
+      "y": 459
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 36,
+    "role": "AXGroup",
+    "subrole": "AXDescription",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 7,
+      "x": 1066,
+      "y": 460
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 37,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "1"
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 172,
+      "x": 670,
+      "y": 499
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 38,
+    "role": "AXGroup",
+    "subrole": "AXTerm",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 22,
+      "x": 670,
+      "y": 500
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 39,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Size"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 172,
+      "x": 670,
+      "y": 514
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 40,
+    "role": "AXGroup",
+    "subrole": "AXDescription",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 30,
+      "x": 670,
+      "y": 515
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 41,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "49.4"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 16,
+      "x": 699,
+      "y": 515
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 42,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": " \u00d7 "
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 29,
+      "x": 714,
+      "y": 515
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 43,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "60.9"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 28,
+      "x": 742,
+      "y": 515
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 44,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": " mm"
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 172,
+      "x": 868,
+      "y": 499
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 45,
+    "role": "AXGroup",
+    "subrole": "AXTerm",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 26,
+      "x": 868,
+      "y": 500
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 46,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Time"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 172,
+      "x": 868,
+      "y": 514
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 47,
+    "role": "AXGroup",
+    "subrole": "AXDescription",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 12,
+      "x": 868,
+      "y": 515
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 48,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "\u2248 "
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 65,
+      "x": 879,
+      "y": 515
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 49,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "4 min 16 s"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 586,
+      "x": 661,
+      "y": 551
+    },
+    "depth": 7,
+    "description": "Export help",
+    "help": "",
+    "identifier": "",
+    "index": 50,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 58,
+      "x": 661,
+      "y": 552
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 51,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "File format"
+  },
+  {
+    "bounds": {
+      "height": 14,
+      "width": 15,
+      "x": 722,
+      "y": 552
+    },
+    "depth": 8,
+    "description": "Help",
+    "help": "Help: File format",
+    "identifier": "",
+    "index": 52,
+    "role": "AXPopUpButton",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 29,
+      "x": 748,
+      "y": 552
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 53,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Stats"
+  },
+  {
+    "bounds": {
+      "height": 14,
+      "width": 15,
+      "x": 780,
+      "y": 552
+    },
+    "depth": 8,
+    "description": "Help",
+    "help": "Help: Export stats",
+    "identifier": "",
+    "index": 54,
+    "role": "AXPopUpButton",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 54,
+      "width": 586,
+      "x": 661,
+      "y": 579
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 55,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 58,
+      "x": 661,
+      "y": 580
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 56,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "File name"
+  },
+  {
+    "bounds": {
+      "height": 14,
+      "width": 14,
+      "x": 1233,
+      "y": 579
+    },
+    "depth": 8,
+    "description": "Help",
+    "help": "Help: File name",
+    "identifier": "",
+    "index": 57,
+    "role": "AXPopUpButton",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 32,
+      "width": 554,
+      "x": 661,
+      "y": 601
+    },
+    "depth": 8,
+    "description": "File name",
+    "help": "",
+    "identifier": "",
+    "index": 58,
+    "role": "AXTextField",
+    "subrole": "",
+    "title": "",
+    "value": "k-logo"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 540,
+      "x": 668,
+      "y": 608
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 59,
+    "role": "AXGroup",
+    "subrole": "AXEmptyGroup",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 5,
+      "x": 1221,
+      "y": 609
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 60,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "."
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 22,
+      "x": 1225,
+      "y": 609
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 61,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "pes"
+  },
+  {
+    "bounds": {
+      "height": 114,
+      "width": 586,
+      "x": 661,
+      "y": 645
+    },
+    "depth": 7,
+    "description": "Origin point",
+    "help": "",
+    "identifier": "",
+    "index": 62,
+    "role": "AXRadioGroup",
+    "subrole": "",
+    "title": "",
+    "value": "<AXUIElement 0x6000030102d0> {pid=35529}"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 264,
+      "x": 661,
+      "y": 646
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 63,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Origin (the point the machine sews around) "
+  },
+  {
+    "bounds": {
+      "height": 14,
+      "width": 15,
+      "x": 928,
+      "y": 649
+    },
+    "depth": 8,
+    "description": "Help",
+    "help": "Help: Origin point",
+    "identifier": "",
+    "index": 64,
+    "role": "AXPopUpButton",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 28,
+      "width": 34,
+      "x": 661,
+      "y": 667
+    },
+    "depth": 8,
+    "description": "top left",
+    "help": "",
+    "identifier": "",
+    "index": 65,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 28,
+      "width": 34,
+      "x": 699,
+      "y": 667
+    },
+    "depth": 8,
+    "description": "top centre",
+    "help": "",
+    "identifier": "",
+    "index": 66,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 28,
+      "width": 34,
+      "x": 737,
+      "y": 667
+    },
+    "depth": 8,
+    "description": "top right",
+    "help": "",
+    "identifier": "",
+    "index": 67,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 28,
+      "width": 34,
+      "x": 661,
+      "y": 699
+    },
+    "depth": 8,
+    "description": "centre left",
+    "help": "",
+    "identifier": "",
+    "index": 68,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 28,
+      "width": 34,
+      "x": 699,
+      "y": 699
+    },
+    "depth": 8,
+    "description": "centre",
+    "help": "",
+    "identifier": "",
+    "index": 69,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "",
+    "value": "1"
+  },
+  {
+    "bounds": {
+      "height": 28,
+      "width": 34,
+      "x": 737,
+      "y": 699
+    },
+    "depth": 8,
+    "description": "centre right",
+    "help": "",
+    "identifier": "",
+    "index": 70,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 28,
+      "width": 34,
+      "x": 661,
+      "y": 731
+    },
+    "depth": 8,
+    "description": "bottom left",
+    "help": "",
+    "identifier": "",
+    "index": 71,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 28,
+      "width": 34,
+      "x": 699,
+      "y": 731
+    },
+    "depth": 8,
+    "description": "bottom centre",
+    "help": "",
+    "identifier": "",
+    "index": 72,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 28,
+      "width": 34,
+      "x": 737,
+      "y": 731
+    },
+    "depth": 8,
+    "description": "bottom right",
+    "help": "",
+    "identifier": "",
+    "index": 73,
+    "role": "AXRadioButton",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 885,
+      "width": 586,
+      "x": 661,
+      "y": 771
+    },
+    "depth": 7,
+    "description": "Before you sew",
+    "help": "",
+    "identifier": "",
+    "index": 74,
+    "role": "AXGroup",
+    "subrole": "AXLandmarkRegion",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 98,
+      "x": 674,
+      "y": 791
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 75,
+    "role": "AXHeading",
+    "subrole": "",
+    "title": "Before you sew",
+    "value": "3"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 99,
+      "x": 674,
+      "y": 792
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 76,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Before you sew"
+  },
+  {
+    "bounds": {
+      "height": 14,
+      "width": 15,
+      "x": 788,
+      "y": 795
+    },
+    "depth": 8,
+    "description": "Help",
+    "help": "Help: Before you sew",
+    "identifier": "",
+    "index": 77,
+    "role": "AXPopUpButton",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 77,
+      "x": 814,
+      "y": 792
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 78,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 8,
+      "x": 814,
+      "y": 793
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 79,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 19,
+      "x": 821,
+      "y": 793
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 80,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": " of "
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 14,
+      "x": 839,
+      "y": 793
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 81,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "12"
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 38,
+      "x": 852,
+      "y": 793
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 82,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": " ticked"
+  },
+  {
+    "bounds": {
+      "height": 32,
+      "width": 98,
+      "x": 1136,
+      "y": 784
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 83,
+    "role": "AXButton",
+    "subrole": "",
+    "title": "Copy as text",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 47,
+      "width": 560,
+      "x": 674,
+      "y": 828
+    },
+    "depth": 8,
+    "description": "Sewing facts",
+    "help": "",
+    "identifier": "",
+    "index": 84,
+    "role": "AXList",
+    "subrole": "AXDescriptionList",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 163,
+      "x": 683,
+      "y": 835
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 85,
+    "role": "AXGroup",
+    "subrole": "AXTerm",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 43,
+      "x": 683,
+      "y": 836
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 86,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Stitches"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 163,
+      "x": 683,
+      "y": 850
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 87,
+    "role": "AXGroup",
+    "subrole": "AXDescription",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 34,
+      "x": 683,
+      "y": 851
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 88,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "1,374"
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 164,
+      "x": 872,
+      "y": 835
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 89,
+    "role": "AXGroup",
+    "subrole": "AXTerm",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 43,
+      "x": 872,
+      "y": 836
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 90,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Time at "
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 22,
+      "x": 914,
+      "y": 836
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 91,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "850"
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 26,
+      "x": 935,
+      "y": 836
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 92,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": " spm"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 164,
+      "x": 872,
+      "y": 850
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 93,
+    "role": "AXGroup",
+    "subrole": "AXDescription",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 76,
+      "x": 872,
+      "y": 851
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 94,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "\u2248 4 min 16 s"
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 164,
+      "x": 1061,
+      "y": 835
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 95,
+    "role": "AXGroup",
+    "subrole": "AXTerm",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 43,
+      "x": 1061,
+      "y": 836
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 96,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Time at "
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 21,
+      "x": 1103,
+      "y": 836
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 97,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "700"
+  },
+  {
+    "bounds": {
+      "height": 13,
+      "width": 26,
+      "x": 1123,
+      "y": 836
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 98,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": " spm"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 164,
+      "x": 1061,
+      "y": 850
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 99,
+    "role": "AXGroup",
+    "subrole": "AXDescription",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 13,
+      "x": 1061,
+      "y": 851
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 100,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "\u2248 "
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 66,
+      "x": 1073,
+      "y": 851
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 101,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "4 min 42 s"
+  },
+  {
+    "bounds": {
+      "height": 123,
+      "width": 560,
+      "x": 674,
+      "y": 887
+    },
+    "depth": 8,
+    "description": "Machine speed",
+    "help": "",
+    "identifier": "",
+    "index": 102,
+    "role": "AXGroup",
+    "subrole": "AXLandmarkRegion",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 536,
+      "x": 686,
+      "y": 895
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 103,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 124,
+      "x": 686,
+      "y": 896
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 104,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Set your machine to "
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 26,
+      "x": 809,
+      "y": 896
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 105,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "700"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 116,
+      "x": 834,
+      "y": 896
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 106,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": " stitches a minute ("
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 181,
+      "x": 949,
+      "y": 896
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 107,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "a good speed for suiting cloth"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 9,
+      "x": 1129,
+      "y": 896
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 108,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": ")."
+  },
+  {
+    "bounds": {
+      "height": 34,
+      "width": 536,
+      "x": 686,
+      "y": 915
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 109,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 32,
+      "width": 530,
+      "x": 686,
+      "y": 916
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 110,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Suiting usually sews at 600 to 800 stitches a minute. Wool holds well; stay in the middle of the range for fine serifs. Speed advice is a rule of thumb: your machine and a test sew-out decide."
+  },
+  {
+    "bounds": {
+      "height": 51,
+      "width": 536,
+      "x": 686,
+      "y": 951
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 111,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 32,
+      "width": 528,
+      "x": 686,
+      "y": 952
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 112,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "On a Brother machine, look in Settings for Max embroidery speed. A file cannot set the speed, so you set it on the machine before you start."
+  },
+  {
+    "bounds": {
+      "height": 32,
+      "width": 516,
+      "x": 686,
+      "y": 969
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 113,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": " Times include stops to swap thread and cut it, and a quarter extra for real life."
+  },
+  {
+    "bounds": {
+      "height": 339,
+      "width": 560,
+      "x": 674,
+      "y": 1022
+    },
+    "depth": 8,
+    "description": "Stitch safety",
+    "help": "",
+    "identifier": "",
+    "index": 114,
+    "role": "AXGroup",
+    "subrole": "AXLandmarkRegion",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 82,
+      "x": 674,
+      "y": 1034
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 115,
+    "role": "AXHeading",
+    "subrole": "",
+    "title": "Stitch safety",
+    "value": "4"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 82,
+      "x": 674,
+      "y": 1035
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 116,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Stitch safety"
+  },
+  {
+    "bounds": {
+      "height": 14,
+      "width": 15,
+      "x": 771,
+      "y": 1038
+    },
+    "depth": 9,
+    "description": "Help",
+    "help": "Help: Stitch safety",
+    "identifier": "",
+    "index": 117,
+    "role": "AXPopUpButton",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 85,
+      "x": 1149,
+      "y": 1035
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 118,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 85,
+      "x": 1149,
+      "y": 1036
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 119,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "All in the green"
+  },
+  {
+    "bounds": {
+      "height": 34,
+      "width": 560,
+      "x": 674,
+      "y": 1064
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 120,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 32,
+      "width": 550,
+      "x": 674,
+      "y": 1065
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 121,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Green is the range that sews well. Amber is a heads up, and Embroidery Studio still makes the file. Moving a slider here changes every shape of that kind."
+  },
+  {
+    "bounds": {
+      "height": 251,
+      "width": 560,
+      "x": 674,
+      "y": 1110
+    },
+    "depth": 9,
+    "description": "Stitch safety settings",
+    "help": "",
+    "identifier": "",
+    "index": 122,
+    "role": "AXGroup",
+    "subrole": "AXContentList",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 87,
+      "width": 560,
+      "x": 674,
+      "y": 1110
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 123,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 560,
+      "x": 674,
+      "y": 1110
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 124,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 63,
+      "x": 674,
+      "y": 1111
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 125,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Satin width"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 10,
+      "x": 742,
+      "y": 1115
+    },
+    "depth": 12,
+    "description": "In the safe range",
+    "help": "",
+    "identifier": "",
+    "index": 126,
+    "role": "AXImage",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 14,
+      "width": 15,
+      "x": 755,
+      "y": 1112
+    },
+    "depth": 12,
+    "description": "Help: Embroidery Studio default. The 1.5 mm floor (1.0 mm for 60 wt thread) matches the calibration table. The 10 mm top is a Lilo default. Lilo splits columns wider than 6.8 mm into halves, so no stitch passes 7 mm.",
+    "help": "Embroidery Studio default. The 1.5 mm floor (1.0 mm for 60 wt thread) matches the calibration table. The 10 mm top is a Lilo default. Lilo splits columns wider than 6.8 mm into halves, so no stitch passes 7 mm.",
+    "identifier": "",
+    "index": 127,
+    "role": "AXImage",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 465,
+      "x": 676,
+      "y": 1135
+    },
+    "depth": 11,
+    "description": "Satin width",
+    "help": "",
+    "identifier": "",
+    "index": 128,
+    "role": "AXSlider",
+    "subrole": "",
+    "title": "",
+    "value": "5.8"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 18,
+      "x": 882,
+      "y": 1135
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 129,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "5.8"
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 59,
+      "x": 1149,
+      "y": 1129
+    },
+    "depth": 11,
+    "description": "Satin width value",
+    "help": "",
+    "identifier": "",
+    "index": 130,
+    "role": "AXTextField",
+    "subrole": "",
+    "title": "",
+    "value": "5.8"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 34,
+      "x": 1155,
+      "y": 1135
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 131,
+    "role": "AXGroup",
+    "subrole": "AXEmptyGroup",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 14,
+      "x": 1188,
+      "y": 1135
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 132,
+    "role": "AXIncrementor",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 1188,
+      "y": 1135
+    },
+    "depth": 13,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 133,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXIncrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 1188,
+      "y": 1144
+    },
+    "depth": 13,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 134,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXDecrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 21,
+      "x": 1213,
+      "y": 1136
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 135,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "mm"
+  },
+  {
+    "bounds": {
+      "height": 34,
+      "width": 560,
+      "x": 674,
+      "y": 1163
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 136,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 32,
+      "width": 541,
+      "x": 674,
+      "y": 1164
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 137,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "6 shapes: 4.7 to 6.2 mm. A satin shape's width is its drawing. Reshape it, or turn it into a running stitch."
+  },
+  {
+    "bounds": {
+      "height": 70,
+      "width": 560,
+      "x": 674,
+      "y": 1209
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 138,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 560,
+      "x": 674,
+      "y": 1209
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 139,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 76,
+      "x": 674,
+      "y": 1210
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 140,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Satin spacing"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 10,
+      "x": 755,
+      "y": 1214
+    },
+    "depth": 12,
+    "description": "In the safe range",
+    "help": "",
+    "identifier": "",
+    "index": 141,
+    "role": "AXImage",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 14,
+      "width": 15,
+      "x": 768,
+      "y": 1211
+    },
+    "depth": 12,
+    "description": "Help: Researched. Hatch and Amefird put satin spacing near 0.40 mm. The calibration table allows 0.35 to 0.60 mm (0.30 mm for 60 wt, up to 0.70 mm on towel).",
+    "help": "Researched. Hatch and Amefird put satin spacing near 0.40 mm. The calibration table allows 0.35 to 0.60 mm (0.30 mm for 60 wt, up to 0.70 mm on towel).",
+    "identifier": "",
+    "index": 142,
+    "role": "AXImage",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 465,
+      "x": 676,
+      "y": 1234
+    },
+    "depth": 11,
+    "description": "Satin spacing",
+    "help": "",
+    "identifier": "",
+    "index": 143,
+    "role": "AXSlider",
+    "subrole": "",
+    "title": "",
+    "value": "0.4"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 18,
+      "x": 744,
+      "y": 1234
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 144,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "0.4"
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 59,
+      "x": 1149,
+      "y": 1228
+    },
+    "depth": 11,
+    "description": "Satin spacing value",
+    "help": "",
+    "identifier": "",
+    "index": 145,
+    "role": "AXTextField",
+    "subrole": "",
+    "title": "",
+    "value": "0.4"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 34,
+      "x": 1155,
+      "y": 1234
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 146,
+    "role": "AXGroup",
+    "subrole": "AXEmptyGroup",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 14,
+      "x": 1188,
+      "y": 1234
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 147,
+    "role": "AXIncrementor",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 1188,
+      "y": 1234
+    },
+    "depth": 13,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 148,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXIncrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 1188,
+      "y": 1243
+    },
+    "depth": 13,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 149,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXDecrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 21,
+      "x": 1213,
+      "y": 1235
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 150,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "mm"
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 560,
+      "x": 674,
+      "y": 1262
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 151,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 101,
+      "x": 674,
+      "y": 1263
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 152,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "6 shapes: 0.4 mm"
+  },
+  {
+    "bounds": {
+      "height": 70,
+      "width": 560,
+      "x": 674,
+      "y": 1291
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 153,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 560,
+      "x": 674,
+      "y": 1291
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 154,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 104,
+      "x": 674,
+      "y": 1292
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 155,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Pull compensation"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 10,
+      "x": 783,
+      "y": 1296
+    },
+    "depth": 12,
+    "description": "In the safe range",
+    "help": "",
+    "identifier": "",
+    "index": 156,
+    "role": "AXImage",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 14,
+      "width": 15,
+      "x": 796,
+      "y": 1293
+    },
+    "depth": 12,
+    "description": "Help: Embroidery Studio default. The calibration table uses 0.15 to 0.20 mm on woven cloth. The 0.1 and 0.4 mm limits are Lilo's own.",
+    "help": "Embroidery Studio default. The calibration table uses 0.15 to 0.20 mm on woven cloth. The 0.1 and 0.4 mm limits are Lilo's own.",
+    "identifier": "",
+    "index": 157,
+    "role": "AXImage",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 465,
+      "x": 676,
+      "y": 1316
+    },
+    "depth": 11,
+    "description": "Pull compensation",
+    "help": "",
+    "identifier": "",
+    "index": 158,
+    "role": "AXSlider",
+    "subrole": "",
+    "title": "",
+    "value": "0.15"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 18,
+      "x": 743,
+      "y": 1316
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 159,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "0.15"
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 59,
+      "x": 1149,
+      "y": 1310
+    },
+    "depth": 11,
+    "description": "Pull compensation value",
+    "help": "",
+    "identifier": "",
+    "index": 160,
+    "role": "AXTextField",
+    "subrole": "",
+    "title": "",
+    "value": "0.15"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 34,
+      "x": 1155,
+      "y": 1316
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 161,
+    "role": "AXGroup",
+    "subrole": "AXEmptyGroup",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 14,
+      "x": 1188,
+      "y": 1316
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 162,
+    "role": "AXIncrementor",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 1188,
+      "y": 1316
+    },
+    "depth": 13,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 163,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXIncrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 1188,
+      "y": 1325
+    },
+    "depth": 13,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 164,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXDecrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 21,
+      "x": 1213,
+      "y": 1317
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 165,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "mm"
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 560,
+      "x": 674,
+      "y": 1344
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 166,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 106,
+      "x": 674,
+      "y": 1345
+    },
+    "depth": 12,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 167,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "6 shapes: 0.15 mm"
+  },
+  {
+    "bounds": {
+      "height": 200,
+      "width": 560,
+      "x": 674,
+      "y": 1369
+    },
+    "depth": 8,
+    "description": "Setup checklist",
+    "help": "",
+    "identifier": "",
+    "index": 168,
+    "role": "AXGroup",
+    "subrole": "AXContentList",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1369
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 169,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1369
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 170,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 31,
+      "width": 548,
+      "x": 674,
+      "y": 1368
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 171,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "Fabric: Suiting (woven wool / blends). Jacket cloth and other firm wovens. It holds its shape, so it is the easy case.",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 516,
+      "x": 698,
+      "y": 1369
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 172,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Fabric: Suiting (woven wool / blends). Jacket cloth and other firm wovens. It holds its shape, so it is the easy case."
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1403
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 173,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1403
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 174,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 31,
+      "width": 548,
+      "x": 674,
+      "y": 1402
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 175,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "Needle: 75/11 sharp. A fresh sharp needle pierces the tight weave without pushing threads aside. Start with a fresh one.",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 507,
+      "x": 698,
+      "y": 1403
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 176,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Needle: 75/11 sharp. A fresh sharp needle pierces the tight weave without pushing threads aside. Start with a fresh one."
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1437
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 177,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1437
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 178,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 31,
+      "width": 548,
+      "x": 674,
+      "y": 1436
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 179,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "Stabiliser: cut-away, medium, about 1.5-2 oz (50-60 g/m2). Cut-away keeps fine serifs from distorting as the garment is worn; trim close to the stitching.",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 514,
+      "x": 698,
+      "y": 1437
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 180,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Stabiliser: cut-away, medium, about 1.5-2 oz (50-60 g/m2). Cut-away keeps fine serifs from distorting as the garment is worn; trim close to the stitching."
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 548,
+      "x": 674,
+      "y": 1471
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 181,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 548,
+      "x": 674,
+      "y": 1471
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 182,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 548,
+      "x": 674,
+      "y": 1470
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 183,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "Topping: none needed.",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 129,
+      "x": 698,
+      "y": 1471
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 184,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Topping: none needed."
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 548,
+      "x": 674,
+      "y": 1491
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 185,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 548,
+      "x": 674,
+      "y": 1491
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 186,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 548,
+      "x": 674,
+      "y": 1490
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 187,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "Hooping: Hoop the fabric together with the stabiliser, drum-tight but not stretched.",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 467,
+      "x": 698,
+      "y": 1491
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 188,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Hooping: Hoop the fabric together with the stabiliser, drum-tight but not stretched."
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1511
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 189,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1511
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 190,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 31,
+      "width": 548,
+      "x": 674,
+      "y": 1510
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 191,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "Hooping: Do not clamp on a finished jacket front: float it on sticky stabiliser instead to avoid hoop marks.",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 515,
+      "x": 698,
+      "y": 1511
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 192,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Hooping: Do not clamp on a finished jacket front: float it on sticky stabiliser instead to avoid hoop marks."
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1545
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 193,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1545
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 194,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 31,
+      "width": 548,
+      "x": 674,
+      "y": 1544
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 195,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "Thread: 40 wt (standard) on top; a 60 wt bobbin thread is the usual match. Check there is a little bobbin thread showing on the back of the satin.",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 514,
+      "x": 698,
+      "y": 1545
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 196,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Thread: 40 wt (standard) on top; a 60 wt bobbin thread is the usual match. Check there is a little bobbin thread showing on the back of the satin."
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1579
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 197,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1579
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 198,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 31,
+      "width": 548,
+      "x": 674,
+      "y": 1578
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 199,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "Test first: sew once on an offcut of the same cloth and stabiliser, then check the hairlines, the crotch of the W and the joins before the real piece.",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 504,
+      "x": 698,
+      "y": 1579
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 200,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Test first: sew once on an offcut of the same cloth and stabiliser, then check the hairlines, the crotch of the W and the joins before the real piece."
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1613
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 201,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1613
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 202,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 31,
+      "width": 548,
+      "x": 674,
+      "y": 1612
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 203,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "Slow the machine down for the first run (about 600-700 stitches per minute) and watch the first minute.",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 513,
+      "x": 698,
+      "y": 1613
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 204,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Slow the machine down for the first run (about 600-700 stitches per minute) and watch the first minute."
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1647
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 205,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 548,
+      "x": 674,
+      "y": 1647
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 206,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 31,
+      "width": 548,
+      "x": 674,
+      "y": 1646
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 207,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "Hoop: 4 x 4 in, 100 \u00d7 100 mm. Hoop the fabric and stabiliser together and check the design sits inside the dashed margin.",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 30,
+      "width": 513,
+      "x": 698,
+      "y": 1647
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 208,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Hoop: 4 x 4 in, 100 \u00d7 100 mm. Hoop the fabric and stabiliser together and check the design sits inside the dashed margin."
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 560,
+      "x": 674,
+      "y": 1581
+    },
+    "depth": 8,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 209,
+    "role": "AXHeading",
+    "subrole": "",
+    "title": "Threads, in sewing order",
+    "value": "4"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 160,
+      "x": 674,
+      "y": 1582
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 210,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "Threads, in sewing order"
+  },
+  {
+    "bounds": {
+      "height": 36,
+      "width": 560,
+      "x": 674,
+      "y": 1607
+    },
+    "depth": 8,
+    "description": "Threads in sewing order",
+    "help": "",
+    "identifier": "",
+    "index": 211,
+    "role": "AXGroup",
+    "subrole": "AXContentList",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 560,
+      "x": 674,
+      "y": 1607
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 212,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 560,
+      "x": 674,
+      "y": 1607
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 213,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 560,
+      "x": 674,
+      "y": 1606
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 214,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "1. Brother 406 Ultramarine",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 149,
+      "x": 716,
+      "y": 1607
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 215,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "1. Brother 406 Ultramarine"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 560,
+      "x": 674,
+      "y": 1627
+    },
+    "depth": 9,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 216,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 560,
+      "x": 674,
+      "y": 1627
+    },
+    "depth": 10,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 217,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 560,
+      "x": 674,
+      "y": 1626
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 218,
+    "role": "AXCheckBox",
+    "subrole": "",
+    "title": "2. Brother 800 Red",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 15,
+      "width": 107,
+      "x": 716,
+      "y": 1627
+    },
+    "depth": 11,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 219,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "2. Brother 800 Red"
+  },
+  {
+    "bounds": {
+      "height": 32,
+      "width": 57,
+      "x": 1078,
+      "y": 862
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 220,
+    "role": "AXButton",
+    "subrole": "",
+    "title": "Close",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 14,
+      "width": 15,
+      "x": 1146,
+      "y": 871
+    },
+    "depth": 7,
+    "description": "Help",
+    "help": "Help: Save",
+    "identifier": "",
+    "index": 221,
+    "role": "AXPopUpButton",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 32,
+      "width": 80,
+      "x": 1168,
+      "y": 862
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 222,
+    "role": "AXButton",
+    "subrole": "",
+    "title": "Save PES",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 12,
+      "width": 5,
+      "x": 320,
+      "y": 215
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 223,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "\u25be"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 14,
+      "x": 390,
+      "y": 251
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 224,
+    "role": "AXIncrementor",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 390,
+      "y": 251
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 225,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXIncrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 390,
+      "y": 260
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 226,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXDecrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 13,
+      "x": 514,
+      "y": 251
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 227,
+    "role": "AXIncrementor",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 13,
+      "x": 514,
+      "y": 251
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 228,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXIncrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 13,
+      "x": 514,
+      "y": 260
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 229,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXDecrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 12,
+      "width": 5,
+      "x": 320,
+      "y": 471
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 230,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "\u25be"
+  },
+  {
+    "bounds": {
+      "height": 12,
+      "width": 5,
+      "x": 320,
+      "y": 563
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 231,
+    "role": "AXStaticText",
+    "subrole": "",
+    "title": "",
+    "value": "\u25be"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 18,
+      "x": 337,
+      "y": 618
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 232,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "0.4"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 14,
+      "x": 487,
+      "y": 618
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 233,
+    "role": "AXIncrementor",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 487,
+      "y": 618
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 234,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXIncrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 487,
+      "y": 627
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 235,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXDecrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 18,
+      "x": 340,
+      "y": 713
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 236,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "0.15"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 14,
+      "x": 487,
+      "y": 713
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 237,
+    "role": "AXIncrementor",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 487,
+      "y": 713
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 238,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXIncrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 487,
+      "y": 722
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 239,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXDecrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 18,
+      "x": 383,
+      "y": 791
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 240,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "7"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 14,
+      "x": 487,
+      "y": 791
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 241,
+    "role": "AXIncrementor",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 487,
+      "y": 791
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 242,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXIncrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 487,
+      "y": 800
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 243,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXDecrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 17,
+      "x": 322,
+      "y": 848
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 244,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 13,
+      "x": 508,
+      "y": 848
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 245,
+    "role": "AXIncrementor",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 13,
+      "x": 508,
+      "y": 848
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 246,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXIncrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 13,
+      "x": 508,
+      "y": 857
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 247,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXDecrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 17,
+      "x": 322,
+      "y": 905
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 248,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 18,
+      "width": 14,
+      "x": 487,
+      "y": 905
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 249,
+    "role": "AXIncrementor",
+    "subrole": "",
+    "title": "",
+    "value": "0"
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 487,
+      "y": 905
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 250,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXIncrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 9,
+      "width": 14,
+      "x": 487,
+      "y": 914
+    },
+    "depth": 7,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 251,
+    "role": "AXIncrementorArrow",
+    "subrole": "AXDecrementArrow",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 18,
+      "x": 913,
+      "y": 889
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 252,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "1386"
+  },
+  {
+    "bounds": {
+      "height": 17,
+      "width": 18,
+      "x": 1083,
+      "y": 889
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 253,
+    "role": "AXValueIndicator",
+    "subrole": "",
+    "title": "",
+    "value": "50"
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 14,
+      "x": 258,
+      "y": 56
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 254,
+    "role": "AXButton",
+    "subrole": "AXCloseButton",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 14,
+      "x": 298,
+      "y": 56
+    },
+    "depth": 2,
+    "description": "",
+    "help": "this button also has an action to zoom the window",
+    "identifier": "",
+    "index": 255,
+    "role": "AXButton",
+    "subrole": "AXFullScreenButton",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 14,
+      "x": 298,
+      "y": 56
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 256,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 14,
+      "x": 298,
+      "y": 56
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 257,
+    "role": "AXGroup",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 16,
+      "width": 14,
+      "x": 278,
+      "y": 56
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 258,
+    "role": "AXButton",
+    "subrole": "AXMinimizeButton",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 1920,
+      "x": 0,
+      "y": 0
+    },
+    "depth": 1,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 259,
+    "role": "AXMenuBar",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 34,
+      "x": 10,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 260,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "Apple",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 261,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_aboutThisMacRequested:",
+    "index": 262,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "About This Mac",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_systemInformationRequested:",
+    "index": 263,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "System Information",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 264,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_systemSettingsRequested:",
+    "index": 265,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "System Settings\u2026, 1 update",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_appStoreRequested:",
+    "index": 266,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "App Store",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 267,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_recentsRequested:",
+    "index": 268,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Recent Items",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 5,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 269,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 270,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Applications",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_recentItemRequested:",
+    "index": 271,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Installer",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_recentItemRequested:",
+    "index": 272,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Show \u201cInstaller\u201d in Finder",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_recentItemRequested:",
+    "index": 273,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "System Settings",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_recentItemRequested:",
+    "index": 274,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Show \u201cSystem Settings\u201d in Finder",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 275,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 276,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Documents",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_recentItemRequested:",
+    "index": 277,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "AnkaGuestAddons.pkg",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_recentItemRequested:",
+    "index": 278,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Show \u201cAnkaGuestAddons.pkg\u201d in Finder",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 279,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 280,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Servers",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_recentItemRequested:",
+    "index": 281,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Macintosh HD",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 282,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_clearRecentItemsRequested:",
+    "index": 283,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Clear Menu",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 284,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_forceQuitPanelRequested:",
+    "index": 285,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Force Quit\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_forceQuitRequested:",
+    "index": 286,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Force Quit Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 287,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_sleepRequested:",
+    "index": 288,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Sleep",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_restartRequested:",
+    "index": 289,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Restart\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_restartNowRequested:",
+    "index": 290,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Restart",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_shutDownRequested:",
+    "index": 291,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Shut Down\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_shutDownNowRequested:",
+    "index": 292,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Shut Down",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 293,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_lockScreenRequested:",
+    "index": 294,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Lock Screen",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_logOutRequested:",
+    "index": 295,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Log Out Anka\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_logOutNowRequested:",
+    "index": 296,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Log Out Anka",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 297,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 141,
+      "x": 44,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 298,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 299,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "customShowAboutPanel:",
+    "index": 300,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "About Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 301,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 302,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Services",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 5,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 303,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 304,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Activity Monitor",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 305,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Allocations & Leaks",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 306,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "File Activity",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 307,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "System Trace",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 308,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Time Profile Active Application",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 309,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Time Profile App Under Mouse",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 310,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Time Profile Entire System",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_processRequest:",
+    "index": 311,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Toggle Instruments Recording",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_configureServicesMenu:",
+    "index": 312,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Services Settings\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 313,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "hide:",
+    "index": 314,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Hide Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "hideOtherApplications:",
+    "index": 315,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Hide Others",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 316,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "terminate:",
+    "index": 317,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Quit Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "NSAlternateQuitMenuItem",
+    "index": 318,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Quit and Keep Windows",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 42,
+      "x": 185,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 319,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "File",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 320,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "performClose:",
+    "index": 321,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Close Window",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "closeAll:",
+    "index": 322,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Close All",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 44,
+      "x": 227,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 323,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "Edit",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 324,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "undo:",
+    "index": 325,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Undo",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "redo:",
+    "index": 326,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Redo",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 327,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "cut:",
+    "index": 328,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Cut",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "copy:",
+    "index": 329,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Copy",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "paste:",
+    "index": 330,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Paste",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "selectAll:",
+    "index": 331,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Select All",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 332,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_NSMenuItemAutoFillIdentifier",
+    "index": 333,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "AutoFill",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 5,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 334,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_handleInsertFromContactsCommand:",
+    "index": 335,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Contact\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "_handleInsertFromPasswordsCommand:",
+    "index": 336,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Passwords\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "startDictation:",
+    "index": 337,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Start Dictation\u2026",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "orderFrontCharacterPalette:",
+    "index": 338,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Emoji & Symbols",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 50,
+      "x": 271,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 339,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "View",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 340,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "toggleFullScreen:",
+    "index": 341,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Toggle Full Screen",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 69,
+      "x": 321,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 342,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "Window",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 343,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "performMiniaturize:",
+    "index": 344,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Minimize",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "miniaturizeAll:",
+    "index": 345,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Minimize All",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "performZoom:",
+    "index": 346,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Zoom",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "zoomAll:",
+    "index": 347,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Zoom All",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_tileLeft:",
+    "index": 348,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Tile Window to Left of Screen",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomLeft:",
+    "index": 349,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Move Window to Left Side of Screen",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_tileRight:",
+    "index": 350,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Tile Window to Right of Screen",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_zoomRight:",
+    "index": 351,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Move Window to Right Side of Screen",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_changeWindowTileLocation:",
+    "index": 352,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Replace Tiled Window",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 353,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "_removeWindowFromStageManagerSet:",
+    "index": 354,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Remove Window from Set",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 355,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "performClose:",
+    "index": 356,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Close Window",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 357,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "makeKeyAndOrderFront:",
+    "index": 358,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "Embroidery Studio",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 24,
+      "width": 48,
+      "x": 390,
+      "y": 0
+    },
+    "depth": 2,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 359,
+    "role": "AXMenuBarItem",
+    "subrole": "",
+    "title": "Help",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 3,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 360,
+    "role": "AXMenu",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 0,
+      "width": 0,
+      "x": 0,
+      "y": 1080
+    },
+    "depth": 4,
+    "description": "",
+    "help": "",
+    "identifier": "searchFieldAction:",
+    "index": 361,
+    "role": "AXMenuItem",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 22,
+      "width": 352,
+      "x": 0,
+      "y": 1058
+    },
+    "depth": 5,
+    "description": "",
+    "help": "",
+    "identifier": "_SC_SEARCH_FIELD",
+    "index": 362,
+    "role": "AXTextField",
+    "subrole": "AXSearchField",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 5,
+      "width": 360,
+      "x": 0,
+      "y": 1075
+    },
+    "depth": 5,
+    "description": "search result",
+    "help": "",
+    "identifier": "_SC_RESULTS_TABLE",
+    "index": 363,
+    "role": "AXTable",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 5,
+      "width": 350,
+      "x": 0,
+      "y": 1075
+    },
+    "depth": 6,
+    "description": "",
+    "help": "",
+    "identifier": "Title",
+    "index": 364,
+    "role": "AXColumn",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 22,
+      "width": 34,
+      "x": 1662,
+      "y": 1
+    },
+    "depth": 1,
+    "description": "",
+    "help": "",
+    "identifier": "",
+    "index": 365,
+    "role": "AXMenuBar",
+    "subrole": "",
+    "title": "",
+    "value": ""
+  },
+  {
+    "bounds": {
+      "height": 22,
+      "width": 34,
+      "x": 1662,
+      "y": 1
+    },
+    "depth": 2,
+    "description": "",
+    "help": "Embroidery Studio",
+    "identifier": "",
+    "index": 366,
+    "role": "AXMenuBarItem",
+    "subrole": "AXMenuExtra",
+    "title": "",
+    "value": ""
+  }
+]

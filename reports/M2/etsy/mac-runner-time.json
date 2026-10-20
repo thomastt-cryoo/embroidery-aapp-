@@ -1,0 +1,482 @@
+{
+  "measuredMacJobSeconds": 9402,
+  "minutes": 156,
+  "remainingSeconds": 42,
+  "uniqueJobs": 36,
+  "userStatedCeilingMinutes": 200,
+  "belowStatedCeiling": true,
+  "accountFreeBalanceVerified": false,
+  "standardRunnersOnly": true,
+  "jobs": [
+    {
+      "id": 118269056836,
+      "name": "macOS universal build and actual runner checks",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-19T19:45:01Z",
+      "completed_at": "2026-10-19T20:01:51Z",
+      "runner_name": "GitHub Actions 1000000013",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 1010
+    },
+    {
+      "id": 118249318733,
+      "name": "macOS universal build and actual runner checks",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-19T19:04:03Z",
+      "completed_at": "2026-10-19T19:10:25Z",
+      "runner_name": "GitHub Actions 1000000012",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 382
+    },
+    {
+      "id": 118246045227,
+      "name": "macOS universal build and actual runner checks",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-10-19T18:57:17Z",
+      "completed_at": "2026-10-19T18:58:48Z",
+      "runner_name": "GitHub Actions 1000000011",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 91
+    },
+    {
+      "id": 118236212033,
+      "name": "macOS universal build and actual runner checks",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-19T18:37:16Z",
+      "completed_at": "2026-10-19T18:47:45Z",
+      "runner_name": "GitHub Actions 1000000010",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 629
+    },
+    {
+      "id": 118334567064,
+      "name": "macOS universal build and actual runner checks",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T22:07:48Z",
+      "completed_at": "2026-10-19T22:18:15Z",
+      "runner_name": "GitHub Actions 1000000028",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 627
+    },
+    {
+      "id": 118315439634,
+      "name": "macOS universal build and actual runner checks",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T21:23:02Z",
+      "completed_at": "2026-10-19T21:30:47Z",
+      "runner_name": "GitHub Actions 1000000024",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 465
+    },
+    {
+      "id": 118311901889,
+      "name": "macOS universal build and actual runner checks",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T21:15:11Z",
+      "completed_at": "2026-10-19T21:22:56Z",
+      "runner_name": "GitHub Actions 1000000022",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 465
+    },
+    {
+      "id": 118311903318,
+      "name": "probe",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-19T21:15:11Z",
+      "completed_at": "2026-10-19T21:16:24Z",
+      "runner_name": "GitHub Actions 1000000023",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 73
+    },
+    {
+      "id": 118300620363,
+      "name": "probe",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-19T20:51:02Z",
+      "completed_at": "2026-10-19T20:52:00Z",
+      "runner_name": "GitHub Actions 1000000020",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 58
+    },
+    {
+      "id": 118381690782,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-20T00:19:22Z",
+      "completed_at": "2026-10-20T00:23:48Z",
+      "runner_name": "GitHub Actions 1000000045",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 266
+    },
+    {
+      "id": 118381661633,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-20T00:19:18Z",
+      "completed_at": "2026-10-20T00:21:52Z",
+      "runner_name": "GitHub Actions 1000000044",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 154
+    },
+    {
+      "id": 118380174598,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-20T00:14:44Z",
+      "completed_at": "2026-10-20T00:17:23Z",
+      "runner_name": "GitHub Actions 1000000043",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 159
+    },
+    {
+      "id": 118378390038,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-20T00:09:20Z",
+      "completed_at": "2026-10-20T00:14:46Z",
+      "runner_name": "GitHub Actions 1000000042",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 326
+    },
+    {
+      "id": 118378353655,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-20T00:09:14Z",
+      "completed_at": "2026-10-20T00:12:36Z",
+      "runner_name": "GitHub Actions 1000000041",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 202
+    },
+    {
+      "id": 118376539093,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-20T00:03:52Z",
+      "completed_at": "2026-10-20T00:08:18Z",
+      "runner_name": "GitHub Actions 1000000040",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 266
+    },
+    {
+      "id": 118376516194,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-20T00:03:47Z",
+      "completed_at": "2026-10-20T00:07:19Z",
+      "runner_name": "GitHub Actions 1000000039",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 212
+    },
+    {
+      "id": 118374998472,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T23:59:10Z",
+      "completed_at": "2026-10-20T00:04:59Z",
+      "runner_name": "GitHub Actions 1000000038",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 349
+    },
+    {
+      "id": 118374976308,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T23:59:07Z",
+      "completed_at": "2026-10-20T00:02:05Z",
+      "runner_name": "GitHub Actions 1000000037",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 178
+    },
+    {
+      "id": 118373862800,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T23:55:40Z",
+      "completed_at": "2026-10-20T00:01:09Z",
+      "runner_name": "GitHub Actions 1000000036",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 329
+    },
+    {
+      "id": 118373835788,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T23:55:37Z",
+      "completed_at": "2026-10-19T23:58:08Z",
+      "runner_name": "GitHub Actions 1000000035",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 151
+    },
+    {
+      "id": 118373238175,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T23:53:43Z",
+      "completed_at": "2026-10-19T23:58:54Z",
+      "runner_name": "GitHub Actions 1000000034",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 311
+    },
+    {
+      "id": 118373018989,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T23:53:05Z",
+      "completed_at": "2026-10-19T23:54:49Z",
+      "runner_name": "GitHub Actions 1000000033",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 104
+    },
+    {
+      "id": 118371668471,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T23:48:57Z",
+      "completed_at": "2026-10-19T23:53:14Z",
+      "runner_name": "GitHub Actions 1000000032",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 257
+    },
+    {
+      "id": 118371647253,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T23:48:55Z",
+      "completed_at": "2026-10-19T23:51:49Z",
+      "runner_name": "GitHub Actions 1000000031",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 174
+    },
+    {
+      "id": 118369533636,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T23:42:34Z",
+      "completed_at": "2026-10-19T23:46:59Z",
+      "runner_name": "GitHub Actions 1000000030",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 265
+    },
+    {
+      "id": 118369533075,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T23:42:34Z",
+      "completed_at": "2026-10-19T23:45:21Z",
+      "runner_name": "GitHub Actions 1000000029",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 167
+    },
+    {
+      "id": 118323784271,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T21:41:49Z",
+      "completed_at": "2026-10-19T21:45:28Z",
+      "runner_name": "GitHub Actions 1000000027",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 219
+    },
+    {
+      "id": 118323742679,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T21:41:45Z",
+      "completed_at": "2026-10-19T21:43:11Z",
+      "runner_name": "GitHub Actions 1000000026",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 86
+    },
+    {
+      "id": 118302656540,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T20:55:22Z",
+      "completed_at": "2026-10-19T20:59:01Z",
+      "runner_name": "GitHub Actions 1000000021",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 219
+    },
+    {
+      "id": 118298929695,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-10-19T20:47:26Z",
+      "completed_at": "2026-10-19T20:54:58Z",
+      "runner_name": "GitHub Actions 1000000019",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 452
+    },
+    {
+      "id": 118296293796,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T20:41:54Z",
+      "completed_at": "2026-10-19T20:44:53Z",
+      "runner_name": "GitHub Actions 1000000018",
+      "labels": [
+        "macos-15-intel"
+      ],
+      "elapsedSeconds": 179
+    },
+    {
+      "id": 118294038559,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-10-19T20:37:08Z",
+      "completed_at": "2026-10-19T20:41:39Z",
+      "runner_name": "",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 0,
+      "runnerNeverAssigned": true
+    },
+    {
+      "id": 118292435765,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "cancelled",
+      "started_at": "2026-10-19T20:33:47Z",
+      "completed_at": "2026-10-19T20:36:56Z",
+      "runner_name": "",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 0,
+      "runnerNeverAssigned": true
+    },
+    {
+      "id": 118286795695,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-19T20:22:06Z",
+      "completed_at": "2026-10-19T20:23:41Z",
+      "runner_name": "GitHub Actions 1000000015",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 95
+    },
+    {
+      "id": 118285450541,
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "started_at": "2026-10-19T20:19:18Z",
+      "completed_at": "2026-10-19T20:20:14Z",
+      "runner_name": "GitHub Actions 1000000014",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 56
+    },
+    {
+      "id": 118319218955,
+      "name": "package",
+      "status": "completed",
+      "conclusion": "failure",
+      "started_at": "2026-10-19T21:31:31Z",
+      "completed_at": "2026-10-19T21:38:37Z",
+      "runner_name": "GitHub Actions 1000000025",
+      "labels": [
+        "macos-14"
+      ],
+      "elapsedSeconds": 426
+    }
+  ]
+}

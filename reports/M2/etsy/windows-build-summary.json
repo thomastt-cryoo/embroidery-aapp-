@@ -3,9 +3,9 @@
     92,
     18
   ],
-  "windowsNativeWorkflowChecks": 9,
+  "windowsNativeWorkflowChecks": 11,
   "runtimeFiles": 458,
   "releaseBuild": "pass",
   "webview": "downloadBootstrapper; absent-runtime branch not clean-VM tested",
-  "engineAndApprovedInterface": "unchanged; source guard recorded separately"
+  "engineAndApprovedInterface": "engine, editing/project logic and M1 layout unchanged; graphics fallback only; source guard recorded separately"
 }

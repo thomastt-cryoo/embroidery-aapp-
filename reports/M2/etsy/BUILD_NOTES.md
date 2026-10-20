@@ -1,6 +1,6 @@
 # M2 Etsy package reproduction
 
-Application packaging source: `544c3837c0a9d8343626639aac10ea0d5a87b715`. The Windows NSIS dictionary setting was recorded in `5241aca`. Subsequent commits add private verification tooling and reports, not application processing changes. `git diff 91e9d9b -- engine editor/src app/src-tauri/src` is empty.
+Final application source: `2204598af6c3bfcd9667d68d91958e21cd8d1fc5`. It includes the Canvas 2D fallback for missing/lost native WebGL. `git diff 6334c8b -- engine editor/src/studio.css` is empty; state/project/platform logic passes the branding-only source guard. Renderer geometry and embroidery generation remain unchanged. Later commits concern native test drivers and reports.
 
 ## Build prerequisites
 
@@ -19,7 +19,7 @@ All Windows functional checks were repeated after removing interception, then th
 
 ## macOS
 
-The private `release.yml` workflow compares complete universal builds with raw assets and `--features asset-compression`. `m2-macos-etsy.py` compares standard app/disk-image/PKG packaging. Both architectures and all runtime files stay present.
+Earlier private builds compared raw and internally compressed assets and complete app/DMG/PKG formats. The final `release.yml` builds the complete universal app with raw assets, using the verified smallest native PKG format. `m2-macos-recompress.py` uses native pbzx/XZ with an x86 BCJ filter and 128 MiB dictionary so duplicated assets across both Mach-O slices compress together. It asserts every decoded cpio byte, native extracted file byte and permission is identical, then verifies strict codesigning for both architectures. `pkgutil` and the standard Installer must accept the exact ZIP contents. Customers run only the normal PKG; no reconstruction scripts or component downloads exist.
 
 The selected PKG uses `pkgbuild --min-os-version 13.0 --compression latest`. The private `mac-zip-verification.yml` downloads the finished ZIP, installs its actual contents and checks the native app. Swift/Python native Accessibility and Vision helpers execute only outside the app bundle on the runner. They do not rebuild the application, add app test hooks, change privacy settings or request new permissions.
 
@@ -27,6 +27,6 @@ Keep final artifacts local before the private GitHub artifact's two-day retentio
 
 ## Final delivery validation
 
-`python scripts/m2-verify-delivery.py` verifies exactly two ZIPs in `dist/M2-Etsy`, expected installers/instructions/legal text, CRC checks, headers, native Windows result counts and the previously verified Mac ZIP hash. It writes `delivery-manifest.json` and Windows build evidence. It deliberately reports the Mac size failure rather than rejecting or silently truncating that complete package.
+`python scripts/m2-verify-delivery.py` verifies exactly two ZIPs in `dist/M2-Etsy`, expected installers/instructions/legal text, CRC checks, headers, native Windows result counts and the exact Mac ZIP hash on both architectures. It writes `delivery-manifest.json` and Windows build evidence. It requires both complete ZIPs to remain strictly below 20,000,000 bytes and requires passing native preview, conversion, editing, hoop, simulation, save/reopen and export evidence.
 
 `node scripts/m2-package-check.mjs` checks isolated branding/updates and protected sources. Reports and test assets belong outside the two customer archives. No M3 work is authorized.

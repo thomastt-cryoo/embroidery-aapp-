@@ -1,5 +1,7 @@
 # M2 checkpoint 4 — native Mac graphics diagnosis
 
+**Historical diagnosis.** Checkpoint 5 implements and validates a Canvas 2D startup fallback for these lost WebGL contexts. The original diagnostic findings below are retained.
+
 ## Completed
 
 Investigated the native canvas error found after dismissing the welcome on the Intel Mac runner. The renderer's startup shader query returned null, while conversion still produced the correct **1,374 stitches** and six objects. Native hoop selection also worked. The embroidery engine, M1 interface and graphics initialization code remain unchanged.
