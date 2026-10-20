@@ -1,0 +1,6 @@
+{
+  "installer": "C:\\Users\\mazin\\Downloads\\embroidry app\\dist\\Windows-UI-Fix\\extracted-for-testing\\Install Embroidery Studio.exe",
+  "exitCode": 0,
+  "testType": "Update existing separate Embroidery Studio install from actual ZIP contents",
+  "installDir": "C:\\Users\\mazin\\Applications\\Embroidery Studio"
+}
