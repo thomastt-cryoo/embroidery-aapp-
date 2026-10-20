@@ -1,0 +1,44 @@
+{
+  "result": "pass",
+  "roundedNativeWindowsIcons": true,
+  "sourceArtworkCropped": false,
+  "method": "Regenerated from existing rounded SVG with complete artwork fitted inside; transparent outer corners",
+  "icons": [
+    {
+      "file": "icon.ico",
+      "pixels": [
+        256,
+        256
+      ],
+      "cornerAlpha": 0,
+      "sha256": "4d241700b153125e6aa19fce158840c9c5f188f1ea34ee9cadfcb0aae95807bf"
+    },
+    {
+      "file": "32x32.png",
+      "pixels": [
+        32,
+        32
+      ],
+      "cornerAlpha": 0,
+      "sha256": "62cfe9afa5ae01d93e9690e9bca7699baf322f128399eaa2222ca354385ae943"
+    },
+    {
+      "file": "128x128.png",
+      "pixels": [
+        128,
+        128
+      ],
+      "cornerAlpha": 0,
+      "sha256": "ef6f7c2121669522b7732ea097a2a9ae4d459a49a007fbfd416232436665b3d7"
+    },
+    {
+      "file": "128x128@2x.png",
+      "pixels": [
+        256,
+        256
+      ],
+      "cornerAlpha": 0,
+      "sha256": "49a71a4fd280c00a7d0680076c29e8203c7f74ffddf05e10cd8fc4f7db7267a4"
+    }
+  ]
+}
