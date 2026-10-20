@@ -86,6 +86,25 @@ class ReportAndPackageTests(unittest.TestCase):
         self.assertIn('those are historical results', text)
         self.assertIn('Gatekeeper consumer testing: NOT COMPLETED', text)
 
+    def test_rebuild_requires_package_checks_and_does_not_claim_native_tests(self):
+        self.assertFalse(report.render_rebuild_report(self.out, 0))
+        self.package()
+        report.validate_package(self.out)
+        self.assertFalse(report.render_rebuild_report(self.out, 0))
+        (self.out / 'evidence/rebuild-package.passed').write_text('test fixture')
+        self.assertTrue(report.render_rebuild_report(self.out, 0))
+        self.assertFalse(report.render_rebuild_report(self.out, 1))
+        report.render_rebuild_report(self.out, 0)
+        text = (self.out / 'MACOS_REBUILD_REPORT.md').read_text(encoding='utf-8')
+        self.assertIn('BUILD AND PACKAGE CHECKS PASSED', text)
+        self.assertIn('does not cover installation or application use', text)
+        self.assertIn('tests were not repeated', text)
+        self.assertFalse((self.out / 'M3_MACOS_RUN_REPORT.md').exists())
+        with zipfile.ZipFile(self.out / 'Mac-QA-evidence.zip') as z:
+            self.assertIsNone(z.testzip())
+            self.assertIn('MACOS_REBUILD_REPORT.md', z.namelist())
+            self.assertNotIn('Embroidery-Studio-macOS.zip', z.namelist())
+
 
 if __name__ == '__main__':
     unittest.main()

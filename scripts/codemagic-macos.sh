@@ -11,7 +11,11 @@ export PYTHONUNBUFFERED=1
 finish() {
   code=$?
   trap - EXIT
-  python3 scripts/codemagic-macos-report.py --exit-code "$code" || true
+  if test "${M2_BUILD_ONLY:-0}" = 1; then
+    python3 scripts/codemagic-macos-report.py --build-only --exit-code "$code" || true
+  else
+    python3 scripts/codemagic-macos-report.py --exit-code "$code" || true
+  fi
   exit "$code"
 }
 trap finish EXIT
@@ -19,7 +23,11 @@ test "$(uname -s)" = Darwin
 test "$(uname -m)" = arm64
 # Reject automatic invocation even if somebody later adds a webhook/schedule.
 case "${CM_TRIGGER_SOURCE:-api}" in webhook|schedule) echo 'Manual builds only.'; exit 1 ;; esac
-python3 scripts/codemagic-macos-report.py --initialize
+if test "${M2_BUILD_ONLY:-0}" = 1; then
+  python3 scripts/codemagic-macos-report.py --build-only --initialize
+else
+  python3 scripts/codemagic-macos-report.py --initialize
+fi
 { sw_vers; xcodebuild -version; node --version; git rev-parse HEAD; } > out/evidence/environment.txt
 if ! git cat-file -e 6334c8b^{commit} 2>/dev/null; then
   if test "$(git rev-parse --is-shallow-repository)" = true; then
@@ -58,6 +66,21 @@ python scripts/m2-macos-etsy.py package \
   --app 'app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embroidery Studio.app' \
   --mode raw --pkg-only --out out 2>&1 | tee out/evidence/packaging.txt
 python scripts/codemagic-macos-report.py --check-package
+if test "${M2_BUILD_ONLY:-0}" = 1; then
+  # This mode packages the UI correction; it does not claim M3/native testing.
+  python - <<'PY'
+import pathlib, plistlib, subprocess
+app = pathlib.Path('app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embroidery Studio.app')
+info = plistlib.loads((app / 'Contents/Info.plist').read_bytes())
+assert info['CFBundleIdentifier'] == 'io.github.thomasttcryoo.embroiderystudio'
+arches = subprocess.check_output(['lipo', '-archs', app / 'Contents/MacOS' / info['CFBundleExecutable']], text=True)
+assert {'arm64', 'x86_64'} <= set(arches.split()), arches
+subprocess.run(['codesign', '--verify', '--deep', '--strict', '--all-architectures', app], check=True)
+pathlib.Path('out/evidence/rebuild-package.passed').write_text('Universal application identity and signature verified; strict ZIP size gate passed.\n')
+PY
+  echo 'Rebuild complete. Functional tests and VNC waits were not requested.'
+  exit 0
+fi
 # Reuse the target compiled above; avoid a second unrelated host release build.
 cargo test --release --target aarch64-apple-darwin --manifest-path app/src-tauri/Cargo.toml --lib \
   2>&1 | tee out/evidence/native-rust-tests.txt

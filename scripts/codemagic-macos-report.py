@@ -124,15 +124,48 @@ def render_report(out, exit_code):
     return success
 
 
+def render_rebuild_report(out, exit_code):
+    """A successful package rebuild must never imply native/customer approval."""
+    out.mkdir(exist_ok=True)
+    size = load(out / 'evidence/size-gate.json', {})
+    success = (exit_code == 0 and size.get('underLimit') is True
+               and (out / 'evidence/rebuild-package.passed').exists())
+    lines = ['# Mac UI rebuild', '',
+             'BUILD AND PACKAGE CHECKS PASSED' if success else 'BUILD INCOMPLETE / FAILED', '',
+             'Manual mac_mini_m2 workflow; 40-minute maximum. No automatic publishing or VNC wait.', '',
+             f"ZIP bytes: {size.get('zipBytes', 'not verified')}; limit: strictly below 20,000,000 bytes.", '',
+             f"ZIP SHA-256: {size.get('zipSha256', 'not verified')}", '',
+             'Includes the latest source UI corrections. Logs include the exact source commit.', '',
+             'A pass covers compilation, preserved-source checks, universal ARM/Intel binary identity, '
+             'ad-hoc signature verification and customer ZIP integrity/size. It does not cover installation or application use.', '',
+             'Native GUI, export, playback and browser regression tests were not repeated in this run. '
+             'No installation screenshots were requested or fabricated.', '',
+             'Clean consumer Gatekeeper testing remains incomplete. Signing remains ad-hoc; '
+             'this rebuild does not add Developer ID signing or notarization.', '',
+             'Download Embroidery-Studio-macOS.zip for the application. Mac-QA-evidence.zip is owner-only build evidence.', '']
+    (out / 'MACOS_REBUILD_REPORT.md').write_text('\n'.join(lines), encoding='utf-8')
+    with zipfile.ZipFile(out / 'Mac-QA-evidence.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
+        for path in sorted((out / 'evidence').rglob('*')):
+            if path.is_file():
+                archive.write(path, path.relative_to(out))
+        for name in ['MACOS_REBUILD_REPORT.md', 'SHA256SUMS.txt']:
+            if (out / name).exists():
+                archive.write(out / name, name)
+    return bool(success)
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--initialize', action='store_true')
     parser.add_argument('--check-package', action='store_true')
     parser.add_argument('--exit-code', type=int, default=1)
+    parser.add_argument('--build-only', action='store_true')
     args = parser.parse_args()
     (OUT / 'evidence').mkdir(parents=True, exist_ok=True)
     if args.check_package:
         print(json.dumps(validate_package(OUT), indent=2))
+    elif args.build_only:
+        render_rebuild_report(OUT, args.exit_code)
     else:
         render_report(OUT, args.exit_code)
 

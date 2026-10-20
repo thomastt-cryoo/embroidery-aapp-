@@ -1,6 +1,34 @@
 # Private owner review only. No triggering/events, schedules or publishing.
 # Start this workflow manually in Codemagic; do not enable billing or override the machine.
 workflows:
+  macos-ui-rebuild:
+    name: Mac rebuild only - updated UI
+    instance_type: mac_mini_m2
+    max_build_duration: 40
+    environment:
+      node: 24
+      xcode: "16.4"
+      vars:
+        APPLE_SIGNING_IDENTITY: "-"
+        CARGO_BUILD_JOBS: "3"
+        MACOSX_DEPLOYMENT_TARGET: "13.0"
+        M2_BUILD_ONLY: "1"
+    cache:
+      cache_paths:
+        - ~/.cargo/registry
+        - ~/.cargo/git
+        - ~/Library/Caches/EmbroideryStudio/fonts
+        - app/src-tauri/target
+    scripts:
+      - name: Rebuild universal Mac ZIP; check package without repeating functional tests
+        script: bash scripts/codemagic-macos.sh
+    artifacts:
+      - out/Embroidery-Studio-macOS.zip
+      - out/installers/*.pkg
+      - out/MACOS_REBUILD_REPORT.md
+      - out/Mac-QA-evidence.zip
+      - out/SHA256SUMS.txt
+      - out/evidence/**
   macos-m3-verify-only:
     name: Mac screenshots only - NO REBUILD
     instance_type: mac_mini_m2
