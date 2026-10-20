@@ -121,9 +121,9 @@ try:
     save_start=time.time()
     # Leave stitch-input focus through the visible File menu. The application's
     # normal keyboard guard intentionally ignores shortcuts while typing.
-    ax('click','File');time.sleep(.7);snap('project-file-menu')
-    for _ in range(3):key(125)
-    key(36);time.sleep(1);snap('project-save-dialog');key(36)
+    ax('click','File');wait_for('Save ⌘S');menu=snap('project-file-menu')
+    save_item=next(r for r in menu if r['role']=='AXMenuItem' and r['title'].startswith('Save ') and not r['title'].startswith('Save As'))
+    ax('click',save_item['title']);time.sleep(2);snap('project-save-dialog');key(36)
     project=None
     for _ in range(30):
         candidates=[p for p in (pathlib.Path.home()/'Documents/Embroidery Studio').glob('*.lilo') if p.stat().st_mtime>=save_start]

@@ -85,6 +85,7 @@ else if operation == "key" {
         let fraction=operation == "range" ? CGFloat(Double(args[3])!) : 0.5
         let point=CGPoint(x:b["x"]!+max(1,min(b["width"]!-1,b["width"]!*fraction)),y:b["y"]!+b["height"]!/2)
         for type in [CGEventType.leftMouseDown,CGEventType.leftMouseUp] {CGEvent(mouseEventSource:nil,mouseType:type,mouseCursorPosition:point,mouseButton:.left)!.post(tap:.cghidEventTap)}
+        RunLoop.current.run(until:Date(timeIntervalSinceNow:0.3))
         result = .success
     } else if operation == "press" { result=AXUIElementPerformAction(element,kAXPressAction as CFString) }
     else {
