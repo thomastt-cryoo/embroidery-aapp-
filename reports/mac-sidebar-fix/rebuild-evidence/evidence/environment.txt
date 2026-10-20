@@ -1,0 +1,11 @@
+ProductName:		macOS
+ProductVersion:		15.5
+BuildVersion:		24F74
+Xcode 16.4
+Build version 16F6
+v24.22.0
+471e1fc1a3544dda51048afcecc177844b7602f6
+rustc 1.99.1 (58cf8f9c3 2026-10-13)
+cargo 1.99.1 (5f94df478 2026-08-27)
+Python 3.12.7
+10.0.0

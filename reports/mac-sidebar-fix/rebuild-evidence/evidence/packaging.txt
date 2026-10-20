@@ -1,0 +1,22 @@
+Mac candidate: {'mode': 'raw', 'kind': 'pkg', 'bytes': 38633368, 'sha256': '0143392186ca6606b82f3c276e354d27885e27455a8b3d6d6894232463b823e2', 'underEtsyLimit': False, 'completeUniversalApplication': True, 'pkgBytes': 38606518}
+{
+  "result": "pass",
+  "originalPkgBytes": 38606518,
+  "pkgBytes": 19851396,
+  "decodedPayloadBytes": 162298368,
+  "decodedPayloadSha256": "931e4aca13ab0ef767c2baaaf5eed1b96c7f50e170f7dd2398923b452c344c07",
+  "decodedPayloadByteIdentical": true,
+  "nativeExpandFullIdentical": true,
+  "signatureVerification": "all architectures; strict",
+  "compression": "native pbzx / one XZ stream / 128 MiB dictionary / 256 MiB block limit",
+  "selectedFilter": "X86 + LZMA2",
+  "compressionCandidates": [
+    {
+      "filter": "X86 + LZMA2",
+      "bytes": 19849004
+    }
+  ],
+  "customerInstallScripts": false,
+  "seconds": 91.95
+}
+Mac candidate: {'mode': 'raw', 'kind': 'pkg', 'bytes': 19866936, 'sha256': '3381ddb207a0e535b780752c58957c3f95d68465921022ab90d306ea54d5e33d', 'underEtsyLimit': True, 'completeUniversalApplication': True, 'pkgBytes': 19851396, 'payloadCompression': 'long-window-lzma2', 'nativeExtractionVerified': True}

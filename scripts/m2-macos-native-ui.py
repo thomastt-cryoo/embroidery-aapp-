@@ -40,7 +40,14 @@ def slider_end(label,end):
     # Home/End like Chromium, so click the observed track end and finish with
     # ordinary left/right keys to cover its thumb's inset.
     ax('range',label,1 if end else 0)
-    for _ in range(12):ax('key',124 if end else 123,0)
+    # Explicitly focus the slider: a coordinate click alone left keyboard
+    # input on another control in the previous remote-session attempt.
+    ax('focus',label)
+    for _ in range(50):
+        observed=control('AXSlider',label)
+        if label=='Playback speed' and float(observed['value'])==(50 if end else 1):break
+        if label=='Scrub stitches' and not end and float(observed['value'])==0:break
+        ax('key',124 if end else 123,0)
     time.sleep(.5)
 
 def number_input(label,value):
@@ -66,7 +73,8 @@ try:
     if 'Skip the tour' in text(initial):press('Skip the tour')
     current=ax('snapshot')
     if 'Upload image' not in text(current):press('Home')
-    wait_for('Upload image');press('Upload image');time.sleep(1)
+    wait_for('Upload image');snap('home-sidebar')
+    press('Upload image');time.sleep(1)
     snap('image-picker');choose(root/'engine/test/fixtures/k-logo.png')
     wait_for('1,374',90);snap('converted');check('native image conversion','1,374 stitches from actual PNG file picker')
     current=ax('snapshot')

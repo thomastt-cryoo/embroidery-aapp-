@@ -9,6 +9,7 @@ import json
 import os
 from pathlib import Path
 import plistlib
+import platform
 import signal
 import subprocess
 import sys
@@ -144,7 +145,7 @@ def main():
         run([sys.executable, ROOT / 'scripts/m2-macos-native-ui.py'], 'native-ui.txt', 480, env)
         result = read_json(EVIDENCE / 'native-ui/results.json', {})
         assert result.get('result') == 'pass', result.get('error')
-        return {'passed': len(result['checks']), 'checks': result['checks'], 'architectureTested': 'arm64'}
+        return {'passed': len(result['checks']), 'checks': result['checks'], 'architectureTested': platform.machine()}
 
     if installed and can_control:
         stage('Installed native app functional tests', native_ui)

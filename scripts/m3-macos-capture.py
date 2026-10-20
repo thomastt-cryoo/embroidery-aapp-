@@ -72,10 +72,18 @@ try:
     subprocess.run(['open','-R',str(archive)],check=True);time.sleep(2);ax(FINDER,'activate')
     snapshot('downloaded-zip-in-finder',FINDER)
     key(FINDER,31,1048576) # Command-O on the Finder-selected ZIP: Archive Utility.
-    pkg=downloads/'Install Embroidery Studio.pkg'
+    # Archive Utility groups multi-file ZIPs into a folder named for the ZIP.
+    # Accept only that exact folder or the flat extraction, and verify bytes.
+    candidates=[downloads/source.stem/'Install Embroidery Studio.pkg',downloads/'Install Embroidery Studio.pkg']
+    import zipfile
+    with zipfile.ZipFile(source) as z:
+        installer_sha=hashlib.sha256(z.read('Install Embroidery Studio.pkg')).hexdigest()
+    pkg=None
     end=time.time()+25
-    while time.time()<end and not pkg.exists():time.sleep(.5)
-    assert pkg.exists(),'Archive Utility did not extract the PKG'
+    while time.time()<end and pkg is None:
+        pkg=next((p for p in candidates if p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==installer_sha),None)
+        if pkg is None:time.sleep(.5)
+    assert pkg is not None,'Archive Utility did not extract the exact PKG in the expected Downloads location'
     snapshot('zip-extracted',FINDER)
     result['installerQuarantine']=quarantine(pkg)
     subprocess.run(['open','-R',str(pkg)],check=True);time.sleep(1)

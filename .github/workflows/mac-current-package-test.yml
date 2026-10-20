@@ -1,0 +1,45 @@
+name: Mac current ZIP - native verification
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [macos-14, macos-15-intel]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python -m pip install Pillow==12.3.0
+      - name: Fetch exact latest customer ZIP without rebuilding
+        run: |
+          set -euo pipefail
+          mkdir -p out/evidence
+          git fetch --depth=1 origin refs/heads/codex/m3-macos-verification-package
+          git show FETCH_HEAD:Embroidery-Studio-macOS.zip > out/Embroidery-Studio-macOS.zip
+          python scripts/github-macos-current-package.py prepare
+      - name: Install and test actual native Mac application
+        env:
+          CM_BUILD_DIR: ${{ github.workspace }}
+          M3_VERIFY_ONLY: '1'
+          M3_USE_CI_TRANSFER: '1'
+        run: python scripts/codemagic-macos-tests.py
+      - name: Write truthful results even after a test failure
+        if: always()
+        run: python scripts/github-macos-current-package.py report
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: Mac-native-verification-${{ matrix.runner }}
+          path: |
+            out/GITHUB_MACOS_RESULTS.md
+            out/evidence/
+            out/02-macOS/
+            out/SHA256SUMS.txt
+          retention-days: 2
