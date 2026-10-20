@@ -14,7 +14,7 @@ def snap(name):
     tree=ax('snapshot');(out/(name+'.json')).write_text(json.dumps(tree,indent=2)+'\n')
     subprocess.run(['screencapture','-x',out/(name+'.png')],check=True)
     return tree
-def text(tree):return '\n'.join(str(r.get(k,'')) for r in tree for k in ['title','description','value','help'])
+def text(tree):return '\n'.join(str(r.get(k,'')) for r in tree for k in ['title','description','value','help','identifier'])
 def wait_for(expected,seconds=60):
     end=time.time()+seconds
     while time.time()<end:
@@ -121,9 +121,9 @@ try:
     save_start=time.time()
     # Leave stitch-input focus through the visible File menu. The application's
     # normal keyboard guard intentionally ignores shortcuts while typing.
-    ax('click','File');wait_for('Save ⌘S');menu=snap('project-file-menu')
+    press('File');wait_for('Save As');menu=snap('project-file-menu')
     save_item=next(r for r in menu if r['role']=='AXMenuItem' and r['title'].startswith('Save ') and not r['title'].startswith('Save As'))
-    ax('click',save_item['title']);time.sleep(2);snap('project-save-dialog');key(36)
+    press(save_item['title']);wait_for('save-panel',30);snap('project-save-dialog');press('Save')
     project=None
     for _ in range(30):
         candidates=[p for p in (pathlib.Path.home()/'Documents/Embroidery Studio').glob('*.lilo') if p.stat().st_mtime>=save_start]
@@ -137,7 +137,7 @@ try:
     press('Export');wait_for('Save PES');snap('export')
     current=ax('snapshot');save=next(r for r in current if r['role']=='AXButton' and ('Save PES' in r['title'] or 'Save PES' in r['description']))
     export_start=time.time()
-    press(save['title'] or save['description']);time.sleep(1);snap('pes-save-dialog');key(36)
+    press(save['title'] or save['description']);wait_for('save-panel',30);snap('pes-save-dialog');press('Save')
     pes=None
     for _ in range(30):
         folders=[pathlib.Path.home()/'Documents/Embroidery Studio',pathlib.Path.home()/'Documents',pathlib.Path.home()/'Desktop',root]

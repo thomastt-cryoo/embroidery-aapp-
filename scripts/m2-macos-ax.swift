@@ -30,7 +30,7 @@ func visit(_ e: AXUIElement, _ depth: Int) {
     rows.append(row)
     if let children=attribute(e,kAXChildrenAttribute) as? [AXUIElement] { for child in children { visit(child,depth+1) } }
 }
-visit(app,0)
+if !["key","type","paste","activate"].contains(operation) { visit(app,0) }
 func emit(_ value: Any) { let d=try! JSONSerialization.data(withJSONObject:value,options:[.prettyPrinted,.sortedKeys]); print(String(data:d,encoding:.utf8)!) }
 func key(_ code: CGKeyCode, _ flags: CGEventFlags = [], settle:Bool = true) {
     for down in [true,false] { let event=CGEvent(keyboardEventSource:nil,virtualKey:code,keyDown:down)!;event.flags=flags;event.post(tap:.cghidEventTap);usleep(20000) }
@@ -75,7 +75,7 @@ else if operation == "key" {
         let role=row["role"] as! String
         if operation == "click" {return row["bounds"] != nil}
         if operation == "range" {return role == "AXSlider" && row["bounds"] != nil}
-        return operation == "press" ? ["AXButton","AXLink","AXRadioButton","AXCheckBox","AXMenuItem"].contains(role) : ["AXTextField","AXTextArea","AXSlider","AXComboBox"].contains(role)
+        return operation == "press" ? ["AXButton","AXPopUpButton","AXLink","AXRadioButton","AXCheckBox","AXMenuItem"].contains(role) : ["AXTextField","AXTextArea","AXSlider","AXComboBox"].contains(role)
     }
     guard let row=candidates.first, let index=row["index"] as? Int else { emit(["error":"No matching actionable element","wanted":wanted,"matches":matching]);exit(2) }
     let element=elements[index]
@@ -84,7 +84,7 @@ else if operation == "key" {
         let b=row["bounds"] as! [String:CGFloat]
         let fraction=operation == "range" ? CGFloat(Double(args[3])!) : 0.5
         let point=CGPoint(x:b["x"]!+max(1,min(b["width"]!-1,b["width"]!*fraction)),y:b["y"]!+b["height"]!/2)
-        for type in [CGEventType.leftMouseDown,CGEventType.leftMouseUp] {CGEvent(mouseEventSource:nil,mouseType:type,mouseCursorPosition:point,mouseButton:.left)!.post(tap:.cghidEventTap)}
+        for type in [CGEventType.leftMouseDown,CGEventType.leftMouseUp] {CGEvent(mouseEventSource:nil,mouseType:type,mouseCursorPosition:point,mouseButton:.left)!.post(tap:.cghidEventTap);usleep(50000)}
         RunLoop.current.run(until:Date(timeIntervalSinceNow:0.3))
         result = .success
     } else if operation == "press" { result=AXUIElementPerformAction(element,kAXPressAction as CFString) }
