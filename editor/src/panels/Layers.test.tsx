@@ -20,7 +20,7 @@ vi.mock("../platform", async (orig) => {
   return { ...real, getPlatform: () => ({ ...real.getPlatform(), openFile: async () => ({ name: "ref.png", bytes: new Uint8Array(4) }) }) };
 });
 
-afterEach(cleanup);
+afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 const T = { timeout: 20_000 };
 const loaded = () => waitFor(() => expect(lastEditor?.state.planResult).not.toBeNull(), T);
 const rowNames = () => [...document.querySelectorAll("li.seq-row")].map((li) => li.querySelector(".seq-name")?.textContent);
@@ -45,6 +45,23 @@ function twoLayerDesign(): Design {
 const dt = { setData: () => {}, effectAllowed: "" } as unknown as DataTransfer;
 
 describe("Layers panel", () => {
+  it("on Windows, clicking or pressing Enter on the active layer expands and collapses it without editing the design", async () => {
+    vi.spyOn(navigator, "userAgent", "get").mockReturnValue("Mozilla/5.0 (Windows NT 10.0; Win64; x64)");
+    renderEditor(<Sequencer />, { design: testDesign() });
+    await loaded();
+    const original = JSON.stringify(lastEditor!.state.design);
+    const layer = screen.getByRole("treeitem", { name: "Stitch layer Stitches" });
+    fireEvent.click(screen.getByText("Stitches", { selector: ".seq-name" }));
+    expect(layer.getAttribute("aria-expanded")).toBe("false");
+    expect(rowNames()).toEqual([]);
+    fireEvent.keyDown(layer, { key: "Enter" });
+    expect(layer.getAttribute("aria-expanded")).toBe("true");
+    expect(rowNames()).toHaveLength(3);
+    expect(JSON.stringify(lastEditor!.state.design)).toBe(original);
+    expect(screen.getByRole("button", { name: "Move layer Stitches up" }).title).toContain("Only one layer");
+    expect(document.querySelector(".layers-options")!.hasAttribute("open")).toBe(false);
+  });
+
   it("shows the banner, the top layer first, and each layer's sew range", async () => {
     renderEditor(<Sequencer />, { design: twoLayerDesign() });
     await loaded();

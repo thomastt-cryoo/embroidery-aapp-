@@ -29,7 +29,7 @@ function EditableText({ value, label, editing, onStart, onDone }: { value: strin
   }, [editing, value]);
   if (!editing) {
     return (
-      <span className="seq-name" title="Double-click to rename" onDoubleClick={(e) => (e.stopPropagation(), onStart())}>
+      <span className="seq-name" title={`${value} — Double-click to rename`} onDoubleClick={(e) => (e.stopPropagation(), onStart())}>
         {value}
       </span>
     );
@@ -82,6 +82,7 @@ const rowKey = {
 };
 
 export function LayersPanel() {
+  const windows = /Windows/.test(navigator.userAgent);
   const { state, actions } = useEditor();
   const design = state.design as Design;
   const { planResult, selectedIds } = state;
@@ -318,7 +319,10 @@ export function LayersPanel() {
         break;
       case "Enter":
         stop();
-        if (type === "layer") actions.setActiveLayer(id);
+        if (type === "layer") {
+          if (windows && id === activeId) setCollapsed(toggle(collapsed, id));
+          actions.setActiveLayer(id);
+        }
         else if (type === "obj") actions.select(id);
         else if (type === "img") actions.selectRefImage(id);
         break;
@@ -382,13 +386,15 @@ export function LayersPanel() {
         </span>
         <span className="swatch small" style={{ background: thread }} aria-hidden="true" />
         <EditableText value={o.name} label={o.name} editing={renaming === key} onStart={() => setRenaming(key)} onDone={(n) => (setRenaming(null), n && actions.rename(o.id, n))} />
-        <span className="seq-kind">{KIND_LABEL[o.kind]}</span>
-        <span className="seq-count" title="stitches">
-          {(counts.get(i) ?? 0).toLocaleString()}
+        <span className="seq-meta">
+          <span className="seq-kind">{KIND_LABEL[o.kind]}</span>
+          <span className="seq-count" title="stitches">
+            {(counts.get(i) ?? 0).toLocaleString()}{windows ? " stitches" : ""}
+          </span>
         </span>
         <button
           tabIndex={-1}
-          className={`icon${open.has(o.id) ? " on" : ""}`}
+          className={`icon row-details-toggle${open.has(o.id) ? " on" : ""}`}
           aria-label={`Details for ${o.name}`}
           aria-expanded={open.has(o.id)}
           title="Stitch and point counts"
@@ -403,7 +409,7 @@ export function LayersPanel() {
           tabIndex={-1}
           className="icon row-move"
           aria-label={`Move ${o.name} up`}
-          title="Sew later"
+          title={isLast ? "Already the last shape sewn in this layer" : "Sew later"}
           disabled={isLast}
           onClick={(e) => {
             e.stopPropagation();
@@ -416,7 +422,7 @@ export function LayersPanel() {
           tabIndex={-1}
           className="icon row-move"
           aria-label={`Move ${o.name} down`}
-          title="Sew earlier"
+          title={isFirst ? "Already the first shape sewn in this layer" : "Sew earlier"}
           disabled={isFirst}
           onClick={(e) => {
             e.stopPropagation();
@@ -427,7 +433,7 @@ export function LayersPanel() {
         </button>
         <button
           tabIndex={-1}
-          className={`icon${hidden ? " off" : ""}`}
+          className={`icon row-visibility${hidden ? " off" : ""}`}
           aria-label={`${hidden ? "Show" : "Hide"} ${o.name}`}
           aria-pressed={!hidden}
           onClick={(e) => {
@@ -476,13 +482,13 @@ export function LayersPanel() {
         <span className="seq-name" title={block?.text}>
           {label}
         </span>
-        <span className="seq-kind">Text</span>
-        <span className="seq-count" title="stitches">
-          {total.toLocaleString()}
+        <span className="seq-meta">
+          <span className="seq-kind">Text</span>
+          <span className="seq-count" title="stitches">{total.toLocaleString()}{windows ? " stitches" : ""}</span>
         </span>
         <button
           tabIndex={-1}
-          className={`icon${hidden ? " off" : ""}`}
+          className={`icon row-visibility${hidden ? " off" : ""}`}
           aria-label={`${hidden ? "Show" : "Hide"} ${label}`}
           aria-pressed={!hidden}
           onClick={(e) => {
@@ -519,16 +525,16 @@ export function LayersPanel() {
       const later = groups[gIdx + 1]; // the block that sews after this one
       const earlier = groups[gIdx - 1];
       out.push(
-        <li key={`g-${l.id}-${group.indices[0]}`} role="presentation" className="seq-group-head" aria-label={`${t?.name ?? "colour"} block`}>
+        <li key={`g-${l.id}-${group.indices[0]}`} role="presentation" className="seq-group-head colour-block" aria-label={`${t?.name ?? "colour"} block`}>
           <span className="swatch" style={{ background: t?.hex }} aria-hidden="true" />
-          <span className="seq-name">
+          <span className="seq-name" title={t ? `${t.brand} ${t.code} · ${t.name}` : "Unknown thread"}>
             <strong>{t ? `${t.brand} ${t.code}` : "?"}</strong> {t?.name}
           </span>
           <button
             tabIndex={-1}
             className="icon row-move"
             aria-label={`Move ${t?.name ?? "colour"} block up`}
-            title="Sew this colour block later"
+            title={later ? "Sew this colour block later" : "Already the last colour block sewn in this layer"}
             disabled={!later}
             onClick={() => actions.moveObjectBlock(group.indices, later.indices[later.indices.length - 1] + 1)}
           >
@@ -538,7 +544,7 @@ export function LayersPanel() {
             tabIndex={-1}
             className="icon row-move"
             aria-label={`Move ${t?.name ?? "colour"} block down`}
-            title="Sew this colour block earlier"
+            title={earlier ? "Sew this colour block earlier" : "Already the first colour block sewn in this layer"}
             disabled={!earlier}
             onClick={() => actions.moveObjectBlock(group.indices, earlier.indices[0])}
           >
@@ -599,7 +605,7 @@ export function LayersPanel() {
         <span className="seq-name" title={m.name}>
           {m.name}
         </span>
-        <span className="seq-kind">Picture</span>
+        <span className="seq-meta"><span className="seq-kind">Picture</span></span>
         <button tabIndex={-1} className="icon" aria-label={`Move picture ${m.name} up`} title="Draw over the one below" disabled={pos === list.length - 1} onClick={(e) => (e.stopPropagation(), moveImageBy(m.id, 1))}>
           ▲
         </button>
@@ -608,7 +614,7 @@ export function LayersPanel() {
         </button>
         <button
           tabIndex={-1}
-          className={`icon${m.visible ? "" : " off"}`}
+          className={`icon row-visibility${m.visible ? "" : " off"}`}
           aria-label={`${m.visible ? "Hide" : "Show"} picture ${m.name}`}
           aria-pressed={m.visible}
           onClick={(e) => (e.stopPropagation(), actions.updateRefImage(m.id, { visible: !m.visible }))}
@@ -630,13 +636,16 @@ export function LayersPanel() {
   const blocks = top.reduce((n, l) => n + (l.kind === "stitch" ? groupObjects(objectsIn(l.id).map((i) => design.objects[i])).length : 0), 0);
 
   return (
-    <div className="layers">
+    <div className={`layers${windows ? " windows-layers" : ""}`}>
       <p className="layers-banner" role="note">
-        Bottom sews first. Top sews last and sits on top.
+        {windows ? "Bottom sews first · Top sews last" : "Bottom sews first. Top sews last and sits on top."}
       </p>
       <p className="muted small">
-        {stitches} objects · {blocks} colour block{blocks === 1 ? "" : "s"}. Drag to reorder, or press Alt and an arrow key.
+        {stitches} objects · {blocks} colour block{blocks === 1 ? "" : "s"}{windows ? "" : ". Drag to reorder, or press Alt and an arrow key."}
       </p>
+      <details className="layers-options" open={windows ? undefined : true}>
+      <summary>Layer options &amp; help</summary>
+      {windows && <p className="muted small">Drag shapes or layers to reorder. Use Alt + ↑ / ↓ with a row focused. Layer arrows move whole layers; colour arrows move whole colour blocks.</p>}
       <div className="hint-strip" aria-label="Layers help">
         <span>
           Views <Hint id="seq.tabs" />
@@ -683,6 +692,7 @@ export function LayersPanel() {
         </button>
         <Hint id="layers.merge" />
       </div>
+      </details>
       {delTarget && (
         <div className="layer-confirm" role="alertdialog" aria-label="Delete layer?">
           <p className="small">
@@ -722,6 +732,7 @@ export function LayersPanel() {
               <div
                 className={`seq-group-head layer-head${isActive ? " active" : ""}${mk === "above" ? " drop-before" : mk === "below" ? " drop-after" : mk === "into" ? " drop-into" : ""}`}
                 draggable
+                title={windows ? `${isActive ? (isCollapsed ? "Expand" : "Collapse") : "Select"} layer ${l.name}` : undefined}
                 onDragStart={(e) => {
                   e.dataTransfer.effectAllowed = "move";
                   e.dataTransfer.setData("text/plain", `layer:${l.id}`);
@@ -730,7 +741,10 @@ export function LayersPanel() {
                 onDragEnd={endDrag}
                 onDragOver={(e) => overLayer(e, l)}
                 onDrop={(e) => dropOnLayer(e, l)}
-                onClick={() => actions.setActiveLayer(l.id)}
+                onClick={() => {
+                  if (windows && isActive) setCollapsed(toggle(collapsed, l.id));
+                  actions.setActiveLayer(l.id);
+                }}
               >
                 <button
                   tabIndex={-1}
@@ -743,7 +757,7 @@ export function LayersPanel() {
                 </button>
                 <button
                   tabIndex={-1}
-                  className={`icon${l.visible ? "" : " off"}`}
+                  className={`icon layer-visibility${l.visible ? "" : " off"}`}
                   aria-label={`${l.visible ? "Hide" : "Show"} layer ${l.name}`}
                   aria-pressed={l.visible}
                   title={l.visible ? "Hide this layer. A hidden stitch layer is not sewn." : "Show this layer"}
@@ -753,7 +767,7 @@ export function LayersPanel() {
                 </button>
                 <button
                   tabIndex={-1}
-                  className={`icon${l.locked ? " on" : ""}`}
+                  className={`icon layer-lock${l.locked ? " on" : ""}`}
                   aria-label={`${l.locked ? "Unlock" : "Lock"} layer ${l.name}`}
                   aria-pressed={l.locked}
                   title={l.locked ? "Locked: nothing in it can be picked or changed" : "Lock this layer"}
@@ -765,10 +779,10 @@ export function LayersPanel() {
                   {l.kind === "stitch" ? "≋" : "▣"}
                 </span>
                 <EditableText value={l.name} label={`layer ${l.name}`} editing={renaming === key} onStart={() => setRenaming(key)} onDone={(n) => (setRenaming(null), n && actions.renameLayer(l.id, n))} />
-                <button tabIndex={-1} className="icon" aria-label={`Move layer ${l.name} up`} title="Sew later (on top)" disabled={i === layers.length - 1} onClick={(e) => (e.stopPropagation(), moveLayerBy(l.id, 1))}>
+                <button tabIndex={-1} className="icon layer-move-up" aria-label={`Move layer ${l.name} up`} title={layers.length === 1 ? "Only one layer. Add another layer to change layer order." : i === layers.length - 1 ? "Already the top layer" : "Sew later (on top)"} disabled={i === layers.length - 1} onClick={(e) => (e.stopPropagation(), moveLayerBy(l.id, 1))}>
                   ▲
                 </button>
-                <button tabIndex={-1} className="icon" aria-label={`Move layer ${l.name} down`} title="Sew earlier (underneath)" disabled={i === 0} onClick={(e) => (e.stopPropagation(), moveLayerBy(l.id, -1))}>
+                <button tabIndex={-1} className="icon layer-move-down" aria-label={`Move layer ${l.name} down`} title={layers.length === 1 ? "Only one layer. Add another layer to change layer order." : i === 0 ? "Already the bottom layer" : "Sew earlier (underneath)"} disabled={i === 0} onClick={(e) => (e.stopPropagation(), moveLayerBy(l.id, -1))}>
                   ▼
                 </button>
                 <div className="layer-sub">
