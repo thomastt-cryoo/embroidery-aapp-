@@ -75,6 +75,7 @@ else if operation == "key" {
         let role=row["role"] as! String
         if operation == "click" {return row["bounds"] != nil}
         if operation == "range" {return role == "AXSlider" && row["bounds"] != nil}
+        if operation == "focus" {return ["AXButton","AXPopUpButton","AXTextField","AXSlider"].contains(role)}
         return operation == "press" ? ["AXButton","AXPopUpButton","AXLink","AXRadioButton","AXCheckBox","AXMenuItem"].contains(role) : ["AXTextField","AXTextArea","AXSlider","AXComboBox"].contains(role)
     }
     guard let row=candidates.first, let index=row["index"] as? Int else { emit(["error":"No matching actionable element","wanted":wanted,"matches":matching]);exit(2) }
@@ -87,7 +88,8 @@ else if operation == "key" {
         for type in [CGEventType.leftMouseDown,CGEventType.leftMouseUp] {CGEvent(mouseEventSource:nil,mouseType:type,mouseCursorPosition:point,mouseButton:.left)!.post(tap:.cghidEventTap);usleep(50000)}
         RunLoop.current.run(until:Date(timeIntervalSinceNow:0.3))
         result = .success
-    } else if operation == "press" { result=AXUIElementPerformAction(element,kAXPressAction as CFString) }
+    } else if operation == "focus" { result=AXUIElementSetAttributeValue(element,kAXFocusedAttribute as CFString,kCFBooleanTrue) }
+    else if operation == "press" { result=AXUIElementPerformAction(element,kAXPressAction as CFString) }
     else {
         let value: CFTypeRef = (row["role"] as? String)=="AXSlider" ? NSNumber(value:Double(args[3])!) : args[3] as CFString
         result=AXUIElementSetAttributeValue(element,kAXValueAttribute as CFString,value)
