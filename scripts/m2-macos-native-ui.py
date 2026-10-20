@@ -117,7 +117,15 @@ try:
         press(found['title'] or found['description']);wait_for('100 × 100');check('native hoop selection','100 × 100 mm selected from search')
     else:raise AssertionError('Native hoop selector was not exposed as expected; evidence retained')
     # Select a generated satin object by its observed native element bounds.
-    ax('click','Ultramarine satin 1');wait_for('Pull compensation')
+    # The last sewn shapes appear first in the new Sew order list. Select an
+    # actually visible satin label instead of clicking an offscreen row.
+    tree=ax('snapshot')
+    window=next(r['bounds'] for r in tree if r['role']=='AXWindow' and r.get('bounds'))
+    visible_satin=next(r for r in tree if r['role']=='AXStaticText'
+                       and str(r['value']).startswith('Ultramarine satin ')
+                       and r.get('bounds') and r['bounds']['y']>=window['y']
+                       and r['bounds']['y']+r['bounds']['height']<window['y']+window['height'])
+    ax('click',visible_satin['value']);wait_for('Pull compensation')
     number_input('Pull compensation value',.35)
     time.sleep(2);snap('stitch-setting-edited')
     edited=control('AXSlider','Pull compensation')

@@ -20,7 +20,17 @@ def ax(app,*args):
     if p.returncode:raise RuntimeError(p.stdout+p.stderr)
     value=json.loads(p.stdout);events.append({'target':app,'action':args,'result':value});return value
 def tree(app):return ax(app,'snapshot')
-def words(t):return '\n'.join(str(r.get(k,'')) for r in t for k in ['title','description','value','help','identifier'])
+def words(t):
+    # Native AX snapshots include hidden menu items such as Edit > AutoFill >
+    # Passwords. Inspect only actual window content for security/auth prompts.
+    visible=[];window_depth=None
+    for r in t:
+        if r['role']=='AXWindow' and r.get('bounds',{}).get('height',0)>0:
+            window_depth=r['depth']
+        elif window_depth is not None and r['depth']<=window_depth:
+            window_depth=None
+        if window_depth is not None:visible.append(r)
+    return '\n'.join(str(r.get(k,'')) for r in visible for k in ['title','description','value','help','identifier'])
 def snapshot(label,app,customer=True):
     current=tree(app); name=f'{len(screens)+1:03d}-{label}'
     (states/(name+'.json')).write_text(json.dumps(current,indent=2)+'\n')
