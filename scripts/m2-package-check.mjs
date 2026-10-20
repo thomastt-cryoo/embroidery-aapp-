@@ -50,4 +50,4 @@ for (const path of protectedPaths) {
   const branded = baseline.replaceAll('Lilo Link', 'Studio Link').replace(/\bLilo\b/g, 'Embrova');
   assert(current === baseline || current === branded, `${path}: only branding words may change; editing, save and platform logic must remain identical`);
 }
-console.log('PASS: separate identity, offline runtime, non-default associations, isolated bridge/projects, disabled updates, private-only workflow and protected M1 sources.');
+console.log('PASS: separate identity, offline runtime, non-default associations, isolated bridge/projects, disabled updates, manual build workflow without Releases and protected M1 sources.');

@@ -27,11 +27,14 @@ try {
     const measure = () => page.locator('.app-nav').evaluate(nav => {
       const bounds = nav.getBoundingClientRect();
       const brand = nav.querySelector('.app-wordmark');
+      const logo = nav.querySelector('.brand-mark');
       const box = el => { const r = el.getBoundingClientRect(); return { left: r.left, right: r.right, top: r.top, width: r.width, height: r.height }; };
       const visible = el => getComputedStyle(el).display !== 'none';
       const nodes = [...nav.querySelectorAll('.app-logo, .app-wordmark, :scope > button, .nav-label, :scope > button > svg')].filter(visible);
       return { titlebar: document.documentElement.dataset.titlebar, paddingLeft: parseFloat(getComputedStyle(nav).paddingLeft),
-        nav: box(nav), brand: { text: brand.textContent, visible: visible(brand), ...box(brand), scrollWidth: brand.scrollWidth, clientWidth: brand.clientWidth },
+        nav: box(nav), logo: { ...box(logo), objectFit: getComputedStyle(logo).objectFit,
+          radius: parseFloat(getComputedStyle(logo).borderRadius), naturalWidth: logo.naturalWidth, naturalHeight: logo.naturalHeight },
+        brand: { text: brand.textContent, visible: visible(brand), ...box(brand), scrollWidth: brand.scrollWidth, clientWidth: brand.clientWidth },
         labels: [...nav.querySelectorAll('.nav-label')].filter(visible).map(el => ({ text: el.textContent, lineHeight: parseFloat(getComputedStyle(el).lineHeight), ...box(el) })),
         overflow: nodes.filter(el => { const r = el.getBoundingClientRect(); return r.width && (r.left < bounds.left - 1 || r.right > bounds.right + 1); }).map(el => el.getAttribute('aria-label') || el.textContent),
         documentWidth: document.documentElement.scrollWidth, viewport: innerWidth };
@@ -53,6 +56,9 @@ try {
           assert.deepEqual(m.overflow, [], JSON.stringify(m));
           assert(m.labels.every(l => l.height <= l.lineHeight * 1.2), JSON.stringify(m));
           assert(m.documentWidth <= m.viewport, JSON.stringify(m));
+          assert(m.logo.width <= 36 && m.logo.height <= 36 && m.logo.radius >= 6, JSON.stringify(m));
+          assert.equal(m.logo.objectFit, 'contain');
+          assert(m.logo.naturalWidth > 0 && m.logo.naturalHeight > 0, 'Logo did not load');
           if (platform === 'mac') assert.equal(m.paddingLeft, width <= 1000 ? 8 : 12);
           if (width > 1000) {
             assert(m.brand.visible && m.brand.width >= m.brand.scrollWidth - 1, JSON.stringify(m));
