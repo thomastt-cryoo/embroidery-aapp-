@@ -1,8 +1,15 @@
 {
-  "beforeBytes": 589714,
-  "afterBytes": 408154,
-  "savedBytes": 181560,
+  "beforeBytes": 599417,
+  "afterBytes": 449630,
+  "savedBytes": 149787,
   "frames": [
+    {
+      "kind": "ic10",
+      "beforeBytes": 344303,
+      "afterBytes": 260099,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
     {
       "kind": "is32",
       "beforeBytes": 480,
@@ -18,62 +25,6 @@
       "allResolutionsRetained": true
     },
     {
-      "kind": "ic07",
-      "beforeBytes": 7114,
-      "afterBytes": 4790,
-      "pixelsUnchanged": true,
-      "allResolutionsRetained": true
-    },
-    {
-      "kind": "ic12",
-      "beforeBytes": 2042,
-      "afterBytes": 1299,
-      "pixelsUnchanged": true,
-      "allResolutionsRetained": true
-    },
-    {
-      "kind": "ic14",
-      "beforeBytes": 92170,
-      "afterBytes": 63136,
-      "pixelsUnchanged": true,
-      "allResolutionsRetained": true
-    },
-    {
-      "kind": "ic13",
-      "beforeBytes": 25170,
-      "afterBytes": 17017,
-      "pixelsUnchanged": true,
-      "allResolutionsRetained": true
-    },
-    {
-      "kind": "ic10",
-      "beforeBytes": 341506,
-      "afterBytes": 237647,
-      "pixelsUnchanged": true,
-      "allResolutionsRetained": true
-    },
-    {
-      "kind": "ic08",
-      "beforeBytes": 25170,
-      "afterBytes": 17017,
-      "pixelsUnchanged": true,
-      "allResolutionsRetained": true
-    },
-    {
-      "kind": "ic11",
-      "beforeBytes": 688,
-      "afterBytes": 428,
-      "pixelsUnchanged": true,
-      "allResolutionsRetained": true
-    },
-    {
-      "kind": "ic09",
-      "beforeBytes": 92170,
-      "afterBytes": 63136,
-      "pixelsUnchanged": true,
-      "allResolutionsRetained": true
-    },
-    {
       "kind": "il32",
       "beforeBytes": 1820,
       "afterBytes": 1820,
@@ -84,6 +35,55 @@
       "kind": "l8mk",
       "beforeBytes": 1024,
       "afterBytes": 1024,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic11",
+      "beforeBytes": 792,
+      "afterBytes": 538,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic12",
+      "beforeBytes": 2263,
+      "afterBytes": 1522,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic13",
+      "beforeBytes": 26265,
+      "afterBytes": 19084,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic07",
+      "beforeBytes": 7605,
+      "afterBytes": 5583,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic14",
+      "beforeBytes": 94120,
+      "afterBytes": 70018,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic08",
+      "beforeBytes": 26265,
+      "afterBytes": 19084,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic09",
+      "beforeBytes": 94120,
+      "afterBytes": 70018,
       "pixelsUnchanged": true,
       "allResolutionsRetained": true
     }

@@ -9,8 +9,16 @@ on:
       context:
         description: Lossless storage comparison; never changes application files
         type: choice
-        default: default
-        options: [default, lc4-pb0, lc2-pb2]
+        default: accepted-default
+        options: [accepted-default, default, lc4-pb0, lc2-pb2]
+      refresh_native_icon:
+        description: Refresh the native Dock icon and renew its resource seal without changing executable code
+        type: boolean
+        default: false
+      owner_size_exception:
+        description: Owner explicitly accepted an Etsy upload above the original decimal size target
+        type: boolean
+        default: false
       functional_checks:
         description: Repeat native functional checks; storage comparisons may reuse identical-app evidence
         type: boolean
@@ -24,6 +32,8 @@ jobs:
     timeout-minutes: 30
     env:
       SOURCE_BUILD_RUN: ${{ inputs.source_run }}
+      REFRESH_NATIVE_ICON: ${{ inputs.refresh_native_icon && '1' || '0' }}
+      MAC_OWNER_ACCEPTED_SIZE_EXCEPTION: ${{ inputs.owner_size_exception && '1' || '0' }}
       MAC_COMPRESSION_TUNING_SECONDS: ${{ inputs.context == 'default' && '600' || '0' }}
       MAC_LZMA_CONTEXT: ${{ inputs.context == 'lc4-pb0' && '4:0' || inputs.context == 'lc2-pb2' && '2:2' || '3:2' }}
     steps:
@@ -38,7 +48,7 @@ jobs:
           run-id: ${{ inputs.source_run }}
           github-token: ${{ github.token }}
           path: received
-      - name: Restore and verify the unchanged universal application
+      - name: Restore universal app and verify any selected native icon refresh
         id: restore
         run: |
           python -m venv .codemagic-venv
@@ -60,7 +70,7 @@ jobs:
           M2_MAC_DELIVERY_DIR: out
           M3_SCREENSHOT_DIR: out/02-macOS/functional/originals
         run: .codemagic-venv/bin/python scripts/m2-macos-native-ui.py
-      - name: Enforce strict Etsy limit for final success
+      - name: Validate final delivery and record the original size target
         if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
         run: .codemagic-venv/bin/python scripts/codemagic-macos-report.py --check-package
       - uses: actions/upload-artifact@v4

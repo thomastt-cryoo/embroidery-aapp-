@@ -26,15 +26,17 @@ def validate_package(out):
         assert sorted(z.namelist()) == ['Install Embrova.pkg', 'LICENSE.txt', 'NOTICE.txt', 'START HERE.txt']
         installer = z.read('Install Embrova.pkg')
         assert installer.startswith(b'xar!'), 'Expected a real flat Apple package'
+    owner_size_exception = os.environ.get('MAC_OWNER_ACCEPTED_SIZE_EXCEPTION') == '1'
     result = dict(zipBytes=size, zipSha256=digest, installerBytes=len(installer),
                   limitBytes=20_000_000, underLimit=size < 20_000_000,
+                  ownerAcceptedSizeException=owner_size_exception,
                   completeUniversalApplication=True, installerCount=1)
     (out / 'evidence/size-gate.json').write_text(json.dumps(result, indent=2) + '\n')
     (out / 'SHA256SUMS.txt').write_text(digest + '  Embrova-macOS.zip\n')
     installers = out / 'installers'
     installers.mkdir(exist_ok=True)
     (installers / 'Install Embrova.pkg').write_bytes(installer)
-    assert size < 20_000_000, f'Complete ZIP is {size:,} bytes; exceeds Etsy limit. No assets removed or split.'
+    assert size < 20_000_000 or owner_size_exception, f'Complete ZIP is {size:,} bytes; exceeds Etsy limit. No assets removed or split.'
     return result
 
 

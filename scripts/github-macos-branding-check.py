@@ -37,7 +37,8 @@ size = json.loads((EVIDENCE / 'size-gate.json').read_text())
     'The owner-supplied full Embrova flower and wordmark replace the temporary identity '
     'in the application, system icons and menu bar. The image is fitted without cropping. '
     'Product labels and project-folder compatibility were updated; embroidery processing is unchanged.\n\n'
-    f"The rebuilt ZIP is {size['zipBytes']:,} bytes; strict Etsy size gate: {'PASS' if size['underLimit'] else 'FAIL — not Etsy-ready'}. "
+    f"The rebuilt ZIP is {size['zipBytes']:,} bytes; original decimal size target: {'PASS' if size['underLimit'] else 'EXCEEDED'}. " +
+    ('The owner accepted a size exception after a successful Etsy upload; this newly packaged ZIP still needs its own upload confirmation. ' if size.get('ownerAcceptedSizeException') else '') +
     'Command-line installation, all installed files/modes '
     'and strict universal signature verification passed. Actual Mac menu-bar screenshot: '
     'evidence/native-menu-bar-branding.png; visual review pending.\n\n'

@@ -2,9 +2,11 @@
 import hashlib
 import importlib.util
 import json
+import os
 from pathlib import Path
 import tempfile
 import unittest
+from unittest.mock import patch
 import zipfile
 
 spec = importlib.util.spec_from_file_location('mac_report', Path(__file__).with_name('codemagic-macos-report.py'))
@@ -52,6 +54,16 @@ class ReportAndPackageTests(unittest.TestCase):
             report.validate_package(self.out)
         self.assertFalse(json.loads((self.out / 'evidence/size-gate.json').read_text())['underLimit'])
         self.assertTrue(path.exists())
+
+    def test_explicit_owner_exception_records_target_failure_without_discarding_package(self):
+        path = self.package()
+        overhead = path.stat().st_size - len(b'xar!test-only-structural-fixture')
+        self.package(b'xar!' + b'0' * (20_000_000 - overhead - 4))
+        with patch.dict(os.environ, {'MAC_OWNER_ACCEPTED_SIZE_EXCEPTION': '1'}):
+            result = report.validate_package(self.out)
+        self.assertFalse(result['underLimit'])
+        self.assertTrue(result['ownerAcceptedSizeException'])
+        self.assertEqual(result['zipBytes'], 20_000_000)
 
     def test_no_run_cannot_be_reported_as_passing(self):
         self.assertFalse(report.render_report(self.out, 0))
