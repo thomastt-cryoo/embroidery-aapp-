@@ -180,10 +180,18 @@ pub fn run() {
                         show_main_window(tray.app_handle());
                     }
                 });
-            // Monochrome menu-bar glyph, tinted by macOS for light/dark bars.
-            tray = tray
-                .icon(tauri::include_image!("icons/tray-mono.png"))
-                .icon_as_template(true);
+            // macOS tints a template for its menu bar. Other platforms need
+            // the supplied colour icon so it stays visible on dark taskbars.
+            #[cfg(target_os = "macos")]
+            {
+                tray = tray
+                    .icon(tauri::include_image!("icons/tray-mono.png"))
+                    .icon_as_template(true);
+            }
+            #[cfg(not(target_os = "macos"))]
+            {
+                tray = tray.icon(tauri::include_image!("icons/32x32.png"));
+            }
             tray.build(app)?;
 
             // Lilo is an editor, not a background service: closing the window
