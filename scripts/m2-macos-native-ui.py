@@ -119,13 +119,14 @@ try:
     # selected. Confirm it normally; XPC-hosted fields are not in the app's AX
     # tree. Find only the newly written agent fixture on this disposable runner.
     save_start=time.time()
-    # Leave stitch-input focus through the visible File menu. The application's
-    # normal keyboard guard intentionally ignores shortcuts while typing.
+    # Explicitly focus an observed header control before delivering the normal
+    # Save shortcut, then wait for the actual native sheet before confirming it.
     ax('focus','File');key(1,1048576)
     wait_for('save-panel',30);snap('project-save-dialog');press('Save')
     project=None
     for _ in range(30):
-        candidates=[p for p in (pathlib.Path.home()/'Documents/Embroidery Studio').glob('*.lilo') if p.stat().st_mtime>=save_start]
+        folders=[pathlib.Path.home()/'Documents/Embroidery Studio',root/'engine/test/fixtures']
+        candidates=[p for folder in folders for p in folder.glob('*.lilo') if p.stat().st_mtime>=save_start]
         if candidates:project=max(candidates,key=lambda p:p.stat().st_mtime);break
         time.sleep(.5)
     assert project is not None,'Native Save sheet did not produce a new project'
@@ -139,7 +140,7 @@ try:
     press(save['title'] or save['description']);wait_for('save-panel',30);snap('pes-save-dialog');press('Save')
     pes=None
     for _ in range(30):
-        folders=[pathlib.Path.home()/'Documents/Embroidery Studio',pathlib.Path.home()/'Documents',pathlib.Path.home()/'Desktop',root]
+        folders=[pathlib.Path.home()/'Documents/Embroidery Studio',pathlib.Path.home()/'Documents',pathlib.Path.home()/'Desktop',root,root/'engine/test/fixtures']
         candidates=[p for folder in folders for p in folder.glob('*.pes') if p.stat().st_mtime>=export_start]
         if candidates:pes=max(candidates,key=lambda p:p.stat().st_mtime);break
         time.sleep(.5)
@@ -147,8 +148,10 @@ try:
     assert pes.read_bytes().startswith(b'#PES')
     shutil.copy2(pes,out/'Native-Mac-ZIP-sample.pes')
     check('native PES export',str(pes.stat().st_size)+' bytes with valid PES header')
-    # Use the OS file-open event to reopen the project saved by this native app.
-    subprocess.run(['open','-a',app,project],check=True);wait_for('1,374');snap('project-reopened')
+    # Start an empty document first so an existing visible stitch count cannot
+    # accidentally satisfy the reopening check. Then use the real OS event.
+    key(45,1048576);wait_for('Untitled design')
+    subprocess.run(['open','-a',app,project],check=True);time.sleep(2);wait_for('1,374');snap('project-reopened')
     check('native project reopening','Native saved project reopened with 1,374 stitches')
     result='pass'
 except Exception as exc:
