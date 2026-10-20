@@ -1,0 +1,1 @@
+PASS: separate identity, offline runtime, non-default associations, isolated bridge/projects, disabled updates, private-only workflow and protected M1 sources.

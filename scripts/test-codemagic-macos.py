@@ -1,0 +1,76 @@
+"""Local contract tests only; these never claim that a Mac build was executed."""
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import tempfile
+import unittest
+import zipfile
+
+spec = importlib.util.spec_from_file_location('mac_report', Path(__file__).with_name('codemagic-macos-report.py'))
+report = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(report)
+
+
+class ReportAndPackageTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.temp.cleanup)
+        self.out = Path(self.temp.name)
+        (self.out / 'evidence').mkdir()
+
+    def package(self, payload=b'xar!test-only-structural-fixture'):
+        path = self.out / 'Embroidery-Studio-macOS.zip'
+        with zipfile.ZipFile(path, 'w', zipfile.ZIP_STORED) as z:
+            z.writestr('Install Embroidery Studio.pkg', payload)
+            for name in ['LICENSE.txt', 'NOTICE.txt', 'START HERE.txt']:
+                z.writestr(name, 'Unit test fixture; never customer delivery.')
+        selected = dict(sha256=hashlib.sha256(path.read_bytes()).hexdigest(), kind='pkg', completeUniversalApplication=True)
+        (self.out / 'evidence/mac-selected-package.json').write_text(json.dumps(selected))
+        return path
+
+    def test_accepts_one_complete_sealed_zip_and_reads_back_installer(self):
+        path = self.package()
+        result = report.validate_package(self.out)
+        self.assertTrue(result['underLimit'])
+        self.assertEqual(result['zipBytes'], path.stat().st_size)
+        self.assertEqual((self.out / 'installers/Install Embroidery Studio.pkg').read_bytes(), b'xar!test-only-structural-fixture')
+
+    def test_rejects_changed_zip(self):
+        path = self.package()
+        with path.open('ab') as f:
+            f.write(b'changed')
+        with self.assertRaisesRegex(AssertionError, 'changed'):
+            report.validate_package(self.out)
+
+    def test_rejects_limit_boundary_preserving_oversize_evidence(self):
+        path = self.package()
+        overhead = path.stat().st_size - len(b'xar!test-only-structural-fixture')
+        path = self.package(b'xar!' + b'0' * (20_000_000 - overhead - 4))
+        self.assertEqual(path.stat().st_size, 20_000_000)
+        with self.assertRaisesRegex(AssertionError, 'exceeds Etsy limit'):
+            report.validate_package(self.out)
+        self.assertFalse(json.loads((self.out / 'evidence/size-gate.json').read_text())['underLimit'])
+        self.assertTrue(path.exists())
+
+    def test_no_run_cannot_be_reported_as_passing(self):
+        self.assertFalse(report.render_report(self.out, 0))
+        text = (self.out / 'M3_MACOS_RUN_REPORT.md').read_text()
+        self.assertIn('INCOMPLETE / FAILED', text)
+        self.assertIn('Gatekeeper consumer testing: NOT COMPLETED', text)
+        self.assertIn('No customer-facing screenshots were captured', (self.out / 'MACOS_ILLUSTRATED_GUIDE_DRAFT.md').read_text())
+
+    def test_missing_native_permissions_remain_blocked(self):
+        (self.out / 'evidence/test-stages.json').write_text(json.dumps([
+            dict(name='Installed native app', status='blocked', detail='Accessibility missing'),
+            dict(name='Browser regression', status='pass', detail='13 exports'),
+        ]))
+        self.assertFalse(report.render_report(self.out, 0))
+        self.assertIn('| Installed native app | blocked |', (self.out / 'M3_MACOS_RUN_REPORT.md').read_text())
+        with zipfile.ZipFile(self.out / 'Mac-QA-evidence.zip') as z:
+            self.assertIsNone(z.testzip())
+            self.assertNotIn('Embroidery-Studio-macOS.zip', z.namelist())
+
+
+if __name__ == '__main__':
+    unittest.main()

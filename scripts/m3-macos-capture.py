@@ -2,14 +2,14 @@
 import hashlib,json,os,pathlib,shutil,subprocess,time,threading,http.server
 
 root=pathlib.Path(__file__).resolve().parent.parent
-out=root/'m3-capture'; originals=out/'originals'; states=out/'internal'
+out=pathlib.Path(os.environ.get('M3_CAPTURE_OUT',str(root/'m3-capture'))); originals=out/'originals'; states=out/'internal'
 for p in [originals,states]:p.mkdir(parents=True,exist_ok=True)
 tool=pathlib.Path(os.environ['RUNNER_TEMP'])/'m3-native-ax'
 subprocess.run(['swiftc',root/'scripts/m3-macos-ax.swift','-o',tool],check=True)
 FINDER='com.apple.finder';SAFARI='com.apple.Safari';INSTALLER='com.apple.installer';STUDIO='io.github.thomasttcryoo.embroiderystudio'
 events=[];screens=[];result={'status':'incomplete','warnings':[],'securityChanges':[]}
-source=pathlib.Path(os.environ['RUNNER_TEMP'])/'m3-source/Embroidery-Studio-macOS.zip'
-expected='bfcc78a2f28f7b2f55d7112135f828dd1ad1d11220b15f0e815091f6a563bf17'
+source=pathlib.Path(os.environ.get('M3_SOURCE_ZIP',str(pathlib.Path(os.environ['RUNNER_TEMP'])/'m3-source/Embroidery-Studio-macOS.zip')))
+expected=os.environ.get('M3_SOURCE_SHA256','bfcc78a2f28f7b2f55d7112135f828dd1ad1d11220b15f0e815091f6a563bf17')
 assert hashlib.sha256(source.read_bytes()).hexdigest()==expected
 downloads=pathlib.Path.home()/'Downloads';downloads.mkdir(exist_ok=True)
 archive=downloads/source.name
@@ -26,7 +26,7 @@ def snapshot(label,app,customer=True):
     (states/(name+'.json')).write_text(json.dumps(current,indent=2)+'\n')
     folder=originals if customer else states
     subprocess.run(['screencapture','-x',str(folder/(name+'.png'))],check=True)
-    screens.append({'number':len(screens)+1,'label':label,'file':str((folder/(name+'.png')).relative_to(out)),'customerCandidate':customer,'app':app})
+    screens.append({'number':len(screens)+1,'label':label,'file':str((folder/(name+'.png')).relative_to(out)),'customerCandidate':customer,'privacyReview':'required before customer use','app':app})
     return current
 def press(app,label):ax(app,'press',label);time.sleep(1)
 def key(app,code,flags=0):ax(app,'key',code,flags);time.sleep(.6)
@@ -59,7 +59,8 @@ try:
         t=snapshot('browser-download-'+str(attempt+1),SAFARI,False)
         if archive.exists() and archive.stat().st_size==source.stat().st_size:break
         available=[r['title'] or r['description'] for r in t if r['role']=='AXButton']
-        choice=next((v for v in available if v in ['Continue','Start Using Safari','Allow']),None)
+        # Do not accept Safari security/privacy/download permission prompts.
+        choice=next((v for v in available if v in ['Continue','Start Using Safari']),None)
         if choice:press(SAFARI,choice)
         else:time.sleep(2)
     assert archive.exists() and hashlib.sha256(archive.read_bytes()).hexdigest()==expected,'Safari did not finish the customer ZIP download'
@@ -90,7 +91,7 @@ try:
     for step in range(7):
         buttons=[r['title'] or r['description'] for r in current if r['role']=='AXButton']
         content=words(current)
-        if any(s in content.lower() for s in ['password','authenticate','unidentified developer','cannot be opened','can’t be opened','cannot check','can’t check']):
+        if any(s in content.lower() for s in ['password','authenticate','unidentified developer','cannot be opened','can’t be opened','cannot check','can’t check','malware','unverified','not verified']):
             result['stopReason']='Actual warning or authentication screen requires inspection';break
         action=next((s for s in ['Continue','Install','Close'] if s in buttons),None)
         if not action:result['stopReason']='No known native installer action; inspect actual screenshot';break
@@ -100,6 +101,6 @@ try:
 except Exception as exc:
     result['error']=type(exc).__name__+': '+str(exc)
 finally:
-    result.update({'screens':screens,'events':events,'scope':'Native Mac GUI installation capture only; no command-line installer fallback; no security disabled'})
+    result.update({'screens':screens,'events':events,'scope':'Native Mac GUI installation capture on CI only; not a clean consumer Gatekeeper test; no command-line installer fallback inside this capture; no security disabled'})
     (out/'capture-results.json').write_text(json.dumps(result,indent=2)+'\n')
     print(json.dumps({k:v for k,v in result.items() if k!='events'},indent=2))

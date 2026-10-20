@@ -37,3 +37,8 @@ reports/M2/etsy/*.txt
 reports/M2/etsy/**/*.txt
 scripts/__pycache__/
 reports/M2/etsy/**/*.bak
+
+# Codemagic runner workspace; never include in customer packages.
+.codemagic-tmp/
+.codemagic-venv/
+out/

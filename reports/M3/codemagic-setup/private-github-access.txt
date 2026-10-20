@@ -1,0 +1,9 @@
+{
+  "id": 39349167291,
+  "html_url": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39349167291",
+  "head_sha": "f49deaa16b4639cbcfbbb30158dd039993831cff",
+  "status": "completed",
+  "conclusion": "failure",
+  "created_at": "2026-10-20T00:41:50Z",
+  "updated_at": "2026-10-20T00:41:58Z"
+}

@@ -5,7 +5,7 @@ root=pathlib.Path(__file__).resolve().parent.parent
 out=root/os.environ.get('M2_MAC_DELIVERY_DIR','received')/'evidence/native-ui';out.mkdir(parents=True,exist_ok=True)
 tool=pathlib.Path(os.environ['RUNNER_TEMP'])/'studio-native-ax'
 subprocess.run(['swiftc',root/'scripts/m2-macos-ax.swift','-o',tool],check=True)
-checks=[];events=[];result='incomplete'
+checks=[];events=[];result='incomplete';numbered_screens=[]
 def ax(*args):
     p=subprocess.run([tool,*map(str,args)],text=True,capture_output=True,timeout=30)
     if p.returncode:raise RuntimeError(p.stdout+p.stderr)
@@ -13,6 +13,12 @@ def ax(*args):
 def snap(name):
     tree=ax('snapshot');(out/(name+'.json')).write_text(json.dumps(tree,indent=2)+'\n')
     subprocess.run(['screencapture','-x',out/(name+'.png')],check=True)
+    if os.environ.get('M3_SCREENSHOT_DIR'):
+        numbered=pathlib.Path(os.environ['M3_SCREENSHOT_DIR']);numbered.mkdir(parents=True,exist_ok=True)
+        filename=f'{len(numbered_screens)+1:03d}-{name}.png'
+        shutil.copy2(out/(name+'.png'),numbered/filename)
+        numbered_screens.append({'number':len(numbered_screens)+1,'file':filename,'label':name,'source':'actual installed macOS app','customerCandidate':name not in ['path-entry','path-entered','save-filename','failure','failed-wait'],'privacyReview':'required before customer use'})
+        (numbered/'screenshots-index.json').write_text(json.dumps(numbered_screens,indent=2)+'\n')
     return tree
 def text(tree):return '\n'.join(str(r.get(k,'')) for r in tree for k in ['title','description','value','help','identifier'])
 def wait_for(expected,seconds=60):
