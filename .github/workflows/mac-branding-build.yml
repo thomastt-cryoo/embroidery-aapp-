@@ -5,7 +5,7 @@ permissions:
   contents: read
 jobs:
   build:
-    runs-on: macos-15
+    runs-on: macos-15-intel
     timeout-minutes: 40
     env:
       CM_BUILD_DIR: ${{ github.workspace }}
@@ -36,7 +36,7 @@ jobs:
       - name: Verify installed branding package and capture actual Mac menu bar
         run: .codemagic-venv/bin/python scripts/github-macos-branding-check.py
       - name: Check project folder compatibility after rebranding
-        run: cargo test --release --target aarch64-apple-darwin --manifest-path app/src-tauri/Cargo.toml --lib projects::tests
+        run: cargo test --release --target x86_64-apple-darwin --manifest-path app/src-tauri/Cargo.toml --lib projects::tests
       - name: Native Embrova editing, saving, reopening and export checks
         env:
           M2_MAC_DELIVERY_DIR: out

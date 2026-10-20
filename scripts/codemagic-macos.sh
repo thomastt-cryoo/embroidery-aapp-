@@ -20,7 +20,11 @@ finish() {
 }
 trap finish EXIT
 test "$(uname -s)" = Darwin
-test "$(uname -m)" = arm64
+case "$(uname -m)" in
+  arm64) ;;
+  x86_64) test "${GITHUB_ACTIONS:-false}" = true ;;
+  *) echo 'A supported native Mac runner is required.'; exit 1 ;;
+esac
 # Reject automatic invocation even if somebody later adds a webhook/schedule.
 case "${CM_TRIGGER_SOURCE:-api}" in webhook|schedule) echo 'Manual builds only.'; exit 1 ;; esac
 if test "${M2_BUILD_ONLY:-0}" = 1; then

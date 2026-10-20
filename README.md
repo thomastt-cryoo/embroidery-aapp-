@@ -1,16 +1,16 @@
-# Embrova — private development copy
+# Embrova â€” private development copy
 
 Free, open-source embroidery digitizing. Turn images, SVGs and fonts into stitch files and send them to your machine over Wi-Fi.
 
-This is the private working copy for the redesigned **Embrova** application, based on [Lilo by Kadwood](https://github.com/Kadwood/lilo). The original repository is a read-only reference and was not modified. The private build repository is `thomastt-cryoo/embroidery-aapp-`. No public release or website deployment is enabled.
+This is the working copy for the redesigned **Embrova** application, based on [Lilo by Kadwood](https://github.com/Kadwood/lilo). The original repository is a read-only reference and was not modified. The build repository is `thomastt-cryoo/embroidery-aapp-`. No public release or website deployment is enabled.
 
 See [M2_FINAL_REPORT.md](M2_FINAL_REPORT.md) for the completed Windows installer, macOS packages, real screenshots, test results and signing limitations.
 
-> Status: **M1 approved; M2 complete for private review. M3 has not started.** The application installs separately from Lilo and preserves the original embroidery engine.
+> Status: **Embrova rebranding and package verification are in progress. See the milestone reports for current tested packages and installation limitations.** The application installs separately from Lilo and preserves the original embroidery engine.
 
 ## What it will do (v1)
 
-- Auto digitize: PNG/JPG → SVG → stitches, with a live tracing animation
+- Auto digitize: PNG/JPG â†’ SVG â†’ stitches, with a live tracing animation
 - Click-to-stitch, full drawing editor, every run type and fill pattern
 - Lettering: ~100 built-in embroidery fonts, plus your own TTF/OTF
 - Stitch player with thread-change stops and realistic preview
@@ -30,7 +30,7 @@ Build and verification commands are in the [M2 handoff](reports/M2/DEVELOPMENT.m
 
 ## Guide
 
-Lilo explains itself. Press **⌘?** (**Ctrl+?** on Windows and Linux) or **Help** in the top bar for the searchable manual. A first-launch tour, a five-step workflow strip, a "?" hint next to almost every control and a calm warnings tray with one-click fixes sit on top of it.
+Lilo explains itself. Press **âŒ˜?** (**Ctrl+?** on Windows and Linux) or **Help** in the top bar for the searchable manual. A first-launch tour, a five-step workflow strip, a "?" hint next to almost every control and a calm warnings tray with one-click fixes sit on top of it.
 
 All the wording lives in `docs/guide/`: the pages are Markdown (`*.md`), and the hints, tour, workflow tips and warnings are JSON (`hints.json`, `tour.json`, `workflow.json`, `live-hints.json`), so there is one copy source and it can be translated later. Four pages are generated from the app's own data (fill patterns, sewing presets, keyboard shortcuts, file formats). `pnpm guide` rebuilds them and `docs/guide/index.json`; `pnpm guide:check` validates everything and runs in CI. Screenshots still to capture are listed in `docs/guide/SCREENSHOTS.md`.
 
@@ -52,24 +52,24 @@ JSON model that later milestones extend; `designToStitchPlan` turns it into need
 ## The editor, in short
 
 - **State** (`editor/src/state/editorStore.ts`): a Zustand store holding the `Design`. Every edit goes
-  through `commit(label, recipe)`, an Immer recipe whose patches feed undo and redo (⌘Z, ⇧⌘Z). Edits
+  through `commit(label, recipe)`, an Immer recipe whose patches feed undo and redo (âŒ˜Z, â‡§âŒ˜Z). Edits
   that share a `merge` key (a drag, a slider, arrow-key nudges) collapse into one undo step. After
   each edit the design is re-stitched in the engine worker, debounced.
 - **Tools** (`editor/src/tools/registry.ts`, `editor/src/canvas/controller.ts`): Select S, Pan Space,
   Measure M, Open shape 1, Closed shape 2, Circle 3, Rectangle 4, Pen 5, Satin blocks 6, Manual
   stitch 7. Left-click is a straight segment; right-click or double-click is a curve point; Enter
-  finishes, Esc cancels; Ctrl constrains (15° snap, square, circle, inverts the aspect lock). Shapes
+  finishes, Esc cancels; Ctrl constrains (15Â° snap, square, circle, inverts the aspect lock). Shapes
   keep their nodes (`geometry.shellNodes` / `geometry.nodes`), so they can be reshaped later.
   The Text tool (T) is a disabled placeholder that lettering fills in.
 - **Shape actions** (the bar above a selection): reshape, cut hole, knife, start/end markers, stitch
-  angle dial, map to path (live until detached), outline ↔ fill, auto redwork, lock, duplicate, delete.
+  angle dial, map to path (live until detached), outline â†” fill, auto redwork, lock, duplicate, delete.
   Knife and cut hole need jsts, so they run in the worker (`engine/src/shapeops.ts`).
 - **Stitch types** (`engine/src/stitch`): run types single, triple (bean), satin, E-stitch, double
   rope, triple rope and manual; satin split/stagger/short stitches and three underlays; 36 fill
   patterns (`engine/src/stitch/fills`, metadata in `engine/src/model/patterns.ts`) with hand stitch,
   gradient, underpath and multiple underlay passes. Picker previews are generated from the engine:
   `pnpm --filter @lilo/engine swatches` rewrites `editor/src/assets/fill-swatches/*.png`.
-- **⌘K** searches every tool and action.
+- **âŒ˜K** searches every tool and action.
 
 ## The screens, in short (M5)
 
@@ -91,7 +91,7 @@ Nav tabs: **Home**, **Editor**, **Pixel art**, **Converter**, **Lilo Link** (`ed
 - **Converter**: drop embroidery files or pictures, tick formats, convert, save one or all. Pictures
   use the editor's Auto digitize settings; PNG/JPG can also be saved as the traced SVG.
 - **Export**: PES (default), DST, JEF, VP3, EXP, XXX, U01, PEC, HUS, VIP, TBF, G-code (a stitch path for CNC and plotter tools), or a PNG picture.
-- **Projects**: Save / Save As / Open / Revert (⌘S, ⇧⌘S, ⌘O) read and write `.lilo` through the
+- **Projects**: Save / Save As / Open / Revert (âŒ˜S, â‡§âŒ˜S, âŒ˜O) read and write `.lilo` through the
   engine's project API. Autosave goes to the version history every 30 s and when the window loses
   focus; the file's last explicit save is never overwritten by an autosave. Version history lists
   versions with thumbnails and restores one as a single undo step. Closing, New, Open and Revert ask
@@ -111,7 +111,7 @@ object, stitch and colour-change counts.
 ## Look and hoops (M6a)
 
 - **Glass.** The window is Liquid Glass on macOS 26+ (`window-vibrancy` 0.8.1 `apply_liquid_glass`), a frosted sidebar on older macOS, Mica on Windows 11 and solid on Linux. Panels, the top bar and the tool dock float on it; the canvas stays opaque so thread colours are true. Appearance (top right) has Light / Dark / System and **Reduce transparency** (also on when macOS asks for it). `LILO_GLASS=off|vibrancy` forces a simpler window when chasing a rendering problem. Tokens and the design basis (Apple HIG and the macOS 27 kit) are at the top of `editor/src/glass.css`; `contrast.test.ts` checks WCAG AA over white, black and the colour wash.
-- **Hoops.** A library of real hoops and machine fields (`engine/src/hoops/library.json`, each with its source; sizes that could not be confirmed say UNVERIFIED), your own hoops (`~/Documents/Lilo/hoops.json`), a picker (brand, machine, hoop, search, recents), the hoop drawn with its frame, clamp, crosshair and safe margin, rulers with draggable guides, Actual size (⌘0, calibrate with a credit card), "smallest hoop that fits" with a re-hooping warning, and approximate placement guides (suit lining pocket, shirt cuff, cap front, garment bag, left chest).
+- **Hoops.** A library of real hoops and machine fields (`engine/src/hoops/library.json`, each with its source; sizes that could not be confirmed say UNVERIFIED), your own hoops (`~/Documents/Lilo/hoops.json`), a picker (brand, machine, hoop, search, recents), the hoop drawn with its frame, clamp, crosshair and safe margin, rulers with draggable guides, Actual size (âŒ˜0, calibrate with a credit card), "smallest hoop that fits" with a re-hooping warning, and approximate placement guides (suit lining pocket, shirt cuff, cap front, garment bag, left chest).
 
 <!-- compat:start (generated by scripts/build-compat-docs.mjs, do not edit by hand) -->
 ## Works with

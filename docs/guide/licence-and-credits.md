@@ -17,7 +17,7 @@ Embrova is free software under the **GNU General Public Licence version 3 (GPL-3
 
 ## Trademarks
 
-The original Kadwood and Lilo names and logos belong to their owners. This modified application uses the temporary name Embrova and a separate hoop-and-stitch icon. It is based on [Lilo](https://github.com/Kadwood/lilo) and retains its GPL licence and required notices.
+The original Kadwood and Lilo names and logos belong to their owners. This modified application uses the Embrova name and its owner-supplied flower and wordmark. It is based on [Lilo](https://github.com/Kadwood/lilo) and retains its GPL licence and required notices.
 
 ## What Embrova is built on
 

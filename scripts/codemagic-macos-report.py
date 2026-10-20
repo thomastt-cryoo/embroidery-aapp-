@@ -133,7 +133,7 @@ def render_rebuild_report(out, exit_code):
                and (out / 'evidence/rebuild-package.passed').exists())
     lines = ['# Mac UI rebuild', '',
              'BUILD AND PACKAGE CHECKS PASSED' if success else 'BUILD INCOMPLETE / FAILED', '',
-             ('Manual standard GitHub macos-15 runner; 40-minute maximum. No automatic publishing or VNC wait.'
+             ('Manual standard GitHub macOS runner; 40-minute maximum. No automatic publishing or VNC wait.'
               if os.environ.get('GITHUB_ACTIONS') == 'true' else
               'Manual mac_mini_m2 workflow; 40-minute maximum. No automatic publishing or VNC wait.'), '',
              f"ZIP bytes: {size.get('zipBytes', 'not verified')}; limit: strictly below 20,000,000 bytes.", '',

@@ -1,0 +1,94 @@
+{
+  "beforeBytes": 589714,
+  "afterBytes": 408154,
+  "savedBytes": 181560,
+  "frames": [
+    {
+      "kind": "is32",
+      "beforeBytes": 480,
+      "afterBytes": 480,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "s8mk",
+      "beforeBytes": 256,
+      "afterBytes": 256,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic07",
+      "beforeBytes": 7114,
+      "afterBytes": 4790,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic12",
+      "beforeBytes": 2042,
+      "afterBytes": 1299,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic14",
+      "beforeBytes": 92170,
+      "afterBytes": 63136,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic13",
+      "beforeBytes": 25170,
+      "afterBytes": 17017,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic10",
+      "beforeBytes": 341506,
+      "afterBytes": 237647,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic08",
+      "beforeBytes": 25170,
+      "afterBytes": 17017,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic11",
+      "beforeBytes": 688,
+      "afterBytes": 428,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "ic09",
+      "beforeBytes": 92170,
+      "afterBytes": 63136,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "il32",
+      "beforeBytes": 1820,
+      "afterBytes": 1820,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    },
+    {
+      "kind": "l8mk",
+      "beforeBytes": 1024,
+      "afterBytes": 1024,
+      "pixelsUnchanged": true,
+      "allResolutionsRetained": true
+    }
+  ],
+  "sourceArtworkCropped": false,
+  "colourQuantization": false,
+  "resolutionsRemoved": false
+}
