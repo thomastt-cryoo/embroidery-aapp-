@@ -14,7 +14,9 @@ evidence = out/'evidence'
 evidence.mkdir(parents=True, exist_ok=True)
 work = pathlib.Path(os.environ.get('RUNNER_TEMP', tempfile.gettempdir()))/'studio-etsy'
 work.mkdir(exist_ok=True)
-sha = lambda p: hashlib.file_digest(p.open('rb'),'sha256').hexdigest()
+def sha(path):
+    with path.open('rb') as stream:
+        return hashlib.file_digest(stream,'sha256').hexdigest()
 def run(cmd):
     result=subprocess.run(list(map(str,cmd)), text=True, capture_output=True, timeout=240)
     if result.returncode:
