@@ -1,0 +1,2098 @@
+{
+  "baseline": false,
+  "nativeMacOS": false,
+  "browser": "Chromium on Windows; real Mac overlay attribute with Tauri development adapter",
+  "checks": [
+    {
+      "name": "mac home Light 960",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 8,
+        "nav": {
+          "left": 0,
+          "right": 64,
+          "top": 0,
+          "width": 64,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "width": 0,
+          "height": 0,
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "labels": [],
+        "overflow": [],
+        "documentWidth": 960,
+        "viewport": 960
+      }
+    },
+    {
+      "name": "mac home Light 1000",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 8,
+        "nav": {
+          "left": 0,
+          "right": 64,
+          "top": 0,
+          "width": 64,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "width": 0,
+          "height": 0,
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "labels": [],
+        "overflow": [],
+        "documentWidth": 1000,
+        "viewport": 1000
+      }
+    },
+    {
+      "name": "mac home Light 1001",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 46,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 210.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 253.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 296.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1001,
+        "viewport": 1001
+      }
+    },
+    {
+      "name": "mac home Light 1024",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 46,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 210.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 253.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 296.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "mac home Light 1280",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 46,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 210.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 253.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 296.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "name": "mac home Light 1440",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 46,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 210.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 253.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 296.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1440,
+        "viewport": 1440
+      }
+    },
+    {
+      "name": "mac home Dark 960",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 8,
+        "nav": {
+          "left": 0,
+          "right": 64,
+          "top": 0,
+          "width": 64,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "width": 0,
+          "height": 0,
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "labels": [],
+        "overflow": [],
+        "documentWidth": 960,
+        "viewport": 960
+      }
+    },
+    {
+      "name": "mac home Dark 1000",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 8,
+        "nav": {
+          "left": 0,
+          "right": 64,
+          "top": 0,
+          "width": 64,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "width": 0,
+          "height": 0,
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "labels": [],
+        "overflow": [],
+        "documentWidth": 1000,
+        "viewport": 1000
+      }
+    },
+    {
+      "name": "mac home Dark 1001",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 46,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 210.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 253.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 296.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1001,
+        "viewport": 1001
+      }
+    },
+    {
+      "name": "mac home Dark 1024",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 46,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 210.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 253.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 296.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "mac home Dark 1280",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 46,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 210.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 253.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 296.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "name": "mac home Dark 1440",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 46,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 210.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 253.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 296.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1440,
+        "viewport": 1440
+      }
+    },
+    {
+      "name": "mac compact editor rail",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 8,
+        "nav": {
+          "left": 0,
+          "right": 64,
+          "top": 0,
+          "width": 64,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "width": 0,
+          "height": 0,
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "labels": [],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "mac navigation Home",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 46,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 210.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 253.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 296.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "mac navigation Pixel art",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 46,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 210.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 253.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 296.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "mac navigation Converter",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 46,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 210.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 253.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 296.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "mac navigation Home",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 46,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 210.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 253.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 296.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "windows home Light 960",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 8,
+        "nav": {
+          "left": 0,
+          "right": 64,
+          "top": 0,
+          "width": 64,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "width": 0,
+          "height": 0,
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "labels": [],
+        "overflow": [],
+        "documentWidth": 960,
+        "viewport": 960
+      }
+    },
+    {
+      "name": "windows home Light 1000",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 8,
+        "nav": {
+          "left": 0,
+          "right": 64,
+          "top": 0,
+          "width": 64,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "width": 0,
+          "height": 0,
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "labels": [],
+        "overflow": [],
+        "documentWidth": 1000,
+        "viewport": 1000
+      }
+    },
+    {
+      "name": "windows home Light 1001",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 24,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 102.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 145.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 188.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 231.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 274.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1001,
+        "viewport": 1001
+      }
+    },
+    {
+      "name": "windows home Light 1024",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 24,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 102.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 145.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 188.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 231.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 274.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "windows home Light 1280",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 24,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 102.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 145.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 188.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 231.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 274.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "name": "windows home Light 1440",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 24,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 102.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 145.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 188.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 231.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 274.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1440,
+        "viewport": 1440
+      }
+    },
+    {
+      "name": "windows home Dark 960",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 8,
+        "nav": {
+          "left": 0,
+          "right": 64,
+          "top": 0,
+          "width": 64,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "width": 0,
+          "height": 0,
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "labels": [],
+        "overflow": [],
+        "documentWidth": 960,
+        "viewport": 960
+      }
+    },
+    {
+      "name": "windows home Dark 1000",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 8,
+        "nav": {
+          "left": 0,
+          "right": 64,
+          "top": 0,
+          "width": 64,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "width": 0,
+          "height": 0,
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "labels": [],
+        "overflow": [],
+        "documentWidth": 1000,
+        "viewport": 1000
+      }
+    },
+    {
+      "name": "windows home Dark 1001",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 24,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 102.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 145.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 188.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 231.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 274.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1001,
+        "viewport": 1001
+      }
+    },
+    {
+      "name": "windows home Dark 1024",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 24,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 102.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 145.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 188.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 231.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 274.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "windows home Dark 1280",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 24,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 102.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 145.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 188.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 231.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 274.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "name": "windows home Dark 1440",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 24,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 102.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 145.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 188.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 231.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 274.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1440,
+        "viewport": 1440
+      }
+    },
+    {
+      "name": "windows compact editor rail",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 8,
+        "nav": {
+          "left": 0,
+          "right": 64,
+          "top": 0,
+          "width": 64,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": false,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "width": 0,
+          "height": 0,
+          "scrollWidth": 0,
+          "clientWidth": 0
+        },
+        "labels": [],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "windows navigation Home",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 24,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 102.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 145.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 188.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 231.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 274.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "windows navigation Pixel art",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 24,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 102.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 145.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 188.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 231.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 274.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "windows navigation Converter",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 24,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 102.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 145.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 188.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 231.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 274.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    },
+    {
+      "name": "windows navigation Home",
+      "detail": {
+        "titlebar": "none",
+        "paddingLeft": 12,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 54,
+          "right": 141,
+          "top": 24,
+          "width": 87,
+          "height": 37.5,
+          "scrollWidth": 87,
+          "clientWidth": 87
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.75,
+            "top": 102.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 86.234375,
+            "top": 145.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 98.6875,
+            "top": 188.078125,
+            "width": 47.6875,
+            "height": 18.84375
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 109.15625,
+            "top": 231.078125,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 51,
+            "right": 116.671875,
+            "top": 274.078125,
+            "width": 65.671875,
+            "height": 18.84375
+          }
+        ],
+        "overflow": [],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    }
+  ],
+  "errors": []
+}

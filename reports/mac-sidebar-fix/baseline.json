@@ -1,0 +1,86 @@
+{
+  "baseline": true,
+  "nativeMacOS": false,
+  "browser": "Chromium on Windows; real Mac overlay attribute with Tauri development adapter",
+  "checks": [
+    {
+      "name": "Reproduced Mac overlay sidebar clipping",
+      "detail": {
+        "titlebar": "overlay",
+        "paddingLeft": 94,
+        "nav": {
+          "left": 0,
+          "right": 164,
+          "top": 0,
+          "width": 164,
+          "height": 678
+        },
+        "brand": {
+          "text": "Embroidery Studio",
+          "visible": true,
+          "left": 136,
+          "right": 209.875,
+          "top": 46,
+          "width": 73.875,
+          "height": 37.5,
+          "scrollWidth": 74,
+          "clientWidth": 74
+        },
+        "labels": [
+          {
+            "text": "Home",
+            "lineHeight": 18.85,
+            "left": 114,
+            "right": 149.75,
+            "top": 124.078125,
+            "width": 35.75,
+            "height": 18.84375
+          },
+          {
+            "text": "Editor",
+            "lineHeight": 18.85,
+            "left": 114,
+            "right": 149.234375,
+            "top": 167.078125,
+            "width": 35.234375,
+            "height": 18.84375
+          },
+          {
+            "text": "Pixel art",
+            "lineHeight": 18.85,
+            "left": 114,
+            "right": 141.8125,
+            "top": 209.5,
+            "width": 27.8125,
+            "height": 37.6875
+          },
+          {
+            "text": "Converter",
+            "lineHeight": 18.85,
+            "left": 114,
+            "right": 172.15625,
+            "top": 270.765625,
+            "width": 58.15625,
+            "height": 18.84375
+          },
+          {
+            "text": "Studio Link",
+            "lineHeight": 18.85,
+            "left": 114,
+            "right": 151.9375,
+            "top": 313.1875,
+            "width": 37.9375,
+            "height": 37.6875
+          }
+        ],
+        "overflow": [
+          "Embroidery Studio",
+          "Converter"
+        ],
+        "documentWidth": 1024,
+        "viewport": 1024
+      }
+    }
+  ],
+  "errors": []
+}
