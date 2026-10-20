@@ -1,0 +1,11 @@
+{
+  "mode": "raw",
+  "kind": "pkg",
+  "bytes": 19871801,
+  "sha256": "9d5bd61cb8531d67cf5b3990b659d3713accd792e08065371340717235f3e481",
+  "underEtsyLimit": true,
+  "completeUniversalApplication": true,
+  "pkgBytes": 19855286,
+  "payloadCompression": "long-window-lzma2",
+  "nativeExtractionVerified": true
+}

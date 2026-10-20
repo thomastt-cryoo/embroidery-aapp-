@@ -10,7 +10,7 @@ import time
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'out'
-EXPECTED = 'cf594cb3c34373aee45a150aca7cb2f9326fff9c19fa41fe5a4f4bdd2012b426'
+EXPECTED = '9d5bd61cb8531d67cf5b3990b659d3713accd792e08065371340717235f3e481'
 
 
 def main():
@@ -19,7 +19,7 @@ def main():
     evidence.mkdir(parents=True, exist_ok=True)
     (evidence / 'run-mode.json').write_text(json.dumps({
         'mode': 'verification-only', 'maximumMinutes': 20, 'applicationRebuilt': False,
-        'sourceBuild': '6ad6d5e57550aed810905b59', 'sourceZipSha256': EXPECTED,
+        'sourceBuild': '6ad6e40e7550aed810905e12', 'sourceZipSha256': EXPECTED,
         'nativeRustTests': '96 passed in source build; not rerun here',
         'browserRegression': 'passed in source build; not rerun here',
     }, indent=2) + '\n')
@@ -29,7 +29,7 @@ def main():
     with (OUT / 'Embroidery-Studio-macOS.zip').open('wb') as archive:
         subprocess.run(['git', 'show', 'FETCH_HEAD:Embroidery-Studio-macOS.zip'], stdout=archive, check=True)
     assert hashlib.sha256((OUT / 'Embroidery-Studio-macOS.zip').read_bytes()).hexdigest() == EXPECTED
-    source = ROOT / 'reports/M3/codemagic-setup/run-2/evidence'
+    source = ROOT / 'reports/M3/codemagic-setup/run-3/evidence'
     for name in ['mac-selected-package.json', 'mac-lossless-pkg-compression.json']:
         (evidence / name).write_bytes((source / name).read_bytes())
     subprocess.run([sys.executable, ROOT / 'scripts/codemagic-macos-report.py', '--check-package'], check=True)

@@ -1,0 +1,64 @@
+{
+  "source": "user-supplied customer ZIP; local structural inspection on Windows, not installation testing",
+  "buildIDFromOwnerScreenshot": "6ad6e40e7550aed810905e12",
+  "sourceCommitFromOwnerScreenshot": "bb6271b",
+  "overallCIStatusFromOwnerScreenshot": "failed; new QA evidence not yet supplied",
+  "zipBytes": 19871801,
+  "zipSha256": "9d5bd61cb8531d67cf5b3990b659d3713accd792e08065371340717235f3e481",
+  "underEtsyLimit": true,
+  "headroomBytes": 128199,
+  "zipIntegrity": "pass",
+  "entries": [
+    {
+      "name": "Install Embroidery Studio.pkg",
+      "bytes": 19855286
+    },
+    {
+      "name": "START HERE.txt",
+      "bytes": 254
+    },
+    {
+      "name": "LICENSE.txt",
+      "bytes": 35149
+    },
+    {
+      "name": "NOTICE.txt",
+      "bytes": 78195
+    }
+  ],
+  "installerBytes": 19855286,
+  "installerSha256": "0e4d1575fa0e3c3f31e1437552c0b2e521755cb39c59b4cb9e82b4d891cac305",
+  "xarChecksums": "all archived and extracted members verified",
+  "packageIdentity": {
+    "overwrite-permissions": "true",
+    "relocatable": "false",
+    "identifier": "io.github.thomasttcryoo.embroiderystudio",
+    "postinstall-action": "none",
+    "version": "1.4.0",
+    "format-version": "2",
+    "generator-version": "InstallCmds-860 (24F74)",
+    "install-location": "/Applications",
+    "auth": "root",
+    "minimumSystemVersion": "13.0"
+  },
+  "decodedCpioBytes": 162298368,
+  "decodedCpioSha256": "827413d37a3ae1ee22725326d83285550648cc8cdf16efc3eb8f8da113b1538e",
+  "applicationFileEntriesWithContent": 4,
+  "bundleIdentifier": "io.github.thomasttcryoo.embroiderystudio",
+  "version": "1.4.0",
+  "architectures": [
+    "x86_64",
+    "arm64"
+  ],
+  "uiMarkersInUniversalExecutable": {
+    "desktop-layers": 88,
+    "windows-layers": 0,
+    "Bottom sews first": 6,
+    "Layer options & help": 2,
+    "Macintosh": 2,
+    "Mac OS X": 2
+  },
+  "stitchesFixEmbedded": true,
+  "nativeMacInstallTest": "not verified from ZIP alone",
+  "nativeMacUITest": "not verified; new QA evidence required"
+}

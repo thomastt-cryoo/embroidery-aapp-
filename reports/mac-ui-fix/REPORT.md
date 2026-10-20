@@ -1,5 +1,7 @@
 # Mac Stitches panel fix — 20 October 2026
 
+**Build 3 update:** the corrected universal Mac ZIP has now been built and installed successfully on CI. It is **19,871,801 bytes**, below the Etsy limit. All 96 Rust tests and nine Mac production-browser checks passed. Native application tests/screenshots were blocked because Accessibility and Screen Recording were unavailable. See [the build-3 review](../M3/codemagic-setup/RUN_3_REVIEW.md). The remaining sections below record the earlier local implementation checks and pre-build status.
+
 The Windows Sew order fix now applies to macOS as well. Shape names have a separate line from stitch counts and actions. Advanced layer controls and help start collapsed. Clicking the active Stitches heading, or pressing Enter on its focused row, expands or collapses its contents. Selecting a different layer still selects it; visibility and lock buttons act independently. All existing editing tools remain available.
 
 The existing Windows CSS declarations were retained exactly under a shared desktop class. The stylesheet is now named `editor/src/sew-order.css`. The embroidery engine, stitch algorithms, state management, project format, export implementation, app identity and security configuration were not changed. The original Lilo installation and upstream repository were not modified.

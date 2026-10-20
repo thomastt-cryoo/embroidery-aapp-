@@ -1,10 +1,10 @@
 # Next run: screenshots and native verification only
 
-> **20 October 2026 update:** the Mac Sew order UI fix was added after this sealed ZIP was built. This workflow still tests the previous ZIP and cannot show the new fix. To produce the corrected application, use the **Embroidery Studio — Mac build, native tests and M3 screenshots** workflow on the updated `main` branch. These instructions remain applicable only to testing the older package.
+> **20 October 2026, build 3 update:** this workflow now reuses the corrected Mac ZIP from commit `bb6271b`, with the Stitches UI fix included. Build and ordinary CI installation already passed. Only native GUI testing/screenshots remain blocked by macOS permissions. Do not run another full build for that blocker.
 
 Use workflow **Mac screenshots only - NO REBUILD**, branch **main**. The full-build workflow remains available but is not needed for this task.
 
-The supplied ZIP was checked locally: **19,861,169 bytes**, SHA-256 `cf594cb3c34373aee45a150aca7cb2f9326fff9c19fa41fe5a4f4bdd2012b426`. It is retained on the dedicated **private** branch `codex/m3-macos-verification-package`, outside main and customer packages. The verification run fetches this exact file through the repository's existing authenticated Git access. There is no public upload, API-token setup, rebuild, engine/UI change, or customer reconstruction step.
+The supplied ZIP was checked locally: **19,871,801 bytes**, SHA-256 `9d5bd61cb8531d67cf5b3990b659d3713accd792e08065371340717235f3e481`. It is retained on the dedicated **private** branch `codex/m3-macos-verification-package`, outside main and customer packages. The verification run fetches this exact file through the repository's existing authenticated Git access. There is no public upload, API-token setup, rebuild, engine/UI change, or customer reconstruction step.
 
 ## What you do
 

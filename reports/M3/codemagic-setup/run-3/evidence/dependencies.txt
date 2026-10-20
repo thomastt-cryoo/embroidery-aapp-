@@ -1,0 +1,13 @@
+Scope: all 3 workspace projects
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +137
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 137, reused 0, downloaded 71, added 62
+Progress: resolved 137, reused 0, downloaded 117, added 108
+Progress: resolved 137, reused 0, downloaded 137, added 137, done
+
+devDependencies:
++ @tauri-apps/cli 2.12.1
+
+Done in 2.9s

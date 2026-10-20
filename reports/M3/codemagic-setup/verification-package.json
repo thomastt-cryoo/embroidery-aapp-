@@ -1,9 +1,11 @@
 {
-  "zipBytes": 19861169,
-  "zipSha256": "cf594cb3c34373aee45a150aca7cb2f9326fff9c19fa41fe5a4f4bdd2012b426",
-  "gitBlob": "0a9a9d4f0b495a19e2ae52be8505285a46b8a1c3",
+  "zipBytes": 19871801,
+  "zipSha256": "9d5bd61cb8531d67cf5b3990b659d3713accd792e08065371340717235f3e481",
+  "gitBlob": "8e37bc07e6d9e6ea72e1e8ca91ef18e1d87c6f16",
   "privatePackageBranch": "codex/m3-macos-verification-package",
-  "packageCommit": "10c900b41d4ad6c78a52b7332afdcc250e01d389",
+  "packageCommit": "13401876554b701d53524b1085e084c92fbbd476",
+  "sourceApplicationCommit": "bb6271b83afdc18f187e11ae0b41473a45b7d2fc",
+  "sourceBuild": "6ad6e40e7550aed810905e12",
   "applicationRebuilt": false,
   "publiclyPublished": false
 }
