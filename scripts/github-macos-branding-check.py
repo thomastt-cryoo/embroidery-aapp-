@@ -9,10 +9,10 @@ import time
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / 'out'
 EVIDENCE = OUT / 'evidence'
-app = Path('/Applications/Embroidery Studio.app')
+app = Path('/Applications/Embrova.app')
 assert os.environ.get('GITHUB_ACTIONS') == 'true'
 assert os.uname().sysname == 'Darwin'
-package = OUT / 'installers/Install Embroidery Studio.pkg'
+package = OUT / 'installers/Install Embrova.pkg'
 subprocess.run(['sudo', '-n', 'installer', '-pkg', package, '-target', '/'], check=True)
 subprocess.run(['codesign', '--verify', '--deep', '--strict', '--all-architectures', app], check=True)
 sealed = json.loads((EVIDENCE / 'mac-lossless-pkg-compression.json').read_text())
@@ -31,11 +31,13 @@ result = {'ciInstallation': 'pass', 'installedManifest': 'matches sealed build',
 (EVIDENCE / 'native-branding-check.json').write_text(json.dumps(result, indent=2) + '\n')
 (OUT / 'MACOS_BRANDING_REPORT.md').write_text(
     '# Mac menu-bar branding package\n\n'
-    'The Lilo flower template asset was replaced by the monochrome Embroidery Studio hoop. '
-    'Only branding assets changed in the application.\n\n'
+    'The owner-supplied full Embrova flower and wordmark replace the temporary identity '
+    'in the application, system icons and menu bar. The image is fitted without cropping. '
+    'Product labels and project-folder compatibility were updated; embroidery processing is unchanged.\n\n'
     'The rebuilt ZIP passed the strict size gate. Command-line installation, all installed files/modes '
     'and strict universal signature verification passed. Actual Mac menu-bar screenshot: '
     'evidence/native-menu-bar-branding.png; visual review pending.\n\n'
-    'The eight native functional checks on ARM and Intel passed for the previous ZIP, before this '
-    'branding-only change; they were not repeated here. Clean consumer Gatekeeper and the full '
+    'The earlier eight native functional checks passed on ARM and Intel before this branding change. '
+    'The workflow runs native ARM checks again for Embrova; consult evidence/native-ui/results.json '
+    'for their actual outcome, which is not implied by this installation report. Clean consumer Gatekeeper and the full '
     'installer authentication walkthrough remain incomplete. Signing is still ad-hoc.\n', encoding='utf-8')

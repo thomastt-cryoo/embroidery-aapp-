@@ -92,7 +92,7 @@ describe("launch check", () => {
 });
 
 describe("Check for updates now", () => {
-  it("runs even right after a check and says when Embroidery Studio is up to date", async () => {
+  it("runs even right after a check and says when Embrova is up to date", async () => {
     const t = setup({ update: null, storage: memory({ [LAST_CHECK_KEY]: "1000000000000" }) });
     await t.updates.checkNow();
     expect(t.backend.check).toHaveBeenCalledTimes(1);

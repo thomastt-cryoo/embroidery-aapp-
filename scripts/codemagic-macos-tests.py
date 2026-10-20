@@ -74,7 +74,7 @@ def main():
     stage('Desktop permission probe (read-only)', probe)
     can_capture = bool(permissions.get('screenCaptureAuthorized') and permissions.get('displayWidth'))
     can_control = bool(can_capture and permissions.get('accessibilityTrusted'))
-    package = OUT / 'Embroidery-Studio-macOS.zip'
+    package = OUT / 'Embrova-macOS.zip'
     capture_out = OUT / '02-macOS/installation'
 
     def capture_installation():
@@ -108,13 +108,13 @@ def main():
         if can_control:
             subprocess.run(['pkill', '-x', 'Installer'], check=False, capture_output=True)
         run(['sudo', '-n', 'installer', '-pkg', pkgs[0], '-target', '/'], 'ci-package-install.txt', 240)
-        app = Path('/Applications/Embroidery Studio.app')
+        app = Path('/Applications/Embrova.app')
         run(['codesign', '--verify', '--deep', '--strict', '--all-architectures', app], 'ci-codesign.txt')
         info = plistlib.loads((app / 'Contents/Info.plist').read_bytes())
         assert info['CFBundleIdentifier'] == 'io.github.thomasttcryoo.embroiderystudio'
         arches = subprocess.check_output(['lipo', '-archs', app / 'Contents/MacOS' / info['CFBundleExecutable']], text=True)
         assert {'arm64', 'x86_64'} <= set(arches.split()), arches
-        built = ROOT / 'app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embroidery Studio.app'
+        built = ROOT / 'app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embrova.app'
 
         def manifest(folder):
             return {str(p.relative_to(folder)): (str(p.readlink()) if p.is_symlink() else

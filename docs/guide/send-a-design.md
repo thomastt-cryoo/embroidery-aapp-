@@ -1,7 +1,7 @@
 ---
 id: "send-a-design"
 title: "Send a design to your machine"
-summary: "Press Send, choose a machine and watch the progress. What Embroidery Studio checks first."
+summary: "Press Send, choose a machine and watch the progress. What Embrova checks first."
 section: "sending"
 order: 2
 keywords: ["send", "machine", "wifi", "progress", "pes", "transfer", "before you sew", "checklist", "replace"]
@@ -22,7 +22,7 @@ Before you send, set up your machine in [Studio Link](lilo-link-wifi.md).
 5. Press **Send**.
 6. A progress line shows how many bytes have gone across. When it finishes it says **Sent** and the name the machine stored it under.
 
-Embroidery Studio sends a **PES** file, the format Brother and Baby Lock use. The file keeps your thread colours.
+Embrova sends a **PES** file, the format Brother and Baby Lock use. The file keeps your thread colours.
 
 ## What the warnings at the top mean
 
@@ -34,11 +34,11 @@ The design appears in the machine's memory or its Wi-Fi inbox. The exact place d
 
 ## If a file with the same name exists
 
-Embroidery Studio asks you to confirm before it replaces it. Rename the project in the top bar if you want to keep both.
+Embrova asks you to confirm before it replaces it. Rename the project in the top bar if you want to keep both.
 
 ## If it fails
 
-Embroidery Studio shows a plain message. Look it up in [Wi-Fi troubleshooting](send-troubleshooting.md).
+Embrova shows a plain message. Look it up in [Wi-Fi troubleshooting](send-troubleshooting.md).
 
 ## Sending from Studio Link
 

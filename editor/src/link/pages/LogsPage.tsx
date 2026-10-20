@@ -47,9 +47,9 @@ export function LogsPage() {
     try {
       const [status, logs] = await Promise.all([client.status(), client.logs(0)]);
       const lines = [
-        "Embroidery Studio diagnostics",
+        "Embrova diagnostics",
         `Generated: ${new Date().toISOString()}`,
-        `Embroidery Studio version: ${status.version}`,
+        `Embrova version: ${status.version}`,
         `API version: ${status.apiVersion}`,
         `Platform: ${navigator.userAgent}`,
         `API: ${status.server.running ? "running" : "stopped"} on port ${status.server.port}`,

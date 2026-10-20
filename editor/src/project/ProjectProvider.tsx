@@ -79,7 +79,7 @@ export function ProjectProvider({ children, manager }: { children: ReactNode; ma
   const name = useEditorSelector((s) => s.projectName);
   const dirty = useStore(m.store, (s) => s.dirty);
   useEffect(() => {
-    document.title = `${name || "Untitled design"}${dirty ? " •" : ""} — Embroidery Studio`;
+    document.title = `${name || "Untitled design"}${dirty ? " •" : ""} — Embrova`;
   }, [name, dirty]);
 
   // the shell holds back quits it can't ask about (Cmd-Q, the tray) while this is true

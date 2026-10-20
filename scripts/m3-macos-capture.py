@@ -8,7 +8,7 @@ tool=pathlib.Path(os.environ['RUNNER_TEMP'])/'m3-native-ax'
 subprocess.run(['swiftc',root/'scripts/m3-macos-ax.swift','-o',tool],check=True)
 FINDER='com.apple.finder';SAFARI='com.apple.Safari';INSTALLER='com.apple.installer';STUDIO='io.github.thomasttcryoo.embroiderystudio'
 events=[];screens=[];result={'status':'incomplete','warnings':[],'securityChanges':[]}
-source=pathlib.Path(os.environ.get('M3_SOURCE_ZIP',str(pathlib.Path(os.environ['RUNNER_TEMP'])/'m3-source/Embroidery-Studio-macOS.zip')))
+source=pathlib.Path(os.environ.get('M3_SOURCE_ZIP',str(pathlib.Path(os.environ['RUNNER_TEMP'])/'m3-source/Embrova-macOS.zip')))
 expected=os.environ.get('M3_SOURCE_SHA256','bfcc78a2f28f7b2f55d7112135f828dd1ad1d11220b15f0e815091f6a563bf17')
 assert hashlib.sha256(source.read_bytes()).hexdigest()==expected
 downloads=pathlib.Path.home()/'Downloads';downloads.mkdir(exist_ok=True)
@@ -53,13 +53,13 @@ def quarantine(path):
 
 class Download(http.server.BaseHTTPRequestHandler):
     def do_GET(self):
-        if self.path!='/Embroidery-Studio-macOS.zip':self.send_error(404);return
-        self.send_response(200);self.send_header('Content-Type','application/zip');self.send_header('Content-Disposition','attachment; filename="Embroidery-Studio-macOS.zip"');self.send_header('Content-Length',str(source.stat().st_size));self.end_headers()
+        if self.path!='/Embrova-macOS.zip':self.send_error(404);return
+        self.send_response(200);self.send_header('Content-Type','application/zip');self.send_header('Content-Disposition','attachment; filename="Embrova-macOS.zip"');self.send_header('Content-Length',str(source.stat().st_size));self.end_headers()
         with source.open('rb') as f:shutil.copyfileobj(f,self.wfile)
     def log_message(self,*args):pass
 
 try:
-    assert not pathlib.Path('/Applications/Embroidery Studio.app').exists(),'This capture needs a fresh Mac without the application'
+    assert not pathlib.Path('/Applications/Embrova.app').exists(),'This capture needs a fresh Mac without the application'
     status=run(['spctl','--status'])
     result.update({'os':run(['sw_vers']).stdout,'zipSha256':expected,'zipBytes':source.stat().st_size,'cleanApplicationState':True,'gatekeeperBaseline':status.stdout.strip() or status.stderr.strip(),'downloadOrigin':'Actual Safari download from local-only test server; no public upload or security attribute modification'})
     if os.environ.get('M3_USE_CI_TRANSFER')=='1':
@@ -67,7 +67,7 @@ try:
         result['downloadOrigin']='Exact sealed customer ZIP fetched through private Git and copied to Downloads. No Safari/Etsy download or consumer quarantine claim.'
     else:
         server=http.server.HTTPServer(('127.0.0.1',8765),Download);threading.Thread(target=server.serve_forever,daemon=True).start()
-        app_open('Safari','http://127.0.0.1:8765/Embroidery-Studio-macOS.zip')
+        app_open('Safari','http://127.0.0.1:8765/Embrova-macOS.zip')
         ax(SAFARI,'activate');time.sleep(1)
         for attempt in range(4):
             t=snapshot('browser-download-'+str(attempt+1),SAFARI,False)
@@ -84,10 +84,10 @@ try:
     key(FINDER,31,1048576) # Command-O on the Finder-selected ZIP: Archive Utility.
     # Archive Utility groups multi-file ZIPs into a folder named for the ZIP.
     # Accept only that exact folder or the flat extraction, and verify bytes.
-    candidates=[downloads/source.stem/'Install Embroidery Studio.pkg',downloads/'Install Embroidery Studio.pkg']
+    candidates=[downloads/source.stem/'Install Embrova.pkg',downloads/'Install Embrova.pkg']
     import zipfile
     with zipfile.ZipFile(source) as z:
-        installer_sha=hashlib.sha256(z.read('Install Embroidery Studio.pkg')).hexdigest()
+        installer_sha=hashlib.sha256(z.read('Install Embrova.pkg')).hexdigest()
     pkg=None
     end=time.time()+25
     while time.time()<end and pkg is None:
@@ -129,7 +129,7 @@ try:
         if not action:result['stopReason']='No known native installer action; inspect actual screenshot';break
         press(app,action);current=snapshot('installer-step-'+str(step+1),app)
         if action=='Close':result['status']='installer-pages-complete';break
-    result['installedAppPresent']=pathlib.Path('/Applications/Embroidery Studio.app').exists()
+    result['installedAppPresent']=pathlib.Path('/Applications/Embrova.app').exists()
 except Exception as exc:
     result['error']=type(exc).__name__+': '+str(exc)
 finally:

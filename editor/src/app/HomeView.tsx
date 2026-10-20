@@ -122,11 +122,11 @@ export function HomeView() {
     >
       <header className="home-hero">
         <div className="home-welcome">
-          <span className="eyebrow">YOUR EMBROIDERY STUDIO</span>
+          <span className="eyebrow">EMBROVA</span>
           <h1>A little idea.<br />Ready to stitch.</h1>
           <p className="muted">Turn your artwork into embroidery, one simple step at a time.</p>
           <button className="lockup" onClick={() => void getPlatform().openUrl(SOURCE_URL)} title="Original Lilo source and GPL licence">
-            <span>Embroidery Studio · based on Lilo · GPL-3.0</span>
+            <span>Embrova · based on Lilo · GPL-3.0</span>
           </button>
         </div>
       </header>
@@ -169,7 +169,7 @@ export function HomeView() {
             }
           />
           <Quick icon="pixel" title="Pixel art" hint="Cross-stitch style, square by square" onClick={() => app.go("pixel")} />
-          <Quick icon="open" tour="home-open" title="Open…" hint="An Embroidery Studio project, or a PES, DST or other stitch file" onClick={() => go(m.openDialog())} />
+          <Quick icon="open" tour="home-open" title="Open…" hint="An Embrova project, or a PES, DST or other stitch file" onClick={() => go(m.openDialog())} />
           <Quick icon="convert" title="Converter" hint="Change embroidery file formats" onClick={() => app.go("converter")} />
         </ul>
         {notice && (
@@ -183,7 +183,7 @@ export function HomeView() {
         <h2 id="recent-title">Recent projects</h2>
         {recent.length === 0 ? (
           <p className="muted" role="status">
-            {loading ? "Looking in your Embroidery Studio folder…" : desktop ? "Nothing here yet. Projects you save show up here, along with anything in Documents/Embroidery Studio." : "Recent projects show up here in the desktop app. Use Open… to pick a project or a stitch file."}
+            {loading ? "Looking in your Embrova folder…" : desktop ? "Nothing here yet. Projects you save show up here, along with anything in Documents/Embrova." : "Recent projects show up here in the desktop app. Use Open… to pick a project or a stitch file."}
           </p>
         ) : (
           <ul className="recent-grid" aria-label="Recent projects">

@@ -6,7 +6,7 @@ export const RELEASES_URL = "https://github.com/thomastt-cryoo/embroidery-aapp-/
 export const releaseUrl = (version: string): string => `${RELEASES_URL}/tag/v${version}`;
 
 /**
- * "Embroidery Studio 1.0.1 is available — What's new · Install and restart". A thin bar under the nav, never a
+ * "Embrova 1.0.1 is available — What's new · Install and restart". A thin bar under the nav, never a
  * modal: the user keeps working until they choose to install.
  */
 export function UpdateBanner() {
@@ -22,7 +22,7 @@ function Banner({ updates }: { updates: Updates }) {
   const error = useUpdateState(updates, (s) => s.error);
 
   if (!update || (dismissed === update.version && !installing && !error)) return null;
-  const name = `Embroidery Studio ${update.version}`;
+  const name = `Embrova ${update.version}`;
 
   if (installing) {
     return (

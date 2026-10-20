@@ -11,7 +11,7 @@ status: "ready"
 
 # Standard or Premium quality
 
-**Quality** is one of three choices in the Sewing setup. It changes how carefully Embroidery Studio digitizes.
+**Quality** is one of three choices in the Sewing setup. It changes how carefully Embrova digitizes.
 
 ## Standard
 
@@ -43,7 +43,7 @@ Premium usually makes about 1.2 to 1.6 times as many stitches as Standard. That 
 
 ## Changing quality later
 
-Open the **Sewing setup** card and pick the other quality. Embroidery Studio updates shapes it made itself. It keeps anything you edited by hand. One undo step goes back.
+Open the **Sewing setup** card and pick the other quality. Embrova updates shapes it made itself. It keeps anything you edited by hand. One undo step goes back.
 
 ## Related
 

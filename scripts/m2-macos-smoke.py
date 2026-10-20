@@ -7,7 +7,7 @@ out.mkdir(parents=True, exist_ok=True)
 with (app/'Contents/Info.plist').open('rb') as f:
     info = plistlib.load(f)
 assert info['CFBundleIdentifier'] == 'io.github.thomasttcryoo.embroiderystudio', info
-assert info['CFBundleName'] == 'Embroidery Studio', info
+assert info['CFBundleName'] == 'Embrova', info
 binary = app/'Contents/MacOS'/info['CFBundleExecutable']
 arches = subprocess.check_output(['lipo', '-archs', str(binary)], text=True).strip()
 assert 'arm64' in arches and 'x86_64' in arches, arches
@@ -20,11 +20,11 @@ health = None
 for _ in range(60):
     try:
         health = json.load(urllib.request.urlopen('http://127.0.0.1:17842/api/health', timeout=2))
-        if health.get('app') == 'embroidery-studio': break
+        if health.get('app') == 'embrova': break
     except Exception:
         pass
     time.sleep(1)
-assert health and health.get('app') == 'embroidery-studio', health
+assert health and health.get('app') == 'embrova', health
 time.sleep(12)
 subprocess.run(['screencapture', '-x', str(out/'native-macos-desktop.png')], check=True)
 subprocess.run(['codesign', '--verify', '--deep', '--strict', str(app)], check=True)

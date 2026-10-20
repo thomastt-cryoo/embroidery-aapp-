@@ -177,10 +177,10 @@ try {
     await chosen.setFiles(projectPath);
     const reopenedTotals = await reopened.getByLabel("Design totals").innerText({ timeout: 120_000 });
     assert.match(reopenedTotals, /1,374 stitches/);
-    assert.match(await reopened.title(), /— Embroidery Studio$/);
+    assert.match(await reopened.title(), /— Embrova$/);
     await reopened.screenshot({ path: join(out, "project-reopened.png") });
     await reopened.close();
-    check("Project save and reopen", `${name}: ${reopenedTotals.replaceAll("\n", "; ")}; Embroidery Studio page title verified`);
+    check("Project save and reopen", `${name}: ${reopenedTotals.replaceAll("\n", "; ")}; Embrova page title verified`);
   }
   assert.equal(problems.length, 0, problems.join("\n"));
   check("Offline processing", "External HTTP(S) blocked throughout conversion, editing, simulation, export and project round-trip");

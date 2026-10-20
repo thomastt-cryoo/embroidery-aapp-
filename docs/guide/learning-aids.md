@@ -1,6 +1,6 @@
 ---
 id: "learning-aids"
-title: "Helpers inside Embroidery Studio: tour, strip, hints and warnings"
+title: "Helpers inside Embrova: tour, strip, hints and warnings"
 summary: "How the first-launch tour, the five-step workflow strip, the ? hints and the warnings tray work, and how to turn them off."
 section: "getting-started"
 order: 7
@@ -9,20 +9,20 @@ appContext: ["panel.stepper", "panel.warnings", "panel.help"]
 status: "ready"
 ---
 
-# Helpers inside Embroidery Studio: tour, strip, hints and warnings
+# Helpers inside Embrova: tour, strip, hints and warnings
 
-Embroidery Studio has four helpers. All of them are quiet. None of them stops you from working.
+Embrova has four helpers. All of them are quiet. None of them stops you from working.
 
 ## The first-launch tour
 
-The first time you open Embroidery Studio, a friendly host asks what you want to make:
+The first time you open Embrova, a friendly host asks what you want to make:
 
 - a **picture**,
 - a drawing **from scratch**,
 - a **monogram**, or
 - an **existing file**.
 
-Each choice shows a few short tips that point at the real buttons. A tip moves on when you do the thing it asks, so you learn by doing. You can **Skip** at any time. Embroidery Studio remembers that you finished or skipped, and does not show it again.
+Each choice shows a few short tips that point at the real buttons. A tip moves on when you do the thing it asks, so you learn by doing. You can **Skip** at any time. Embrova remembers that you finished or skipped, and does not show it again.
 
 To see it again, open **Help** and press **Replay the tour**.
 
@@ -32,7 +32,7 @@ Five steps sit across the top of the editor.
 
 1. **Get a design** ticks when the canvas has something on it.
 2. **Size and hoop** ticks when the design fits the hoop.
-3. **Stitches** ticks when Embroidery Studio sees no stitch quality problems.
+3. **Stitches** ticks when Embrova sees no stitch quality problems.
 4. **Preview** ticks when you have played the stitches or looked at the realistic view.
 5. **Send** ticks when you have exported or sent the design.
 
@@ -51,7 +51,7 @@ Press **Esc** to close it.
 
 ## The warnings tray
 
-When Embroidery Studio spots something that may sew badly, a note appears in a small tray in the right-hand column, under the Sewing setup card. For example: your design is bigger than the hoop, or your letters are too small for the thread. Each note has a button that fixes it in one click, or a link to read more. You can dismiss a note. It stays dismissed until the problem changes.
+When Embrova spots something that may sew badly, a note appears in a small tray in the right-hand column, under the Sewing setup card. For example: your design is bigger than the hoop, or your letters are too small for the thread. Each note has a button that fixes it in one click, or a link to read more. You can dismiss a note. It stays dismissed until the problem changes.
 
 Read [What the warnings mean](warnings-explained.md).
 

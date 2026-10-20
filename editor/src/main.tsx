@@ -10,6 +10,7 @@ import "./guide/guide.css";
 import "./studio.css";
 import "./sew-order.css";
 import "./mac-sidebar.css";
+import "./embrova-brand.css";
 
 async function boot() {
   // `?mock` (development only): sample projects and an in-memory platform, to look at every screen

@@ -22,7 +22,7 @@ Thread has thickness. Make letters small enough, and the thread fills the gaps i
 
 **Height** here means the height of a capital letter.
 
-Embroidery Studio checks this for every font. If your letters are shorter than the limit, a warning shows under the height box and in the warnings tray. It offers to switch to 60 wt thread.
+Embrova checks this for every font. If your letters are shorter than the limit, a warning shows under the height box and in the warnings tray. It offers to switch to 60 wt thread.
 
 ## How to sew small text clean
 
@@ -34,7 +34,7 @@ Embroidery Studio checks this for every font. If your letters are shorter than t
 
 ## Do not swap the thread without redigitizing
 
-If you design for 40 wt and then put 60 wt thread on the machine, you lose coverage. Change **Thread weight** in the Sewing setup instead, so Embroidery Studio tightens the spacing.
+If you design for 40 wt and then put 60 wt thread on the machine, you lose coverage. Change **Thread weight** in the Sewing setup instead, so Embrova tightens the spacing.
 
 ## Letters on the inside of a jacket
 

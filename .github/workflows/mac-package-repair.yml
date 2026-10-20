@@ -37,7 +37,7 @@ jobs:
           for name in ['Build complete universal Mac app and compare delivery formats','Native Rust regression checks on macOS']:
               assert any(s['name']==name and s['conclusion']=='success' for s in steps),name
           PY
-          gh run download "$SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" --name Embroidery-Studio-macOS-M2-Etsy-private --dir source-package
+          gh run download "$SOURCE_RUN_ID" --repo "$GITHUB_REPOSITORY" --name Embrova-macOS-M2-Etsy-private --dir source-package
       - name: Extract sealed application and rebuild installer metadata only
         run: |
           set -euo pipefail
@@ -49,11 +49,11 @@ jobs:
           import os,pathlib,subprocess,zipfile
           work=pathlib.Path(os.environ['RUNNER_TEMP'])/'studio-source'
           work.mkdir()
-          with zipfile.ZipFile('source-package/Embroidery-Studio-macOS.zip') as z:
+          with zipfile.ZipFile('source-package/Embrova-macOS.zip') as z:
               assert z.testzip() is None
-              z.extract('Install Embroidery Studio.pkg',work)
-          subprocess.run(['pkgutil','--expand-full',str(work/'Install Embroidery Studio.pkg'),str(work/'expanded')],check=True)
-          app=next((work/'expanded').rglob('Embroidery Studio.app'))
+              z.extract('Install Embrova.pkg',work)
+          subprocess.run(['pkgutil','--expand-full',str(work/'Install Embrova.pkg'),str(work/'expanded')],check=True)
+          app=next((work/'expanded').rglob('Embrova.app'))
           subprocess.run(['codesign','--verify','--deep','--strict','--all-architectures',str(app)],check=True)
           subprocess.run(['python','scripts/m2-macos-etsy.py','package','--app',str(app),'--mode','raw','--pkg-only'],check=True)
           PY
@@ -66,7 +66,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: Embroidery-Studio-macOS-M2-Etsy-private
+          name: Embrova-macOS-M2-Etsy-private
           path: out/
           retention-days: 2
           if-no-files-found: error

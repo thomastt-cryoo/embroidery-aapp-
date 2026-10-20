@@ -30,7 +30,7 @@ def zip_installer(source, target, instruction):
     for method, tag in [(zipfile.ZIP_STORED,'store'),(zipfile.ZIP_DEFLATED,'deflate')]:
         candidate=target.with_name(target.stem+'-'+tag+'.zip')
         with zipfile.ZipFile(candidate,'w',compression=method,compresslevel=9 if method==zipfile.ZIP_DEFLATED else None) as z:
-            z.write(source,'Install Embroidery Studio'+source.suffix);docs(z,instruction)
+            z.write(source,'Install Embrova'+source.suffix);docs(z,instruction)
         alternatives.append(candidate)
     winner=min(alternatives,key=lambda p:p.stat().st_size)
     shutil.copy2(winner,target)
@@ -46,7 +46,7 @@ if args.action == 'package':
               'underEtsyLimit':candidate.stat().st_size<20_000_000,'completeUniversalApplication':True}
         if extra:item.update(extra)
         records.append(item)
-        final=out/'Embroidery-Studio-macOS.zip'
+        final=out/'Embrova-macOS.zip'
         if not final.exists() or candidate.stat().st_size<final.stat().st_size:
             shutil.copy2(candidate,final)
             (evidence/'mac-selected-package.json').write_text(json.dumps(item,indent=2)+'\n')
@@ -56,25 +56,25 @@ if args.action == 'package':
         direct=modework/'application.zip'
         run(['ditto','-c','-k','--sequesterRsrc','--keepParent','--zlibCompressionLevel','9',app,direct])
         with zipfile.ZipFile(direct,'a',compression=zipfile.ZIP_DEFLATED,compresslevel=9) as z:
-            docs(z,'Drag Embroidery Studio.app to Applications, then open Embroidery Studio.')
+            docs(z,'Drag Embrova.app to Applications, then open Embrova.')
         record(direct,'app')
     image_source=modework/'disk-image';image_source.mkdir(exist_ok=True)
     run(['ditto',app,image_source/app.name])
     (image_source/'Applications').symlink_to('/Applications',target_is_directory=True)
     for fmt in ([] if args.pkg_only else ['UDZO','UDBZ','ULMO']):
         try:
-            dmg=modework/('Install Embroidery Studio-'+fmt+'.dmg')
-            run(['hdiutil','create','-srcfolder',image_source,'-volname','Embroidery Studio','-format',fmt,'-ov',dmg])
+            dmg=modework/('Install Embrova-'+fmt+'.dmg')
+            run(['hdiutil','create','-srcfolder',image_source,'-volname','Embrova','-format',fmt,'-ov',dmg])
             verify=run(['hdiutil','verify',dmg])
             (evidence/(args.mode+'-'+fmt+'-verify.txt')).write_text(verify.stdout+verify.stderr)
             delivery=modework/(fmt+'.zip')
-            zip_installer(dmg,delivery,'Open the disk image and drag Embroidery Studio to Applications, then open it.')
+            zip_installer(dmg,delivery,'Open the disk image and drag Embrova to Applications, then open it.')
             record(delivery,'dmg',{'dmgFormat':fmt,'dmgBytes':dmg.stat().st_size})
         except Exception as exc:
             records.append({'mode':args.mode,'kind':fmt,'error':str(exc)})
             result_path.write_text(json.dumps(records,indent=2)+'\n')
     try:
-        pkg=modework/'Install Embroidery Studio.pkg'
+        pkg=modework/'Install Embrova.pkg'
         # Install to /Applications even when another copy exists in a build or
         # downloads folder. Automatic bundle relocation must not pick that copy.
         pkgroot=modework/'pkg-root';pkgroot.mkdir(exist_ok=True)
@@ -86,13 +86,13 @@ if args.action == 'package':
         with components.open('wb') as f:plistlib.dump(properties,f)
         run(['pkgbuild','--root',pkgroot,'--component-plist',components,'--install-location','/Applications','--identifier','io.github.thomasttcryoo.embroiderystudio','--version','1.4.0','--min-os-version','13.0','--compression','latest',pkg])
         delivery=modework/'pkg.zip'
-        zip_installer(pkg,delivery,'Open Install Embroidery Studio.pkg and follow the installer. Then open Embroidery Studio in Applications.')
+        zip_installer(pkg,delivery,'Open Install Embrova.pkg and follow the installer. Then open Embrova in Applications.')
         record(delivery,'pkg',{'pkgBytes':pkg.stat().st_size})
         try:
-            compact=modework/'Compact Embroidery Studio.pkg'
-            subprocess.run([sys.executable,ROOT/'scripts/m2-macos-recompress.py',pkg,compact,evidence/'mac-lossless-pkg-compression.json'],check=True,timeout=600)
+            compact=modework/'Compact Embrova.pkg'
+            subprocess.run([sys.executable,ROOT/'scripts/m2-macos-recompress.py',pkg,compact,evidence/'mac-lossless-pkg-compression.json'],check=True,timeout=900)
             compact_delivery=modework/'pkg-long-window.zip'
-            zip_installer(compact,compact_delivery,'Open Install Embroidery Studio.pkg and follow the installer. Then open Embroidery Studio in Applications.')
+            zip_installer(compact,compact_delivery,'Open Install Embrova.pkg and follow the installer. Then open Embrova in Applications.')
             record(compact_delivery,'pkg',{'pkgBytes':compact.stat().st_size,'payloadCompression':'long-window-lzma2','nativeExtractionVerified':True})
         except Exception as exc:
             records.append({'mode':args.mode,'kind':'pkg-long-window','error':str(exc)})
@@ -101,21 +101,21 @@ if args.action == 'package':
         records.append({'mode':args.mode,'kind':'pkg','error':str(exc)})
         result_path.write_text(json.dumps(records,indent=2)+'\n')
 elif args.action == 'install':
-    final=out/'Embroidery-Studio-macOS.zip'
+    final=out/'Embrova-macOS.zip'
     extracted=work/'customer-extracted';extracted.mkdir(exist_ok=True)
     run(['unzip','-t',final])
     run(['ditto','-x','-k',final,extracted])
     selected=json.loads((evidence/'mac-selected-package.json').read_text())
-    installed=pathlib.Path('/Applications/Embroidery Studio.app')
+    installed=pathlib.Path('/Applications/Embrova.app')
     if selected['kind']=='app':
-        run(['ditto',extracted/'Embroidery Studio.app',installed])
+        run(['ditto',extracted/'Embrova.app',installed])
     elif selected['kind']=='pkg':
         r=run(['sudo','installer','-pkg',next(extracted.glob('*.pkg')),'-target','/'])
         (evidence/'mac-package-install.txt').write_text(r.stdout+r.stderr)
     else:
         mount=work/'customer-volume';mount.mkdir(exist_ok=True)
         run(['hdiutil','attach',next(extracted.glob('*.dmg')),'-nobrowse','-mountpoint',mount])
-        run(['ditto',mount/'Embroidery Studio.app',installed])
+        run(['ditto',mount/'Embrova.app',installed])
         run(['hdiutil','detach',mount])
     run(['codesign','--verify','--deep','--strict',installed])
     # Existing native smoke check opens and recomputes a real saved design.

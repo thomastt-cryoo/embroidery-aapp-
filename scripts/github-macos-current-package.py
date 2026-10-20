@@ -16,7 +16,7 @@ spec.loader.exec_module(package_report)
 
 
 def prepare():
-    archive = OUT / 'Embroidery-Studio-macOS.zip'
+    archive = OUT / 'Embrova-macOS.zip'
     assert hashlib.file_digest(archive.open('rb'), 'sha256').hexdigest() == EXPECTED, 'Wrong application ZIP'
     evidence = OUT / 'evidence'
     evidence.mkdir(parents=True, exist_ok=True)

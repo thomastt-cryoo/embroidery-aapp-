@@ -2,7 +2,7 @@
 import hashlib,json,pathlib,re,zipfile
 root=pathlib.Path(__file__).resolve().parent.parent
 out=root/'dist/M2-Etsy';evidence=root/'reports/M2/etsy'
-expected={'Embroidery-Studio-Windows.zip':'Install Embroidery Studio.exe','Embroidery-Studio-macOS.zip':'Install Embroidery Studio.pkg'}
+expected={'Embrova-Windows.zip':'Install Embrova.exe','Embrova-macOS.zip':'Install Embrova.pkg'}
 assert {p.name for p in out.iterdir()}==set(expected),'Customer folder must contain exactly two complete ZIPs'
 sha=lambda p:hashlib.file_digest(p.open('rb'),'sha256').hexdigest()
 records=[]

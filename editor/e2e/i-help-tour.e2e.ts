@@ -10,7 +10,7 @@ describe("journey i: tour, hints, help and the workflow strip", () => {
     const { page } = j;
     await j.run(async () => {
       // the welcome: four ways to start
-      const welcome = page.getByRole("dialog", { name: /Hi, I am your Embroidery Studio guide/ });
+      const welcome = page.getByRole("dialog", { name: /Hi, I am your Embrova guide/ });
       await welcome.waitFor();
       expect(await welcome.locator("[data-path]").evaluateAll((els) => els.map((e) => e.getAttribute("data-path")))).toEqual(["picture", "draw", "monogram", "open"]);
       await j.shot("1-tour-welcome");

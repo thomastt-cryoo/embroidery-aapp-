@@ -76,7 +76,7 @@ export function ShelfPanel() {
       <Section title="Add from the catalogue" help="Search every brand by code or name, for example “madeira 1000” or “navy”." id="shelf-catalogue">
         <CatalogueAdd onNote={setNote} />
       </Section>
-      <Section title="Add a spool by photo" help="Photograph the label on the spool. Embroidery Studio reads the text and suggests which thread it is; you confirm." open={false} id="shelf-photo">
+      <Section title="Add a spool by photo" help="Photograph the label on the spool. Embrova reads the text and suggests which thread it is; you confirm." open={false} id="shelf-photo">
         <PhotoAdd onNote={setNote} />
       </Section>
       <Section title="Add by hand" help="For a thread that is not in the catalogue: pick its colour yourself." open={false} id="shelf-manual">
@@ -317,7 +317,7 @@ export function PhotoAdd({ onNote }: { onNote: (n: Note) => void }) {
       setState({ kind: "done", name, preview: preview.current, text: lines.map((l) => l.text), candidates });
     } catch (e) {
       const m = msg(e);
-      setState({ kind: "error", text: m.startsWith("unsupported") ? "Reading a label from a photo needs the Embroidery Studio desktop app on a Mac. You can still add the spool by code or by hand." : `Could not read that photo: ${m}` });
+      setState({ kind: "error", text: m.startsWith("unsupported") ? "Reading a label from a photo needs the Embrova desktop app on a Mac. You can still add the spool by code or by hand." : `Could not read that photo: ${m}` });
     }
   };
 

@@ -63,7 +63,7 @@ jobs:
             if [ "$mode" = compressed ]; then EXTRA=(--features asset-compression); fi
             pnpm tauri build --target universal-apple-darwin --bundles app "${EXTRA[@]}" 2>&1 | tee "out/evidence/macos-build-$mode.txt"
             cp reports/M2/etsy/asset-preservation.json "out/evidence/assets-$mode.json"
-            python scripts/m2-macos-etsy.py package --app "app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embroidery Studio.app" --mode "$mode" --pkg-only
+            python scripts/m2-macos-etsy.py package --app "app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embrova.app" --mode "$mode" --pkg-only
           done
       - name: Native Rust regression checks on macOS
         run: |
@@ -99,7 +99,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: Embroidery-Studio-macOS-M2-Etsy-private
+          name: Embrova-macOS-M2-Etsy-private
           path: out/
           retention-days: 2
           if-no-files-found: error

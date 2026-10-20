@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import mascotUrl from "../assets/brand/studio-icon.svg";
+import mascotUrl from "../assets/brand/embrova-logo.png";
 import { useApp } from "../app/AppContext";
 import { useModalFocus } from "../shell/useModalFocus";
 import { useEditor } from "../state/store";
@@ -26,7 +26,7 @@ function Welcome() {
   return (
     <div className="tour-backdrop" role="presentation">
       <div ref={modal} tabIndex={-1} className="tour-welcome" role="dialog" aria-modal="true" aria-labelledby="tour-welcome-title" onKeyDown={(e) => e.key === "Escape" && skipTour()}>
-        <img className="tour-mascot" src={mascotUrl} alt="Embroidery Studio hoop and stitch mark" width={96} height={96} />
+        <img className="tour-mascot" src={mascotUrl} alt="Embrova flower and wordmark" width={128} height={128} />
         <h2 id="tour-welcome-title">{w.title}</h2>
         <p>{w.body}</p>
         <ul className="tour-choices" aria-label="What do you want to make?">

@@ -1,5 +1,5 @@
 [
-  { "id": "getting-started", "title": "Getting started", "order": 1, "blurb": "Install Embroidery Studio, make a first design and learn your way round." },
+  { "id": "getting-started", "title": "Getting started", "order": 1, "blurb": "Install Embrova, make a first design and learn your way round." },
   { "id": "digitizing", "title": "Digitizing", "order": 2, "blurb": "Turn pictures into stitches, or draw your own." },
   { "id": "stitches", "title": "Stitches", "order": 3, "blurb": "Run types, fills, underlay and your sewing setup." },
   { "id": "lettering", "title": "Lettering", "order": 4, "blurb": "Monograms, names and your own fonts." },

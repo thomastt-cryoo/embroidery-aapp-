@@ -1,12 +1,12 @@
-param([string]$InstallDir = (Join-Path $env:LOCALAPPDATA 'Embroidery Studio'))
+param([string]$InstallDir = (Join-Path $env:LOCALAPPDATA 'Embrova'))
 $ErrorActionPreference = 'Stop'
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $baseline = Get-Content -LiteralPath (Join-Path $repoRoot 'reports/M2/evidence/baseline.json') -Raw | ConvertFrom-Json
 $appDir = $InstallDir
-$exe = Join-Path $appDir 'embroidery-studio.exe'
-if (-not (Test-Path -LiteralPath $exe)) { throw 'Embroidery Studio is not installed at its own location.' }
+$exe = Join-Path $appDir 'embrova.exe'
+if (-not (Test-Path -LiteralPath $exe)) { throw 'Embrova is not installed at its own location.' }
 $installedHash = (Get-FileHash -LiteralPath $exe -Algorithm SHA256).Hash
-$buildPath = Join-Path $repoRoot 'app/src-tauri/target/release/embroidery-studio.exe'
+$buildPath = Join-Path $repoRoot 'app/src-tauri/target/release/embrova.exe'
 $builtHash = (Get-FileHash -LiteralPath $buildPath -Algorithm SHA256).Hash
 # Tauri temporarily patches UNK -> NSS while bundling, then restores the raw
 # build. Compare every byte after applying only that known three-byte marker.
@@ -28,21 +28,21 @@ foreach ($property in $baseline.extensionDefaults.PSObject.Properties) {
     if ($value -ne $property.Value) { throw ('Extension default changed: .' + $property.Name) }
     $defaults[$property.Name] = $value
 }
-$uninstallKey = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\Embroidery Studio'
+$uninstallKey = 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Uninstall\Embrova'
 $entry = Get-ItemProperty -LiteralPath $uninstallKey
-if ($entry.DisplayName -ne 'Embroidery Studio') { throw 'Wrong uninstall identity.' }
-$openWith = (Get-ItemProperty -LiteralPath 'HKCU:\Software\Classes\.lilo\OpenWithProgids').'EmbroideryStudio.Project'
+if ($entry.DisplayName -ne 'Embrova') { throw 'Wrong uninstall identity.' }
+$openWith = (Get-ItemProperty -LiteralPath 'HKCU:\Software\Classes\.lilo\OpenWithProgids').'Embrova.Project'
 if ($null -eq $openWith) { throw 'The compatible project Open With entry is missing.' }
-$projectCommand = (Get-Item -LiteralPath 'HKCU:\Software\Classes\EmbroideryStudio.Project\shell\open\command').GetValue('')
+$projectCommand = (Get-Item -LiteralPath 'HKCU:\Software\Classes\Embrova.Project\shell\open\command').GetValue('')
 if ($projectCommand -ne ('"' + $exe + '" "%1"')) { throw 'Open With points to the wrong executable.' }
-$protocolCommand = (Get-Item -LiteralPath 'HKCU:\Software\Classes\embroidery-studio\shell\open\command').GetValue('')
+$protocolCommand = (Get-Item -LiteralPath 'HKCU:\Software\Classes\embrova\shell\open\command').GetValue('')
 if ($protocolCommand -ne ('"' + $exe + '" "%1"')) { throw 'The application URL handler points to the wrong executable.' }
 $liloProtocol = (Get-Item -LiteralPath 'HKCU:\Software\Classes\lilo\shell\open\command').GetValue('')
 if ($liloProtocol -ne ('"' + $baseline.originalInstalledExe + '" "%1"')) { throw 'The original Lilo URL handler was replaced.' }
 $files = @(Get-ChildItem -LiteralPath $appDir -Recurse -File | ForEach-Object { $_.FullName.Substring($appDir.Length + 1) })
 if ($files | Where-Object { $_ -match 'node_modules|\.git\\|reports\\|test\\|\.map$' }) { throw 'Development files present in customer install.' }
 $shell = New-Object -ComObject WScript.Shell
-$startMenu = Join-Path $env:APPDATA 'Microsoft/Windows/Start Menu/Programs/Embroidery Studio/Embroidery Studio.lnk'
+$startMenu = Join-Path $env:APPDATA 'Microsoft/Windows/Start Menu/Programs/Embrova/Embrova.lnk'
 if (-not (Test-Path -LiteralPath $startMenu)) { throw 'Separate Start Menu shortcut is missing.' }
 $shortcutTarget = $shell.CreateShortcut($startMenu).TargetPath
 if ($shortcutTarget -ne $exe) { throw 'Shortcut target is not the new app.' }

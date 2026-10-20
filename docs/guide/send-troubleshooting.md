@@ -11,7 +11,7 @@ status: "ready"
 
 # Wi-Fi troubleshooting
 
-When a send fails, Embroidery Studio shows a short message. Under the message is a **code**, a short word with an underscore. Find your code below.
+When a send fails, Embrova shows a short message. Under the message is a **code**, a short word with an underscore. Find your code below.
 
 First check the basics:
 
@@ -22,7 +22,7 @@ First check the basics:
 ## Codes
 
 ### `machine_unreachable`
-"Machine unreachable." Embroidery Studio cannot connect at all. The machine is off, asleep, on a different network or has a new address. **Do this:** turn the machine on, check its Wi-Fi, press **Scan network** again.
+"Machine unreachable." Embrova cannot connect at all. The machine is off, asleep, on a different network or has a new address. **Do this:** turn the machine on, check its Wi-Fi, press **Scan network** again.
 
 ### `machine_timeout`
 "Request to machine timed out." The machine did not answer in time. **Do this:** wake the machine, move closer to the router and try again.
@@ -37,13 +37,13 @@ First check the basics:
 "The device identity changed. Scan again and select the intended machine." The address now belongs to a different device. **Do this:** scan again and save the right machine.
 
 ### `unsupported_operation`
-"This device does not support that operation." The machine cannot do what Embroidery Studio asked, like listing storage. **Do this:** use another way, such as a [USB stick](usb-stick.md).
+"This device does not support that operation." The machine cannot do what Embrova asked, like listing storage. **Do this:** use another way, such as a [USB stick](usb-stick.md).
 
 ### `file_exists`
 "A file with this name exists. Confirm replacement before sending." **Do this:** rename the project, or confirm the replacement.
 
 ### `protocol_error`
-"Protocol error." The machine answered in a way Embroidery Studio did not expect. **Do this:** update Embroidery Studio and the machine's software, then try again. If it keeps happening, [report a bug](bug-reports.md).
+"Protocol error." The machine answered in a way Embrova did not expect. **Do this:** update Embrova and the machine's software, then try again. If it keeps happening, [report a bug](bug-reports.md).
 
 ### `machine_rejected`
 "Machine rejected the request (machine error code N)." The machine understood and said no. **Do this:** read the number on the machine's screen. Check its manual. Often the file is too complex or the machine is in a mode that does not accept designs.
@@ -58,7 +58,7 @@ First check the basics:
 "Unsupported design format; this machine accepts ..." **Do this:** export a format the machine accepts. Read [File formats](formats-reference.md).
 
 ### `upload_failed`
-"Upload rejected with HTTP status N." The upload was refused part-way. **Do this:** try again. If it repeats, restart the machine and Embroidery Studio.
+"Upload rejected with HTTP status N." The upload was refused part-way. **Do this:** try again. If it repeats, restart the machine and Embrova.
 
 ### `pairing_required`
 "Machine requires pairing." The machine wants to approve this computer first. A hint says what to press on the machine. **Do this:** follow the hint on the machine's screen, then send again.
@@ -76,23 +76,23 @@ A file name is required. **Do this:** give your project a name in the top bar.
 "Transfer cancelled." You (or something else) stopped the send. Send again if you want it.
 
 ### `updating`
-"Bridge is updating." Embroidery Studio is installing an update. **Do this:** wait until it restarts.
+"Bridge is updating." Embrova is installing an update. **Do this:** wait until it restarts.
 
 ### `unauthorized`
-"Missing or invalid API token." The window and Embroidery Studio's built-in connection service lost touch. **Do this:** restart Embroidery Studio.
+"Missing or invalid API token." The window and Embrova's built-in connection service lost touch. **Do this:** restart Embrova.
 
 ### `not_found`
-The thing Embroidery Studio asked about (a saved machine or a transfer) does not exist any more. **Do this:** refresh the Machines list.
+The thing Embrova asked about (a saved machine or a transfer) does not exist any more. **Do this:** refresh the Machines list.
 
 ### `internal_error`
-Something went wrong inside Embroidery Studio. **Do this:** open **Studio Link**, then **Logs**, and [report a bug](bug-reports.md) with the log text.
+Something went wrong inside Embrova. **Do this:** open **Studio Link**, then **Logs**, and [report a bug](bug-reports.md) with the log text.
 
 ## Less common codes
 
-These come from Embroidery Studio's built-in connection service. You will rarely see them. Most need only a retry or a restart.
+These come from Embrova's built-in connection service. You will rarely see them. Most need only a retry or a restart.
 
 ### `ip_not_local`
-Embroidery Studio refuses to contact an address that is not on your home or office network. **Do this:** use the address shown on the machine's own network screen. It usually starts with 192.168 or 10.
+Embrova refuses to contact an address that is not on your home or office network. **Do this:** use the address shown on the machine's own network screen. It usually starts with 192.168 or 10.
 
 ### `discovery_running`
 A network scan is already running. **Do this:** wait for it to finish.
@@ -119,13 +119,13 @@ The file name has a folder or odd characters in it. **Do this:** rename the proj
 Deleting a file from a machine needs your confirmation. **Do this:** confirm in Studio Link.
 
 ### `identity_required`
-Embroidery Studio must read the machine's status before it deletes a file. **Do this:** press **Test** on the machine first.
+Embrova must read the machine's status before it deletes a file. **Do this:** press **Test** on the machine first.
 
 ### `pairing_in_progress`
 Another pairing request is waiting for a decision. **Do this:** wait a moment and try again.
 
 ### `pairing_origin_mismatch`
-A pairing request belongs to a different source. **Do this:** start the pairing again from Embroidery Studio.
+A pairing request belongs to a different source. **Do this:** start the pairing again from Embrova.
 
 ### `origin_required`
 Pairing only works from a web page. **Do this:** read the token in Studio Link, **Settings**.

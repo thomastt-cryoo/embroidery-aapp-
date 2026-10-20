@@ -26,9 +26,9 @@ def main():
     # The archive lives on a dedicated branch in the same private repository,
     # outside main and customer packages. No public download/token is needed.
     subprocess.run(['git', 'fetch', '--depth=1', 'origin', 'refs/heads/codex/m3-macos-verification-package'], check=True)
-    with (OUT / 'Embroidery-Studio-macOS.zip').open('wb') as archive:
-        subprocess.run(['git', 'show', 'FETCH_HEAD:Embroidery-Studio-macOS.zip'], stdout=archive, check=True)
-    assert hashlib.sha256((OUT / 'Embroidery-Studio-macOS.zip').read_bytes()).hexdigest() == EXPECTED
+    with (OUT / 'Embrova-macOS.zip').open('wb') as archive:
+        subprocess.run(['git', 'show', 'FETCH_HEAD:Embrova-macOS.zip'], stdout=archive, check=True)
+    assert hashlib.sha256((OUT / 'Embrova-macOS.zip').read_bytes()).hexdigest() == EXPECTED
     source = ROOT / 'reports/M3/codemagic-setup/run-3/evidence'
     for name in ['mac-selected-package.json', 'mac-lossless-pkg-compression.json']:
         (evidence / name).write_bytes((source / name).read_bytes())

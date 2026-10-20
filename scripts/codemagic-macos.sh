@@ -4,7 +4,7 @@ set -euo pipefail
 cd "${CM_BUILD_DIR:?Run this workflow on the connected Codemagic project}"
 mkdir -p out/evidence out/02-macOS .codemagic-tmp
 export RUNNER_TEMP="$PWD/.codemagic-tmp"
-export LILO_FONTS_CACHE="$HOME/Library/Caches/EmbroideryStudio/fonts"
+export LILO_FONTS_CACHE="$HOME/Library/Caches/Embrova/fonts"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PYTHONUNBUFFERED=1
 # No credentials, account emails or environment dumps are written to artifacts.
@@ -63,14 +63,14 @@ node scripts/m2-package-check.mjs 2>&1 | tee out/evidence/preservation.txt
 pnpm tauri build --target universal-apple-darwin --bundles app 2>&1 | tee out/evidence/macos-build.txt
 cp reports/M2/etsy/asset-preservation.json out/evidence/asset-preservation.json
 python scripts/m2-macos-etsy.py package \
-  --app 'app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embroidery Studio.app' \
+  --app 'app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embrova.app' \
   --mode raw --pkg-only --out out 2>&1 | tee out/evidence/packaging.txt
 python scripts/codemagic-macos-report.py --check-package
 if test "${M2_BUILD_ONLY:-0}" = 1; then
   # This mode packages the UI correction; it does not claim M3/native testing.
   python - <<'PY'
 import pathlib, plistlib, subprocess
-app = pathlib.Path('app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embroidery Studio.app')
+app = pathlib.Path('app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embrova.app')
 info = plistlib.loads((app / 'Contents/Info.plist').read_bytes())
 assert info['CFBundleIdentifier'] == 'io.github.thomasttcryoo.embroiderystudio'
 arches = subprocess.check_output(['lipo', '-archs', app / 'Contents/MacOS' / info['CFBundleExecutable']], text=True)

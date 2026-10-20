@@ -1,7 +1,7 @@
 ---
 id: "stitch-safety"
 title: "Stitch safety and machine speed"
-summary: "The green and amber stitch ranges, what each amber note means, and the machine speed Embroidery Studio suggests."
+summary: "The green and amber stitch ranges, what each amber note means, and the machine speed Embrova suggests."
 section: "stitches"
 order: 7
 keywords: ["stitch safety", "safe range", "green", "amber", "speed", "spm", "stitches a minute", "thin satin", "long stitch", "snag", "sew time", "thread break", "pucker", "metallic"]
@@ -11,9 +11,9 @@ status: "ready"
 
 # Stitch safety and machine speed
 
-Some stitch settings sew well. Some make thread break or cloth pucker. Embroidery Studio shows you which is which, with a **green band** behind each slider.
+Some stitch settings sew well. Some make thread break or cloth pucker. Embrova shows you which is which, with a **green band** behind each slider.
 
-Amber is a heads up. It is never a block. Embroidery Studio still makes the file and you can still export it.
+Amber is a heads up. It is never a block. Embrova still makes the file and you can still export it.
 
 ## Where you see it
 
@@ -32,7 +32,7 @@ A satin shape's width is its drawing, so the card cannot widen it. Reshape it, o
 
 ## What will this change?
 
-Under a slider you see how the change moved the design, like "+1,240 stitches · +1 min 30 s". It counts from where you started moving that slider. Embroidery Studio works it out in the background, so the screen stays smooth.
+Under a slider you see how the change moved the design, like "+1,240 stitches · +1 min 30 s". It counts from where you started moving that slider. Embrova works it out in the background, so the screen stays smooth.
 
 ## The ranges
 
@@ -40,15 +40,15 @@ These are for 40 wt thread on cloth you wear. 60 wt and towel move a few numbers
 
 | Setting | Green range | Where the numbers come from |
 | --- | --- | --- |
-| Satin width | 1.5 to 10 mm (60 wt: 1 to 10) | Embroidery Studio default. The 1.5 mm floor matches the calibration table. |
+| Satin width | 1.5 to 10 mm (60 wt: 1 to 10) | Embrova default. The 1.5 mm floor matches the calibration table. |
 | Satin spacing | 0.35 to 0.60 mm (60 wt: from 0.30, towel: to 0.70) | Researched |
 | Fill row spacing | 0.35 to 0.60 mm (60 wt: from 0.30) | Researched |
 | Fill stitch length | 3 to 4.5 mm | Researched |
-| Running stitch length | 1.5 to 4 mm (towel: to 5) | Embroidery Studio default |
-| Pull compensation | 0.1 to 0.4 mm | Embroidery Studio default |
+| Running stitch length | 1.5 to 4 mm (towel: to 5) | Embrova default |
+| Pull compensation | 0.1 to 0.4 mm | Embrova default |
 | Longest stitch | up to 7 mm on cloth you wear | Researched |
 
-**Researched** means it comes from the sourced calibration table behind Embroidery Studio's defaults and from Brother and digitizing guides. **Embroidery Studio default** means it is Embroidery Studio's own choice, with no source behind it. Treat those as a good start, not a rule.
+**Researched** means it comes from the sourced calibration table behind Embrova's defaults and from Brother and digitizing guides. **Embrova default** means it is Embrova's own choice, with no source behind it. Treat those as a good start, not a rule.
 
 ## Amber notes, in plain words
 
@@ -59,11 +59,11 @@ These are for 40 wt thread on cloth you wear. 60 wt and towel move a few numbers
 - **Fill or running stitch too long:** it can snag on fingers and buttons.
 - **Pull compensation too low:** edges may leave gaps. **Too high:** shapes come out fat.
 
-Embroidery Studio also warns when a stitch is over 7 mm on cloth you wear. It still splits anything over 12.1 mm on its own. See [What the warnings mean](warnings-explained.md).
+Embrova also warns when a stitch is over 7 mm on cloth you wear. It still splits anything over 12.1 mm on its own. See [What the warnings mean](warnings-explained.md).
 
-## Embroidery Studio's own settings are always green
+## Embrova's own settings are always green
 
-A design made only with Embroidery Studio's settings, for any quality, thread weight and fabric, has no amber items. To keep it that way Embroidery Studio:
+A design made only with Embrova's settings, for any quality, thread weight and fabric, has no amber items. To keep it that way Embrova:
 
 - splits satin columns wider than 6.8 mm into halves, so no stitch passes 7 mm,
 - swaps a zig-zag underlay for edge and centre walks under columns that are wider than 5.5 mm,
@@ -78,11 +78,11 @@ With 40 wt thread and Premium quality, custom-font letters now never use a satin
 
 ## Machine speed
 
-A file cannot set your machine's speed. You set it on the machine. Embroidery Studio suggests a speed for the design in **Before you sew**:
+A file cannot set your machine's speed. You set it on the machine. Embrova suggests a speed for the design in **Before you sew**:
 
 > Set your machine to **450** stitches a minute (thin lines in this design).
 
-Embroidery Studio starts from the middle of the range for your fabric, then slows down for what is in the design.
+Embrova starts from the middle of the range for your fabric, then slows down for what is in the design.
 
 | What is in the design | Suggested speed |
 | --- | --- |
@@ -93,7 +93,7 @@ Embroidery Studio starts from the middle of the range for your fabric, then slow
 
 It never goes above the machine's top speed, 850 stitches a minute on the Brother NV2700. The caps are rules of thumb from Brother's FAQ and hobbyist guides. No maker publishes an exact table, so sew a test first.
 
-On a Brother machine, look in Settings for **Max embroidery speed**. Menu names differ between models, so Embroidery Studio does not give exact steps.
+On a Brother machine, look in Settings for **Max embroidery speed**. Menu names differ between models, so Embrova does not give exact steps.
 
 ## Sew time
 

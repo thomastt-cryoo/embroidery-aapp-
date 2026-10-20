@@ -214,7 +214,7 @@ describe("Add a spool by photo", () => {
     render(<ShelfPanel />);
     open("shelf-photo");
     fireEvent.click(screen.getByRole("button", { name: "Choose a photo…" }));
-    expect((await screen.findByRole("alert", undefined, T)).textContent).toMatch(/needs the Embroidery Studio desktop app on a Mac/);
+    expect((await screen.findByRole("alert", undefined, T)).textContent).toMatch(/needs the Embrova desktop app on a Mac/);
   });
 
   it("accepts a dropped photo", async () => {

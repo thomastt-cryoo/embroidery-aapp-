@@ -23,7 +23,7 @@ workflows:
       - name: Rebuild universal Mac ZIP; check package without repeating functional tests
         script: bash scripts/codemagic-macos.sh
     artifacts:
-      - out/Embroidery-Studio-macOS.zip
+      - out/Embrova-macOS.zip
       - out/installers/*.pkg
       - out/MACOS_REBUILD_REPORT.md
       - out/Mac-QA-evidence.zip
@@ -45,7 +45,7 @@ workflows:
       - out/evidence/**
       - out/02-macOS/**
   macos-m2-build-test:
-    name: Embroidery Studio — Mac build, native tests and M3 screenshots
+    name: Embrova — Mac build, native tests and M3 screenshots
     instance_type: mac_mini_m2
     max_build_duration: 80
     environment:
@@ -65,7 +65,7 @@ workflows:
       - name: Build and test privately; always collect available evidence
         script: bash scripts/codemagic-macos.sh
     artifacts:
-      - out/Embroidery-Studio-macOS.zip
+      - out/Embrova-macOS.zip
       - out/installers/*.pkg
       - out/M3_MACOS_RUN_REPORT.md
       - out/MACOS_ILLUSTRATED_GUIDE_DRAFT.md

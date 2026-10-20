@@ -27,19 +27,19 @@ The **File** menu in the top-left of the editor has:
 
 ## Where files go
 
-The first time you save, Embroidery Studio suggests **Documents, then Embroidery Studio**. You can save anywhere. Home lists recent projects, newest first, with a thumbnail.
+The first time you save, Embrova suggests **Documents, then Embrova**. You can save anywhere. Home lists recent projects, newest first, with a thumbnail.
 
 A small dot next to the project name means you have unsaved changes.
 
 ## Autosave
 
-Embroidery Studio saves a copy of your work every **30 seconds** and when you click away from the window. These copies go into the project's own **version history**, not over your last real save. So autosave never destroys a save you chose to keep.
+Embrova saves a copy of your work every **30 seconds** and when you click away from the window. These copies go into the project's own **version history**, not over your last real save. So autosave never destroys a save you chose to keep.
 
-If Embroidery Studio closes by accident, open the project again and look in **Version history**.
+If Embrova closes by accident, open the project again and look in **Version history**.
 
 ## Opening a project
 
-Use **Open…** on Home, **⌘O**, or double-click a .lilo file. Embroidery Studio asks before it throws away unsaved changes in the current design.
+Use **Open…** on Home, **⌘O**, or double-click a .lilo file. Embrova asks before it throws away unsaved changes in the current design.
 
 You can also open a stitch file (PES, DST and others) the same way. It becomes a new, unsaved project. The first **Save** makes a .lilo and never touches the original. Read [Opening files](opening-files.md).
 

@@ -11,9 +11,9 @@ status: "ready"
 
 # Frequently asked questions
 
-## Does Embroidery Studio cost anything?
+## Does Embrova cost anything?
 
-No. Embroidery Studio is free and open source under the GPL-3.0 licence.
+No. Embrova is free and open source under the GPL-3.0 licence.
 
 ## Do I need an account?
 
@@ -59,13 +59,13 @@ You can skip the tour at any step. Hints only show when you ask for them. Dismis
 
 Open **Help** and press **Replay the tour**.
 
-## What if Embroidery Studio closes without saving?
+## What if Embrova closes without saving?
 
-Embroidery Studio autosaves every 30 seconds. Reopen the project and look in **Version history**. Read [Version history](version-history.md).
+Embrova autosaves every 30 seconds. Reopen the project and look in **Version history**. Read [Version history](version-history.md).
 
 ## Windows says "Windows protected your PC".
 
-That is SmartScreen, because the installer is not signed yet. Click **More info**, then **Run anyway**. Read [Install Embroidery Studio](install.md).
+That is SmartScreen, because the installer is not signed yet. Click **More info**, then **Run anyway**. Read [Install Embrova](install.md).
 
 ## Where do I report a problem?
 

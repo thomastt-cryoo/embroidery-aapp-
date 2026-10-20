@@ -76,7 +76,7 @@ export function CalibrationDialog({ onClose }: { onClose: () => void }) {
         <p className="muted small">
           {fromOs
             ? `Your computer says this screen is about ${pxPerInch(fromOs)} pixels per inch. Check it: hold a credit card flat against the screen and stretch the grey card until it is the same size.`
-            : "Embroidery Studio can't tell how big this screen is. Hold a credit card (or any ID card) flat against the screen and stretch the grey card until it is the same size."}
+            : "Embrova can't tell how big this screen is. Hold a credit card (or any ID card) flat against the screen and stretch the grey card until it is the same size."}
         </p>
         <div className="calibration-stage">
           <div className="calibration-card" style={{ width: widthPx, height: CARD_HEIGHT_MM * pxPerMm }} aria-label={`Card, ${CARD_WIDTH_MM} by ${CARD_HEIGHT_MM} millimetres`}>

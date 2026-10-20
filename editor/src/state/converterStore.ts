@@ -35,7 +35,7 @@ export const converter = {
         bytes: f.bytes,
         kind,
         status: kind === "unknown" ? "error" : "ready",
-        error: kind === "unknown" ? "Embroidery Studio can't read this kind of file." : undefined,
+        error: kind === "unknown" ? "Embrova can't read this kind of file." : undefined,
         outputs: [],
       };
     });

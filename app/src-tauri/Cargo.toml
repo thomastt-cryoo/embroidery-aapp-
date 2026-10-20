@@ -1,7 +1,7 @@
 [package]
 name = "lilo"
 version = "1.4.0"
-description = "Embroidery Studio — offline embroidery design software"
+description = "Embrova — offline embroidery design software"
 authors = ["Kadwood"]
 edition = "2021"
 license = "GPL-3.0-only"

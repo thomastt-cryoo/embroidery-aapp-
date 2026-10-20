@@ -1,6 +1,6 @@
-import iconUrl from "../assets/brand/studio-icon.svg";
+import iconUrl from "../assets/brand/embrova-logo.png";
 
-/** Temporary Embroidery Studio hoop-and-stitch identity. */
+/** The owner's complete supplied flower and wordmark, fitted without cropping. */
 export function BrandMark({ size = 24 }: { size?: number }) {
   return <img className="brand-mark" src={iconUrl} width={size} height={size} alt="" draggable={false} />;
 }

@@ -21,7 +21,7 @@ const FORMAT_NOTES: Partial<Record<FormatExt, string>> = {
   gcode: "Not a sewing machine file: a stitch path for CNC and plotter tools, with a pause at each colour change.",
 };
 
-/** Every format Embroidery Studio writes, PES first (the default), then the picture. */
+/** Every format Embrova writes, PES first (the default), then the picture. */
 export const EXPORT_CHOICES: { id: ExportFormat; label: string; note: string }[] = [
   ...(["pes", "dst", "jef", "vp3", "exp", "xxx", "u01", "pec", "hus", "vip", "tbf", "gcode"] as const).map((ext) => {
     const f = FORMATS.find((x) => x.ext === ext)!;

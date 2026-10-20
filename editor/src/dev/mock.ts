@@ -91,7 +91,7 @@ export async function installMockPlatform(): Promise<void> {
   shelf = addEntry(shelf, { brand: "Local Mill", code: "A7", name: "Plum", hex: "#8a3a6a", qty: 2, source: "manual" });
   state.shelfJson = exportShelf(shelf);
 
-  // sample projects in "Documents/Embroidery Studio", with history
+  // sample projects in "Documents/Embrova", with history
   const now = Date.now();
   const make = (title: string, design: Design, ageMin: number, versions: Design[] = []) => {
     const t = new Date(now - ageMin * 60_000);
@@ -102,7 +102,7 @@ export async function installMockPlatform(): Promise<void> {
     });
     p = { ...p, doc: { ...p.doc, design } };
     const bytes = saveProject(p, t);
-    const path = `/mock/Documents/Embroidery Studio/${title}.lilo`;
+    const path = `/mock/Documents/Embrova/${title}.lilo`;
     state.files.set(path, bytes);
     state.recents.push({ path, name: title, modifiedMs: t.getTime(), sizeBytes: bytes.length });
   };

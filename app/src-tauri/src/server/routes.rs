@@ -78,7 +78,7 @@ fn required_ip(params: &HashMap<String, String>) -> Result<IpAddr, ApiError> {
 pub async fn health(State(state): State<Arc<AppState>>) -> impl IntoResponse {
     let health = state.server_health.read().await.clone();
     Json(json!({
-        "app": "embroidery-studio",
+        "app": "embrova",
         "version": app_version(),
         "apiVersion": API_VERSION,
         "port": health.port,
@@ -103,7 +103,7 @@ pub async fn status(
     }
 
     Ok(Json(json!({
-        "app": "embroidery-studio",
+        "app": "embrova",
         "version": app_version(),
         "apiVersion": API_VERSION,
         "uptimeSeconds": state.started_at.elapsed().as_secs(),

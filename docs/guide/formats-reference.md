@@ -1,7 +1,7 @@
 ---
 id: "formats-reference"
 title: "File formats"
-summary: "The 12 embroidery file formats Embroidery Studio writes (all but G-code it also reads), and which machines use each one."
+summary: "The 12 embroidery file formats Embrova writes (all but G-code it also reads), and which machines use each one."
 section: "reference"
 order: 20
 keywords: ["format","pes","dst","exp","jef","vp3","xxx","u01","pec","brand","machine","compatibility"]
@@ -11,11 +11,11 @@ status: "generated"
 
 # File formats
 
-Embroidery Studio writes 12 embroidery formats and reads 11 of them. The list is built from the app's own format table.
+Embrova writes 12 embroidery formats and reads 11 of them. The list is built from the app's own format table.
 
 A format is the file type your machine understands. Brother and Baby Lock machines use **PES**. Most commercial machines use **DST**. If you are not sure, check your machine manual or the type of file it already sews.
 
-| Extension | Name | Embroidery Studio | Keeps thread colours? | Used by |
+| Extension | Name | Embrova | Keeps thread colours? | Used by |
 | --- | --- | --- | --- | --- |
 | .pes | Brother PES | Read and write | Yes | Brother, Baby Lock, Bernina (reads) |
 | .pec | Brother PEC | Read and write | Yes | Brother, Baby Lock |
@@ -34,4 +34,4 @@ A format is the file type your machine understands. Brother and Baby Lock machin
 
 ## Machine compatibility
 
-The research behind Embroidery Studio covers 17 brands, 66 machines and 44 thread brands. No machine has been tested on real hardware beyond one pending Brother run, so treat every machine as "should work" until you have sewn one design. The full tables are in compatibility.md in the docs folder.
+The research behind Embrova covers 17 brands, 66 machines and 44 thread brands. No machine has been tested on real hardware beyond one pending Brother run, so treat every machine as "should work" until you have sewn one design. The full tables are in compatibility.md in the docs folder.

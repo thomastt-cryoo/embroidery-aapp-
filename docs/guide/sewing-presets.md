@@ -13,7 +13,7 @@ status: "generated"
 
 This page is built from the same tables the app uses for the **Sewing setup** card and the **Before you sew** checklist. Every number is a starting point. Sew a small test first, on a scrap of the same cloth.
 
-You choose three things: the **fabric**, the **thread weight** and the **quality**. Embroidery Studio then picks stitch spacing, edge compensation and underlay for you. Read how they work in [Sewing setup](sewing-setup.md).
+You choose three things: the **fabric**, the **thread weight** and the **quality**. Embrova then picks stitch spacing, edge compensation and underlay for you. Read how they work in [Sewing setup](sewing-setup.md).
 
 ## Fabrics
 
@@ -26,7 +26,7 @@ Jacket cloth and other firm wovens. It holds its shape, so it is the easy case.
 - **Topping:** none needed.
 - **Hooping:** Hoop the fabric together with the stabiliser, drum-tight but not stretched.
 - **Hooping:** Do not clamp on a finished jacket front: float it on sticky stabiliser instead to avoid hoop marks.
-- **What Embroidery Studio changes:** nothing. This is the baseline the other fabrics are measured against.
+- **What Embrova changes:** nothing. This is the baseline the other fabrics are measured against.
 
 ### Shirting / lining (light woven)
 
@@ -37,7 +37,7 @@ Thin cotton, silk or lining fabric. Puckers and shows needle holes easily, so li
 - **Topping:** none needed.
 - **Hooping:** Hoop lightly: the fabric should lie flat, not be pulled.
 - **Hooping:** Keep lining smooth, no ripples in the hoop.
-- **What Embroidery Studio changes:** nothing. This is the baseline the other fabrics are measured against.
+- **What Embrova changes:** nothing. This is the baseline the other fabrics are measured against.
 
 ### Twill / caps
 
@@ -48,7 +48,7 @@ Cotton twill, chinos and structured caps. Stable, but heavier cloth swallows thi
 - **Topping:** none needed.
 - **Hooping:** Hoop twill drum-tight.
 - **Hooping:** Caps: use the cap frame and make sure the seam is centred.
-- **What Embroidery Studio changes:** line spacing is looser (x1.06).
+- **What Embrova changes:** line spacing is looser (x1.06).
 
 ### Knit / polo / jersey
 
@@ -59,7 +59,7 @@ Stretchy cloth. It moves under the needle, so it needs a firm backing, more edge
 - **Topping:** none needed.
 - **Hooping:** Taut but never stretched: stretched knit springs back and puckers around the design.
 - **Hooping:** A magnetic hoop holds knits without pulling them.
-- **What Embroidery Studio changes:** edge compensation is 180 % of the woven value; line spacing is looser (x1.19); the narrowest satin column is 1.5 mm.
+- **What Embrova changes:** edge compensation is 180 % of the woven value; line spacing is looser (x1.19); the narrowest satin column is 1.5 mm.
 
 ### Denim
 
@@ -69,7 +69,7 @@ Thick, tight cotton. Strong enough to take dense stitching, tough on small needl
 - **Stabiliser:** cut-away, medium, 2 oz (60 g/m2). Tear-away is acceptable for heavy denim that does not stretch.
 - **Topping:** none needed.
 - **Hooping:** Hoop drum-tight; thick seams should not sit under the design.
-- **What Embroidery Studio changes:** nothing. This is the baseline the other fabrics are measured against.
+- **What Embrova changes:** nothing. This is the baseline the other fabrics are measured against.
 
 ### Towel / terry / fleece
 
@@ -80,7 +80,7 @@ Pile fabric. Stitches sink into the loops, so fine lines vanish; use bolder shap
 - **Topping:** a water-soluble topping on top, so the stitches do not sink into the pile.
 - **Hooping:** Hoop the stabiliser and fabric together without crushing the pile.
 - **Hooping:** Lay the water-soluble topping over the area before sewing and tear it away after.
-- **What Embroidery Studio changes:** edge compensation is 150 % of the woven value; line spacing is looser (x1.6); the narrowest satin column is 2 mm.
+- **What Embrova changes:** edge compensation is 150 % of the woven value; line spacing is looser (x1.6); the narrowest satin column is 2 mm.
 
 ### Leather / faux leather / vinyl
 
@@ -91,7 +91,7 @@ Every needle hole is permanent. Looser stitching and light underlay so it does n
 - **Topping:** none needed.
 - **Hooping:** Do not hoop leather, the hoop leaves a permanent ring: float it on sticky stabiliser and hold with clips or tape.
 - **Hooping:** Test on an offcut: you cannot unpick without leaving holes.
-- **What Embroidery Studio changes:** edge compensation is 80 % of the woven value; line spacing is looser (x1.3); the narrowest satin column is 1.5 mm; no zig-zag underlay.
+- **What Embrova changes:** edge compensation is 80 % of the woven value; line spacing is looser (x1.3); the narrowest satin column is 1.5 mm; no zig-zag underlay.
 
 ## Thread weight
 

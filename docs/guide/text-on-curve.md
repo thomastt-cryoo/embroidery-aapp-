@@ -29,7 +29,7 @@ A curve centres the words on the arc, so **Alignment** is ignored while a curve 
 
 - The text should be shorter than the arc. A 30 mm radius gives an arc of about 150 mm. That is room for a name at 10 mm tall.
 - For a round patch, make the radius a little smaller than the patch radius. A 50 mm patch is 25 mm from the centre, so try 20 mm and make the letters about 6 mm tall.
-- If the text is too long for the circle, Embroidery Studio says so: "The text is N mm long but the path is only N mm". Make the radius bigger or the letters smaller.
+- If the text is too long for the circle, Embrova says so: "The text is N mm long but the path is only N mm". Make the radius bigger or the letters smaller.
 
 ## Change it later
 

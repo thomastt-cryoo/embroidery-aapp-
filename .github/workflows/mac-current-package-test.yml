@@ -22,7 +22,7 @@ jobs:
           set -euo pipefail
           mkdir -p out/evidence
           git fetch --depth=1 origin refs/heads/codex/m3-macos-verification-package
-          git show FETCH_HEAD:Embroidery-Studio-macOS.zip > out/Embroidery-Studio-macOS.zip
+          git show FETCH_HEAD:Embrova-macOS.zip > out/Embrova-macOS.zip
           python scripts/github-macos-current-package.py prepare
       - name: Install and test actual native Mac application
         env:

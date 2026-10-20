@@ -1,7 +1,7 @@
 ---
 id: "thread-brands-matching"
 title: "Thread brands and matching"
-summary: "How Embroidery Studio picks real thread colours, how to change brands, and how colours reach your machine."
+summary: "How Embrova picks real thread colours, how to change brands, and how colours reach your machine."
 section: "threads"
 order: 1
 keywords: ["thread", "brand", "catalogue", "match", "colour", "color", "brother", "madeira", "isacord", "code", "swap", "merge", "picker"]
@@ -11,11 +11,11 @@ status: "ready"
 
 # Thread brands and matching
 
-Embroidery thread comes in **brands** and **lines**. Each has its own colour names and codes. Embroidery Studio has a catalogue of tens of thousands of real thread colours across many brands.
+Embroidery thread comes in **brands** and **lines**. Each has its own colour names and codes. Embrova has a catalogue of tens of thousands of real thread colours across many brands.
 
 ## How matching works
 
-Pictures have millions of colours. Thread has a few hundred per brand. When Embroidery Studio digitizes a picture, it finds the **nearest real thread** for each colour in the picture. It compares them the way the eye does, using a colour difference measure called CIEDE2000.
+Pictures have millions of colours. Thread has a few hundred per brand. When Embrova digitizes a picture, it finds the **nearest real thread** for each colour in the picture. It compares them the way the eye does, using a colour difference measure called CIEDE2000.
 
 ## Choose a brand
 

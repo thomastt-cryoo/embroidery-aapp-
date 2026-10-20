@@ -43,7 +43,7 @@ export function ConfirmDialog() {
         <h2 id="confirm-title">{recover ? "This project file is damaged" : revert ? "Revert to the saved version?" : `Save changes to “${name}”?`}</h2>
         <p id="confirm-body" className="muted">
           {recover
-            ? "Embroidery Studio can't read it, but the copy from the save before the last one is fine. Open that copy instead? Nothing is overwritten until you save."
+            ? "Embrova can't read it, but the copy from the save before the last one is fine. Open that copy instead? Nothing is overwritten until you save."
             : revert
               ? "Everything since you last saved will be lost."
               : `You have changes that are not saved. If you ${confirm.action} without saving, they will be lost.`}

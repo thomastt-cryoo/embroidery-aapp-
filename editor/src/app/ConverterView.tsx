@@ -59,7 +59,7 @@ export function ConverterView() {
     // the same path as Open… and a drop on the editor: a new project, or a new layer when a design is open
     const ok = await project.addStitchFile({ name: item.name, bytes: item.bytes });
     if (ok) app.go("editor");
-    else setMessage({ kind: "error", text: project.store.getState().notice?.text ?? "Embroidery Studio couldn't open this file." });
+    else setMessage({ kind: "error", text: project.store.getState().notice?.text ?? "Embrova couldn't open this file." });
   };
 
   return (

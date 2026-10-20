@@ -98,7 +98,7 @@ function Shell() {
         <span className="app-logo" data-tauri-drag-region>
           <BrandMark size={24} />
           <span className="app-wordmark" data-tauri-drag-region style={{ fontSize: 15, lineHeight: 1.25 }}>
-            Embroidery Studio
+            Embrova
           </span>
         </span>
         {NAV.map((n) => (

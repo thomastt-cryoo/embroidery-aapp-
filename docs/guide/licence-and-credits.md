@@ -1,7 +1,7 @@
 ---
 id: "licence-and-credits"
 title: "Licence and credits"
-summary: "Embroidery Studio is free software under GPL-3.0. Here is what it is built on and where the full notices are."
+summary: "Embrova is free software under GPL-3.0. Here is what it is built on and where the full notices are."
 section: "help"
 order: 5
 keywords: ["licence", "license", "gpl", "credits", "open source", "notice", "fonts", "trademark", "stitchjs", "vtracer", "thread palettes"]
@@ -13,15 +13,15 @@ status: "ready"
 
 ## Licence
 
-Embroidery Studio is free software under the **GNU General Public Licence version 3 (GPL-3.0)**. You can use it, study it, change it and share it. If you share a changed version, you must share its source under the same licence. The full text is in the **LICENSE** file.
+Embrova is free software under the **GNU General Public Licence version 3 (GPL-3.0)**. You can use it, study it, change it and share it. If you share a changed version, you must share its source under the same licence. The full text is in the **LICENSE** file.
 
 ## Trademarks
 
-The original Kadwood and Lilo names and logos belong to their owners. This modified application uses the temporary name Embroidery Studio and a separate hoop-and-stitch icon. It is based on [Lilo](https://github.com/Kadwood/lilo) and retains its GPL licence and required notices.
+The original Kadwood and Lilo names and logos belong to their owners. This modified application uses the temporary name Embrova and a separate hoop-and-stitch icon. It is based on [Lilo](https://github.com/Kadwood/lilo) and retains its GPL licence and required notices.
 
-## What Embroidery Studio is built on
+## What Embrova is built on
 
-Embroidery Studio stands on other people's open-source work. Thanks to everyone behind it.
+Embrova stands on other people's open-source work. Thanks to everyone behind it.
 
 - **The Wi-Fi bridge** behind Studio Link. MIT licence.
 - **stitchjs**, which writes the stitch patterns. MIT licence.
@@ -34,12 +34,12 @@ The complete list, with copyright lines and licence texts, is in the **NOTICE.md
 
 ## Brand names
 
-Machine, thread and font names belong to their owners. Embroidery Studio is not affiliated with any of them. A name in Embroidery Studio only says that a file or product works with it, or matches it.
+Machine, thread and font names belong to their owners. Embrova is not affiliated with any of them. A name in Embrova only says that a file or product works with it, or matches it.
 
 ## No tracking
 
-Embroidery Studio does not collect data about you or your designs.
+Embrova does not collect data about you or your designs.
 
 ## Credits for this guide
 
-This guide derives from the original Lilo guide, with branding and private-review installation instructions adapted for Embroidery Studio.
+This guide derives from the original Lilo guide, with branding and private-review installation instructions adapted for Embrova.

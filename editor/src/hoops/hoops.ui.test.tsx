@@ -330,7 +330,7 @@ describe("Home", () => {
     expect(screen.getByRole("button", { name: "Upload image" })).toBeTruthy();
     fireEvent.click(screen.getByTitle("Original Lilo source and GPL licence"));
     await waitFor(() => expect(mock.openedUrls).toEqual(["https://github.com/Kadwood/lilo"]));
-    expect(screen.getByText("Embroidery Studio · based on Lilo · GPL-3.0")).toBeTruthy();
+    expect(screen.getByText("Embrova · based on Lilo · GPL-3.0")).toBeTruthy();
   });
 
   it("Pixel art and Converter go to their screens; Type a monogram starts a design with the Text tool", async () => {

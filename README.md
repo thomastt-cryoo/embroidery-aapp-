@@ -1,8 +1,8 @@
-# Embroidery Studio — private development copy
+# Embrova — private development copy
 
 Free, open-source embroidery digitizing. Turn images, SVGs and fonts into stitch files and send them to your machine over Wi-Fi.
 
-This is the private working copy for the redesigned **Embroidery Studio** application, based on [Lilo by Kadwood](https://github.com/Kadwood/lilo). The original repository is a read-only reference and was not modified. The private build repository is `thomastt-cryoo/embroidery-aapp-`. No public release or website deployment is enabled.
+This is the private working copy for the redesigned **Embrova** application, based on [Lilo by Kadwood](https://github.com/Kadwood/lilo). The original repository is a read-only reference and was not modified. The private build repository is `thomastt-cryoo/embroidery-aapp-`. No public release or website deployment is enabled.
 
 See [M2_FINAL_REPORT.md](M2_FINAL_REPORT.md) for the completed Windows installer, macOS packages, real screenshots, test results and signing limitations.
 
@@ -24,7 +24,7 @@ One desktop app for macOS, Windows and Linux. No account needed.
 
 Use the packages in `dist/M2` and follow the [review instructions](reports/M2/DELIVERY_README.md). They are private review packages: Windows is unsigned, and macOS uses ad-hoc signing without Developer ID or notarization. The Mac workflow is manual and keeps artifacts private.
 
-**Automatic updates are disabled.** Embroidery Studio does not use Lilo's release channel. Your existing Lilo installation, URL handler and default file associations are preserved.
+**Automatic updates are disabled.** Embrova does not use Lilo's release channel. Your existing Lilo installation, URL handler and default file associations are preserved.
 
 Build and verification commands are in the [M2 handoff](reports/M2/DEVELOPMENT.md). The original engine documentation below is retained for technical reference. Required third-party attribution and licences remain in [NOTICE.md](NOTICE.md) and [LICENSE](LICENSE).
 

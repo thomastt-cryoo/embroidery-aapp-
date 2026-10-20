@@ -1,7 +1,7 @@
 ---
 id: "sewout-troubleshooting"
 title: "Fixing sew-out problems"
-summary: "Puckering, gaps, thread breaks and birdnesting: what causes each and which Embroidery Studio setting to change."
+summary: "Puckering, gaps, thread breaks and birdnesting: what causes each and which Embrova setting to change."
 section: "help"
 order: 1
 keywords: ["puckering", "pucker", "gaps", "thread break", "birdnest", "bird nest", "bobbin", "loose", "shrink", "outline", "registration", "problem", "sew-out", "fix", "troubleshoot", "tension", "needle"]
@@ -11,7 +11,7 @@ status: "ready"
 
 # Fixing sew-out problems
 
-A **sew-out** is the real stitched result. When it looks wrong, find your symptom below. Each one lists the cause and the Embroidery Studio setting that helps. Change one thing at a time and sew a small test again.
+A **sew-out** is the real stitched result. When it looks wrong, find your symptom below. Each one lists the cause and the Embrova setting that helps. Change one thing at a time and sew a small test again.
 
 ## Puckering
 
@@ -33,7 +33,7 @@ White cloth shows between a fill and its outline, or between two shapes.
 
 1. **Pull compensation too low.** The thread pulled the shapes in. Raise **Pull compensation**.
 2. **Cloth moved.** Use firmer stabiliser and hoop tighter.
-3. **Shapes did not overlap.** Slightly enlarge one of them, or let Embroidery Studio overlap columns with **Premium** quality.
+3. **Shapes did not overlap.** Slightly enlarge one of them, or let Embrova overlap columns with **Premium** quality.
 4. **Fill underlay missing.** The fill sank into the cloth. Turn on underlay.
 
 ![A fill with a gap to its outline, and the fixed version](screenshots/gap-fix.png)
@@ -59,9 +59,9 @@ A tangled lump of thread forms under the cloth, and the machine jams.
 1. **The top thread slipped out of tension.** Rethread the top thread with the presser foot **up**.
 2. **Fluff in the bobbin area.** Clean the bobbin case.
 3. **Hoop not seated.** Cloth lifting off the plate. Re-hoop.
-4. **Long jump at the start.** In Embroidery Studio, move the start point close to where sewing begins. Use **Start** in the shape bar.
+4. **Long jump at the start.** In Embrova, move the start point close to where sewing begins. Use **Start** in the shape bar.
 
-Embroidery Studio cannot see your machine. The first two causes are in the machine.
+Embrova cannot see your machine. The first two causes are in the machine.
 
 ## Bobbin thread shows on top
 

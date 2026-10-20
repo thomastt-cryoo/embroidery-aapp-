@@ -51,6 +51,17 @@ with tempfile.TemporaryDirectory(prefix='studio-pkg-compression-') as folder:
             filters=[options])
         candidates.append({'filter':'LZMA2','bytes':len(alternate)})
         if len(alternate)<len(packed):packed=alternate;selected='LZMA2'
+    # Larger branding assets may move the complete ZIP close to Etsy's limit.
+    # Try only storage-context tuning; every decoded payload byte stays exact.
+    if len(packed)>=19_950_000:
+        for lc,pb in [(0,0),(4,0),(2,2)]:
+            tuned=dict(options,lc=lc,lp=0,pb=pb)
+            candidate=lzma.compress(raw,format=lzma.FORMAT_XZ,check=lzma.CHECK_NONE,
+                filters=[{'id':lzma.FILTER_X86},tuned])
+            label=f'X86 + LZMA2 lc={lc} pb={pb}'
+            candidates.append({'filter':label,'bytes':len(candidate)})
+            if len(candidate)<len(packed):packed=candidate;selected=label
+            if len(packed)<19_950_000:break
     container=b'pbzx'+struct.pack('>QQQ',256*1024*1024,len(raw),len(packed))+packed
     assert decode(container)==raw,'Compression changed decoded payload bytes'
     payload.write_bytes(container)
@@ -58,7 +69,7 @@ with tempfile.TemporaryDirectory(prefix='studio-pkg-compression-') as folder:
     before=work/'native-before';after=work/'native-after'
     run('pkgutil','--expand-full',source,before)
     run('pkgutil','--expand-full',target,after)
-    old_app=next(before.rglob('Embroidery Studio.app'));new_app=next(after.rglob('Embroidery Studio.app'))
+    old_app=next(before.rglob('Embrova.app'));new_app=next(after.rglob('Embrova.app'))
     files=manifest(old_app)
     assert files==manifest(new_app),'Native package extraction changed application files or permissions'
     run('codesign','--verify','--deep','--strict','--all-architectures',new_app)

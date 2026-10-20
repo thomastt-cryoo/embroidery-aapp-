@@ -1,4 +1,4 @@
-//! Desktop lifecycle: navigation-only deep links (`embroidery-studio://`).
+//! Desktop lifecycle: navigation-only deep links (`embrova://`).
 use std::sync::Mutex;
 use tauri::{Emitter, Manager};
 use tauri_plugin_deep_link::DeepLinkExt;
@@ -6,7 +6,7 @@ use tauri_plugin_deep_link::DeepLinkExt;
 #[derive(Default)]
 struct Navigation(Mutex<Option<String>>);
 fn destination(url: &reqwest::Url) -> Option<&'static str> {
-    if url.scheme() != "embroidery-studio"
+    if url.scheme() != "embrova"
         || !url.username().is_empty()
         || url.password().is_some()
         || url.port().is_some()
@@ -37,7 +37,7 @@ pub fn setup(app: &tauri::App) -> Result<(), Box<dyn std::error::Error>> {
     if let Err(error) = app.deep_link().register_all() {
         // URL launch support is optional; a missing desktop helper or denied
         // registration must not prevent local setup and file transfers.
-        tracing::warn!(%error, "Could not register Embroidery Studio URL handler");
+        tracing::warn!(%error, "Could not register Embrova URL handler");
     }
     let handle = app.handle().clone();
     app.deep_link()
@@ -57,8 +57,8 @@ mod tests {
     #[test]
     fn accepts_navigation_only() {
         for (url, page) in [
-            ("embroidery-studio://open", "machines"),
-            ("embroidery-studio://connect/", "settings"),
+            ("embrova://open", "machines"),
+            ("embrova://connect/", "settings"),
         ] {
             assert_eq!(destination(&url.parse().unwrap()), Some(page));
         }
@@ -66,12 +66,12 @@ mod tests {
             "https://open",
             "lilo://open",
             "lilo://connect",
-            "embroidery-studio://send",
-            "embroidery-studio://open?token=secret",
-            "embroidery-studio://setup/file",
-            "embroidery-studio://user@open",
-            "embroidery-studio://open:42",
-            "embroidery-studio://connect#approve",
+            "embrova://send",
+            "embrova://open?token=secret",
+            "embrova://setup/file",
+            "embrova://user@open",
+            "embrova://open:42",
+            "embrova://connect#approve",
         ] {
             assert_eq!(destination(&url.parse().unwrap()), None);
         }

@@ -28,7 +28,7 @@ The **Sewing setup** card tells you which type fits your fabric. Read [Sewing se
 
 The **hoop** is the frame that holds cloth and stabiliser flat and tight. It has two rings. You press the cloth between them and tighten a screw.
 
-The machine can only sew inside the hoop. Every hoop has a **sewing area**, a little smaller than the frame itself. Embroidery Studio draws that area on the canvas and warns you if your design sticks out. Read [Sizing and hoops](sizing-and-hoops.md).
+The machine can only sew inside the hoop. Every hoop has a **sewing area**, a little smaller than the frame itself. Embrova draws that area on the canvas and warns you if your design sticks out. Read [Sizing and hoops](sizing-and-hoops.md).
 
 A good hoop job feels like a drum. The cloth is tight but not stretched. Stretched cloth springs back after sewing and puckers the design.
 
@@ -36,7 +36,7 @@ A good hoop job feels like a drum. The cloth is tight but not stretched. Stretch
 
 The **top thread** is what you see. Most embroidery uses **40 wt** thread. The "wt" number says how thin it is. A bigger number means thinner thread. **60 wt** is finer. It lets you sew smaller, crisper details, like tiny letters.
 
-Thread comes in **brands** and each brand has its own colour codes. Embroidery Studio knows many. Read [Thread brands and matching](thread-brands-matching.md).
+Thread comes in **brands** and each brand has its own colour codes. Embrova knows many. Read [Thread brands and matching](thread-brands-matching.md).
 
 ## Bobbin
 
@@ -46,7 +46,7 @@ A good sew-out shows only a little bobbin thread on the front. If you see a lot 
 
 ## Needle
 
-Use a fresh needle. A dull needle shreds thread and punches holes. Embroidery Studio's Sewing setup suggests a size for your fabric and thread, like **75/11** for most cloth or **70/10** for a thin lining.
+Use a fresh needle. A dull needle shreds thread and punches holes. Embrova's Sewing setup suggests a size for your fabric and thread, like **75/11** for most cloth or **70/10** for a thin lining.
 
 ## Next step
 

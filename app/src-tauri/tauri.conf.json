@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "Embroidery Studio",
+  "productName": "Embrova",
   "version": "1.4.0",
   "identifier": "io.github.thomasttcryoo.embroiderystudio",
   "build": {
@@ -13,7 +13,7 @@
     "macOSPrivateApi": true,
     "windows": [
       {
-        "title": "Embroidery Studio",
+        "title": "Embrova",
         "width": 1440,
         "height": 900,
         "minWidth": 960,
@@ -36,11 +36,11 @@
   "bundle": {
     "active": true,
     "targets": "all",
-    "publisher": "Embroidery Studio",
-    "copyright": "Embroidery Studio contributors; based on Lilo (GPL-3.0)",
+    "publisher": "Embrova",
+    "copyright": "Embrova contributors; based on Lilo (GPL-3.0)",
     "category": "GraphicsAndDesign",
     "shortDescription": "Offline embroidery design studio",
-    "longDescription": "Embroidery Studio turns artwork into embroidery with lettering, editing, hoop selection, thread catalogues, simulation and machine-file export. Based on Lilo; licensed under GPL-3.0-only.",
+    "longDescription": "Embrova turns artwork into embroidery with lettering, editing, hoop selection, thread catalogues, simulation and machine-file export. Based on Lilo; licensed under GPL-3.0-only.",
     "fileAssociations": [
       {
         "ext": [
@@ -102,7 +102,7 @@
       "nsis": {
         "installMode": "currentUser",
         "installerHooks": "installer-hooks.nsh",
-        "startMenuFolder": "Embroidery Studio"
+        "startMenuFolder": "Embrova"
       },
       "webviewInstallMode": {
         "type": "downloadBootstrapper",
@@ -120,10 +120,10 @@
     "deep-link": {
       "desktop": {
         "schemes": [
-          "embroidery-studio"
+          "embrova"
         ]
       }
     }
   },
-  "mainBinaryName": "embroidery-studio"
+  "mainBinaryName": "embrova"
 }

@@ -11,14 +11,14 @@ status: "ready"
 
 # Report a bug or a machine
 
-For this private review, report problems to the person who supplied your Embroidery Studio package. The source and build evidence are kept in the private embroidery-aapp- repository. No public issue is created automatically.
+For this private review, report problems to the person who supplied your Embrova package. The source and build evidence are kept in the private embroidery-aapp- repository. No public issue is created automatically.
 
 ## Report a bug
 
 Include:
 
 1. **What happened.** Say what you did, what you expected and what you got.
-2. **Your system.** Mac, Windows or Linux, and the Embroidery Studio version. The version is in **Studio Link**, **Settings**.
+2. **Your system.** Mac, Windows or Linux, and the Embrova version. The version is in **Studio Link**, **Settings**.
 3. **A project file.** If you can, attach the .lilo file. It lets us see the design.
 4. **Logs.** For a send problem, copy the text from **Studio Link**, **Logs**.
 
@@ -26,7 +26,7 @@ A screenshot helps a lot.
 
 ## Report a machine
 
-Tell us how Embroidery Studio worked with your machine. A machine is **tested** only after a real sew-out. Include:
+Tell us how Embrova worked with your machine. A machine is **tested** only after a real sew-out. Include:
 
 - The **brand and model**.
 - Whether the **Wi-Fi scan** found it.
@@ -37,5 +37,5 @@ Tell us how Embroidery Studio worked with your machine. A machine is **tested** 
 ## Before you report
 
 - Check [Wi-Fi troubleshooting](send-troubleshooting.md) or [Fixing sew-out problems](sewout-troubleshooting.md).
-- Check the version against the latest Embroidery Studio package supplied for review.
-- Do not include private information. Embroidery Studio does not send anything automatically.
+- Check the version against the latest Embrova package supplied for review.
+- Do not include private information. Embrova does not send anything automatically.

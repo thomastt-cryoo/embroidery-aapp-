@@ -13,7 +13,7 @@ import {
 import { getPlatform } from "../platform";
 
 /**
- * The user's own hoops, app-wide (not per project): `~/Documents/Embroidery Studio/hoops.json` on the desktop,
+ * The user's own hoops, app-wide (not per project): `~/Documents/Embrova/hoops.json` on the desktop,
  * localStorage in a browser. Built and checked by the engine (`hoops/index.ts`); this is the holder, the
  * same pattern as the My Threads shelf. Also the recently used hoops (this computer's localStorage).
  */

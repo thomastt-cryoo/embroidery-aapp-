@@ -78,11 +78,11 @@ describe("tauri platform: screens", () => {
   });
 
   it("opens a project from a dialog that starts in the projects folder, and allows writing back to it", async () => {
-    invoke.mockImplementation(async (cmd: string) => (cmd === "projects_folder" ? "/Users/me/Documents/Embroidery Studio" : cmd === "read_project_file" ? new Uint8Array([9]).buffer : undefined));
+    invoke.mockImplementation(async (cmd: string) => (cmd === "projects_folder" ? "/Users/me/Documents/Embrova" : cmd === "read_project_file" ? new Uint8Array([9]).buffer : undefined));
     open.mockResolvedValue("/Users/me/Desktop/Crest.lilo");
     const f = await tauriPlatform.openProjectDialog();
     const call = open.mock.calls[0][0] as { defaultPath: string; filters: { extensions: string[] }[] };
-    expect(call.defaultPath).toBe("/Users/me/Documents/Embroidery Studio");
+    expect(call.defaultPath).toBe("/Users/me/Documents/Embrova");
     // one list that takes a project or any stitch file, then each kind on its own
     expect(new Set(call.filters[0].extensions)).toEqual(new Set(["lilo", "pes", "pec", "dst", "exp", "jef", "vp3", "xxx", "u01", "hus", "vip", "tbf"]));
     expect(call.filters[0].extensions).toHaveLength(12);
@@ -94,7 +94,7 @@ describe("tauri platform: screens", () => {
   });
 
   it("a stitch file from the Open dialog is read once with the dialog's own permission, comes back with no path and is never allowed for saving", async () => {
-    invoke.mockImplementation(async (cmd: string) => (cmd === "projects_folder" ? "/Users/me/Documents/Embroidery Studio" : undefined));
+    invoke.mockImplementation(async (cmd: string) => (cmd === "projects_folder" ? "/Users/me/Documents/Embrova" : undefined));
     open.mockResolvedValue("/Users/me/Desktop/Rooster.pes");
     stat.mockResolvedValue({ size: 3 });
     readFile.mockResolvedValue(new Uint8Array([1, 2, 3]));
@@ -111,10 +111,10 @@ describe("tauri platform: screens", () => {
   });
 
   it("Save As starts in the projects folder, adds .lilo, allows the path and writes through the project command", async () => {
-    invoke.mockImplementation(async (cmd: string) => (cmd === "projects_folder" ? "/Users/me/Documents/Embroidery Studio" : undefined));
+    invoke.mockImplementation(async (cmd: string) => (cmd === "projects_folder" ? "/Users/me/Documents/Embrova" : undefined));
     save.mockResolvedValue("/Users/me/Desktop/Crest");
     const path = await tauriPlatform.saveProjectAs("Crest.lilo", new Uint8Array([1, 2]));
-    expect(save).toHaveBeenCalledWith(expect.objectContaining({ defaultPath: "/Users/me/Documents/Embroidery Studio/Crest.lilo" }));
+    expect(save).toHaveBeenCalledWith(expect.objectContaining({ defaultPath: "/Users/me/Documents/Embrova/Crest.lilo" }));
     expect(path).toBe("/Users/me/Desktop/Crest.lilo");
     expect(invoke).toHaveBeenCalledWith("allow_project_path", { path: "/Users/me/Desktop/Crest.lilo" });
     expect(invoke).toHaveBeenCalledWith("write_project_file", expect.any(Uint8Array), { headers: { path: encodeURIComponent("/Users/me/Desktop/Crest.lilo") } });

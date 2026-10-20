@@ -2,7 +2,7 @@ import { createStore } from "zustand/vanilla";
 import type { WindowMaterial } from "../platform/types";
 
 /**
- * How Embroidery Studio looks: light/dark, and whether the chrome may be see-through. App-wide and remembered in
+ * How Embrova looks: light/dark, and whether the chrome may be see-through. App-wide and remembered in
  * localStorage (a preference of this computer, not part of a project). `material` is what the window is
  * made of behind the page (reported by the desktop shell; always "solid" in a browser).
  */

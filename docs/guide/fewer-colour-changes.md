@@ -27,7 +27,7 @@ Open the **Colours** tab in the Sew order panel. Pick **Merge into** on a colour
 
 ### 3. Group by colour
 
-If the same thread is used in several places, the machine may swap away and back. Press **Group by colour** in the **Colours** tab. Embroidery Studio reorders the objects so each colour is sewn in one block.
+If the same thread is used in several places, the machine may swap away and back. Press **Group by colour** in the **Colours** tab. Embrova reorders the objects so each colour is sewn in one block.
 
 Check the new order in the stitch player. Sewing order affects what covers what.
 
@@ -37,7 +37,7 @@ Use one thread for two roles. For a garment-bag crest, sew the outline and the l
 
 ## What counts as many
 
-Embroidery Studio's tray suggests a look at your colours when a design has more than 8 colour changes. That is a guide, not a rule. A rich crest may need more.
+Embrova's tray suggests a look at your colours when a design has more than 8 colour changes. That is a guide, not a rule. A rich crest may need more.
 
 ## Related
 

@@ -63,7 +63,7 @@ export interface RecentProject {
   sizeBytes: number;
 }
 
-/** A file the OS asked Embroidery Studio to open (Finder double-click, "Open With", command line), or the user chose in Open. `path` is "" for a stitch file. */
+/** A file the OS asked Embrova to open (Finder double-click, "Open With", command line), or the user chose in Open. `path` is "" for a stitch file. */
 export interface OpenedPath {
   path: string;
   name: string;
@@ -116,12 +116,12 @@ export interface Platform {
    * "unsupported" where the OS has no recogniser (everything but macOS, and the browser).
    */
   ocrImage(bytes: Uint8Array): Promise<OcrLine[]>;
-  /** Projects the user opened or saved anywhere, plus those in `~/Documents/Embroidery Studio`, newest first. */
+  /** Projects the user opened or saved anywhere, plus those in `~/Documents/Embrova`, newest first. */
   listRecentProjects(limit?: number): Promise<RecentProject[]>;
   /** Remember a project the user just opened (the desktop remembers saves by itself). */
   recordRecent(path: string): Promise<void>;
   /**
-   * Called for every project the OS opens in Embroidery Studio: first any that arrived before this call (a
+   * Called for every project the OS opens in Embrova: first any that arrived before this call (a
    * double-click that launched the app), then each later one. Returns the unsubscribe function.
    */
   onOpenFile(callback: (file: OpenedPath) => void): Unsubscribe;
@@ -137,13 +137,13 @@ export interface Platform {
   openFiles(options?: OpenFileOptions): Promise<OpenedFile[]>;
   /** Save several files into a folder the user picks (one prompt, not one per file). Resolves to the folder, or null if cancelled. The browser downloads each. */
   saveFilesToFolder(files: { name: string; bytes: Uint8Array }[]): Promise<string | null>;
-  /** The My Threads shelf as JSON text (`~/Documents/Embroidery Studio/my-threads.json`; localStorage in the browser), or null if there is none yet. */
+  /** The My Threads shelf as JSON text (`~/Documents/Embrova/my-threads.json`; localStorage in the browser), or null if there is none yet. */
   readMyThreads(): Promise<MyThreadsFile>;
   writeMyThreads(json: string): Promise<void>;
   /** Open a web page in the user's browser. */
   openUrl(url: string): Promise<void>;
   /**
-   * Native "Open" dialog, starting in the default folder: a Embroidery Studio project or a stitch file (PES, DST, ...).
+   * Native "Open" dialog, starting in the default folder: a Embrova project or a stitch file (PES, DST, ...).
    * A chosen project can then be saved to. A stitch file comes back with `path: ""`: it is read once and is
    * never written to or remembered. In the browser (no path) a project opens but Save downloads a copy.
    */
@@ -152,7 +152,7 @@ export interface Platform {
   saveProjectAs(suggestedName: string, bytes: Uint8Array): Promise<string | null>;
   /**
    * Called whenever the user tries to quit: closing the window, Cmd-Q, the app menu, the Dock, the tray's
-   * Quit. Embroidery Studio stays open until `handler` resolves to true (it can show an "unsaved changes" prompt
+   * Quit. Embrova stays open until `handler` resolves to true (it can show an "unsaved changes" prompt
    * first). Returns the unsubscribe function.
    */
   onCloseRequested(handler: () => Promise<boolean>): Unsubscribe;
@@ -162,7 +162,7 @@ export interface Platform {
   readProjectBackup(path: string): Promise<Uint8Array | null>;
 
   // ---- M6a: glass + hoops --------------------------------------------------------------------
-  /** The user's own hoops as JSON text (`~/Documents/Embroidery Studio/hoops.json`; localStorage in the browser). */
+  /** The user's own hoops as JSON text (`~/Documents/Embrova/hoops.json`; localStorage in the browser). */
   readHoops(): Promise<HoopsFile>;
   writeHoops(json: string): Promise<void>;
   /** The physical size of the screen the window is on (for Actual size). Unknown in the browser. */

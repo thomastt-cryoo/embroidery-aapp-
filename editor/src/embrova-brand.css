@@ -1,0 +1,32 @@
+/* Preserve the supplied full flower and wordmark at every display size. */
+.brand-mark,
+.tour-mascot {
+  object-fit: contain;
+  object-position: center;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.app:not(.editor-mode) .app-logo {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 0 6px 20px;
+}
+
+.app:not(.editor-mode) .app-logo .brand-mark {
+  width: 32px;
+  height: 32px;
+}
+
+.editor-mode .app-logo .brand-mark {
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 1000px) {
+  .app:not(.editor-mode) .app-logo .brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -17,7 +17,7 @@ jobs:
           set -euo pipefail
           test "$(gh api "repos/$GITHUB_REPOSITORY" --jq .private)" = true
           gh run download 39346926486 --repo "$GITHUB_REPOSITORY" --name M2-Etsy-native-ZIP-verification --dir "$RUNNER_TEMP/m3-source"
-          shasum -a 256 "$RUNNER_TEMP/m3-source/Embroidery-Studio-macOS.zip"
+          shasum -a 256 "$RUNNER_TEMP/m3-source/Embrova-macOS.zip"
       - name: Capture real macOS customer installation screens
         timeout-minutes: 8
         run: python3 scripts/m3-macos-capture.py

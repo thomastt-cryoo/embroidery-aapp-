@@ -22,7 +22,20 @@ pub const STITCH_EXTENSIONS: [&str; 11] = ["pes", "dst", "jef", "vp3", "exp", "x
 /// Refuse stitch files bigger than this (a big real PES is a few MB). Same figure as the editor's `MAX_STITCH_FILE_BYTES`.
 pub const MAX_STITCH_BYTES: u64 = 32 * 1024 * 1024;
 /// Folder inside the user's Documents.
-pub const FOLDER: &str = "Embroidery Studio";
+pub const FOLDER: &str = "Embrova";
+/// Keep existing projects discoverable after the product rename; never move or
+/// overwrite them, and never scan the original Lilo application's folder.
+const LEGACY_FOLDER: &str = "Embroidery Studio";
+
+fn project_folders_in(documents: &Path) -> [PathBuf; 2] {
+    [documents.join(FOLDER), documents.join(LEGACY_FOLDER)]
+}
+
+fn in_project_folders(documents: &Path, resolved: &Path) -> bool {
+    project_folders_in(documents).iter().any(|folder| {
+        folder.canonicalize().ok().is_some_and(|folder| resolved.starts_with(folder))
+    })
+}
 /// Event the editor listens to for files opened while it is running.
 pub const OPEN_EVENT: &str = "lilo-open-file";
 /// Refuse project files bigger than this (the engine enforces its own unzip limits too).
@@ -271,7 +284,7 @@ fn resolve(path: &Path) -> Result<PathBuf, String> {
     // A symbolic link could point a save at any file the user can write. Checked here, so it holds
     // when the path is registered and again at every read and write.
     if std::fs::symlink_metadata(&resolved).is_ok_and(|m| m.file_type().is_symlink()) {
-        return Err("That file is a symbolic link; Embroidery Studio won't open or save through it.".into());
+        return Err("That file is a symbolic link; Embrova won't open or save through it.".into());
     }
     Ok(resolved)
 }
@@ -290,22 +303,23 @@ pub fn allow_project_path(app: tauri::AppHandle, path: String) -> Result<(), Str
 /// or existing ones in the recents file (so a recent from a previous session still opens).
 fn allowed(app: &tauri::AppHandle, path: &Path) -> Result<PathBuf, String> {
     let resolved = resolve(path)?;
-    let in_default = projects_dir(app)
+    let in_default = app.path().document_dir()
         .ok()
-        .and_then(|d| d.canonicalize().ok())
-        .is_some_and(|d| resolved.starts_with(d));
+        .is_some_and(|documents| in_project_folders(&documents, &resolved));
     let announced = app.state::<OpenFiles>().announced.lock().unwrap().contains(&resolved);
     if in_default || announced || in_recents(app, &resolved) {
         Ok(resolved)
     } else {
-        Err("That file wasn't opened from Embroidery Studio's projects folder.".into())
+        Err("That file wasn't opened from Embrova's projects folder.".into())
     }
 }
 
 #[tauri::command]
 pub fn list_recent_projects(app: tauri::AppHandle, limit: Option<usize>) -> Vec<RecentProject> {
     let limit = limit.unwrap_or(24).min(200);
-    let scanned = projects_dir(&app).map(|d| scan_projects(&d, 200)).unwrap_or_default();
+    let scanned = app.path().document_dir().map(|documents| {
+        project_folders_in(&documents).iter().flat_map(|d| scan_projects(d, 200)).collect()
+    }).unwrap_or_default();
     let recents = recents_file(&app).map(|f| read_recents(&f)).unwrap_or_default();
     merge_recents(scanned, &recents, limit)
 }
@@ -435,7 +449,7 @@ pub fn setup(app: &tauri::App) {
     app.manage(OpenFiles::default());
     if let Ok(dir) = projects_dir(app.handle()) {
         if let Err(error) = ensure_dir(&dir) {
-            tracing::warn!(%error, "Could not create the Embroidery Studio projects folder");
+            tracing::warn!(%error, "Could not create the Embrova projects folder");
         }
     }
     let args: Vec<String> = std::env::args().collect();
@@ -447,6 +461,26 @@ mod tests {
     use super::*;
     use std::fs::File;
     use std::time::{Duration, SystemTime};
+
+    #[test]
+    fn rebranding_keeps_old_projects_accessible_without_accepting_lilo_or_other_folders() {
+        let documents = scratch("embrova-folders");
+        for folder in [FOLDER, LEGACY_FOLDER, "Lilo", "Elsewhere"] {
+            std::fs::create_dir_all(documents.join(folder)).unwrap();
+        }
+        for folder in [FOLDER, LEGACY_FOLDER] {
+            let file = documents.join(folder).join("Existing.lilo");
+            std::fs::write(&file, b"preserved project").unwrap();
+            assert!(in_project_folders(&documents, &file.canonicalize().unwrap()));
+            assert_eq!(scan_projects(&documents.join(folder), 10).len(), 1);
+        }
+        for folder in ["Lilo", "Elsewhere"] {
+            let file = documents.join(folder).join("Not-our-project.lilo");
+            std::fs::write(&file, b"untouched").unwrap();
+            assert!(!in_project_folders(&documents, &file.canonicalize().unwrap()));
+        }
+        std::fs::remove_dir_all(documents).unwrap();
+    }
 
     fn scratch(tag: &str) -> PathBuf {
         let n = SystemTime::now().duration_since(UNIX_EPOCH).unwrap().as_nanos();

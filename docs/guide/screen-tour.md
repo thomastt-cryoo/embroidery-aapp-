@@ -19,7 +19,7 @@ The editor has the same layout every time. Here is where things live.
 
 - The left **navigation** (Home, Editor, Pixel art, Converter, Studio Link) switches between the parts of the app. In the editor, hover over an icon to see its name. **Help** opens this guide; **Appearance** switches light, dark or system mode.
 - The **top bar** holds the project menu, the project name, the **hoop** chooser, a search box (**⌘K**), **Export** and **Send**.
-- The **workflow strip** shows your five steps. Read [Helpers inside Embroidery Studio](learning-aids.md).
+- The **workflow strip** shows your five steps. Read [Helpers inside Embrova](learning-aids.md).
 
 ## Left panel
 
@@ -53,4 +53,4 @@ Under the canvas. **Play**, scrub and change the speed. It also shows the totals
 
 ## The warnings tray
 
-When Embroidery Studio spots something that may sew badly, a small tray appears in the right-hand column, under the Sewing setup card. It is calm and never blocks you. Read [What the warnings mean](warnings-explained.md).
+When Embrova spots something that may sew badly, a small tray appears in the right-hand column, under the Sewing setup card. It is calm and never blocks you. Read [What the warnings mean](warnings-explained.md).

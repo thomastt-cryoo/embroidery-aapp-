@@ -9,7 +9,7 @@ const root = resolve(import.meta.dirname, '..');
 const require = createRequire(join(root, 'editor/package.json'));
 const { chromium } = require('playwright-core');
 const baseline = process.env.NAV_BASELINE === '1';
-const out = join(root, 'reports/mac-sidebar-fix');
+const out = resolve(root, process.env.NAV_EVIDENCE_OUT || 'reports/mac-sidebar-fix');
 await mkdir(out, { recursive: true });
 const browser = await chromium.launch({ executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe' });
 const checks = [], errors = [];

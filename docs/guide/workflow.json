@@ -3,7 +3,7 @@
     {
       "id": "design",
       "label": "Upload",
-      "tip": { "title": "Start with your artwork", "body": "Upload a PNG, JPG, WEBP or SVG. Embroidery Studio generates stitches automatically. You can also draw a shape or type a monogram.", "action": { "kind": "open-digitize", "label": "Upload image" }, "guideId": "first-design" }
+      "tip": { "title": "Start with your artwork", "body": "Upload a PNG, JPG, WEBP or SVG. Embrova generates stitches automatically. You can also draw a shape or type a monogram.", "action": { "kind": "open-digitize", "label": "Upload image" }, "guideId": "first-design" }
     },
     {
       "id": "size",
@@ -23,7 +23,7 @@
     {
       "id": "send",
       "label": "Export",
-      "tip": { "title": "Ready for your machine", "body": "Export a stitch file for your machine or a PNG preview. You can also use Send for Wi-Fi transfer. Save your Embroidery Studio project to keep it editable.", "action": { "kind": "open-export", "label": "Open Export" }, "guideId": "export-formats" }
+      "tip": { "title": "Ready for your machine", "body": "Export a stitch file for your machine or a PNG preview. You can also use Send for Wi-Fi transfer. Save your Embrova project to keep it editable.", "action": { "kind": "open-export", "label": "Open Export" }, "guideId": "export-formats" }
     }
   ]
 }

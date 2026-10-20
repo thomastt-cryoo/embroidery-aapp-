@@ -9,9 +9,9 @@ on:
       artifactName:
         description: Private artifact containing the complete customer ZIP
         type: choice
-        default: Embroidery-Studio-macOS-M2-Etsy-private
+        default: Embrova-macOS-M2-Etsy-private
         options:
-          - Embroidery-Studio-macOS-M2-Etsy-private
+          - Embrova-macOS-M2-Etsy-private
           - M2-Etsy-native-ZIP-verification
       runner:
         description: Standard macOS runner pool

@@ -79,7 +79,7 @@ async fn health_needs_no_token() {
         .unwrap();
     assert_eq!(response.status(), StatusCode::OK);
     let json = body_json(response).await;
-    assert_eq!(json["app"], "embroidery-studio");
+    assert_eq!(json["app"], "embrova");
 }
 
 #[tokio::test]

@@ -64,10 +64,10 @@ def choose(path,saving=False):
 def check(name,detail):
     checks.append({'name':name,'result':'pass','detail':detail})
     (out/'checks-live.json').write_text(json.dumps(checks,indent=2)+'\n')
-app='/Applications/Embroidery Studio.app'
+app='/Applications/Embrova.app'
 try:
     # The runner contains only the scripted test document, never user work.
-    subprocess.run(['pkill','-x','embroidery-studio'],check=False);time.sleep(1)
+    subprocess.run(['pkill','-x','embrova'],check=False);time.sleep(1)
     subprocess.run(['open','-na',app],check=True);time.sleep(4);ax('activate');time.sleep(.5)
     initial=snap('initial')
     if 'Skip the tour' in text(initial):press('Skip the tour')
@@ -147,7 +147,7 @@ try:
     wait_for('save-panel',30);snap('project-save-dialog');press('Save')
     project=None
     for _ in range(30):
-        folders=[pathlib.Path.home()/'Documents/Embroidery Studio',root/'engine/test/fixtures']
+        folders=[pathlib.Path.home()/'Documents/Embrova',root/'engine/test/fixtures']
         candidates=[p for folder in folders for p in folder.glob('*.lilo') if p.stat().st_mtime>=save_start]
         if candidates:project=max(candidates,key=lambda p:p.stat().st_mtime);break
         time.sleep(.5)
@@ -162,7 +162,7 @@ try:
     press(save['title'] or save['description']);wait_for('save-panel',30);snap('pes-save-dialog');press('Save')
     pes=None
     for _ in range(30):
-        folders=[pathlib.Path.home()/'Documents/Embroidery Studio',pathlib.Path.home()/'Documents',pathlib.Path.home()/'Desktop',root,root/'engine/test/fixtures']
+        folders=[pathlib.Path.home()/'Documents/Embrova',pathlib.Path.home()/'Documents',pathlib.Path.home()/'Desktop',root,root/'engine/test/fixtures']
         candidates=[p for folder in folders for p in folder.glob('*.pes') if p.stat().st_mtime>=export_start]
         if candidates:pes=max(candidates,key=lambda p:p.stat().st_mtime);break
         time.sleep(.5)

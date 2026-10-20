@@ -20,9 +20,9 @@ class ReportAndPackageTests(unittest.TestCase):
         (self.out / 'evidence').mkdir()
 
     def package(self, payload=b'xar!test-only-structural-fixture'):
-        path = self.out / 'Embroidery-Studio-macOS.zip'
+        path = self.out / 'Embrova-macOS.zip'
         with zipfile.ZipFile(path, 'w', zipfile.ZIP_STORED) as z:
-            z.writestr('Install Embroidery Studio.pkg', payload)
+            z.writestr('Install Embrova.pkg', payload)
             for name in ['LICENSE.txt', 'NOTICE.txt', 'START HERE.txt']:
                 z.writestr(name, 'Unit test fixture; never customer delivery.')
         selected = dict(sha256=hashlib.sha256(path.read_bytes()).hexdigest(), kind='pkg', completeUniversalApplication=True)
@@ -34,7 +34,7 @@ class ReportAndPackageTests(unittest.TestCase):
         result = report.validate_package(self.out)
         self.assertTrue(result['underLimit'])
         self.assertEqual(result['zipBytes'], path.stat().st_size)
-        self.assertEqual((self.out / 'installers/Install Embroidery Studio.pkg').read_bytes(), b'xar!test-only-structural-fixture')
+        self.assertEqual((self.out / 'installers/Install Embrova.pkg').read_bytes(), b'xar!test-only-structural-fixture')
 
     def test_rejects_changed_zip(self):
         path = self.package()
@@ -69,7 +69,7 @@ class ReportAndPackageTests(unittest.TestCase):
         self.assertIn('| Installed native app | blocked |', (self.out / 'M3_MACOS_RUN_REPORT.md').read_text())
         with zipfile.ZipFile(self.out / 'Mac-QA-evidence.zip') as z:
             self.assertIsNone(z.testzip())
-            self.assertNotIn('Embroidery-Studio-macOS.zip', z.namelist())
+            self.assertNotIn('Embrova-macOS.zip', z.namelist())
 
     def test_verification_only_cannot_pass_without_all_native_stages(self):
         (self.out / 'evidence/run-mode.json').write_text(json.dumps({'mode': 'verification-only'}))
@@ -103,7 +103,7 @@ class ReportAndPackageTests(unittest.TestCase):
         with zipfile.ZipFile(self.out / 'Mac-QA-evidence.zip') as z:
             self.assertIsNone(z.testzip())
             self.assertIn('MACOS_REBUILD_REPORT.md', z.namelist())
-            self.assertNotIn('Embroidery-Studio-macOS.zip', z.namelist())
+            self.assertNotIn('Embrova-macOS.zip', z.namelist())
 
 
 if __name__ == '__main__':

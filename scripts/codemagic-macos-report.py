@@ -15,7 +15,7 @@ def load(path, default=None):
 
 
 def validate_package(out):
-    archive = out / 'Embroidery-Studio-macOS.zip'
+    archive = out / 'Embrova-macOS.zip'
     size = archive.stat().st_size
     selected = load(out / 'evidence/mac-selected-package.json', {})
     digest = hashlib.sha256(archive.read_bytes()).hexdigest()
@@ -23,17 +23,17 @@ def validate_package(out):
     assert selected.get('completeUniversalApplication') and selected.get('kind') == 'pkg'
     with zipfile.ZipFile(archive) as z:
         assert z.testzip() is None
-        assert sorted(z.namelist()) == ['Install Embroidery Studio.pkg', 'LICENSE.txt', 'NOTICE.txt', 'START HERE.txt']
-        installer = z.read('Install Embroidery Studio.pkg')
+        assert sorted(z.namelist()) == ['Install Embrova.pkg', 'LICENSE.txt', 'NOTICE.txt', 'START HERE.txt']
+        installer = z.read('Install Embrova.pkg')
         assert installer.startswith(b'xar!'), 'Expected a real flat Apple package'
     result = dict(zipBytes=size, zipSha256=digest, installerBytes=len(installer),
                   limitBytes=20_000_000, underLimit=size < 20_000_000,
                   completeUniversalApplication=True, installerCount=1)
     (out / 'evidence/size-gate.json').write_text(json.dumps(result, indent=2) + '\n')
-    (out / 'SHA256SUMS.txt').write_text(digest + '  Embroidery-Studio-macOS.zip\n')
+    (out / 'SHA256SUMS.txt').write_text(digest + '  Embrova-macOS.zip\n')
     installers = out / 'installers'
     installers.mkdir(exist_ok=True)
-    (installers / 'Install Embroidery Studio.pkg').write_bytes(installer)
+    (installers / 'Install Embrova.pkg').write_bytes(installer)
     assert size < 20_000_000, f'Complete ZIP is {size:,} bytes; exceeds Etsy limit. No assets removed or split.'
     return result
 
@@ -77,7 +77,7 @@ def render_report(out, exit_code):
               '## Screenshots and walkthrough', '',
               'Original full-resolution PNGs: 02-macOS/installation/originals and 02-macOS/functional/originals. Internal AX/debug logs are separate. Browser screenshots are under evidence/browser-acceptance and are not native installation evidence.', '',
               'See MACOS_ILLUSTRATED_GUIDE_DRAFT.md. Screenshots are private QA artifacts until reviewed for account information and personal paths; do not put unreviewed originals in an Etsy listing.', '',
-              'Build logs, manifests, screenshot indexes and test reports are included in Mac-QA-evidence.zip. The customer download is only Embroidery-Studio-macOS.zip.', '']
+              'Build logs, manifests, screenshot indexes and test reports are included in Mac-QA-evidence.zip. The customer download is only Embrova-macOS.zip.', '']
     (out / 'M3_MACOS_RUN_REPORT.md').write_text('\n'.join(lines))
     guide = ['# Mac installation walkthrough — actual CI evidence draft', '',
              'This draft contains only screenshots captured in this run. Missing stages are not illustrated. It is not a completed clean-customer Gatekeeper guide. Review every screenshot for privacy before customer use.', '']
@@ -92,8 +92,8 @@ def render_report(out, exit_code):
     captions = {
         'downloaded-zip-in-finder': 'Find the downloaded ZIP in Downloads',
         'zip-extracted': 'Open the ZIP to extract its contents',
-        'select-installer': 'Open Install Embroidery Studio.pkg',
-        'initial': 'Open Embroidery Studio from Applications',
+        'select-installer': 'Open Install Embrova.pkg',
+        'initial': 'Open Embrova from Applications',
         'image-picker': 'Choose the image you want to embroider',
         'converted': 'View the embroidery generated from your image',
         'stitches-without-reference': 'Preview the stitches without the source picture',
@@ -145,7 +145,7 @@ def render_rebuild_report(out, exit_code):
              'No installation screenshots were requested or fabricated.', '',
              'Clean consumer Gatekeeper testing remains incomplete. Signing remains ad-hoc; '
              'this rebuild does not add Developer ID signing or notarization.', '',
-             'Download Embroidery-Studio-macOS.zip for the application. Mac-QA-evidence.zip is owner-only build evidence.', '']
+             'Download Embrova-macOS.zip for the application. Mac-QA-evidence.zip is owner-only build evidence.', '']
     (out / 'MACOS_REBUILD_REPORT.md').write_text('\n'.join(lines), encoding='utf-8')
     with zipfile.ZipFile(out / 'Mac-QA-evidence.zip', 'w', zipfile.ZIP_DEFLATED) as archive:
         for path in sorted((out / 'evidence').rglob('*')):

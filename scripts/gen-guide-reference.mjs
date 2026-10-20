@@ -81,7 +81,7 @@ Set the pattern in the **Fill pattern** section of the left panel. Each preview 
   })}
 This page is built from the same tables the app uses for the **Sewing setup** card and the **Before you sew** checklist. Every number is a starting point. Sew a small test first, on a scrap of the same cloth.
 
-You choose three things: the **fabric**, the **thread weight** and the **quality**. Embroidery Studio then picks stitch spacing, edge compensation and underlay for you. Read how they work in [Sewing setup](sewing-setup.md).
+You choose three things: the **fabric**, the **thread weight** and the **quality**. Embrova then picks stitch spacing, edge compensation and underlay for you. Read how they work in [Sewing setup](sewing-setup.md).
 
 ## Fabrics
 
@@ -99,7 +99,7 @@ You choose three things: the **fabric**, the **thread weight** and the **quality
     if (e.densityFactor !== 1) bits.push(`line spacing is ${e.densityFactor > 1 ? "looser" : "tighter"} (x${e.densityFactor})`);
     if (e.minSatinFloorMm) bits.push(`the narrowest satin column is ${e.minSatinFloorMm} mm`);
     if (!e.zigzagUnderlay) bits.push("no zig-zag underlay");
-    body += `- **What Embroidery Studio changes:** ${bits.length ? bits.join("; ") + "." : "nothing. This is the baseline the other fabrics are measured against."}\n\n`;
+    body += `- **What Embrova changes:** ${bits.length ? bits.join("; ") + "." : "nothing. This is the baseline the other fabrics are measured against."}\n\n`;
   }
   body += `## Thread weight\n\n`;
   for (const w of THREAD_WEIGHT_IDS) {
@@ -178,18 +178,18 @@ You do not have to remember these. Press **⌘K** and type what you want. The se
   let body = `${front({
     id: "formats-reference",
     title: "File formats",
-    summary: `The ${FORMATS.length} embroidery file formats Embroidery Studio writes (all but G-code it also reads), and which machines use each one.`,
+    summary: `The ${FORMATS.length} embroidery file formats Embrova writes (all but G-code it also reads), and which machines use each one.`,
     section: "reference",
     order: 20,
     keywords: ["format", "pes", "dst", "exp", "jef", "vp3", "xxx", "u01", "pec", "brand", "machine", "compatibility"],
     appContext: ["dialog.export", "view.converter"],
     status: "generated",
   })}
-Embroidery Studio writes ${FORMATS.length} embroidery formats and reads ${FORMATS.filter((f) => f.canRead !== false).length} of them. The list is built from the app's own format table.
+Embrova writes ${FORMATS.length} embroidery formats and reads ${FORMATS.filter((f) => f.canRead !== false).length} of them. The list is built from the app's own format table.
 
 A format is the file type your machine understands. Brother and Baby Lock machines use **PES**. Most commercial machines use **DST**. If you are not sure, check your machine manual or the type of file it already sews.
 
-| Extension | Name | Embroidery Studio | Keeps thread colours? | Used by |
+| Extension | Name | Embrova | Keeps thread colours? | Used by |
 | --- | --- | --- | --- | --- |
 `;
   for (const f of FORMATS) {
@@ -199,7 +199,7 @@ A format is the file type your machine understands. Brother and Baby Lock machin
   }
   body += `\n**Keeps thread colours** matters when you send a file. Formats without colours still sew in the right order. They just show you "colour 1, colour 2" instead of real thread names. See [Choosing a format](export-formats.md).\n\n`;
   if (compat) {
-    body += `## Machine compatibility\n\nThe research behind Embroidery Studio covers ${compat.counts.brands} brands, ${compat.counts.machines} machines and ${compat.counts.threadBrands} thread brands. No machine has been tested on real hardware beyond one pending Brother run, so treat every machine as "should work" until you have sewn one design. The full tables are in compatibility.md in the docs folder.\n`;
+    body += `## Machine compatibility\n\nThe research behind Embrova covers ${compat.counts.brands} brands, ${compat.counts.machines} machines and ${compat.counts.threadBrands} thread brands. No machine has been tested on real hardware beyond one pending Brother run, so treat every machine as "should work" until you have sewn one design. The full tables are in compatibility.md in the docs folder.\n`;
   } else {
     body += `## Machine compatibility\n\nWi-Fi sending works with Brother and Baby Lock machines that have built-in Wi-Fi. Every other machine uses a file on a USB stick. Read [Send over Wi-Fi](lilo-link-wifi.md) and [USB stick](usb-stick.md).\n`;
   }
