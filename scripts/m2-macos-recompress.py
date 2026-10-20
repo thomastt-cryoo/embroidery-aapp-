@@ -71,10 +71,15 @@ with tempfile.TemporaryDirectory(prefix='studio-pkg-compression-') as folder:
         print(json.dumps({k:v for k,v in report.items() if k!='nativeAppManifest'},indent=2),flush=True)
     budget=float(os.environ.get('MAC_COMPRESSION_TUNING_SECONDS','600'))
     options={'id':lzma.FILTER_LZMA2,'dict_size':128*1024*1024,'preset':9|lzma.PRESET_EXTREME}
+    context=os.environ.get('MAC_LZMA_CONTEXT','3:2')
+    assert context in {'3:2','4:0','2:2'}, 'Unsupported storage context'
+    lc,pb=map(int,context.split(':'))
+    options.update(lc=lc,lp=0,pb=pb)
     # The complete format comparison established BCJ + LZMA2 as the smallest.
     # Start with that verified setting to avoid spending runner time twice.
     packed=lzma.compress(raw,format=lzma.FORMAT_XZ,check=lzma.CHECK_NONE,filters=[{'id':lzma.FILTER_X86},options])
-    candidates.append({'filter':'X86 + LZMA2','bytes':len(packed)});selected='X86 + LZMA2'
+    selected='X86 + LZMA2'+(f' lc={lc} pb={pb}' if context!='3:2' else '')
+    candidates.append({'filter':selected,'bytes':len(packed)})
     checkpoint(packed,selected)
     if len(packed)>=19_900_000 and time.monotonic()-started<budget:
         alternate=lzma.compress(raw,format=lzma.FORMAT_XZ,check=lzma.CHECK_NONE,

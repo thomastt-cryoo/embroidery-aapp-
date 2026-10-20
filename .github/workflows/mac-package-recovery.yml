@@ -6,6 +6,15 @@ on:
         description: Completed Embrova Mac build run ID whose universal app will be reused
         required: true
         type: string
+      context:
+        description: Lossless storage comparison; never changes application files
+        type: choice
+        default: default
+        options: [default, lc4-pb0, lc2-pb2]
+      functional_checks:
+        description: Repeat native functional checks; storage comparisons may reuse identical-app evidence
+        type: boolean
+        default: true
 permissions:
   contents: read
   actions: read
@@ -15,7 +24,8 @@ jobs:
     timeout-minutes: 30
     env:
       SOURCE_BUILD_RUN: ${{ inputs.source_run }}
-      MAC_COMPRESSION_TUNING_SECONDS: '600'
+      MAC_COMPRESSION_TUNING_SECONDS: ${{ inputs.context == 'default' && '600' || '0' }}
+      MAC_LZMA_CONTEXT: ${{ inputs.context == 'lc4-pb0' && '4:0' || inputs.context == 'lc2-pb2' && '2:2' || '3:2' }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -45,7 +55,7 @@ jobs:
         if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
         run: .codemagic-venv/bin/python scripts/github-macos-branding-check.py
       - name: Native editing, saving, reopening and export
-        if: ${{ !cancelled() && steps.restore.outcome == 'success' }}
+        if: ${{ !cancelled() && steps.restore.outcome == 'success' && inputs.functional_checks }}
         env:
           M2_MAC_DELIVERY_DIR: out
           M3_SCREENSHOT_DIR: out/02-macOS/functional/originals
