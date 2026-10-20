@@ -1,0 +1,9 @@
+{
+  "result": "pass",
+  "zipSha256": "cf594cb3c34373aee45a150aca7cb2f9326fff9c19fa41fe5a4f4bdd2012b426",
+  "binaryArchitectures": "x86_64 arm64",
+  "allInstalledFilesAndModesMatchBuild": true,
+  "method": "sudo -n installer on disposable CI; not a customer Gatekeeper test",
+  "signature": "ad-hoc, not Developer ID/notarized",
+  "securitySettingsChanged": false
+}

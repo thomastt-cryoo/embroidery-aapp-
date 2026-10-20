@@ -1,0 +1,41 @@
+[
+  {
+    "name": "Desktop permission probe (read-only)",
+    "status": "pass",
+    "detail": {
+      "accessibilityTrusted": false,
+      "displayHeight": 768,
+      "displayWidth": 1024,
+      "screenCaptureAuthorized": false,
+      "securityPermissionsChanged": false
+    }
+  },
+  {
+    "name": "M3 GUI installation walkthrough",
+    "status": "blocked",
+    "detail": "Desktop capture/accessibility access is missing. No permissions changed; no screenshots invented."
+  },
+  {
+    "name": "Ordinary CI installation from the actual customer ZIP",
+    "status": "pass",
+    "detail": {
+      "result": "pass",
+      "zipSha256": "cf594cb3c34373aee45a150aca7cb2f9326fff9c19fa41fe5a4f4bdd2012b426",
+      "binaryArchitectures": "x86_64 arm64",
+      "allInstalledFilesAndModesMatchBuild": true,
+      "method": "sudo -n installer on disposable CI; not a customer Gatekeeper test",
+      "signature": "ad-hoc, not Developer ID/notarized",
+      "securitySettingsChanged": false
+    }
+  },
+  {
+    "name": "Installed native app functional tests",
+    "status": "blocked",
+    "detail": "Installation or desktop permissions unavailable; browser results cannot substitute for native results."
+  },
+  {
+    "name": "Separate production browser regression",
+    "status": "pass",
+    "detail": "Production frontend: real engine, 13 exports, save/reopen, simulation and offline regression; not native UI"
+  }
+]

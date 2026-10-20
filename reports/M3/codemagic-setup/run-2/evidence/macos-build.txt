@@ -1,0 +1,1411 @@
+
+> lilo@1.4.0 tauri /Users/builder/clone
+> cd app && tauri "build" "--target" "universal-apple-darwin" "--bundles" "app"
+
+        Info Looking up installed tauri packages to check mismatched versions...
+     Running beforeBuildCommand `pnpm --filter editor build`
+
+> editor@1.4.0 build /Users/builder/clone/editor
+> node --experimental-strip-types ../scripts/import-fonts.mjs --ensure && pnpm typecheck && vite build && python ../scripts/m2-optimize-assets.py
+
+fonts: data/fonts is up to date (c7e3a05)
+
+> editor@1.4.0 typecheck /Users/builder/clone/editor
+> tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.node.json && tsc --noEmit -p e2e/tsconfig.json
+
+[36mvite v8.3.2 [32mbuilding client environment for production...[36m[39m
+transforming...
+
+new URL('vtracer_bg.wasm', import.meta.url) doesn't exist at build time, it will remain unchanged to be resolved at runtime. If this is intended, you can use the /* @vite-ignore */ comment to suppress this warning.
+[33m[plugin rolldown:vite-resolve] Module "module" has been externalized for browser compatibility, imported by "/Users/builder/clone/node_modules/.pnpm/voron8@3.4.2/node_modules/voron8/dist/voron8.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.[39m
+[33m[plugin rolldown:vite-resolve] Module "module" has been externalized for browser compatibility, imported by "/Users/builder/clone/node_modules/.pnpm/voron8@3.4.2/node_modules/voron8/dist/voron8.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.[39m
+[33m[plugin rolldown:vite-resolve] Module "module" has been externalized for browser compatibility, imported by "/Users/builder/clone/node_modules/.pnpm/@matthewjacobson+str8@0.2.0/node_modules/@matthewjacobson/str8/dist/str8.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.[39m
+[33m[plugin rolldown:vite-resolve] Module "module" has been externalized for browser compatibility, imported by "/Users/builder/clone/node_modules/.pnpm/@matthewjacobson+str8@0.2.0/node_modules/@matthewjacobson/str8/dist/str8.js". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.[39m
+[33m[33m[INEFFECTIVE_DYNAMIC_IMPORT] [0m../data/threads/index.json is dynamically imported by ../engine/src/threads.ts but also statically imported by ../engine/src/threads.ts, dynamic import will not move module into another chunk.
+[39m
+[33m[33m[INEFFECTIVE_DYNAMIC_IMPORT] [0m../data/threads/brother-country.json is dynamically imported by ../engine/src/threads.ts but also statically imported by ../engine/src/threads.ts, dynamic import will not move module into another chunk.
+[39m
+[33m[33m[INEFFECTIVE_DYNAMIC_IMPORT] [0m../data/threads/brother-embroidery.json is dynamically imported by ../engine/src/threads.ts but also statically imported by ../engine/src/threads.ts, dynamic import will not move module into another chunk.
+[39m
+[33m[33m[INEFFECTIVE_DYNAMIC_IMPORT] [0m../data/threads/brothread-40.json is dynamically imported by ../engine/src/threads.ts but also statically imported by ../engine/src/threads.ts, dynamic import will not move module into another chunk.
+[39m
+✓ 1904 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/assets/__vite-browser-external-CvujFrRr.js                    0.10 kB
+dist/index.html                                                    1.04 kB │ gzip:     0.43 kB
+dist/assets/stars-C2gyJOQz.png                                     4.51 kB
+dist/assets/stipple-CSmc6j6T.png                                   6.81 kB
+dist/assets/preview-W-DPIeZI.png                                   8.42 kB
+dist/assets/font-BvcaAK3s.json                                     8.53 kB │ gzip:     3.47 kB
+dist/assets/columns-b7YS2-12.png                                   9.10 kB
+dist/assets/original-D5hl31hs.png                                 10.21 kB
+dist/assets/offset-columns-sV17aykK.png                           10.23 kB
+dist/assets/rainfall-Dn-HWln_.png                                 10.37 kB
+dist/assets/preview-BMufDBkJ.png                                  10.75 kB
+dist/assets/hearts-s-BZ8ayotV.png                                 11.69 kB
+dist/assets/preview-PAzWbckQ.png                                  11.83 kB
+dist/assets/staircase-JHNWZc6q.png                                12.05 kB
+dist/assets/circles-s-D1tdXEbv.png                                12.43 kB
+dist/assets/preview-BoLt8cSM.png                                  12.52 kB
+dist/assets/hearts-l-Dgwx-vQo.png                                 12.70 kB
+dist/assets/streamlines-CrNBkmaq.png                              13.21 kB
+dist/assets/circles-l-B49REBCx.png                                13.63 kB
+dist/assets/preview-B5BOTjAf.png                                  14.00 kB
+dist/assets/hearts-m-KNSTayvQ.png                                 14.03 kB
+dist/assets/plaid-GXZUccx7.png                                    14.13 kB
+dist/assets/tatami-DBUFV58p.png                                   14.41 kB
+dist/assets/preview-Bz4PSe5S.png                                  14.56 kB
+dist/assets/preview-BULe2oz7.png                                  14.63 kB
+dist/assets/circles-m--7Z2B_f6.png                                14.86 kB
+dist/assets/preview-luwJjIWy.png                                  15.06 kB
+dist/assets/preview-CDkrVYjv.png                                  15.88 kB
+dist/assets/preview-Dxu8cf0s.png                                  16.68 kB
+dist/assets/crosshatch-BJmzGMlm.png                               17.31 kB
+dist/assets/preview-BgxCVhaE.png                                  17.58 kB
+dist/assets/preview-Bvlo1XBL.png                                  18.10 kB
+dist/assets/preview-CzCkzKR_.png                                  19.49 kB
+dist/assets/sunburst-XeCLd0JX.png                                 20.77 kB
+dist/assets/preview-mGoribXB.png                                  21.46 kB
+dist/assets/preview-CUxkqTZB.png                                  21.65 kB
+dist/assets/preview-Cix9uSlZ.png                                  21.85 kB
+dist/assets/preview-CVSr-Itm.png                                  21.89 kB
+dist/assets/preview-w29lMnjz.png                                  22.95 kB
+dist/assets/preview-j3MMCocO.png                                  23.24 kB
+dist/assets/preview-BRlvsgxn.png                                  23.47 kB
+dist/assets/preview-BNZS7ycf.png                                  23.85 kB
+dist/assets/font-DQIqQ_XR.json                                    23.96 kB │ gzip:     9.70 kB
+dist/assets/preview-Vr2oubB5.png                                  23.98 kB
+dist/assets/font-DZ2TvgO-.json                                    24.61 kB │ gzip:     9.80 kB
+dist/assets/heartbeat-CMyTj9AL.png                                24.63 kB
+dist/assets/preview-Dj3VFCL5.png                                  24.68 kB
+dist/assets/preview-D9YSzS9o.png                                  24.78 kB
+dist/assets/preview-7AZvNCI5.png                                  24.96 kB
+dist/assets/preview-DUucM11A.png                                  25.24 kB
+dist/assets/triangle-DxyO-NWh.png                                 25.60 kB
+dist/assets/preview-VsaFNE7W.png                                  25.99 kB
+dist/assets/preview-Dpzg5843.png                                  26.04 kB
+dist/assets/preview-DUTqJ1ZU.png                                  26.66 kB
+dist/assets/preview-D-epb90y.png                                  27.05 kB
+dist/assets/preview-xlm3IZEN.png                                  27.08 kB
+dist/assets/preview-DaH3mbg1.png                                  27.51 kB
+dist/assets/tornado-D6Rp00if.png                                  27.98 kB
+dist/assets/preview-Da4TJtDh.png                                  28.40 kB
+dist/assets/preview-C8nyuzua.png                                  29.07 kB
+dist/assets/font-CCuDKJRO.json                                    29.39 kB │ gzip:    10.86 kB
+dist/assets/preview-B8scYCMy.png                                  29.71 kB
+dist/assets/preview-By2AfTVe.png                                  29.77 kB
+dist/assets/preview-CLaBTKb1.png                                  29.97 kB
+dist/assets/preview-g0V1PFMu.png                                  30.10 kB
+dist/assets/preview-ZWAWFeyt.png                                  30.10 kB
+dist/assets/preview-4L1k8FFX.png                                  30.32 kB
+dist/assets/preview-BmNAVuJg.png                                  30.64 kB
+dist/assets/preview-CHZ9zN6G.png                                  30.69 kB
+dist/assets/preview-CGDE5H4S.png                                  31.04 kB
+dist/assets/preview-ApeC6XAL.png                                  31.36 kB
+dist/assets/preview-TWKv8aNq.png                                  31.50 kB
+dist/assets/preview-AeZWTnxd.png                                  31.71 kB
+dist/assets/preview-DrcaHG7k.png                                  32.20 kB
+dist/assets/waves-BhTVzpk2.png                                    32.21 kB
+dist/assets/preview-fPUj7YL0.png                                  32.32 kB
+dist/assets/preview-7xcbqXIw.png                                  34.18 kB
+dist/assets/preview-B76RBXqH.png                                  34.32 kB
+dist/assets/zigzag-CgibeaY7.png                                   34.34 kB
+dist/assets/preview-PVPuxAZu.png                                  35.00 kB
+dist/assets/preview-BYmHoWhN.png                                  35.82 kB
+dist/assets/preview-CJJkXZ4w.png                                  35.92 kB
+dist/assets/preview-DRD75thf.png                                  36.05 kB
+dist/assets/preview-BSQsWJTy.png                                  36.16 kB
+dist/assets/preview-DHxozTgn.png                                  36.59 kB
+dist/assets/preview-uIwBWrYh.png                                  37.16 kB
+dist/assets/preview-BKzLBzAB.png                                  37.92 kB
+dist/assets/preview-DM8sF5CT.png                                  38.06 kB
+dist/assets/preview-Dd1eQErp.png                                  38.62 kB
+dist/assets/preview-kL1KKC9O.png                                  39.06 kB
+dist/assets/spiral-CavmM816.png                                   42.56 kB
+dist/assets/font-BnMu_4-R.json                                    42.77 kB │ gzip:    10.82 kB
+dist/assets/preview-CO98Ds2x.png                                  42.80 kB
+dist/assets/circular-BVALILZE.png                                 42.84 kB
+dist/assets/preview-DT33os7h.png                                  42.96 kB
+dist/assets/font-W7E5Uqb2.json                                    43.19 kB │ gzip:    10.83 kB
+dist/assets/preview-DN59OCJD.png                                  45.21 kB
+dist/assets/preview-DC9M1fjL.png                                  45.32 kB
+dist/assets/preview-rGCQPa2J.png                                  45.96 kB
+dist/assets/font-BgVw-9X6.json                                    46.78 kB │ gzip:    12.27 kB
+dist/assets/preview-tGRn4GeZ.png                                  47.26 kB
+dist/assets/preview-iW3Gi6Kz.png                                  47.42 kB
+dist/assets/preview-CI3khV4v.png                                  48.75 kB
+dist/assets/preview-DfcHDCJw.png                                  48.88 kB
+dist/assets/preview-BaFV1PNs.png                                  52.22 kB
+dist/assets/preview-BcxGKotw.png                                  52.56 kB
+dist/assets/preview-CVQnmjS_.png                                  52.97 kB
+dist/assets/preview-Y8LBk5CV.png                                  54.71 kB
+dist/assets/preview-MoA-PO5a.png                                  55.27 kB
+dist/assets/font-BNV9tW1S.json                                    55.39 kB │ gzip:    15.47 kB
+dist/assets/preview-BcKy616C.png                                  55.42 kB
+dist/assets/preview-fGMKlU7q.png                                  56.15 kB
+dist/assets/preview-DFENXn0Z.png                                  56.72 kB
+dist/assets/preview-BNH3sMcx.png                                  57.08 kB
+dist/assets/preview-CRmejQEI.png                                  59.06 kB
+dist/assets/preview-CSU-dTAH.png                                  59.51 kB
+dist/assets/font-BnLVj5Pd.json                                    59.57 kB │ gzip:    17.53 kB
+dist/assets/preview-CtJ0Uibs.png                                  60.84 kB
+dist/assets/preview-W01S0T1L.png                                  61.52 kB
+dist/assets/preview-nyLlpWiQ.png                                  66.94 kB
+dist/assets/preview-CmKnupWY.png                                  68.21 kB
+dist/assets/preview-Chap6KiL.png                                  68.85 kB
+dist/assets/font-lqcZSbHe.json                                    69.55 kB │ gzip:    19.19 kB
+dist/assets/font-CVDy-miL.json                                    71.18 kB │ gzip:    21.96 kB
+dist/assets/preview-DxKooBrX.png                                  72.72 kB
+dist/assets/font-BE-IsUqh.json                                    74.45 kB │ gzip:    23.25 kB
+dist/assets/preview-CRVDunYK.png                                  76.14 kB
+dist/assets/preview-BeZRlCFb.png                                  77.04 kB
+dist/assets/font-Bb2Z9D94.json                                    78.22 kB │ gzip:    22.45 kB
+dist/assets/preview-CsdoTtLV.png                                  79.66 kB
+dist/assets/preview-CpXqElBe.png                                  81.66 kB
+dist/assets/preview-BH2w_m59.png                                  83.36 kB
+dist/assets/preview-FgF1Gc1R.png                                  84.21 kB
+dist/assets/font-DnJJESmn.json                                    84.35 kB │ gzip:    22.25 kB
+dist/assets/preview-LsEDp9eC.png                                  84.69 kB
+dist/assets/font-DIXbYWXe.json                                    85.28 kB │ gzip:    31.20 kB
+dist/assets/preview-DB6i63xl.png                                  85.43 kB
+dist/assets/font-Db7eboCm.json                                    87.18 kB │ gzip:    30.55 kB
+dist/assets/font-CfmljSPI.json                                    87.45 kB │ gzip:    12.02 kB
+dist/assets/preview-Btgbcn2_.png                                  88.21 kB
+dist/assets/font-UaWgFp7c.json                                    93.03 kB │ gzip:    29.64 kB
+dist/assets/font-7Jjb9rx6.json                                    94.85 kB │ gzip:    23.78 kB
+dist/assets/index-B61YHdjO.json                                   97.61 kB │ gzip:    14.97 kB
+dist/assets/font-BpEyIm5Q.json                                   100.72 kB │ gzip:    30.16 kB
+dist/assets/font-8eyL_APP.json                                   114.19 kB │ gzip:    36.15 kB
+dist/assets/font-B1cIJd01.json                                   117.01 kB │ gzip:    36.37 kB
+dist/assets/font-C5jGup7t.json                                   117.27 kB │ gzip:    35.27 kB
+dist/assets/font-aJugjofY.json                                   118.48 kB │ gzip:    35.40 kB
+dist/assets/font-CEsj4sqH.json                                   120.80 kB │ gzip:    38.07 kB
+dist/assets/font-DDeeAILk.json                                   123.66 kB │ gzip:    34.88 kB
+dist/assets/font-DoLlRcKw.json                                   124.13 kB │ gzip:    41.49 kB
+dist/assets/preview-CQTc_QAk.png                                 124.22 kB
+dist/assets/font-B1mj5d3U.json                                   132.77 kB │ gzip:    37.31 kB
+dist/assets/vtracer-CMOpYs3R.wasm                                136.86 kB │ gzip:    60.11 kB
+dist/assets/font-BWM3VVTN.json                                   137.73 kB │ gzip:    40.51 kB
+dist/assets/preview-BXV_RJZu.png                                 140.87 kB
+dist/assets/font-Bdp-Asgg.json                                   142.11 kB │ gzip:    33.41 kB
+dist/assets/preview-B2cEPRqR.png                                 145.53 kB
+dist/assets/font-_qIGtBOD.json                                   150.11 kB │ gzip:    47.03 kB
+dist/assets/font-UMnnKJQw.json                                   150.62 kB │ gzip:    47.08 kB
+dist/assets/export-dialog-BALmYHa9.png                           166.32 kB
+dist/assets/font-5a4DAvoM.json                                   167.09 kB │ gzip:    43.31 kB
+dist/assets/font-BedT1CtB.json                                   167.94 kB │ gzip:    43.66 kB
+dist/assets/font-7fVFfxiP.json                                   173.58 kB │ gzip:    52.55 kB
+dist/assets/stitch-safety-card-DwBGcivQ.png                      174.51 kB
+dist/assets/editor-overview-zqn8uErz.png                         178.09 kB
+dist/assets/font-KKY4FV0G.json                                   179.10 kB │ gzip:    45.57 kB
+dist/assets/hoop-picker-BUw2a1YU.png                             186.55 kB
+dist/assets/font-DCApKfYQ.json                                   188.15 kB │ gzip:    50.59 kB
+dist/assets/my-threads-BazpekP5.png                              191.18 kB
+dist/assets/font-CXuCOu9O.json                                   197.48 kB │ gzip:    58.60 kB
+dist/assets/font-BmjxeSSV.json                                   199.08 kB │ gzip:    58.65 kB
+dist/assets/font-Ci5qGuuX.json                                   200.96 kB │ gzip:     9.62 kB
+dist/assets/font-C3AZdsu8.json                                   201.14 kB │ gzip:    55.37 kB
+dist/assets/font-CRrfJbVU.json                                   202.78 kB │ gzip:    48.03 kB
+dist/assets/font-D8ASKKL8.json                                   204.94 kB │ gzip:    56.56 kB
+dist/assets/sewing-card-DDv4qzKh.png                             207.03 kB
+dist/assets/preview-q3DsZDA4.png                                 207.07 kB
+dist/assets/font-BJelmWRL.json                                   209.38 kB │ gzip:    44.00 kB
+dist/assets/font-CHf-FT84.json                                   211.91 kB │ gzip:    55.14 kB
+dist/assets/font-BgzEd9sj.json                                   215.19 kB │ gzip:    45.03 kB
+dist/assets/font-BWQo9o4P.json                                   230.73 kB │ gzip:     8.56 kB
+dist/assets/font-Cfq7dxfV.json                                   232.32 kB │ gzip:    62.65 kB
+dist/assets/preview-Ch7GNgq-.png                                 242.08 kB
+dist/assets/font-CVPxszNO.json                                   242.09 kB │ gzip:    76.60 kB
+dist/assets/font-JD-69GkA.json                                   252.13 kB │ gzip:    56.61 kB
+dist/assets/font-BWPmZvPu.json                                   262.22 kB │ gzip:    81.93 kB
+dist/assets/preview-CFKIIEXh.png                                 263.05 kB
+dist/assets/preview-CNLRC2rv.png                                 271.18 kB
+dist/assets/font-CH2FpRQU.json                                   271.34 kB │ gzip:    71.54 kB
+dist/assets/preview-BSkelLW5.png                                 273.67 kB
+dist/assets/font-DIzT1x8C.json                                   280.55 kB │ gzip:    80.42 kB
+dist/assets/font-DzMjr38s.json                                   288.25 kB │ gzip:    81.06 kB
+dist/assets/font-wXpVyp9N.json                                   293.79 kB │ gzip:    81.37 kB
+dist/assets/font-Mpq1RnKP.json                                   297.66 kB │ gzip:    83.63 kB
+dist/assets/font-CE7aA6C1.json                                   303.66 kB │ gzip:   106.90 kB
+dist/assets/font-BCCDji8z.json                                   322.34 kB │ gzip:   104.83 kB
+dist/assets/font-D6R_ZvDi.json                                   331.21 kB │ gzip:   105.14 kB
+dist/assets/font-DODi3I7m.json                                   336.23 kB │ gzip:    97.36 kB
+dist/assets/font-suEWxq5N.json                                   343.94 kB │ gzip:    95.18 kB
+dist/assets/font-Dvy6GZ17.json                                   349.36 kB │ gzip:    94.34 kB
+dist/assets/font-GnbPH5pL.json                                   349.62 kB │ gzip:    94.40 kB
+dist/assets/font-DUMnNvin.json                                   352.99 kB │ gzip:    99.70 kB
+dist/assets/font-C4mzUybU.json                                   364.03 kB │ gzip:   108.24 kB
+dist/assets/font-DH3FiXx2.json                                   369.24 kB │ gzip:    83.02 kB
+dist/assets/font-CFVuriED.json                                   370.43 kB │ gzip:   100.47 kB
+dist/assets/font-mZIRfg_g.json                                   371.47 kB │ gzip:    92.22 kB
+dist/assets/font-Corn0En8.json                                   372.57 kB │ gzip:   100.58 kB
+dist/assets/font-DFnUX9cF.json                                   402.68 kB │ gzip:   130.29 kB
+dist/assets/font-D6KkmOFf.json                                   421.56 kB │ gzip:   116.82 kB
+dist/assets/font-DHQ4pUU3.json                                   428.78 kB │ gzip:   115.87 kB
+dist/assets/font-nMEY77DK.json                                   478.04 kB │ gzip:   142.36 kB
+dist/assets/font-Bwb_MfxP.json                                   491.11 kB │ gzip:   110.82 kB
+dist/assets/font-dAXyIHag.json                                   504.98 kB │ gzip:   117.21 kB
+dist/assets/font-ThQSmEXq.json                                   516.17 kB │ gzip:   118.95 kB
+dist/assets/font-D1VQWwVr.json                                   519.87 kB │ gzip:   150.11 kB
+dist/assets/font-Db6pHPGZ.json                                   524.18 kB │ gzip:   137.72 kB
+dist/assets/font-BGN8RCGp.json                                   531.05 kB │ gzip:   137.92 kB
+dist/assets/preview-uv1fXfDi.png                                 541.25 kB
+dist/assets/font-CBX1wIBS.json                                   592.35 kB │ gzip:   112.71 kB
+dist/assets/font-DP-4QOL8.json                                   615.81 kB │ gzip:   160.39 kB
+dist/assets/font-Djk0yDpg.json                                   627.46 kB │ gzip:   130.99 kB
+dist/assets/font-BkKAQDCr.json                                   637.95 kB │ gzip:   136.14 kB
+dist/assets/font-JnCFMUda.json                                   666.83 kB │ gzip:   173.59 kB
+dist/assets/font-LoxGauAQ.json                                   668.59 kB │ gzip:   173.69 kB
+dist/assets/font-C_sMzE4l.json                                   671.94 kB │ gzip:   122.52 kB
+dist/assets/preview-uOnwC-yZ.png                                 683.57 kB
+dist/assets/font-DV9PDEQ1.json                                   748.73 kB │ gzip:   232.28 kB
+dist/assets/font-BK7_iEOf.json                                   750.06 kB │ gzip:   222.37 kB
+dist/assets/font-DX9ubnwI.json                                   758.59 kB │ gzip:   173.15 kB
+dist/assets/font-CJI35yMZ.json                                   776.37 kB │ gzip:   195.35 kB
+dist/assets/font-C_4QCDOT.json                                   777.30 kB │ gzip:   195.69 kB
+dist/assets/font-Xli3u-Wx.json                                   801.35 kB │ gzip:   201.21 kB
+dist/assets/font-B1YKpYI6.json                                   956.20 kB │ gzip:   197.21 kB
+dist/assets/font-DvDVB7q8.json                                   981.64 kB │ gzip:   225.22 kB
+dist/assets/font-BU1DHlNW.json                                 1,232.89 kB │ gzip:   329.73 kB
+dist/assets/font-BWgFOhKS.json                                 1,261.98 kB │ gzip:    70.09 kB
+dist/assets/font-CWbv-B3q.json                                 1,300.10 kB │ gzip:   297.68 kB
+dist/assets/font-OcZK7lG0.json                                 1,499.37 kB │ gzip:   184.05 kB
+dist/assets/font-DNAUsynl.json                                 1,512.45 kB │ gzip:    69.47 kB
+dist/assets/font-kBAzXutY.json                                 1,608.14 kB │ gzip:   326.56 kB
+dist/assets/font-DcjX-YPX.json                                 1,610.99 kB │ gzip:   327.30 kB
+dist/assets/font-YFciqN7-.json                                 1,686.76 kB │ gzip:   475.54 kB
+dist/assets/font-D9zmsbjg.json                                 1,777.18 kB │ gzip:   543.96 kB
+dist/assets/font-BWRh4IhO.json                                 1,829.89 kB │ gzip:   439.59 kB
+dist/assets/font-DiF-6t2f.json                                 1,915.50 kB │ gzip:   369.68 kB
+dist/assets/font-BPM-NeZs.json                                 1,945.70 kB │ gzip:   682.30 kB
+dist/assets/font-Bjf9-ATB.json                                 2,021.28 kB │ gzip:   403.40 kB
+dist/assets/font-CGx0_LLu.json                                 2,994.82 kB │ gzip:   627.53 kB
+dist/assets/worker-C2gyB5kb.js                                 5,344.47 kB
+dist/assets/LinkApp-s6Z_O-F4.css                                  10.53 kB │ gzip:     2.36 kB
+dist/assets/index-QN4xFPmb.css                                    81.53 kB │ gzip:    16.76 kB
+dist/assets/webworkerAll-xRl3bN5g.js                               0.05 kB │ gzip:     0.06 kB
+dist/assets/font-2jLQqUzu.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-40sstiIU.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-4fNmkjU1.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-7bKwsh3E.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-8Z-QFIK4.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-9KZDugfT.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-B6PdXlrg.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-B7i2v8w2.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-B9pKYDRi.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BBHzwXa2.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BDWn5cno.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BE67ZPfz.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BE_o3f7F.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BJUWOXFV.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BLSnSVoc.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BLdNjCiF.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BOfAAoSj.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BOyDwL69.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BUSqNRor.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BUr33I-Z.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BY5-Ka-9.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BaJUH9lR.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BafEpUBY.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Bam5qMe_.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BefbJLJe.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BgMhkHx5.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BjsEN54f.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BkjFVDPF.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BlDofIAh.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BmKnFeJ6.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Bmn6OyvK.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Bo3vKUjH.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BoeEreKF.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BogZRhlk.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BqvtNHU_.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BrJ_AEJp.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BrKCpmXZ.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BrhqMc7O.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BuqCBWSd.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-BvUkcNSc.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Bz1SNa6M.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-C2X_YHK5.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-C3hsX5oW.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-C4Ed1ZRS.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-C5OkoULZ.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CBjRv6qr.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CFSFidAn.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CG3wath3.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CKDINeZX.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CLGBulEc.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CM8rpfu7.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CMnVokkc.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CN8EslSL.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-COIXR_5P.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CR-uhohz.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CT4Ywt4N.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CUHa0dL2.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-C_R375_q.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-C_j7sJq6.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CbVhmQEv.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Cp65qfTA.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CqOMewyy.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Cu5iKSqt.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-CukVR_-r.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Cum0KEko.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Cw5OGv44.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Cxs6r8Ab.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-D-24CBWe.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-D1cVRUVV.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-D3fZIpPN.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-D8eWWLHc.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DC1xByfA.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DCGgoddq.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DGmAvNyX.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DHA8nnzI.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DJlMbQWg.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DUSLl8V8.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DUgsCBNZ.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DXM8JgBL.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DZN7zVZa.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-D__8FrFC.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Dae70RlH.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DahU5fI2.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DbSSjzx-.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DfiiQpx5.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DfjCWJUH.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DhR2c5WY.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DjfANP_Q.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DmEGTj76.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Dn9z9kj3.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DoSveulk.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Dp7KAYJg.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DpVWjsbB.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DqzRIzAG.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Dt5N4gF3.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-Dt8WY55U.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DuC1w-Cr.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DuQ_TmEN.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-DydW3l41.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-JVS_tDH1.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-STdV1nuU.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-TfuiD0A5.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-VQ58TDzF.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-VgTwd9zn.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-fZS1b0YM.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-hOYsxgwu.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-r5N823FJ.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/font-yrVtWpVE.js                                       0.05 kB │ gzip:     0.07 kB
+dist/assets/fonts-M8s6i76T.js                                      0.05 kB │ gzip:     0.07 kB
+dist/assets/WebGLRenderer-lVyvXpBe.js                              0.06 kB │ gzip:     0.08 kB
+dist/assets/CanvasRenderer-Crf6hvVN.js                             0.06 kB │ gzip:     0.08 kB
+dist/assets/WebGPURenderer-Df5xnHlY.js                             0.06 kB │ gzip:     0.08 kB
+dist/assets/__vite-browser-external-CKnVkMRn.js                    0.10 kB │ gzip:     0.11 kB
+dist/assets/rolldown-runtime-Dd_uD5pT.js                           1.10 kB │ gzip:     0.62 kB
+dist/assets/simthread-glow-in-the-dark-15-colors-DeoE8s7M.js       1.32 kB │ gzip:     0.57 kB
+dist/assets/viking-palette-CXsAHwQC.js                             1.91 kB │ gzip:     0.69 kB
+dist/assets/brothread-40-3Yo9eguJ.js                               2.76 kB │ gzip:     1.16 kB
+dist/assets/brother-embroidery-BKYSUqsZ.js                         4.19 kB │ gzip:     1.67 kB
+dist/assets/brother-country-DVSMNyMk.js                            4.20 kB │ gzip:     1.68 kB
+dist/assets/brildor-co-DmjOn_Dk.js                                 4.84 kB │ gzip:     1.83 kB
+dist/assets/brother-brothread-80-CzwpB4aK.js                       5.25 kB │ gzip:     1.97 kB
+dist/assets/janome-standard-DZo7ripD.js                            5.25 kB │ gzip:     1.96 kB
+dist/assets/simthread-polyester-63-brother-colors-BciuSXKM.js      5.64 kB │ gzip:     2.26 kB
+dist/assets/outback-embroidery-rayon-DAGcorjL.js                   7.86 kB │ gzip:     2.63 kB
+dist/assets/radiant-rayon-dkt_soeu.js                              7.99 kB │ gzip:     2.64 kB
+dist/assets/aurifil-lana-CRxgdnb7.js                               8.16 kB │ gzip:     2.68 kB
+dist/assets/simthread-polyester-Brtum9vz.js                        8.39 kB │ gzip:     2.82 kB
+dist/assets/mtb-embroidex-CvGy-qFa.js                              8.40 kB │ gzip:     2.81 kB
+dist/assets/princess-standard-X6rX2utv.js                          9.06 kB │ gzip:     3.00 kB
+dist/assets/madeira-burmilana-DGdfTKGr.js                          9.39 kB │ gzip:     3.07 kB
+dist/assets/brildor-ac-Dn0rUGlw.js                                 9.42 kB │ gzip:     3.12 kB
+dist/assets/getTexelRangeRects-B8sL-c_T.js                        11.31 kB │ gzip:     2.97 kB
+dist/assets/mettler-embroidery-B691imFK.js                        11.45 kB │ gzip:     3.66 kB
+dist/assets/sigma-standard-DLwkrwo6.js                            11.74 kB │ gzip:     3.78 kB
+dist/assets/aurifil-mako-Dx4t5D9L.js                              12.27 kB │ gzip:     3.86 kB
+dist/assets/madeira-matt-Bgc-HQHf.js                              12.39 kB │ gzip:     3.89 kB
+dist/assets/metro-standard-DrIbX-PP.js                            13.00 kB │ gzip:     4.18 kB
+dist/assets/wonderfil-polyester-N3k7QdFQ.js                       13.43 kB │ gzip:     4.32 kB
+dist/assets/aurifil-rayon-7PWYMUJ9.js                             13.83 kB │ gzip:     3.99 kB
+dist/assets/brildor-ny-BTFNhuR-.js                                14.02 kB │ gzip:     4.41 kB
+dist/assets/init-DklEjJnk.js                                      15.21 kB │ gzip:     4.73 kB
+dist/assets/ral-standard-gcJk7sHb.js                              15.30 kB │ gzip:     4.59 kB
+dist/assets/gutermann-creativ-dekor-ypq6KsDy.js                   15.58 kB │ gzip:     4.97 kB
+dist/assets/aurifil-polyester-BI0HZmnk.js                         15.68 kB │ gzip:     4.77 kB
+dist/assets/magnifico-standard-l3FfVUZB.js                        15.69 kB │ gzip:     5.31 kB
+dist/assets/brildor-mf-CHGaphTq.js                                16.26 kB │ gzip:     5.21 kB
+dist/assets/fil-tec-glide-B7a3w02N.js                             16.28 kB │ gzip:     5.53 kB
+dist/assets/threadart-standard-Bhq9Vgrh.js                        17.00 kB │ gzip:     5.55 kB
+dist/assets/swist-rayon-DXRsK09p.js                               17.60 kB │ gzip:     5.41 kB
+dist/assets/LinkApp-Cop-eoLw.js                                   20.04 kB │ gzip:     6.34 kB
+dist/assets/threads-D1zrn1tl.js                                   20.23 kB │ gzip:     2.37 kB
+dist/assets/brildor-pb-D3i6QdnO.js                                20.31 kB │ gzip:     6.39 kB
+dist/assets/embroidex-standard-Bbo0NICa.js                        20.50 kB │ gzip:     6.51 kB
+dist/assets/floriani-polyester-D-pw1OHV.js                        21.97 kB │ gzip:     7.23 kB
+dist/assets/poly-x40-standard-Bp7zPNYd.js                         22.12 kB │ gzip:     6.75 kB
+dist/assets/isafil-rayon-Bo-JzMN_.js                              22.22 kB │ gzip:     6.67 kB
+dist/assets/arc-polyester-Dkp_6Qht.js                             22.27 kB │ gzip:     6.87 kB
+dist/assets/arc-rayon-CjeMfH76.js                                 22.37 kB │ gzip:     6.81 kB
+dist/assets/sulky-rayon-eFtxNSKV.js                               22.58 kB │ gzip:     6.85 kB
+dist/assets/vyapar-rayon-CJZ4cAsE.js                              22.88 kB │ gzip:     6.39 kB
+dist/assets/hemingworth-standard-BFA6XT_6.js                      23.00 kB │ gzip:     7.45 kB
+dist/assets/tristar-polyester-DlVY6Swv.js                         23.03 kB │ gzip:     6.92 kB
+dist/assets/marathon-polyester-BhHqjZFR.js                        23.34 kB │ gzip:     7.00 kB
+dist/assets/coats-sylko-usa-CknOEESL.js                           23.84 kB │ gzip:     7.72 kB
+dist/assets/gunold-polyester-ODf5MSR6.js                          23.98 kB │ gzip:     7.12 kB
+dist/assets/coats-alcazar-jazz-D8DqGkqt.js                        24.03 kB │ gzip:     6.32 kB
+dist/assets/marathon-rayon-Dm9CZg2D.js                            24.62 kB │ gzip:     7.47 kB
+dist/assets/admelody-polyester-CCSFtbss.js                        24.96 kB │ gzip:     8.16 kB
+dist/assets/bfc-polyester-CvgEe_Qg.js                             25.19 kB │ gzip:     7.53 kB
+dist/assets/mettler-poly-sheen-C4S1FfQi.js                        26.77 kB │ gzip:     8.61 kB
+dist/assets/madeira-polyneon-CnUIQhZw.js                          26.90 kB │ gzip:     8.27 kB
+dist/assets/wonderfil-rayon-D3iAgg4w.js                           27.01 kB │ gzip:     8.15 kB
+dist/assets/madeira-rayon-CEQ_harS.js                             27.61 kB │ gzip:     8.39 kB
+dist/assets/marathon-rayon-v3-DYT19Jw3.js                         29.72 kB │ gzip:     8.82 kB
+dist/assets/simthread-rayon-BD8gfH3h.js                           30.31 kB │ gzip:     9.13 kB
+dist/assets/tristar-rayon-DcyK8dTN.js                             30.40 kB │ gzip:     8.45 kB
+dist/assets/isacord-polyester--M7KtoeR.js                         30.44 kB │ gzip:     9.61 kB
+dist/assets/coats-sylko-CmpZQhrK.js                               31.81 kB │ gzip:     8.52 kB
+dist/assets/isalon-polyester-BxfpzhGq.js                          32.03 kB │ gzip:     8.55 kB
+dist/assets/royal-polyester-U-gysCpc.js                           32.11 kB │ gzip:     9.84 kB
+dist/assets/robison-anton-rayon-tHDWKSVI.js                       32.24 kB │ gzip:     8.84 kB
+dist/assets/admelody-rayon-DHxrezCL.js                            32.48 kB │ gzip:    10.12 kB
+dist/assets/king-star-standard-D67nSZyq.js                        32.73 kB │ gzip:     9.12 kB
+dist/assets/anchor-standard-DD1LQaDe.js                           34.35 kB │ gzip:     8.60 kB
+dist/assets/robison-anton-polyester-CS2aZCkW.js                   34.58 kB │ gzip:    10.29 kB
+dist/assets/dmc-standard-CyUe05IP.js                              38.14 kB │ gzip:    10.27 kB
+dist/assets/royal-viscose-rayon-txDBzJCI.js                       38.15 kB │ gzip:     7.66 kB
+dist/assets/aurifil-royal-DSw5llCF.js                             38.76 kB │ gzip:     7.80 kB
+dist/assets/safety-DwdhkyeW.js                                    39.07 kB │ gzip:    14.58 kB
+dist/assets/coats-alcazar-DP1TTtzO.js                             39.77 kB │ gzip:    10.13 kB
+dist/assets/emmel-standard-CRixKCup.js                            41.69 kB │ gzip:    12.32 kB
+dist/assets/browserAll-CbcLMA3x.js                                43.48 kB │ gzip:    11.21 kB
+dist/assets/fufu-rayon-CvVX2HhT.js                                55.26 kB │ gzip:    16.33 kB
+dist/assets/fufu-polyester-BvET8pp3.js                            55.26 kB │ gzip:    16.33 kB
+dist/assets/sulky-polyester-BYmDWJ6G.js                           70.76 kB │ gzip:    20.69 kB
+dist/assets/RenderTargetSystem-DLGecAin.js                        78.13 kB │ gzip:    22.09 kB
+dist/assets/types-PIKtYjhH.js                                     83.75 kB │ gzip:    30.18 kB
+dist/assets/CanvasPool-BnnISwb7.js                               112.37 kB │ gzip:    34.32 kB
+dist/assets/ops-DfalzuJ3.js                                      149.34 kB │ gzip:    52.05 kB
+dist/assets/guide-D_d99mL5.js                                    168.54 kB │ gzip:    52.54 kB
+dist/assets/lettering-6-0sX4Qh.js                                251.51 kB │ gzip:    73.70 kB
+dist/assets/scene-C7xRb9OQ.js                                    286.86 kB │ gzip:    83.57 kB
+dist/assets/index-BAxpYxqw.js                                    732.41 kB │ gzip:   234.17 kB
+dist/assets/strokes-Fv8gyEZE.js                                5,094.15 kB │ gzip: 1,484.62 kB
+
+[33m[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 4000 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[32m✓ built in 1.41s[39m
+Removing bKGD chunk as it no longer matches the image data
+Removing bKGD chunk as it no longer matches the image data
+Removing bKGD chunk as it no longer matches the image data
+Removing bKGD chunk as it no longer matches the image data
+Removing bKGD chunk as it no longer matches the image data
+Stripping iDOT chunk which will be invalidated by file changes
+Removing bKGD chunk as it no longer matches the image data
+Files processed: 137/137   
+Input size: 7.85 MiB (8232674 bytes)
+Output size: 5.72 MiB (5994085 bytes)
+Total saved: 2.13 MiB (27.19%)
+PASS: all 458 assets retained; 137 previews losslessly optimized; 2111315 bytes saved; pixels, profiles, fonts, WASM and code preserved.
+    Updating crates.io index
+ Downloading crates ...
+  Downloaded cfg-if v1.0.4
+  Downloaded adler2 v2.0.1
+  Downloaded atomic-waker v1.1.2
+  Downloaded cargo-platform v0.1.9
+  Downloaded block-buffer v0.10.4
+  Downloaded bitflags v1.3.2
+  Downloaded dirs-sys v0.5.0
+  Downloaded futures-io v0.3.32
+  Downloaded darling_macro v0.23.0
+  Downloaded crypto-common v0.1.7
+  Downloaded bit-set v0.8.0
+  Downloaded dtoa-short v0.3.5
+  Downloaded foreign-types-shared v0.3.1
+  Downloaded dirs v7.0.0
+  Downloaded futures-task v0.3.32
+  Downloaded dirs v4.0.0
+  Downloaded cpufeatures v0.2.17
+  Downloaded cssparser-macros v0.7.1
+  Downloaded equivalent v1.0.2
+  Downloaded embed_plist v1.2.2
+  Downloaded heck v0.5.0
+  Downloaded dirs-sys v0.3.7
+  Downloaded fnv v1.0.7
+  Downloaded form_urlencoded v1.2.2
+  Downloaded futures-core v0.3.32
+  Downloaded hex v0.4.3
+  Downloaded http-body v1.0.1
+  Downloaded scopeguard v1.2.0
+  Downloaded bit-vec v0.8.0
+  Downloaded byteorder v1.5.0
+  Downloaded core-graphics-types v0.2.0
+  Downloaded dpi v0.1.2
+  Downloaded dunce v1.0.5
+  Downloaded foreign-types v0.5.0
+  Downloaded foreign-types-macros v0.2.3
+  Downloaded futures-sink v0.3.32
+  Downloaded httpdate v1.0.3
+  Downloaded same-file v1.0.6
+  Downloaded auto-launch v0.5.0
+  Downloaded errno v0.3.14
+  Downloaded futures-macro v0.3.32
+  Downloaded generic-array v0.14.7
+  Downloaded core-foundation v0.10.1
+  Downloaded fdeflate v0.3.7
+  Downloaded schemars_derive v0.8.22
+  Downloaded security-framework-sys v2.17.0
+  Downloaded powerfmt v0.2.0
+  Downloaded core-foundation v0.9.4
+  Downloaded deranged v0.5.8
+  Downloaded digest v0.10.7
+  Downloaded displaydoc v0.2.6
+  Downloaded dtoa v1.0.11
+  Downloaded dyn-clone v1.0.20
+  Downloaded embed-resource v3.0.11
+  Downloaded erased-serde v0.4.10
+  Downloaded fastrand v2.4.1
+  Downloaded filetime v0.2.29
+  Downloaded find-msvc-tools v0.1.9
+  Downloaded foldhash v0.2.0
+  Downloaded futures-executor v0.3.32
+  Downloaded http-body-util v0.1.3
+  Downloaded phf v0.13.1
+  Downloaded pin-project-lite v0.2.17
+  Downloaded ref-cast v1.0.25
+  Downloaded anyhow v1.0.103
+  Downloaded async-trait v0.1.89
+  Downloaded autocfg v1.5.1
+  Downloaded axum-core v0.5.6
+  Downloaded base64 v0.22.1
+  Downloaded block2 v0.6.2
+  Downloaded bs58 v0.5.1
+  Downloaded camino v1.2.4
+  Downloaded cargo_metadata v0.19.2
+  Downloaded cargo_toml v1.0.1
+  Downloaded cc v1.2.66
+  Downloaded cfb v0.14.0
+  Downloaded cookie v0.18.1
+  Downloaded core-foundation-sys v0.8.7
+  Downloaded core-graphics v0.25.0
+  Downloaded crc32fast v1.5.0
+  Downloaded crossbeam-utils v0.8.22
+  Downloaded cssparser v0.37.0
+  Downloaded ctor v1.0.13
+  Downloaded darling v0.23.0
+  Downloaded dispatch2 v0.3.1
+  Downloaded dom_query v0.28.0
+  Downloaded futures v0.3.32
+  Downloaded futures-channel v0.3.32
+  Downloaded getrandom v0.2.17
+  Downloaded getrandom v0.3.4
+  Downloaded getrandom v0.4.3
+  Downloaded glob v0.3.3
+  Downloaded html5ever v0.39.0
+  Downloaded httparse v1.10.1
+  Downloaded stable_deref_trait v1.2.1
+  Downloaded sync_wrapper v1.0.2
+  Downloaded system-configuration-sys v0.6.0
+  Downloaded thread_local v1.1.10
+  Downloaded time-core v0.1.9
+  Downloaded tokio-macros v2.7.0
+  Downloaded tower-service v0.3.3
+  Downloaded quote v1.0.46
+  Downloaded rustc_version v0.4.1
+  Downloaded typeid v1.0.3
+  Downloaded utf8_iter v1.0.4
+  Downloaded web-time v1.1.0
+  Downloaded xattr v1.6.1
+  Downloaded yoke v0.8.3
+  Downloaded matchers v0.2.0
+  Downloaded aho-corasick v1.1.4
+  Downloaded axum v0.8.9
+  Downloaded base64 v0.21.7
+  Downloaded bitflags v2.13.0
+  Downloaded bytes v1.12.1
+  Downloaded chrono v0.4.45
+  Downloaded crossbeam-channel v0.5.16
+  Downloaded darling_core v0.23.0
+  Downloaded derive_more v2.1.1
+  Downloaded derive_more-impl v2.1.1
+  Downloaded flate2 v1.1.9
+  Downloaded futures-util v0.3.32
+  Downloaded hashbrown v0.12.3
+  Downloaded hashbrown v0.17.1
+  Downloaded http v1.4.2
+  Downloaded rustls-pki-types v1.15.0
+  Downloaded semver v1.0.28
+  Downloaded serde_repr v0.1.20
+  Downloaded serde_urlencoded v0.7.1
+  Downloaded serialize-to-javascript v0.1.2
+  Downloaded shlex v2.0.1
+  Downloaded siphasher v1.0.3
+  Downloaded string_cache_codegen v0.6.1
+  Downloaded strsim v0.11.1
+  Downloaded tauri-plugin v2.7.1
+  Downloaded thiserror v1.0.69
+  Downloaded thiserror v2.0.18
+  Downloaded thiserror-impl v1.0.69
+  Downloaded thiserror-impl v2.0.18
+  Downloaded tinystr v0.8.3
+  Downloaded tinyvec_macros v0.1.1
+  Downloaded tokio-native-tls v0.3.1
+  Downloaded tokio-rustls v0.26.6
+  Downloaded toml_datetime v1.1.1+spec-1.1.0
+  Downloaded toml_writer v1.1.1+spec-1.1.0
+  Downloaded tower-layer v0.3.3
+  Downloaded reqwest v0.12.28
+  Downloaded wry v0.57.0
+  Downloaded hyper-util v0.1.20
+  Downloaded icu_normalizer v2.2.0
+  Downloaded icu_provider v2.2.0
+  Downloaded indexmap v2.14.0
+  Downloaded infer v0.22.0
+  Downloaded ipnet v2.12.0
+  Downloaded markup5ever v0.39.0
+  Downloaded num-traits v0.2.19
+  Downloaded objc2-core-audio-types v0.3.2
+  Downloaded phf_codegen v0.13.1
+  Downloaded phf_generator v0.13.1
+  Downloaded phf_macros v0.13.1
+  Downloaded phf_shared v0.13.1
+  Downloaded new_debug_unreachable v1.0.6
+  Downloaded ryu v1.0.23
+  Downloaded selectors v0.38.0
+  Downloaded serde-untagged v0.1.9
+  Downloaded serde_derive_internals v0.29.1
+  Downloaded serde_path_to_error v0.1.20
+  Downloaded serde_spanned v1.1.1
+  Downloaded serde_with_macros v3.21.0
+  Downloaded serialize-to-javascript-impl v0.1.2
+  Downloaded servo_arc v0.4.3
+  Downloaded sha2 v0.10.9
+  Downloaded simd-adler32 v0.3.9
+  Downloaded slab v0.4.12
+  Downloaded string_cache v0.9.0
+  Downloaded subtle v2.6.1
+  Downloaded swift-rs v1.0.8
+  Downloaded synstructure v0.13.2
+  Downloaded system-configuration v0.7.0
+  Downloaded tauri-codegen v2.7.1
+  Downloaded tauri-plugin-deep-link v2.4.10
+  Downloaded tauri-plugin-process v2.4.0
+  Downloaded tauri-plugin-single-instance v2.4.5
+  Downloaded tauri-runtime v2.12.1
+  Downloaded tauri-winres v0.3.6
+  Downloaded tempfile v3.27.0
+  Downloaded time-macros v0.2.31
+  Downloaded toml_parser v1.1.2+spec-1.1.0
+  Downloaded tracing-log v0.2.0
+  Downloaded objc2 v0.6.4
+  Downloaded objc2-core-audio v0.3.2
+  Downloaded plist v1.10.0
+  Downloaded png v0.17.16
+  Downloaded png v0.18.1
+  Downloaded potential_utf v0.1.5
+  Downloaded writeable v0.6.3
+  Downloaded iana-time-zone v0.1.65
+  Downloaded icu_properties_data v2.2.0
+  Downloaded ident_case v1.0.1
+  Downloaded miniz_oxide v0.8.9
+  Downloaded muda v0.20.0
+  Downloaded native-tls v0.2.18
+  Downloaded rustls-platform-verifier v0.7.1
+  Downloaded schemars v0.8.22
+  Downloaded schemars v0.9.0
+  Downloaded smallvec v1.15.2
+  Downloaded socket2 v0.6.4
+  Downloaded tar v0.4.46
+  Downloaded tauri-build v2.7.1
+  Downloaded tauri-macros v2.7.1
+  Downloaded tauri-plugin-opener v2.5.4
+  Downloaded tauri-runtime-wry v2.12.1
+  Downloaded tendril v0.5.1
+  Downloaded tinyvec v1.12.0
+  Downloaded toml v1.1.2+spec-1.1.0
+  Downloaded tracing-attributes v0.1.31
+  Downloaded tracing-core v0.1.36
+  Downloaded objc2-app-kit v0.3.2
+  Downloaded objc2-av-foundation v0.3.2
+  Downloaded icu_properties v2.2.0
+  Downloaded idna v1.1.0
+  Downloaded mio v1.2.1
+  Downloaded parking_lot v0.12.5
+  Downloaded parking_lot_core v0.9.12
+  Downloaded percent-encoding v2.3.2
+  Downloaded ppv-lite86 v0.2.21
+  Downloaded precomputed-hash v0.1.1
+  Downloaded proc-macro2 v1.0.106
+  Downloaded quick-xml v0.41.0
+  Downloaded rand v0.9.4
+  Downloaded rand_chacha v0.9.0
+  Downloaded rand_core v0.9.5
+  Downloaded raw-window-handle v0.6.2
+  Downloaded ref-cast-impl v1.0.25
+  Downloaded rfd v0.16.0
+  Downloaded rustls-webpki v0.103.15
+  Downloaded schemars v1.2.1
+  Downloaded security-framework v3.7.0
+  Downloaded serde v1.0.228
+  Downloaded serde_core v1.0.228
+  Downloaded serde_derive v1.0.228
+  Downloaded sharded-slab v0.1.7
+  Downloaded tauri-plugin-autostart v2.5.1
+  Downloaded tauri-plugin-dialog v2.7.3
+  Downloaded tauri-plugin-fs v2.5.2
+  Downloaded tauri-plugin-updater v2.13.1
+  Downloaded tower v0.5.3
+  Downloaded regex v1.13.0
+  Downloaded regex-automata v0.4.15
+  Downloaded regex-syntax v0.8.11
+  Downloaded reqwest v0.13.4
+  Downloaded objc2-core-ml v0.3.2
+  Downloaded objc2-core-video v0.3.2
+  Downloaded objc2-encode v4.1.0
+  Downloaded objc2-exception-helper v0.1.1
+  Downloaded objc2-image-io v0.3.2
+  Downloaded objc2-io-surface v0.3.2
+  Downloaded objc2-osa-kit v0.3.2
+  Downloaded objc2-quartz-core v0.3.2
+  Downloaded once_cell v1.21.4
+  Downloaded osakit v0.3.1
+  Downloaded rustc-hash v2.1.3
+  Downloaded try-lock v0.2.5
+  Downloaded untrusted v0.9.0
+  Downloaded version_check v0.9.5
+  Downloaded want v0.3.1
+  Downloaded yoke-derive v0.8.2
+  Downloaded zerofrom v0.1.8
+  Downloaded objc2-vision v0.3.2
+  Downloaded open v5.3.6
+  Downloaded option-ext v0.2.0
+  Downloaded tray-icon v0.25.1
+  Downloaded uuid v1.23.4
+  Downloaded walkdir v2.5.0
+  Downloaded web_atoms v0.2.5
+  Downloaded tauri-utils v2.10.1
+  Downloaded objc2-core-graphics v0.3.2
+  Downloaded objc2-core-image v0.3.2
+  Downloaded objc2-core-media v0.3.2
+  Downloaded objc2-web-kit v0.3.2
+  Downloaded typenum v1.20.1
+  Downloaded unicode-ident v1.0.24
+  Downloaded url v2.5.8
+  Downloaded urlpattern v0.6.0
+  Downloaded serde_json v1.0.150
+  Downloaded tokio-util v0.7.18
+  Downloaded tower-http v0.6.11
+  Downloaded objc2-core-foundation v0.3.2
+  Downloaded tracing-subscriber v0.3.23
+  Downloaded winnow v1.0.3
+  Downloaded serde_with v3.21.0
+  Downloaded objc2-foundation v0.3.2
+  Downloaded zerocopy v0.8.54
+  Downloaded hyper-rustls v0.27.10
+  Downloaded hyper-tls v0.6.0
+  Downloaded idna_adapter v1.2.2
+  Downloaded if-addrs v0.13.4
+  Downloaded itoa v1.0.18
+  Downloaded syn v2.0.118
+  Downloaded tao v0.37.1
+  Downloaded time v0.3.53
+  Downloaded ico v0.5.0
+  Downloaded icu_normalizer_data v2.2.0
+  Downloaded indexmap v1.9.3
+  Downloaded json-patch v4.2.0
+  Downloaded rustix v1.1.4
+  Downloaded rustls v0.23.45
+  Downloaded tauri v2.12.1
+  Downloaded icu_collections v2.2.0
+  Downloaded matchit v0.8.4
+  Downloaded mime v0.3.17
+  Downloaded keyboard-types v0.8.3
+  Downloaded lazy_static v1.5.0
+  Downloaded litemap v0.8.2
+  Downloaded nu-ansi-term v0.50.3
+  Downloaded tracing v0.1.44
+  Downloaded lock_api v0.4.14
+  Downloaded minisign-verify v0.2.5
+  Downloaded icu_locale_core v2.2.0
+  Downloaded jsonptr v0.7.1
+  Downloaded log v0.4.33
+  Downloaded memchr v2.8.3
+  Downloaded tokio v1.52.3
+  Downloaded zerofrom-derive v0.1.7
+  Downloaded zeroize v1.9.0
+  Downloaded zerovec-derive v0.11.3
+  Downloaded num-conv v0.2.2
+  Downloaded zerovec v0.11.6
+  Downloaded zerotrie v0.2.4
+  Downloaded hyper v1.10.1
+  Downloaded zmij v1.0.21
+  Downloaded ring v0.17.14
+  Downloaded window-vibrancy v0.8.1
+  Downloaded libc v0.2.186
+   Compiling proc-macro2 v1.0.106
+   Compiling unicode-ident v1.0.24
+   Compiling quote v1.0.46
+   Compiling libc v0.2.186
+   Compiling serde_core v1.0.228
+   Compiling syn v2.0.118
+   Compiling find-msvc-tools v0.1.9
+   Compiling shlex v2.0.1
+   Compiling cc v1.2.66
+   Compiling zmij v1.0.21
+   Compiling icu_normalizer_data v2.2.0
+   Compiling icu_properties_data v2.2.0
+   Compiling bitflags v2.13.0
+   Compiling siphasher v1.0.3
+   Compiling phf_shared v0.13.1
+   Compiling fastrand v2.4.1
+   Compiling phf_generator v0.13.1
+   Compiling synstructure v0.13.2
+   Compiling cfg-if v1.0.4
+   Compiling stable_deref_trait v1.2.1
+   Compiling memchr v2.8.3
+   Compiling serde v1.0.228
+   Compiling smallvec v1.15.2
+   Compiling thiserror v2.0.18
+   Compiling zerofrom-derive v0.1.7
+   Compiling yoke-derive v0.8.2
+   Compiling serde_derive v1.0.228
+   Compiling zerovec-derive v0.11.3
+   Compiling displaydoc v0.2.6
+   Compiling zerofrom v0.1.8
+   Compiling yoke v0.8.3
+   Compiling getrandom v0.4.3
+   Compiling zerovec v0.11.6
+   Compiling thiserror-impl v2.0.18
+   Compiling itoa v1.0.18
+   Compiling phf_macros v0.13.1
+   Compiling typeid v1.0.3
+   Compiling num-conv v0.2.2
+   Compiling time-core v0.1.9
+   Compiling tinystr v0.8.3
+   Compiling phf_codegen v0.13.1
+   Compiling erased-serde v0.4.10
+   Compiling strsim v0.11.1
+   Compiling litemap v0.8.2
+   Compiling serde_json v1.0.150
+   Compiling ident_case v1.0.1
+   Compiling writeable v0.6.3
+   Compiling darling_core v0.23.0
+   Compiling icu_locale_core v2.2.0
+   Compiling potential_utf v0.1.5
+   Compiling zerotrie v0.2.4
+   Compiling utf8_iter v1.0.4
+   Compiling parking_lot_core v0.9.12
+   Compiling icu_collections v2.2.0
+   Compiling icu_provider v2.2.0
+   Compiling anyhow v1.0.103
+   Compiling new_debug_unreachable v1.0.6
+   Compiling scopeguard v1.2.0
+   Compiling lock_api v0.4.14
+   Compiling darling_macro v0.23.0
+   Compiling phf v0.13.1
+   Compiling darling v0.23.0
+   Compiling string_cache_codegen v0.6.1
+   Compiling objc2-exception-helper v0.1.1
+   Compiling precomputed-hash v0.1.1
+   Compiling serde_with_macros v3.21.0
+   Compiling web_atoms v0.2.5
+   Compiling parking_lot v0.12.5
+   Compiling icu_properties v2.2.0
+   Compiling icu_normalizer v2.2.0
+   Compiling semver v1.0.28
+   Compiling winnow v1.0.3
+   Compiling toml_parser v1.1.2+spec-1.1.0
+   Compiling idna_adapter v1.2.2
+   Compiling string_cache v0.9.0
+   Compiling serde_spanned v1.1.1
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling percent-encoding v2.3.2
+   Compiling dtoa v1.0.11
+   Compiling autocfg v1.5.1
+   Compiling objc2 v0.6.4
+   Compiling toml_writer v1.1.1+spec-1.1.0
+   Compiling log v0.4.33
+   Compiling toml v1.1.2+spec-1.1.0
+   Compiling indexmap v1.9.3
+   Compiling dtoa-short v0.3.5
+   Compiling form_urlencoded v1.2.2
+   Compiling idna v1.1.0
+   Compiling uuid v1.23.4
+   Compiling tendril v0.5.1
+   Compiling selectors v0.38.0
+   Compiling derive_more-impl v2.1.1
+   Compiling cssparser-macros v0.7.1
+   Compiling aho-corasick v1.1.4
+   Compiling camino v1.2.4
+   Compiling objc2-encode v4.1.0
+   Compiling regex-syntax v0.8.11
+   Compiling derive_more v2.1.1
+   Compiling cssparser v0.37.0
+   Compiling regex-automata v0.4.15
+   Compiling markup5ever v0.39.0
+   Compiling url v2.5.8
+   Compiling swift-rs v1.0.8
+   Compiling servo_arc v0.4.3
+   Compiling serde_derive_internals v0.29.1
+   Compiling equivalent v1.0.2
+   Compiling bit-vec v0.8.0
+   Compiling hashbrown v0.17.1
+   Compiling fnv v1.0.7
+   Compiling powerfmt v0.2.0
+   Compiling schemars v0.8.22
+   Compiling web-time v1.1.0
+   Compiling deranged v0.5.8
+   Compiling hashbrown v0.12.3
+   Compiling rustc-hash v2.1.3
+   Compiling time v0.3.53
+   Compiling cfb v0.14.0
+   Compiling indexmap v2.14.0
+   Compiling schemars_derive v0.8.22
+   Compiling regex v1.13.0
+   Compiling bit-set v0.8.0
+   Compiling html5ever v0.39.0
+   Compiling jsonptr v0.7.1
+   Compiling cargo-platform v0.1.9
+   Compiling quick-xml v0.41.0
+   Compiling dunce v1.0.5
+   Compiling bytes v1.12.1
+   Compiling base64 v0.21.7
+   Compiling foldhash v0.2.0
+   Compiling base64 v0.22.1
+   Compiling same-file v1.0.6
+   Compiling dyn-clone v1.0.20
+   Compiling plist v1.10.0
+   Compiling walkdir v2.5.0
+   Compiling http v1.4.2
+   Compiling dom_query v0.28.0
+   Compiling cargo_metadata v0.19.2
+   Compiling json-patch v4.2.0
+   Compiling serde-untagged v0.1.9
+   Compiling urlpattern v0.6.0
+   Compiling infer v0.22.0
+   Compiling serde_with v3.21.0
+   Compiling glob v0.3.3
+   Compiling once_cell v1.21.4
+   Compiling ctor v1.0.13
+   Compiling objc2-core-foundation v0.3.2
+   Compiling tauri-utils v2.10.1
+   Compiling pin-project-lite v0.2.17
+   Compiling block2 v0.6.2
+   Compiling core-foundation-sys v0.8.7
+   Compiling objc2-foundation v0.3.2
+   Compiling version_check v0.9.5
+   Compiling tauri-plugin v2.7.1
+   Compiling rustc_version v0.4.1
+   Compiling crc32fast v1.5.0
+   Compiling option-ext v0.2.0
+   Compiling dirs-sys v0.5.0
+   Compiling embed-resource v3.0.11
+   Compiling tokio-macros v2.7.0
+   Compiling mio v1.2.1
+   Compiling socket2 v0.6.4
+   Compiling heck v0.5.0
+   Compiling tokio v1.52.3
+   Compiling tauri-winres v0.3.6
+   Compiling dirs v7.0.0
+   Compiling objc2-quartz-core v0.3.2
+   Compiling cargo_toml v1.0.1
+   Compiling tauri-build v2.7.1
+   Compiling objc2-app-kit v0.3.2
+   Compiling core-foundation v0.10.1
+   Compiling tauri v2.12.1
+   Compiling futures-core v0.3.32
+   Compiling generic-array v0.14.7
+   Compiling simd-adler32 v0.3.9
+   Compiling time-macros v0.2.31
+   Compiling adler2 v2.0.1
+   Compiling typenum v1.20.1
+   Compiling crossbeam-utils v0.8.22
+   Compiling miniz_oxide v0.8.9
+   Compiling dpi v0.1.2
+   Compiling tracing-core v0.1.36
+   Compiling futures-sink v0.3.32
+   Compiling raw-window-handle v0.6.2
+   Compiling flate2 v1.1.9
+   Compiling fdeflate v0.3.7
+   Compiling cookie v0.18.1
+   Compiling tracing-attributes v0.1.31
+   Compiling getrandom v0.3.4
+   Compiling tracing v0.1.44
+   Compiling crossbeam-channel v0.5.16
+   Compiling futures-channel v0.3.32
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling foreign-types-macros v0.2.3
+   Compiling bitflags v1.3.2
+   Compiling foreign-types-shared v0.3.1
+   Compiling foreign-types v0.5.0
+   Compiling png v0.17.16
+   Compiling digest v0.10.7
+   Compiling wry v0.57.0
+   Compiling objc2-web-kit v0.3.2
+   Compiling core-graphics-types v0.2.0
+   Compiling dispatch2 v0.3.1
+   Compiling futures-macro v0.3.32
+   Compiling cpufeatures v0.2.17
+   Compiling slab v0.4.12
+   Compiling futures-io v0.3.32
+   Compiling muda v0.20.0
+   Compiling futures-task v0.3.32
+   Compiling byteorder v1.5.0
+   Compiling tauri-runtime v2.12.1
+   Compiling futures-util v0.3.32
+   Compiling ico v0.5.0
+   Compiling sha2 v0.10.9
+   Compiling core-graphics v0.25.0
+   Compiling png v0.18.1
+   Compiling http-body v1.0.1
+   Compiling objc2-core-graphics v0.3.2
+   Compiling keyboard-types v0.8.3
+   Compiling mime v0.3.17
+   Compiling tauri-runtime-wry v2.12.1
+   Compiling tray-icon v0.25.1
+   Compiling tauri-codegen v2.7.1
+   Compiling tao v0.37.1
+   Compiling serialize-to-javascript-impl v0.1.2
+   Compiling ring v0.17.14
+   Compiling system-configuration-sys v0.6.0
+   Compiling tower-service v0.3.3
+   Compiling httparse v1.10.1
+   Compiling rustix v1.1.4
+   Compiling serialize-to-javascript v0.1.2
+   Compiling tauri-macros v2.7.1
+   Compiling window-vibrancy v0.8.1
+   Compiling serde_repr v0.1.20
+   Compiling errno v0.3.14
+   Compiling zeroize v1.9.0
+   Compiling try-lock v0.2.5
+   Compiling embed_plist v1.2.2
+   Compiling want v0.3.1
+   Compiling rustls-pki-types v1.15.0
+   Compiling core-foundation v0.9.4
+   Compiling security-framework-sys v2.17.0
+   Compiling getrandom v0.2.17
+   Compiling atomic-waker v1.1.2
+   Compiling httpdate v1.0.3
+   Compiling untrusted v0.9.0
+   Compiling hyper v1.10.1
+   Compiling security-framework v3.7.0
+   Compiling system-configuration v0.7.0
+   Compiling sync_wrapper v1.0.2
+   Compiling ipnet v2.12.0
+   Compiling tower-layer v0.3.3
+   Compiling rustls v0.23.45
+   Compiling hyper-util v0.1.20
+   Compiling rustls-webpki v0.103.15
+   Compiling http-body-util v0.1.3
+   Compiling subtle v2.6.1
+   Compiling tower v0.5.3
+   Compiling tempfile v3.27.0
+   Compiling tauri-plugin-fs v2.5.2
+   Compiling native-tls v0.2.18
+   Compiling zerocopy v0.8.54
+   Compiling tauri-plugin-deep-link v2.4.10
+   Compiling thiserror v1.0.69
+   Compiling tower-http v0.6.11
+   Compiling tokio-util v0.7.18
+   Compiling tokio-rustls v0.26.6
+   Compiling tauri-plugin-dialog v2.7.3
+   Compiling tauri-plugin-updater v2.13.1
+   Compiling tauri-plugin-autostart v2.5.1
+   Compiling tauri-plugin-opener v2.5.4
+   Compiling tauri-plugin-process v2.4.0
+   Compiling thiserror-impl v1.0.69
+   Compiling dirs-sys v0.3.7
+   Compiling ryu v1.0.23
+   Compiling rfd v0.16.0
+   Compiling serde_urlencoded v0.7.1
+   Compiling dirs v4.0.0
+   Compiling ppv-lite86 v0.2.21
+   Compiling hyper-rustls v0.27.10
+   Compiling rustls-platform-verifier v0.7.1
+   Compiling tokio-native-tls v0.3.1
+   Compiling xattr v1.6.1
+   Compiling rand_core v0.9.5
+   Compiling objc2-osa-kit v0.3.2
+   Compiling filetime v0.2.29
+   Compiling lazy_static v1.5.0
+   Compiling sharded-slab v0.1.7
+   Compiling osakit v0.3.1
+   Compiling tar v0.4.46
+   Compiling rand_chacha v0.9.0
+   Compiling hyper-tls v0.6.0
+   Compiling reqwest v0.13.4
+   Compiling auto-launch v0.5.0
+   Compiling axum-core v0.5.6
+   Compiling futures-executor v0.3.32
+   Compiling tracing-log v0.2.0
+   Compiling matchers v0.2.0
+   Compiling lilo v1.4.0 (/Users/builder/clone/app/src-tauri)
+   Compiling objc2-core-ml v0.3.2
+   Compiling objc2-av-foundation v0.3.2
+   Compiling objc2-core-image v0.3.2
+   Compiling objc2-core-video v0.3.2
+   Compiling objc2-image-io v0.3.2
+   Compiling objc2-core-media v0.3.2
+   Compiling serde_path_to_error v0.1.20
+   Compiling thread_local v1.1.10
+   Compiling open v5.3.6
+   Compiling matchit v0.8.4
+   Compiling nu-ansi-term v0.50.3
+   Compiling minisign-verify v0.2.5
+   Compiling tracing-subscriber v0.3.23
+   Compiling axum v0.8.9
+   Compiling objc2-vision v0.3.2
+   Compiling futures v0.3.32
+   Compiling tauri-plugin-single-instance v2.4.5
+   Compiling reqwest v0.12.28
+   Compiling rand v0.9.4
+   Compiling async-trait v0.1.89
+   Compiling if-addrs v0.13.4
+    Finished `release` profile [optimized] target(s) in 3m 38s
+   Compiling libc v0.2.186
+   Compiling serde_core v1.0.228
+   Compiling objc2-exception-helper v0.1.1
+   Compiling memchr v2.8.3
+   Compiling cfg-if v1.0.4
+   Compiling objc2 v0.6.4
+   Compiling objc2-encode v4.1.0
+   Compiling itoa v1.0.18
+   Compiling once_cell v1.21.4
+   Compiling serde v1.0.228
+   Compiling zerofrom v0.1.8
+   Compiling stable_deref_trait v1.2.1
+   Compiling yoke v0.8.3
+   Compiling bytes v1.12.1
+   Compiling bitflags v2.13.0
+   Compiling objc2-core-foundation v0.3.2
+   Compiling pin-project-lite v0.2.17
+   Compiling block2 v0.6.2
+   Compiling zerovec v0.11.6
+   Compiling core-foundation-sys v0.8.7
+   Compiling smallvec v1.15.2
+   Compiling log v0.4.33
+   Compiling objc2-foundation v0.3.2
+   Compiling tinystr v0.8.3
+   Compiling writeable v0.6.3
+   Compiling percent-encoding v2.3.2
+   Compiling litemap v0.8.2
+   Compiling potential_utf v0.1.5
+   Compiling icu_locale_core v2.2.0
+   Compiling http v1.4.2
+   Compiling zerotrie v0.2.4
+   Compiling utf8_iter v1.0.4
+   Compiling icu_collections v2.2.0
+   Compiling icu_provider v2.2.0
+   Compiling icu_normalizer_data v2.2.0
+   Compiling icu_properties_data v2.2.0
+   Compiling mio v1.2.1
+   Compiling socket2 v0.6.4
+   Compiling tokio v1.52.3
+   Compiling icu_normalizer v2.2.0
+   Compiling icu_properties v2.2.0
+   Compiling form_urlencoded v1.2.2
+   Compiling zmij v1.0.21
+   Compiling serde_json v1.0.150
+   Compiling idna_adapter v1.2.2
+   Compiling core-foundation v0.10.1
+   Compiling idna v1.1.0
+   Compiling base64 v0.22.1
+   Compiling url v2.5.8
+   Compiling thiserror v2.0.18
+   Compiling futures-core v0.3.32
+   Compiling tauri v2.12.1
+   Compiling aho-corasick v1.1.4
+   Compiling regex-syntax v0.8.11
+   Compiling objc2-quartz-core v0.3.2
+   Compiling objc2-app-kit v0.3.2
+   Compiling regex-automata v0.4.15
+   Compiling num-conv v0.2.2
+   Compiling powerfmt v0.2.0
+   Compiling deranged v0.5.8
+   Compiling time-core v0.1.9
+   Compiling time v0.3.53
+   Compiling crossbeam-utils v0.8.22
+   Compiling dpi v0.1.2
+   Compiling tracing-core v0.1.36
+   Compiling typeid v1.0.3
+   Compiling futures-sink v0.3.32
+   Compiling simd-adler32 v0.3.9
+   Compiling raw-window-handle v0.6.2
+   Compiling crc32fast v1.5.0
+   Compiling uuid v1.23.4
+   Compiling erased-serde v0.4.10
+   Compiling equivalent v1.0.2
+   Compiling fnv v1.0.7
+   Compiling siphasher v1.0.3
+   Compiling hashbrown v0.17.1
+   Compiling web-time v1.1.0
+   Compiling winnow v1.0.3
+   Compiling adler2 v2.0.1
+   Compiling miniz_oxide v0.8.9
+   Compiling toml_parser v1.1.2+spec-1.1.0
+   Compiling indexmap v2.14.0
+   Compiling cfb v0.14.0
+   Compiling getrandom v0.3.4
+   Compiling phf_shared v0.13.1
+   Compiling crossbeam-channel v0.5.16
+   Compiling tracing v0.1.44
+   Compiling cookie v0.18.1
+   Compiling futures-channel v0.3.32
+   Compiling regex v1.13.0
+   Compiling jsonptr v0.7.1
+   Compiling serde_spanned v1.1.1
+   Compiling toml_datetime v1.1.1+spec-1.1.0
+   Compiling quick-xml v0.41.0
+   Compiling anyhow v1.0.103
+   Compiling same-file v1.0.6
+   Compiling toml_writer v1.1.1+spec-1.1.0
+   Compiling option-ext v0.2.0
+   Compiling foreign-types-shared v0.3.1
+   Compiling foreign-types v0.5.0
+   Compiling toml v1.1.2+spec-1.1.0
+   Compiling dirs-sys v0.5.0
+   Compiling walkdir v2.5.0
+   Compiling plist v1.10.0
+   Compiling json-patch v4.2.0
+   Compiling urlpattern v0.6.0
+   Compiling serde-untagged v0.1.9
+   Compiling flate2 v1.1.9
+   Compiling infer v0.22.0
+   Compiling phf v0.13.1
+   Compiling fdeflate v0.3.7
+   Compiling objc2-web-kit v0.3.2
+   Compiling core-graphics-types v0.2.0
+   Compiling dispatch2 v0.3.1
+   Compiling semver v1.0.28
+   Compiling serde_with v3.21.0
+   Compiling slab v0.4.12
+   Compiling futures-io v0.3.32
+   Compiling ctor v1.0.13
+   Compiling futures-task v0.3.32
+   Compiling glob v0.3.3
+   Compiling dunce v1.0.5
+   Compiling tauri-runtime v2.12.1
+   Compiling futures-util v0.3.32
+   Compiling muda v0.20.0
+   Compiling core-graphics v0.25.0
+   Compiling tauri-utils v2.10.1
+   Compiling png v0.18.1
+   Compiling wry v0.57.0
+   Compiling dirs v7.0.0
+   Compiling http-body v1.0.1
+   Compiling objc2-core-graphics v0.3.2
+   Compiling keyboard-types v0.8.3
+   Compiling mime v0.3.17
+   Compiling tray-icon v0.25.1
+   Compiling tauri-runtime-wry v2.12.1
+   Compiling tao v0.37.1
+   Compiling tower-service v0.3.3
+   Compiling system-configuration-sys v0.6.0
+   Compiling rustix v1.1.4
+   Compiling httparse v1.10.1
+   Compiling serialize-to-javascript v0.1.2
+   Compiling ring v0.17.14
+   Compiling window-vibrancy v0.8.1
+   Compiling errno v0.3.14
+   Compiling try-lock v0.2.5
+   Compiling embed_plist v1.2.2
+   Compiling zeroize v1.9.0
+   Compiling heck v0.5.0
+   Compiling rustls-pki-types v1.15.0
+   Compiling want v0.3.1
+   Compiling security-framework-sys v2.17.0
+   Compiling core-foundation v0.9.4
+   Compiling getrandom v0.2.17
+   Compiling httpdate v1.0.3
+   Compiling untrusted v0.9.0
+   Compiling atomic-waker v1.1.2
+   Compiling hyper v1.10.1
+   Compiling system-configuration v0.7.0
+   Compiling security-framework v3.7.0
+   Compiling sync_wrapper v1.0.2
+   Compiling getrandom v0.4.3
+   Compiling ipnet v2.12.0
+   Compiling tower-layer v0.3.3
+   Compiling hyper-util v0.1.20
+   Compiling rustls v0.23.45
+   Compiling rustls-webpki v0.103.15
+   Compiling http-body-util v0.1.3
+   Compiling fastrand v2.4.1
+   Compiling subtle v2.6.1
+   Compiling tempfile v3.27.0
+   Compiling tower v0.5.3
+   Compiling native-tls v0.2.18
+   Compiling zerocopy v0.8.54
+   Compiling tauri-plugin-fs v2.5.2
+   Compiling thiserror v1.0.69
+   Compiling tauri-plugin-deep-link v2.4.10
+   Compiling tower-http v0.6.11
+   Compiling tokio-util v0.7.18
+   Compiling dirs-sys v0.3.7
+   Compiling tokio-rustls v0.26.6
+   Compiling ryu v1.0.23
+   Compiling serde_urlencoded v0.7.1
+   Compiling rfd v0.16.0
+   Compiling hyper-rustls v0.27.10
+   Compiling rustls-platform-verifier v0.7.1
+   Compiling ppv-lite86 v0.2.21
+   Compiling dirs v4.0.0
+   Compiling tauri-plugin-updater v2.13.1
+   Compiling tauri-plugin-dialog v2.7.3
+   Compiling tauri-plugin-process v2.4.0
+   Compiling tauri-plugin-opener v2.5.4
+   Compiling tauri-plugin-autostart v2.5.1
+   Compiling tokio-native-tls v0.3.1
+   Compiling xattr v1.6.1
+   Compiling rand_core v0.9.5
+   Compiling objc2-osa-kit v0.3.2
+   Compiling filetime v0.2.29
+   Compiling lazy_static v1.5.0
+   Compiling sharded-slab v0.1.7
+   Compiling osakit v0.3.1
+   Compiling tar v0.4.46
+   Compiling rand_chacha v0.9.0
+   Compiling hyper-tls v0.6.0
+   Compiling auto-launch v0.5.0
+   Compiling reqwest v0.13.4
+   Compiling axum-core v0.5.6
+   Compiling futures-executor v0.3.32
+   Compiling tracing-log v0.2.0
+   Compiling matchers v0.2.0
+   Compiling objc2-core-ml v0.3.2
+   Compiling objc2-av-foundation v0.3.2
+   Compiling objc2-core-image v0.3.2
+   Compiling objc2-core-video v0.3.2
+   Compiling objc2-image-io v0.3.2
+   Compiling objc2-core-media v0.3.2
+   Compiling serde_path_to_error v0.1.20
+   Compiling thread_local v1.1.10
+   Compiling open v5.3.6
+   Compiling minisign-verify v0.2.5
+   Compiling nu-ansi-term v0.50.3
+   Compiling matchit v0.8.4
+   Compiling axum v0.8.9
+   Compiling tracing-subscriber v0.3.23
+   Compiling objc2-vision v0.3.2
+   Compiling lilo v1.4.0 (/Users/builder/clone/app/src-tauri)
+   Compiling futures v0.3.32
+   Compiling tauri-plugin-single-instance v2.4.5
+   Compiling reqwest v0.12.28
+   Compiling rand v0.9.4
+   Compiling if-addrs v0.13.4
+    Finished `release` profile [optimized] target(s) in 2m 42s
+       Built application at: /Users/builder/clone/app/src-tauri/target/universal-apple-darwin/release/embroidery-studio
+    Bundling Embroidery Studio.app (/Users/builder/clone/app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embroidery Studio.app)
+     Signing with identity "-"
+Signing with identity "-"
+Signing /Users/builder/clone/app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embroidery Studio.app/Contents/MacOS/embroidery-studio
+/Users/builder/clone/app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embroidery Studio.app/Contents/MacOS/embroidery-studio: replacing existing signature
+Signing with identity "-"
+Signing /Users/builder/clone/app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embroidery Studio.app
+/Users/builder/clone/app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embroidery Studio.app: replacing existing signature
+        Warn skipping app notarization, no APPLE_ID & APPLE_PASSWORD & APPLE_TEAM_ID or APPLE_API_KEY & APPLE_API_ISSUER & APPLE_API_KEY_PATH environment variables found
+    Finished 1 bundle at:
+        /Users/builder/clone/app/src-tauri/target/universal-apple-darwin/release/bundle/macos/Embroidery Studio.app (154.78 MiB)
+

@@ -72,3 +72,26 @@ Setup is ready for the first manual account-authorized run. M3 installation scre
 The first Codemagic run (`6ad6d39a7550aed810905add`, source `48349f4`) reached macOS 15.5/Xcode 16.4 and installed Pillow successfully, then stopped during pnpm setup: `EEXIST: file already exists, /usr/local/bin/pnpm`. No application compilation or installation tests ran.
 
 The setup script now installs the pinned pnpm 10.0.0 inside the disposable workspace and places its local executable first on PATH. It does not replace Codemagic's existing pnpm/Corepack shim. The corrected installation was exercised locally, including a second installation into the same directory, and pnpm reported 10.0.0. Shell syntax and the existing package/report tests also passed. This local check is not a new Mac build result. One new manual build of the latest main commit is needed; do not retry the old commit.
+
+## Second run — build and CI installation passed; native GUI permissions blocked
+
+Run `6ad6d5e57550aed810905b59`, source `74c0fd0`, successfully built the complete universal application and installed its actual customer package on macOS. The owner supplied its QA artifact for inspection. Detailed evidence is preserved in `reports/M3/codemagic-setup/run-2/`.
+
+| Check | Verified result |
+|---|---|
+| Complete customer ZIP | **19,861,169 bytes**; under 20,000,000 bytes by 138,831 bytes |
+| Installer | **19,845,240 bytes** |
+| Customer ZIP SHA-256 | `cf594cb3c34373aee45a150aca7cb2f9326fff9c19fa41fe5a4f4bdd2012b426` |
+| Architectures built/installed | `x86_64 arm64` |
+| CI installation | Passed; installed files and modes match the built app |
+| Ad-hoc signature verification | Passed; still not Developer ID/notarized |
+| Native Rust code tests | **96 passed**, zero failures |
+| Production browser regression on Mac | **9 checks passed**, all 13 exports written; 11 machine formats reread; conversion, hoop selection, simulation, project save/reopen and offline processing passed |
+| Native GUI tests and installation screenshots | **Blocked**, not failed application assertions |
+| macOS Accessibility access | `false` |
+| macOS screen-capture authorization | `false` |
+| New native installation screenshots | **0** |
+
+The overall red build status is intentional: blocked native UI coverage cannot become a passing result merely because compilation, ordinary CI installation and browser tests succeeded. Browser screenshots in this artifact are not substituted for native screenshots. No GUI security warning was tested, and no clean consumer Gatekeeper pass is claimed.
+
+**Do not spend another full build on this blocker.** Preserve/download the already-produced customer ZIP. Completing native UI testing requires a remote or physical Mac session with Accessibility and Screen Recording permission approved by the account owner for the actual test host/process. The workflow never requests/grants those permissions or changes OS security itself. Any subsequent verification should reuse this exact ZIP/hash rather than rebuild it. Work stops here for that user-only permission/access step; no further runner or billing action has been taken.
