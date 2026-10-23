@@ -1,0 +1,12 @@
+{
+  "customerZipSha256": "55328fcdc554ee09cc955c5e8a347953be228cc8f433e2a696ae68f58e4f10bb",
+  "windowTitle": "Embrova",
+  "consumerSmartScreenTested": false,
+  "securitySettingsChanged": false,
+  "result": "pass",
+  "scope": "Standard CI installation and launch; exact executable resource checksum checked; no clean consumer warning claim",
+  "productName": "Embrova",
+  "installerExitCode": 0,
+  "installedExecutableSha256": "9ebcab65045570f83a287a107793202ac52142826ee422a136a86a21afd512cf",
+  "roundedIconExecutableMatched": true
+}

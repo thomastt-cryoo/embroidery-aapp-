@@ -1,0 +1,30 @@
+{
+  "windowsIconFrames": [
+    {
+      "size": 16,
+      "payloadPresentInInstalledExecutable": true
+    },
+    {
+      "size": 24,
+      "payloadPresentInInstalledExecutable": true
+    },
+    {
+      "size": 32,
+      "payloadPresentInInstalledExecutable": true
+    },
+    {
+      "size": 48,
+      "payloadPresentInInstalledExecutable": true
+    },
+    {
+      "size": 64,
+      "payloadPresentInInstalledExecutable": true
+    },
+    {
+      "size": 256,
+      "payloadPresentInInstalledExecutable": true
+    }
+  ],
+  "macIcnsSha256": "f0f9f25676452400b290db6eddc92b9e5f8aaaab3cb5f7cfdfac76ace7dca1e1",
+  "expectedMacRoundedIcnsSha256": "f0f9f25676452400b290db6eddc92b9e5f8aaaab3cb5f7cfdfac76ace7dca1e1"
+}

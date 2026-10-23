@@ -1,5 +1,7 @@
 # M2 — Embrova final customer packages
 
+**23 October 2026 update:** newer customer ZIPs replace the files below following the requested plain home-credit change. Both now show exactly `emvrova based on open source software`, with no link or click action. [Updated Windows ZIP](dist/Embrova-Customer-Release-20261023/Embrova-Windows.zip), [updated Mac ZIP](dist/Embrova-Customer-Release-20261023/Embrova-macOS.zip), and [verification report](reports/footer-update-20261023/REPORT.md). The remaining sections document the 20 October release.
+
 20 October 2026. The requested Embrova name, complete supplied logo, small rounded sidebar logo, Windows taskbar icon and Mac Dock icon are included in these final packages. Installation/launch checks passed for the final Windows ZIP; all eight installed-app functional checks passed for the final Mac ZIP.
 
 ## Final downloads

@@ -1,0 +1,24 @@
+[
+  {
+    "platform": "windows",
+    "kind": "Production browser rendering with platform emulation; not a native installation test",
+    "text": "emvrova based on open source software",
+    "tag": "SPAN",
+    "interactive": false,
+    "href": null,
+    "onclick": false,
+    "clickOpensUrl": false,
+    "result": "pass"
+  },
+  {
+    "platform": "mac",
+    "kind": "Production browser rendering with platform emulation; not a native installation test",
+    "text": "emvrova based on open source software",
+    "tag": "SPAN",
+    "interactive": false,
+    "href": null,
+    "onclick": false,
+    "clickOpensUrl": false,
+    "result": "pass"
+  }
+]

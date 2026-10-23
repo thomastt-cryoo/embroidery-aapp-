@@ -1,0 +1,90 @@
+{
+  "created": "2026-10-23",
+  "sourceCommit": "1a37e1986c3ea5423432aa080963315b0b32a775",
+  "footerText": "emvrova based on open source software",
+  "interactive": false,
+  "packages": [
+    {
+      "platform": "Windows",
+      "path": "dist/Embrova-Customer-Release-20261023/Embrova-Windows.zip",
+      "bytes": 17042643,
+      "sha256": "55328fcdc554ee09cc955c5e8a347953be228cc8f433e2a696ae68f58e4f10bb",
+      "installer": "Install Embrova.exe",
+      "zipCRC": "pass",
+      "licenseAndNotice": "source text preserved; only platform newline conventions differ"
+    },
+    {
+      "platform": "macOS",
+      "path": "dist/Embrova-Customer-Release-20261023/Embrova-macOS.zip",
+      "bytes": 20146115,
+      "sha256": "def95b9889c4d0a008e70a9af23b619bf4f278037f4c254c79276a7197185538",
+      "installer": "Install Embrova.pkg",
+      "zipCRC": "pass",
+      "licenseAndNotice": "source text preserved; only platform newline conventions differ"
+    }
+  ],
+  "uiTests": {
+    "passed": 27,
+    "failed": 0
+  },
+  "productionBrowserLayouts": [
+    "Windows",
+    "macOS"
+  ],
+  "windowsInstallationRun": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39893460690",
+  "macBuildAndNativeRun": "https://github.com/thomastt-cryoo/embroidery-aapp-/actions/runs/39892683483",
+  "macNativeChecks": [
+    {
+      "name": "plain home credit",
+      "result": "pass",
+      "detail": "Exact owner-supplied text visible in installed Mac app; no link or button role"
+    },
+    {
+      "name": "native image conversion",
+      "result": "pass",
+      "detail": "1,374 stitches from actual PNG file picker"
+    },
+    {
+      "name": "native canvas preview",
+      "result": "pass",
+      "detail": "Actual installed application screenshot, reference hidden: 1176 red and 3486 blue pixels in central stitch area"
+    },
+    {
+      "name": "native simulation",
+      "result": "pass",
+      "detail": "Played from zero to the end at 50x through native controls"
+    },
+    {
+      "name": "native hoop selection",
+      "result": "pass",
+      "detail": "100 \u00d7 100 mm selected from search"
+    },
+    {
+      "name": "native stitch editing",
+      "result": "pass",
+      "detail": "Selected generated satin, changed pull compensation 0.15 to 0.35, then restored 0.15 through native range input"
+    },
+    {
+      "name": "native project save",
+      "result": "pass",
+      "detail": "Actual native Save sheet wrote a valid project with six editable objects"
+    },
+    {
+      "name": "native PES export",
+      "result": "pass",
+      "detail": "4072 bytes with valid PES header"
+    },
+    {
+      "name": "native project reopening",
+      "result": "pass",
+      "detail": "Native saved project reopened with 1,374 stitches"
+    }
+  ],
+  "macArchitectureExecuted": "x86_64",
+  "macUniversalBundle": "Intel + Apple silicon, strict all-architecture signature check passed",
+  "macOriginalDecimalSizeTargetMet": false,
+  "macOwnerSizeException": true,
+  "originalLiloRepositoryAndInstall": "untouched",
+  "ownerInstalledApps": "not launched or changed",
+  "signing": "Unchanged: Windows unsigned; Mac ad-hoc signed. Consumer security-warning testing remains deferred by owner instruction."
+}
