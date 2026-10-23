@@ -73,7 +73,12 @@ try:
     if 'Skip the tour' in text(initial):press('Skip the tour')
     current=ax('snapshot')
     if 'Upload image' not in text(current):press('Home')
-    wait_for('Upload image');snap('home-sidebar')
+    wait_for('Upload image');home=snap('home-sidebar')
+    if os.environ.get('VERIFY_PLAIN_HOME_CREDIT')=='1':
+        credit='emvrova based on open source software'
+        assert credit in text(home),'Requested plain home credit is missing'
+        assert not any(r.get('role') in ('AXLink','AXButton') and credit in '\n'.join(str(r.get(k,'')) for k in ('title','description','value')) for r in home),'Home credit must not be interactive'
+        check('plain home credit','Exact owner-supplied text visible in installed Mac app; no link or button role')
     press('Upload image');time.sleep(1)
     snap('image-picker');choose(root/'engine/test/fixtures/k-logo.png')
     wait_for('1,374',90);snap('converted');check('native image conversion','1,374 stitches from actual PNG file picker')

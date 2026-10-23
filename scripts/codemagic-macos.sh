@@ -80,7 +80,7 @@ assert info['CFBundleIdentifier'] == 'io.github.thomasttcryoo.embroiderystudio'
 arches = subprocess.check_output(['lipo', '-archs', app / 'Contents/MacOS' / info['CFBundleExecutable']], text=True)
 assert {'arm64', 'x86_64'} <= set(arches.split()), arches
 subprocess.run(['codesign', '--verify', '--deep', '--strict', '--all-architectures', app], check=True)
-pathlib.Path('out/evidence/rebuild-package.passed').write_text('Universal application identity and signature verified; strict ZIP size gate passed.\n')
+pathlib.Path('out/evidence/rebuild-package.passed').write_text('Universal application identity and signature verified; package acceptance passed (owner size exception is recorded separately when used).\n')
 PY
   echo 'Rebuild complete. Functional tests and VNC waits were not requested.'
   exit 0

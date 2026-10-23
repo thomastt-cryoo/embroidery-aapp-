@@ -35,8 +35,6 @@ export function Card({ card, onOpen }: { card: RecentCard; onOpen: () => void })
   );
 }
 
-const SOURCE_URL = "https://github.com/Kadwood/lilo";
-
 const ICONS = {
   new: <path d="M12 5v14M5 12h14" />,
   picture: (
@@ -125,9 +123,7 @@ export function HomeView() {
           <span className="eyebrow">EMBROVA</span>
           <h1>A little idea.<br />Ready to stitch.</h1>
           <p className="muted">Turn your artwork into embroidery, one simple step at a time.</p>
-          <button className="lockup" onClick={() => void getPlatform().openUrl(SOURCE_URL)} title="Original Lilo source and GPL licence">
-            <span>Embrova · based on Lilo · GPL-3.0</span>
-          </button>
+          <span className="lockup">emvrova based on open source software</span>
         </div>
       </header>
 

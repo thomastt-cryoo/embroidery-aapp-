@@ -13,6 +13,8 @@ jobs:
       APPLE_SIGNING_IDENTITY: '-'
       CARGO_BUILD_JOBS: '3'
       MACOSX_DEPLOYMENT_TARGET: '13.0'
+      MAC_COMPRESSION_TUNING_SECONDS: '0'
+      MAC_OWNER_ACCEPTED_SIZE_EXCEPTION: '1'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,7 +33,7 @@ jobs:
             ~/Library/Caches/Embrova/fonts
             app/src-tauri/target
           key: mac-universal-branding-intel-${{ hashFiles('app/src-tauri/Cargo.lock', 'pnpm-lock.yaml') }}
-      - name: Build complete universal ZIP and enforce Etsy size limit
+      - name: Build complete universal ZIP with the owner-approved size exception
         run: bash scripts/codemagic-macos.sh
       - name: Verify installed branding package and capture actual Mac menu bar
         run: .codemagic-venv/bin/python scripts/github-macos-branding-check.py
@@ -41,6 +43,7 @@ jobs:
         env:
           M2_MAC_DELIVERY_DIR: out
           M3_SCREENSHOT_DIR: out/02-macOS/functional/originals
+          VERIFY_PLAIN_HOME_CREDIT: '1'
         run: .codemagic-venv/bin/python scripts/m2-macos-native-ui.py
       - uses: actions/upload-artifact@v4
         if: always()

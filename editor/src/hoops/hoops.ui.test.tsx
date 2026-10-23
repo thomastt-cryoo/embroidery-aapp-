@@ -322,15 +322,16 @@ describe("Home", () => {
     return { view: "home", go: vi.fn() as unknown as AppApi["go"] };
   }
 
-  it("offers the six ways to start as cards, and credits the original source", async () => {
+  it("offers the six ways to start as cards, with plain open-source credit", async () => {
     renderEditor(<HomeView />, { app: app() });
     const grid = screen.getByRole("list", { name: "Ways to start" });
     for (const name of ["New design", "Digitize a picture…", "Type a monogram", "Pixel art", "Open…", "Converter"]) expect(within(grid).getByRole("button", { name })).toBeTruthy();
     expect(screen.getByRole("heading", { name: /A little idea/ })).toBeTruthy();
     expect(screen.getByRole("button", { name: "Upload image" })).toBeTruthy();
-    fireEvent.click(screen.getByTitle("Original Lilo source and GPL licence"));
-    await waitFor(() => expect(mock.openedUrls).toEqual(["https://github.com/Kadwood/lilo"]));
-    expect(screen.getByText("Embrova · based on Lilo · GPL-3.0")).toBeTruthy();
+    const credit = screen.getByText("emvrova based on open source software");
+    expect(credit.closest("a, button")).toBeNull();
+    fireEvent.click(credit);
+    expect(mock.openedUrls).toEqual([]);
   });
 
   it("Pixel art and Converter go to their screens; Type a monogram starts a design with the Text tool", async () => {
